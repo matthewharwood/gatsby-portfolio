@@ -16,12 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-brotli'
     },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: { "*.br": ["content-encoding: br"]},
-      },
-    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     {
