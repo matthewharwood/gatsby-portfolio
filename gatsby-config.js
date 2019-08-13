@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        headers: { "/*.br": []},
+        headers: { "*.br": ["content-encoding: br"]},
       },
     },
     `gatsby-plugin-react-helmet`,
