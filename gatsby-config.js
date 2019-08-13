@@ -5,7 +5,19 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-styletron",
+      options: {
+        // You can pass options to Styletron.
+        // Prefix all generated classNames:
+        prefix: "_"
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-brotli'
+    },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
