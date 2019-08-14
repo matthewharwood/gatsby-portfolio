@@ -1,7 +1,10 @@
 import React from 'react';
-
-const Hello = () => (
-  <div>hello</div>
-);
+import { useStyletron } from "styletron-react";
+const Hello = () => {
+  const [css] = useStyletron();
+  return (
+    <p className={css({ color: "red" })}>hello world</p>
+  );
+}
 
 export {Hello};
