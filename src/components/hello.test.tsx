@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import Hello from './hello';
+import {Hello} from './hello';
 
 describe("Hello", () => {
   it("renders correctly", () => {

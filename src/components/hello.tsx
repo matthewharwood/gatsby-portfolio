@@ -4,4 +4,4 @@ const Hello = () => (
   <div>hello</div>
 );
 
-export default Hello;
+export {Hello};

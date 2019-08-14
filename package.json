@@ -24,6 +24,8 @@
     "@types/node": "^12.7.1",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/styletron-react": "^5.0.1",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.8",
     "gatsby-plugin-brotli": "^1.2.4",
