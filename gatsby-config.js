@@ -7,15 +7,42 @@ module.exports = {
   plugins: [
     `gatsby-plugin-mdx`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `work`,
+        path: `${__dirname}/content/work`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lab`,
+        path: `${__dirname}/content/lab`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `profile`,
+        path: `${__dirname}/content/profile`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-page-creator`,
+    //   options: {
+    //     path: `${__dirname}/content/work`,
+    //   },
+    // },
+    {
       resolve: "gatsby-plugin-styletron",
       options: {
         // You can pass options to Styletron.
         // Prefix all generated classNames:
-        prefix: "_"
-      }
+        prefix: "_",
+      },
     },
     {
-      resolve: 'gatsby-plugin-brotli'
+      resolve: "gatsby-plugin-brotli",
     },
 
     `gatsby-plugin-react-helmet`,
