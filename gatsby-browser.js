@@ -13,7 +13,7 @@ const MorningHarwood = createTheme(
   {
     ...lightThemePrimitives,
     // add all the properties here you'd like to override from the light theme primitives
-    primaryFontFamily: '"Comic Sans MS", cursive, sans-serif',
+    primaryFontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
 );
 
