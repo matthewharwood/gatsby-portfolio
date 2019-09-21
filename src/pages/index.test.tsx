@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import {Hello} from './hello';
+import IndexPage from './';
 
 describe("Hello", () => {
   it("renders correctly", () => {
     const tree = renderer
-      .create(<Hello />)
+      .create(<IndexPage />)
       .toJSON()
     expect(tree).toMatchSnapshot();
   })
