@@ -8,6 +8,7 @@
 
 import React from "react"
 import { createTheme, lightThemePrimitives, BaseProvider } from 'baseui';
+import "./src/styles/global.css"
 
 const MorningHarwood = createTheme(
   {
