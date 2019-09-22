@@ -1,4 +1,5 @@
-html, body {
+html, body, #___gatsby, #___gatsby > div:first-of-type ,
+#gatsby-focus-wrapper {
   margin: 0;
   padding: 0;
   height: 100%;

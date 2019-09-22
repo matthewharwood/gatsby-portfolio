@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Morningharwood",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A portfolio of Matthew Harwood",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matthew Harwood <matthhar12@gmail.com>",
   "dependencies": {
     "baseui": "^9.4.1",
     "gatsby": "^2.13.61",
@@ -55,12 +55,5 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
