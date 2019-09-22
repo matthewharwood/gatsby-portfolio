@@ -6,9 +6,14 @@
 
 // You can delete this file if you're not using it
 
-import React from "react"
-import { createTheme, lightThemePrimitives, BaseProvider } from "baseui"
-import "./src/styles/global.css"
+import React from 'react';
+import {
+  createTheme,
+  lightThemePrimitives,
+  darkThemePrimitives,
+  BaseProvider,
+} from 'baseui';
+import './src/styles/global.css';
 
 const MorningHarwood = createTheme(
   {
@@ -18,18 +23,21 @@ const MorningHarwood = createTheme(
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
   {
+    colors: {
+      ...darkThemePrimitives.colors,
+    },
     positions: {
-      absolute: "absolute",
-      relative: "relative",
-      static: "static",
-      sticky: "sticky",
-      fixed: "fixed",
+      absolute: 'absolute',
+      relative: 'relative',
+      static: 'static',
+      sticky: 'sticky',
+      fixed: 'fixed',
     },
   }
-)
+);
 
 export const wrapRootElement = ({ element }) => (
   <BaseProvider id="baseui" theme={MorningHarwood}>
     {element}
   </BaseProvider>
-)
+);
