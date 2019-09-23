@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { StatefulMenu } from 'baseui/menu';
 import { useStyletron } from 'baseui';
 import { Button, KIND, SIZE } from 'baseui/button';
-import { Display3, Paragraph1 } from 'baseui/typography';
+import { Display2, Display3, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
 import Img from 'gatsby-image';
 
@@ -23,8 +23,8 @@ const WorkMenu = props => {
   const ITEMS = [
     { label: 'Item One' },
     { label: 'Item Two' },
-    { label: 'Item Three', disabled: true },
-    { label: 'Item Four', disabled: true },
+    { label: 'Item Three' },
+    { label: 'Item Four' },
     { label: 'Item Five' },
     { label: 'Item Six' },
     { label: 'Item Seven' },
@@ -33,7 +33,15 @@ const WorkMenu = props => {
     { label: 'Item Ten' },
     { label: 'Item Eleven' },
     { label: 'Item Twelve' },
-  ];
+    { label: 'Item Ten' },
+    { label: 'Item Eleven' },
+    { label: 'Item Twelve' },
+    { label: 'Item Ten' },
+    { label: 'Item Eleven' },
+    { label: 'Item Twelve' },
+  ].map((i, index) => ({
+    label: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
+  }));
 
   return (
     <StatefulMenu
@@ -66,18 +74,26 @@ const WorkMenu = props => {
 };
 
 const Grid = props => {
-  const [css] = useStyletron();
+  const [css, theme] = useStyletron();
+
+  const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  console.log(lg);
   return (
     <div
       className={css({
         display: 'grid',
         height: '100%',
-        gridTemplateColumns: '40% 60%',
-        gridTemplateRows: '33.3333% 66.6666%',
-        gridTemplateAreas: `
+        gridTemplateRows: '20% 13.333% 66.6666%',
+        gridTemplateColumns: 'unset',
+        gridTemplateAreas: `"post" "menuTitle" "menu"`,
+        position: 'relative',
+        [lg]: {
+          gridTemplateColumns: '40% 60%',
+          gridTemplateRows: '33.3333% 66.6666%',
+          gridTemplateAreas: `
           "menuTitle post"
           "menu post"`,
-        position: 'relative',
+        },
       })}
     >
       {props.children}
@@ -137,11 +153,11 @@ const MenuGridInnerShadow = () => {
   return (
     <div
       className={css({
-        position: 'absolute',
+        position: 'fixed',
         width: '100%',
         bottom: '1px',
         zIndex: '1',
-        boxShadow: '0px 0px 8px 2px #000000',
+        boxShadow: '0px 0px 8px 10px rgba(255,255,255,0.4)',
       })}
     />
   );
@@ -196,46 +212,48 @@ const InsetShadow = props => {
 };
 const Work = ({ data }) => {
   return (
-    <Grid>
-      <GridItem gridArea={'menuTitle'}>
-        <GridItemInner>
-          <Display3>Work</Display3>
-          <Paragraph1>Check out some of my work</Paragraph1>
-        </GridItemInner>
-      </GridItem>
-      <GridItem gridArea={'menu'}>
-        <MenuGridInnerShadow />
-        <MenuGridInner>
-          <WorkMenu />
-        </MenuGridInner>
-      </GridItem>
-      <GridItem gridArea={'post'}>
-        <BoxShadow />
-        <Img
-          style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
-          fluid={data.placeholderImage.childImageSharp.fluid}
-        />
+    <>
+      <MenuGridInnerShadow />
+      <Grid>
+        <GridItem gridArea={'menuTitle'}>
+          <GridItemInner>
+            <Display2>Work</Display2>
+            <Paragraph1>Check out some of my work</Paragraph1>
+          </GridItemInner>
+        </GridItem>
+        <GridItem gridArea={'menu'}>
+          <MenuGridInner>
+            <WorkMenu />
+          </MenuGridInner>
+        </GridItem>
+        <GridItem gridArea={'post'}>
+          <BoxShadow />
+          <Img
+            style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
+            fluid={data.placeholderImage.childImageSharp.fluid}
+          />
 
-        <FloatingDetails>
-          <Display3 color="primary50">Nike Jordan Editor</Display3>
-          <Paragraph1 color="primary50">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-            sed voluptas nemo molestiae dicta provident, distinctio, ipsum id
-            pariatur labore inventore non repellat. Accusamus exercitationem
-            molestiae voluptatibus magni expedita vitae!
-          </Paragraph1>
-          <Button
-            $as="a"
-            href="https://styletron.org"
-            kind={KIND.secondary}
-            size={SIZE.large}
-            endEnhancer={() => <ArrowRight size={24} />}
-          >
-            View Project
-          </Button>
-        </FloatingDetails>
-      </GridItem>
-    </Grid>
+          <FloatingDetails>
+            <Display3 color="primary50">Nike Jordan Editor</Display3>
+            <Paragraph1 color="primary50">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
+              sed voluptas nemo molestiae dicta provident, distinctio, ipsum id
+              pariatur labore inventore non repellat. Accusamus exercitationem
+              molestiae voluptatibus magni expedita vitae!
+            </Paragraph1>
+            <Button
+              $as="a"
+              href="https://styletron.org"
+              kind={KIND.secondary}
+              size={SIZE.large}
+              endEnhancer={() => <ArrowRight size={24} />}
+            >
+              View Project
+            </Button>
+          </FloatingDetails>
+        </GridItem>
+      </Grid>
+    </>
   );
 };
 
