@@ -77,16 +77,23 @@ const Grid = props => {
   const [css, theme] = useStyletron();
 
   const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  const med = `@media (min-width: ${theme.breakpoints.medium}px)`;
   console.log(lg);
   return (
     <div
       className={css({
         display: 'grid',
-        height: '100%',
-        gridTemplateRows: '20% 13.333% 66.6666%',
-        gridTemplateColumns: 'unset',
-        gridTemplateAreas: `"post" "menuTitle" "menu"`,
         position: 'relative',
+        height: '100%',
+        gridTemplateRows: '20% 80%',
+        gridTemplateColumns: 'unset',
+        gridTemplateAreas: `"menuTitle" "menu"`,
+
+        [med]: {
+          gridTemplateRows: '20% 13.333% 66.6666%',
+          gridTemplateColumns: 'unset',
+          gridTemplateAreas: `"post" "menuTitle" "menu"`,
+        },
         [lg]: {
           gridTemplateColumns: '40% 60%',
           gridTemplateRows: '33.3333% 66.6666%',
@@ -115,15 +122,45 @@ const GridItem = props => {
     </div>
   );
 };
-
-const GridItemInner = props => {
+const GridPostItem = props => {
   const [css, theme] = useStyletron();
+  const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  const md = `@media (min-width: ${theme.breakpoints.medium}px)`;
 
   return (
     <div
       className={css({
-        paddingLeft: theme.sizing.scale1600,
-        paddingTop: theme.sizing.scale1600,
+        position: theme.positions.relative,
+        display: 'none',
+        [md]: {
+          display: 'grid',
+          gridArea: 'post',
+        },
+      })}
+    >
+      {props.children}
+    </div>
+  );
+};
+
+const GridItemInner = props => {
+  const [css, theme] = useStyletron();
+  const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  const md = `@media (min-width: ${theme.breakpoints.medium}px)`;
+
+  return (
+    <div
+      className={css({
+        paddingLeft: theme.sizing.scale700,
+        paddingTop: theme.sizing.scale700,
+        [md]: {
+          paddingLeft: theme.sizing.scale700,
+          paddingTop: theme.sizing.scale800,
+        },
+        [lg]: {
+          paddingLeft: theme.sizing.scale1600,
+          paddingTop: theme.sizing.scale1600,
+        },
       })}
     >
       {props.children}
@@ -133,15 +170,23 @@ const GridItemInner = props => {
 
 const MenuGridInner = props => {
   const [css, theme] = useStyletron();
-
+  const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  const md = `@media (min-width: ${theme.breakpoints.medium}px)`;
   return (
     <div
       className={css({
-        paddingLeft: theme.sizing.scale1600,
-        paddingTop: theme.sizing.scale1600,
         overflow: 'auto',
-        paddingBottom: theme.sizing.scale0,
         position: 'relative',
+        paddingLeft: theme.sizing.scale200,
+        paddingTop: theme.sizing.scale700,
+        paddingBottom: theme.sizing.scale0,
+        [md]: {
+          paddingLeft: theme.sizing.scale200,
+          paddingTop: theme.sizing.scale1000,
+        },
+        [lg]: {
+          paddingLeft: theme.sizing.scale1600,
+        },
       })}
     >
       {props.children}
@@ -165,18 +210,24 @@ const MenuGridInnerShadow = () => {
 const FloatingDetails = props => {
   const [css, theme] = useStyletron();
   const { colors, sizing, positions } = theme;
+  const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
+  const md = `@media (min-width: ${theme.breakpoints.medium}px)`;
 
   return (
     <div
       className={css({
-        minHeight: sizing.scale4800,
-        color: colors.white,
-        padding: sizing.scale1600,
-        position: positions.absolute,
-        bottom: sizing.scale1600,
-        left: '-1px',
-        right: sizing.scale1600,
-        background: colors.black,
+        display: 'none',
+        [lg]: {
+          display: 'block',
+          minHeight: sizing.scale4800,
+          color: colors.white,
+          padding: sizing.scale1600,
+          position: positions.absolute,
+          bottom: sizing.scale1600,
+          left: '-1px',
+          right: sizing.scale1600,
+          background: colors.black,
+        },
       })}
     >
       {props.children}
@@ -226,7 +277,7 @@ const Work = ({ data }) => {
             <WorkMenu />
           </MenuGridInner>
         </GridItem>
-        <GridItem gridArea={'post'}>
+        <GridPostItem>
           <BoxShadow />
           <Img
             style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
@@ -251,7 +302,7 @@ const Work = ({ data }) => {
               View Project
             </Button>
           </FloatingDetails>
-        </GridItem>
+        </GridPostItem>
       </Grid>
     </>
   );
