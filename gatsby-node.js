@@ -44,7 +44,9 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.markdowns.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`src/templates/${node.frontmatter.templateKey}.js`),
+        component: path.resolve(
+          `./src/templates/${String(node.frontmatter.templateKey)}.js`
+        ),
         context: { id: node.id },
       });
     });

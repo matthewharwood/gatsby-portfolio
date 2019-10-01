@@ -5,7 +5,6 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,6 +12,14 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mdxFiles`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     // {
     //   resolve: `gatsby-plugin-page-creator`,
     //   options: {
@@ -20,15 +27,15 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-plugin-styletron",
+      resolve: 'gatsby-plugin-styletron',
       options: {
         // You can pass options to Styletron.
         // Prefix all generated classNames:
-        prefix: "_",
+        prefix: '_',
       },
     },
     {
-      resolve: "gatsby-plugin-brotli",
+      resolve: 'gatsby-plugin-brotli',
     },
 
     `gatsby-plugin-react-helmet`,
@@ -58,4 +65,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
   ],
-}
+};
