@@ -26,12 +26,28 @@ const MorningHarwood = createTheme(
     colors: {
       ...darkThemePrimitives.colors,
     },
+    breakpoints: {
+      small: 599,
+      medium: 600,
+      mediumUpper: 1139,
+      large: 1140,
+    },
+    mq: {
+      sm: '@media (max-width: 599px)',
+      md: '@media (min-width: 600px) and (max-width: 1139px)',
+      lg: '@media (min-width: 1140px)',
+    },
     positions: {
       absolute: 'absolute',
       relative: 'relative',
       static: 'static',
       sticky: 'sticky',
       fixed: 'fixed',
+    },
+    display: {
+      grid: 'grid',
+      block: 'block',
+      flex: 'flex',
     },
   }
 );
