@@ -6,8 +6,10 @@ import {
   Label3,
   Paragraph4,
 } from 'baseui/typography';
+import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
+import { spawn } from 'child_process';
 
 const TopElement = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
@@ -45,16 +47,44 @@ const ListItem = ({ $borderColor, children }: any) => {
       display: theme.display.grid,
       gridColumn: 'span 3',
       marginBottom: theme.sizing.scale800,
+      alignContent: 'start',
     }),
   };
 
   return <div {...c}>{children}</div>;
 };
 
-const Headline = ({ eyebrow, main, sub, $backgroundColor, $color }: any) => {
+const Headline = ({
+  eyebrow,
+  main,
+  sub,
+  projectOverview,
+  $backgroundColor,
+  $color,
+}: any) => {
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary700;
   const color = $color || theme.colors.primary100;
+  const Layout = (data: any) => {
+    switch (data.type) {
+      case 'link':
+        return data.items.map((d: any) => (
+          <>
+            <StyledLink href={d.href}>{d.text}</StyledLink>
+            <br />
+          </>
+        ));
+      case 'list':
+        return data.items.map((d: any) => (
+          <span>
+            {d}
+            <br />
+          </span>
+        ));
+      default:
+        return data;
+    }
+  };
 
   return (
     <Section $backgroundColor={backgroundColor} $color={color}>
@@ -66,33 +96,19 @@ const Headline = ({ eyebrow, main, sub, $backgroundColor, $color }: any) => {
             <Display3 color={'inheirt'}>{sub.text}</Display3>
           </TopElement>
           <Grid>
-            <ListItem>
-              <Label3 color={'inheirt'}>Client</Label3>
-              <Paragraph4 color={'inheirt'}>Nike Jordan</Paragraph4>
-            </ListItem>
-            <ListItem>
-              <Label3 color={'inheirt'}>Agency</Label3>
-              <Paragraph4 color={'inheirt'}>AKQA</Paragraph4>
-            </ListItem>
-            <ListItem>
-              <Label3 color={'inheirt'}>When</Label3>
-              <Paragraph4 color={'inheirt'}>
-                Feb 2014 - Mar 2014 (8 weeks)
-              </Paragraph4>
-            </ListItem>
-            <ListItem>
-              <Label3 color={'inheirt'}>My Role</Label3>
-              <Paragraph4 color={'inheirt'}>Developer/Designer</Paragraph4>
-            </ListItem>
-            <ListItem>
-              <Label3 color={'inheirt'}>Collaborators</Label3>
-              <Paragraph4 color={'inheirt'}>
-                Jimmy Soat (Creative Director) <br />
-                Stanley Yeung (Visual Designer)
-                <br />
-                Jeffrey Qua (Developer)
-              </Paragraph4>
-            </ListItem>
+            {Object.entries(projectOverview).map(([key, { data }]) => {
+              return (
+                <ListItem>
+                  <Label3
+                    color={'inheirt'}
+                    style={{ textTransform: 'capitalize' }}
+                  >
+                    {key}
+                  </Label3>
+                  <Paragraph4 color={'inheirt'}>{Layout(data)}</Paragraph4>
+                </ListItem>
+              );
+            })}
           </Grid>
         </Grid>
       </Container>
