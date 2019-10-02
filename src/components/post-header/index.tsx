@@ -9,11 +9,9 @@ import {
 import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
-import { spawn } from 'child_process';
 
 const TopElement = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
-  console.log(theme.colors);
   const c = {
     className: css({
       display: theme.display.grid,
@@ -26,19 +24,6 @@ const TopElement = ({ $borderColor, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const List = ({ $borderColor, children }: any) => {
-  const [css, theme] = useStyletron();
-
-  const c = {
-    className: css({
-      backgroundColor: 'purple',
-      display: theme.display.grid,
-      gridColumn: '1/-1',
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
-};
 const ListItem = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
 
@@ -54,7 +39,7 @@ const ListItem = ({ $borderColor, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const Headline = ({
+const PostHeader = ({
   eyebrow,
   main,
   sub,
@@ -76,10 +61,10 @@ const Headline = ({
         ));
       case 'list':
         return data.items.map((d: any) => (
-          <span>
+          <>
             {d}
             <br />
-          </span>
+          </>
         ));
       default:
         return data;
@@ -116,4 +101,4 @@ const Headline = ({
   );
 };
 
-export { Headline };
+export { PostHeader };

@@ -25,6 +25,7 @@ const MorningHarwood = createTheme(
   {
     colors: {
       ...darkThemePrimitives.colors,
+      accent: 'tomato',
     },
     breakpoints: {
       small: 599,
