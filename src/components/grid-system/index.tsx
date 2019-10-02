@@ -1,13 +1,14 @@
 import React from 'react';
 import { useStyletron } from 'baseui';
 
-export const Section = ({ $backgroundColor, children }: any) => {
+export const Section = ({ $backgroundColor, $color, children }: any) => {
   const [css, theme] = useStyletron();
   const bgColor = $backgroundColor || 'inherit';
-
+  const color = $color || 'inherit';
   const className = css({
     backgroundColor: bgColor,
     boxSizing: 'border-box',
+    color: color,
     display: theme.display.block,
     paddingTop: theme.sizing.scale1000,
     paddingBottom: theme.sizing.scale1000,
