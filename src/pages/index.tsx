@@ -1,6 +1,7 @@
 import React from 'react';
 import { PostHeader } from '../components/post-header';
 import { Summary } from '../components/summary';
+import { Process } from '../components/process';
 
 const IndexPage = () => (
   <>
@@ -54,6 +55,7 @@ const IndexPage = () => (
       }
       $borderBottom={true}
     />
+    <Process />
   </>
 );
 

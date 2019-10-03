@@ -80,7 +80,7 @@ export const Summary = ({
       <Section
         $backgroundColor={backgroundColor}
         $color={color}
-        $collapsePaddingBottom
+        $collapsePaddingBottom={!!$borderBottom}
       >
         <Container $borderBottom={$borderBottom} $color={color}>
           <Grid>
