@@ -61,24 +61,28 @@ export const Summary = ({
   body,
   $accentColor,
   $backgroundColor,
+  $borderBottom,
   $color,
 }: any) => {
   const [, theme] = useStyletron();
   const [isOpen, setIsOpen] = useState(false);
-  console.log(setIsOpen);
+
   function close() {
     setIsOpen(false);
   }
-  function open() {
-    console.log('yo');
-  }
+
   const backgroundColor = $backgroundColor || theme.colors.primary100;
   const color = $color || theme.colors.primary700;
   const accent = $accentColor || theme.colors.accent;
+
   return (
     <>
-      <Section $backgroundColor={backgroundColor} $color={color}>
-        <Container>
+      <Section
+        $backgroundColor={backgroundColor}
+        $color={color}
+        $collapsePaddingBottom
+      >
+        <Container $borderBottom={$borderBottom} $color={color}>
           <Grid>
             <TopElement>
               <Label1 color={accent}>{eyebrow}</Label1>
