@@ -235,6 +235,7 @@ const Work = ({ data }) => {
   );
 
   const [currentItemId, setCurrentItemId] = useState(0);
+  const currentItem = items[currentItemId];
 
   return (
     <>
@@ -255,12 +256,13 @@ const Work = ({ data }) => {
           <BoxShadow />
           <Img
             style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
-            fluid={data.placeholderImage.childImageSharp.fluid}
+            // fluid={data.placeholderImage.childImageSharp.fluid}
+            fluid={currentItem.image.childImageSharp.fluid}
           />
 
           <FloatingDetails>
-            <Display3 color="primary50">{items[currentItemId].label}</Display3>
-            <Paragraph1 color="primary50">{items[currentItemId].description}</Paragraph1>
+            <Display3 color="primary50">{currentItem.label}</Display3>
+            <Paragraph1 color="primary50">{currentItem.description}</Paragraph1>
             <Button
               $as="a"
               href="https://styletron.org"
@@ -296,14 +298,14 @@ export const PageQuery = graphql`
           frontmatter {
             label: title
             description
+            image {
+              childImageSharp{
+                fluid (quality:90) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
-        }
-      }
-    }
-    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
         }
       }
     }
