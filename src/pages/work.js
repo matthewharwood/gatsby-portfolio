@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { StatefulMenu } from 'baseui/menu';
+import Img from 'gatsby-image';
+
 import { useStyletron } from 'baseui';
+import { StatefulMenu } from 'baseui/menu';
+import { Navigation } from 'baseui/side-navigation';
 import { Button, KIND, SIZE } from 'baseui/button';
 import { Display2, Display3, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
-import Img from 'gatsby-image';
+
 
 const WorkMenu = props => {
   const data = useStaticQuery(graphql`
@@ -40,36 +43,57 @@ const WorkMenu = props => {
     { label: 'Item Eleven' },
     { label: 'Item Twelve' },
   ].map((i, index) => ({
-    label: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
+    title: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
+    itemId: `/work/#${index}`,
+    // label: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
   }));
 
+  const [location, setLocation] = useState(ITEMS[0].itemId);
   return (
-    <StatefulMenu
+
+    <Navigation 
       items={ITEMS}
-      onItemSelect={console.log}
+      activeItemId={ location }
+      onChange={({item}) => setLocation(item.itemId, location)}
       overrides={{
-        List: {
-          style: {
-            height: '100%',
-            paddingLeft: 0,
-            paddingRight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            boxShadow: 'none',
-          },
-        },
-        ListItem: {
-          style: {
-            fontSize: '19px',
-          },
-        },
-        Option: {
-          props: {
-            getItemLabel: item => item.label,
-          },
-        },
+        navLink: {
+          style: ({$active, $theme}) => {
+            return {
+              borderLeftColor: '#449922',
+            }
+          }
+        }
       }}
-    />
+    >
+
+    </Navigation>
+
+    // <StatefulMenu
+      // items={ITEMS}
+      // onItemSelect={console.log}
+      // overrides={{
+      //   List: {
+      //     style: {
+      //       height: '100%',
+      //       paddingLeft: 0,
+      //       paddingRight: 0,
+      //       paddingTop: 0,
+      //       paddingBottom: 0,
+      //       boxShadow: 'none',
+      //     },
+      //   },
+      //   ListItem: {
+      //     style: {
+      //       fontSize: '19px',
+      //     },
+      //   },
+      //   Option: {
+      //     props: {
+      //       getItemLabel: item => item.label,
+      //     },
+      //   },
+      // }}
+    // />
   );
 };
 
@@ -226,7 +250,7 @@ const FloatingDetails = props => {
           bottom: sizing.scale1600,
           left: '-1px',
           right: sizing.scale1600,
-          background: colors.black,
+          background: colors.primary700,
         },
       })}
     >
@@ -298,6 +322,16 @@ const Work = ({ data }) => {
               kind={KIND.secondary}
               size={SIZE.large}
               endEnhancer={() => <ArrowRight size={24} />}
+              overrides={{
+                BaseButton: {
+                  style: ({$theme}) => {
+                    return {
+                      backgroundColor: '#FF6347',
+                      color: $theme.colors.mono100,
+                    }
+                  }
+                }
+              }}
             >
               View Project
             </Button>
