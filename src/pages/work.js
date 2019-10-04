@@ -1,99 +1,44 @@
-import React, { Component, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState } from 'react';
+import {graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { useStyletron } from 'baseui';
-import { StatefulMenu } from 'baseui/menu';
+// import { StatefulMenu } from 'baseui/menu';
 import { Navigation } from 'baseui/side-navigation';
 import { Button, KIND, SIZE } from 'baseui/button';
 import { Display2, Display3, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
 
+const WorkMenu = ({ items, currentItemId, setCurrentItemId }) => {
+  const [menuItems, setMenuItems] = useState(
+    items.map((i, index) => ({
+      index,
+      title: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
+      itemId: `#${index}`,
+    }))
+  );
 
-const WorkMenu = props => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+  const [location, setLocation] = useState(menuItems[currentItemId].itemId);
 
-  const ITEMS = [
-    { label: 'Item One' },
-    { label: 'Item Two' },
-    { label: 'Item Three' },
-    { label: 'Item Four' },
-    { label: 'Item Five' },
-    { label: 'Item Six' },
-    { label: 'Item Seven' },
-    { label: 'Item Eight' },
-    { label: 'Item Nine' },
-    { label: 'Item Ten' },
-    { label: 'Item Eleven' },
-    { label: 'Item Twelve' },
-    { label: 'Item Ten' },
-    { label: 'Item Eleven' },
-    { label: 'Item Twelve' },
-    { label: 'Item Ten' },
-    { label: 'Item Eleven' },
-    { label: 'Item Twelve' },
-  ].map((i, index) => ({
-    title: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
-    itemId: `/work/#${index}`,
-    // label: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
-  }));
 
-  const [location, setLocation] = useState(ITEMS[0].itemId);
   return (
-
-    <Navigation 
-      items={ITEMS}
-      activeItemId={ location }
-      onChange={({item}) => setLocation(item.itemId, location)}
+    <Navigation
+      items={menuItems}
+      activeItemId={location}
+      onChange={({ item }) => {
+        setCurrentItemId(item.index);
+        setLocation(`#${item.index}`);
+      }}
       overrides={{
         navLink: {
-          style: ({$active, $theme}) => {
+          style: ({ $active, $theme }) => {
             return {
               borderLeftColor: '#449922',
-            }
-          }
-        }
+            };
+          },
+        },
       }}
-    >
-
-    </Navigation>
-
-    // <StatefulMenu
-      // items={ITEMS}
-      // onItemSelect={console.log}
-      // overrides={{
-      //   List: {
-      //     style: {
-      //       height: '100%',
-      //       paddingLeft: 0,
-      //       paddingRight: 0,
-      //       paddingTop: 0,
-      //       paddingBottom: 0,
-      //       boxShadow: 'none',
-      //     },
-      //   },
-      //   ListItem: {
-      //     style: {
-      //       fontSize: '19px',
-      //     },
-      //   },
-      //   Option: {
-      //     props: {
-      //       getItemLabel: item => item.label,
-      //     },
-      //   },
-      // }}
-    // />
+    ></Navigation>
   );
 };
 
@@ -102,7 +47,6 @@ const Grid = props => {
 
   const lg = `@media (min-width: ${theme.breakpoints.large}px)`;
   const med = `@media (min-width: ${theme.breakpoints.medium}px)`;
-  console.log(lg);
   return (
     <div
       className={css({
@@ -286,6 +230,12 @@ const InsetShadow = props => {
   );
 };
 const Work = ({ data }) => {
+  const [items, setItems] = useState(
+    data.allMdx.edges.map(edge => edge.node.frontmatter)
+  );
+
+  const [currentItemId, setCurrentItemId] = useState(0);
+
   return (
     <>
       <MenuGridInnerShadow />
@@ -298,7 +248,7 @@ const Work = ({ data }) => {
         </GridItem>
         <GridItem gridArea={'menu'}>
           <MenuGridInner>
-            <WorkMenu />
+            <WorkMenu items={items} currentItemId={currentItemId} setCurrentItemId={setCurrentItemId} />
           </MenuGridInner>
         </GridItem>
         <GridPostItem>
@@ -309,13 +259,8 @@ const Work = ({ data }) => {
           />
 
           <FloatingDetails>
-            <Display3 color="primary50">Nike Jordan Editor</Display3>
-            <Paragraph1 color="primary50">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              sed voluptas nemo molestiae dicta provident, distinctio, ipsum id
-              pariatur labore inventore non repellat. Accusamus exercitationem
-              molestiae voluptatibus magni expedita vitae!
-            </Paragraph1>
+            <Display3 color="primary50">{items[currentItemId].label}</Display3>
+            <Paragraph1 color="primary50">{items[currentItemId].description}</Paragraph1>
             <Button
               $as="a"
               href="https://styletron.org"
@@ -324,13 +269,13 @@ const Work = ({ data }) => {
               endEnhancer={() => <ArrowRight size={24} />}
               overrides={{
                 BaseButton: {
-                  style: ({$theme}) => {
+                  style: ({ $theme }) => {
                     return {
                       backgroundColor: '#FF6347',
                       color: $theme.colors.mono100,
-                    }
-                  }
-                }
+                    };
+                  },
+                },
               }}
             >
               View Project
@@ -341,5 +286,28 @@ const Work = ({ data }) => {
     </>
   );
 };
+
+export const PageQuery = graphql`
+  {
+    allMdx(filter: { frontmatter: { templateKey: { eq: "workTemplate" } } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            label: title
+            description
+          }
+        }
+      }
+    }
+    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default Work;
