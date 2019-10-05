@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Display1,
-  Display3,
-  Display4,
-  Label3,
+  Display2,
+  Label2,
+  Label1,
   Paragraph4,
+  Paragraph1,
 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
@@ -16,8 +16,8 @@ const TopElement = ({ $borderColor, children }: any) => {
     className: css({
       display: theme.display.grid,
       gridColumn: '1/-1',
-      paddingBottom: theme.sizing.scale1600,
-      borderBottom: `${$borderColor} ${theme.sizing.scale0} solid`,
+      paddingBottom: theme.sizing.scale800,
+      borderBottom: `${$borderColor} 1px solid`,
     }),
   };
 
@@ -31,7 +31,6 @@ const ListItem = ({ $borderColor, children }: any) => {
     className: css({
       display: theme.display.grid,
       gridColumn: 'span 3',
-      marginBottom: theme.sizing.scale800,
       alignContent: 'start',
     }),
   };
@@ -76,20 +75,20 @@ const PostHeader = ({
       <Container>
         <Grid>
           <TopElement $borderColor={color}>
-            <Display4 color={'inheirt'}>{eyebrow.text}</Display4>
-            <Display1 color={'inheirt'}>{main.text}</Display1>
-            <Display3 color={'inheirt'}>{sub.text}</Display3>
+            <Label1 color={'inheirt'}>{eyebrow.text}</Label1>
+            <Display2 color={'inheirt'}>{main.text}</Display2>
+            <Paragraph1 color={'inheirt'}>{sub.text}</Paragraph1>
           </TopElement>
           <Grid>
             {Object.entries(projectOverview).map(([key, { data }]) => {
               return (
                 <ListItem>
-                  <Label3
+                  <Label2
                     color={'inheirt'}
                     style={{ textTransform: 'capitalize' }}
                   >
                     {key}
-                  </Label3>
+                  </Label2>
                   <Paragraph4 color={'inheirt'}>{Layout(data)}</Paragraph4>
                 </ListItem>
               );

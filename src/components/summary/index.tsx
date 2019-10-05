@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Section, Container, Grid } from '../grid-system';
 import { useStyletron } from 'baseui';
-import { Display3, Label1, Label4, Paragraph1 } from 'baseui/typography';
+import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
 import ArrowRight from 'baseui/icon/arrow-right';
 import {
@@ -86,7 +86,7 @@ export const Summary = ({
           <Grid>
             <TopElement>
               <Label1 color={accent}>{eyebrow}</Label1>
-              <Display3 color={'inheirt'}>{title}</Display3>
+              <Display4 color={'inheirt'}>{title}</Display4>
               <Paragraph1 color={'inheirt'}>{body}</Paragraph1>
             </TopElement>
             <Grid>

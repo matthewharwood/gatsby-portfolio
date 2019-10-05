@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Section, Container, Grid } from '../grid-system';
 import { useStyletron } from 'baseui';
-import { Display3, Label1, Label4, Paragraph1 } from 'baseui/typography';
+import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import { ProgressSteps, Step } from 'baseui/progress-steps';
 
 const GridItemHalf = ({ children }: any) => {
@@ -37,7 +37,7 @@ export const Process = ({
       <Container $borderBottom={$borderBottom} $color={color}>
         <Grid>
           <GridItemHalf>
-            <Display3>Process</Display3>
+            <Display4>Process</Display4>
           </GridItemHalf>
           <GridItemHalf>
             <ProgressSteps

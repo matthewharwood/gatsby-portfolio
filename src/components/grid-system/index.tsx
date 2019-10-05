@@ -43,9 +43,7 @@ export const Section = ({
 
 export const Container = ({ children, $borderBottom, $color }: any) => {
   const [css, theme] = useStyletron();
-  const borderBottom = $borderBottom
-    ? `${$color} ${theme.sizing.scale0} solid`
-    : 'none';
+  const borderBottom = $borderBottom ? `${$color} 1px solid` : 'none';
 
   const className = css({
     margin: '0 auto',
