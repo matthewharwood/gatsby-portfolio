@@ -94,6 +94,31 @@ const IndexPage = () => (
 
         `}
     />
+    {/* Update this to Highlight Bold BLock */}
+    <Highlight
+      eyebrow={'03'}
+      title={'Proposed Solution'}
+      leftCols={4}
+      rightCols={8}
+      orderLeft={0}
+      orderRight={1}
+      src={
+        'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
+      }
+      body={
+        'Create a design and authoring tool, that enables, en masse, inhouse or remote Nike teams to collaborate and to rapidly iterate web pages for nike.com.
+        '
+      }
+    />
+
+    <Summary
+      eyebrow={'04'}
+      title={'Design Execution'}
+      body={
+        'We had to move quick, we went from a list of product requirements to paper prototype with in the first day.  We based most of our interaction design on the precidence of teams’ tooling e.g. Photoshop and CQ5. Next, we gathered all of the creative assets, e.g. fonts, color pallets, icongraphy, etc, in preperation of developing a MVP.'
+      }
+      $borderBottom={true}
+    />
   </>
 );
 
