@@ -4,9 +4,8 @@ import { Summary } from '../components/summary';
 import { Process } from '../components/process';
 
 import { Highlight } from '../components/highlight';
-import { NextProjectSection } from '../components/next-project-section';
+import { PostPagination } from '../components/post-pagination';
 
-console.log('**'.repeat(100), Highlight);
 const IndexPage = () => (
   <>
     <PostHeader
@@ -121,7 +120,7 @@ const IndexPage = () => (
       }
       $borderBottom={true}
     />
-    <NextProjectSection
+    <PostPagination
       title={'Pathfinder'}
       description={
         'A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.'
