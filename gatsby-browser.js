@@ -47,6 +47,7 @@ const MorningHarwood = createTheme(
       fixed: 'fixed',
     },
     display: {
+      none: 'none',
       grid: 'grid',
       block: 'block',
       flex: 'flex',

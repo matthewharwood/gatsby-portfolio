@@ -2,7 +2,10 @@ import React from 'react';
 import { PostHeader } from '../components/post-header';
 import { Summary } from '../components/summary';
 import { Process } from '../components/process';
+
 import { Highlight } from '../components/highlight';
+import { NextProjectSection } from '../components/next-project-section';
+
 console.log('**'.repeat(100), Highlight);
 const IndexPage = () => (
   <>
@@ -117,6 +120,12 @@ const IndexPage = () => (
         'We had to move quick, we went from a list of product requirements to paper prototype with in the first day.  We based most of our interaction design on the precidence of teams’ tooling e.g. Photoshop and CQ5. Next, we gathered all of the creative assets, e.g. fonts, color pallets, icongraphy, etc, in preperation of developing a MVP.'
       }
       $borderBottom={true}
+    />
+    <NextProjectSection
+      title={'Pathfinder'}
+      description={
+        'A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.'
+      }
     />
   </>
 );
