@@ -20,7 +20,6 @@ export const Process = ({
   $color,
   $accentColor,
   $borderBottom,
-  collapsePaddingBottom,
 }: any) => {
   const [, theme] = useStyletron();
   const [current, setCurrent] = useState(0);
