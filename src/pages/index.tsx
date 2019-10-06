@@ -106,8 +106,7 @@ const IndexPage = () => (
         'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
       }
       body={
-        'Create a design and authoring tool, that enables, en masse, inhouse or remote Nike teams to collaborate and to rapidly iterate web pages for nike.com.
-        '
+        'Create a design and authoring tool, that enables, en masse, inhouse or remote Nike teams to collaborate and to rapidly iterate web pages for nike.com.'
       }
     />
 
