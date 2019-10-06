@@ -2,6 +2,7 @@ import React from 'react';
 import { PostHeader } from '../components/post-header';
 import { Summary } from '../components/summary';
 import { Process } from '../components/process';
+import { NextProjectSection } from '../components/next-project-section';
 
 const IndexPage = () => (
   <>
@@ -56,6 +57,12 @@ const IndexPage = () => (
       $borderBottom={true}
     />
     <Process />
+    <NextProjectSection
+      title={'Pathfinder'}
+      description={
+        'A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.'
+      }
+    />
   </>
 );
 
