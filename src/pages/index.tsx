@@ -120,6 +120,56 @@ const IndexPage = () => (
       }
       $borderBottom={true}
     />
+
+    <Highlight
+      eyebrow={'06'}
+      title={'Presentation'}
+      leftCols={5}
+      rightCols={7}
+      orderLeft={0}
+      orderRight={1}
+      body={
+        'After completing this project we had the great oppertunity to do a presentation infront of the entire AKQA San Francisco office.  Jeffery Qua and myself stood in an room of 450 sets of eyes and ears that watched and listened to what we had made.'
+      }
+    />
+
+    <Highlight
+      eyebrow={'07'}
+      title={'Test / Measure / Iterate'}
+      leftCols={7}
+      rightCols={5}
+      orderLeft={1}
+      orderRight={0}
+      body={
+        'We took an agile approach to the production of the Nike Jordan CMS.  Meaning we broke our eight week project into four x two week sprints.  Inside each sprint we would design, develop and test a feature with the AKQA designers.  Our agile approch created a feedback loop that yielded much of the insight needed to fail fast.  We believe this is what allowed us to make such a functional and polished project in such a short amount of time.'
+      }
+    />
+
+    <Highlight
+      eyebrow={'08'}
+      title={'Result'}
+      leftCols={10}
+      rightCols={2}
+      orderLeft={0}
+      orderRight={1}
+      body={
+        'From lunch room small talk about robots and leaving empolyees to a functional real-time WYSIWYG editor. We set out to make a tool that helped reduce the friction between AKQA and NIke, with hopes that AKQA could get more creative ownership with Nike Jordan.  In the end, we made a product that did just that.'
+      }
+    />
+
+    <Highlight
+      eyebrow={'09'}
+      title={'Retrospective'}
+      leftCols={6}
+      rightCols={6}
+      orderLeft={1}
+      orderRight={0}
+      src={'https://via.placeholder.com/400'}
+      body={
+        'This project was a great kickstart to my career. As an intern, I was able to experience the end to end process between agency and Client; between Creative and Technlogy. This project built the foundation of a Process Model, that to this day, I still use.'
+      }
+    />
+
     <PostPagination
       title={'Pathfinder'}
       description={
