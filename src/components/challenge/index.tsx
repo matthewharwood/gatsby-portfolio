@@ -2,7 +2,7 @@ import React from 'react';
 import { Section, Container, Grid } from '../grid-system';
 
 import { useStyletron } from 'baseui';
-import { Paragraph1, Label2, Label4 } from 'baseui/typography';
+import { H4, Paragraph1, Label2, Label4 } from 'baseui/typography';
 
 const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
   const [css, theme] = useStyletron();
@@ -53,8 +53,8 @@ const CardItem = ({
         height: theme.sizing.scale100,
         backgroundColor: $accentColor,
         position: theme.positions.absolute,
-        top: '0',
-        left: '0',
+        top: 0,
+        left: 0,
         width: '100%',
         marginTop: theme.sizing.scale0,
       },
@@ -108,28 +108,6 @@ const CardItem = ({
   );
 };
 
-const MarginWrapper = ({
-  children,
-  $marginTop = '0',
-  $marginBottom = '0',
-  $marginLeft = '0',
-  $marginRight = '0',
-}: any) => {
-  const [css] = useStyletron();
-  return (
-    <div
-      className={css({
-        marginLeft: $marginLeft,
-        marginRight: $marginRight,
-        marginTop: $marginTop,
-        marginBottom: $marginBottom,
-      })}
-    >
-      {children}
-    </div>
-  );
-};
-
 const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
   const [css, theme] = useStyletron();
   const color = $color || theme.colors.primary700;
@@ -139,7 +117,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
     <div>
       <CardItem
         {...cardItem}
-        $labelColor={theme.colors.primary450}
+        $labelColor={theme.colors.primary500}
         $color={color}
       ></CardItem>
     </div>
@@ -154,7 +132,12 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
       })}
     >
       {legend.map(legendItem => (
-        <div className={css({ display:theme.display.flex, marginRight: theme.sizing.scale1200 })}>
+        <div
+          className={css({
+            display: theme.display.flex,
+            marginRight: theme.sizing.scale1200,
+          })}
+        >
           <div
             className={css({
               width: theme.sizing.scale700,
@@ -163,28 +146,72 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
               marginRight: theme.sizing.scale600,
             })}
           ></div>
-          <span className={css({ textTransform: 'uppercase' })}>{legendItem.name}</span>
+          <span className={css({ textTransform: 'uppercase' })}>
+            {legendItem.name}
+          </span>
         </div>
       ))}
     </div>
   );
 
+  const md = theme.mq.md;
+  const lg = theme.mq.lg;
   return (
     <>
-      <div
-        className={css({
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gridTemplateRows: ( $cardsDirection == 'column' ) ? '1fr 1fr 1fr' : '',
-          gridGap: theme.sizing.scale700,
-          gridAutoFlow: gridAutoFlow,
-          marginTop: theme.sizing.scale700,
-        })}
-      >
-        {cardItems}
+      <div className={css({ marginBottom: theme.sizing.scale1600 })}>
+        <Grid>
+          <GridItemLeft leftCols={'4'} orderLeft={'0'} />
+          <GridItemRight rightCols={'8'} orderRight={'1'}>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '1fr',
+                gridTemplateRows:
+                  $cardsDirection == 'column' ? '1fr 1fr 1fr' : '',
+                gridGap: theme.sizing.scale700,
+                marginTop: theme.sizing.scale700,
+                [md]: {
+                  gridTemplateColumns: '1fr 1fr',
+                  gridAutoFlow: gridAutoFlow,
+                },
+                [lg]: {
+                  gridTemplateColumns: '1fr 1fr',
+                  gridAutoFlow: gridAutoFlow,
+                }
+              })}
+            >
+              {cardItems}
+            </div>
+            {legendItems}
+          </GridItemRight>
+        </Grid>
       </div>
-      {legendItems}
     </>
+  );
+};
+
+const Headline = ({ title, text, $hasBottomMargin = true }: any) => {
+  const [css, theme] = useStyletron();
+  const marginBottom = $hasBottomMargin ? theme.sizing.scale1600 : 0;
+  return (
+    <div className={css({ marginBottom })}>
+      <Grid>
+        <GridItemLeft leftCols={'4'} orderLeft={'0'}>
+          <H4
+            margin="0"
+            alignSelf="start"
+            $style={{ textTransform: 'uppercase' }}
+          >
+            {title}
+          </H4>
+        </GridItemLeft>
+        <GridItemRight rightCols={'8'} orderRight={'1'}>
+          <Paragraph1 margin="0" color={'inherit'}>
+            {text}
+          </Paragraph1>
+        </GridItemRight>
+      </Grid>
+    </div>
   );
 };
 
@@ -195,7 +222,7 @@ export const Challenge = ({
   takeaway,
   $color,
   $cardsDirection,
-  solutionCards=[],
+  solutionCards = [],
   legend,
 }: any) => {
   const [css, theme] = useStyletron();
@@ -203,39 +230,25 @@ export const Challenge = ({
   return (
     <Section $collapsePaddingBottom={true} $color={color}>
       <Container $color={theme.colors.primary300} $borderBottom={true}>
-        <MarginWrapper $marginBottom={theme.sizing.scale1600}>
-          <Grid>
-            <GridItemLeft leftCols={'4'} orderLeft={'0'}>
-              <h1>CHALLENGE #{challengeNum}</h1>
-            </GridItemLeft>
-            <GridItemRight rightCols={'8'} orderRight={'1'}>
-              <Paragraph1 color={'inherit'}>{challengeText}</Paragraph1>
-            </GridItemRight>
-          </Grid>
-        </MarginWrapper>
-        <MarginWrapper $marginBottom={theme.sizing.scale1600}>
-          <Grid>
-            <GridItemLeft leftCols={'4'} orderLeft={'0'}>
-              <h1>SOLUTION</h1>
-            </GridItemLeft>
-            <GridItemRight rightCols={'8'} orderRight={'1'}>
-              <Paragraph1 color={'inherit'}>{solution}</Paragraph1>
-              <SolutionCards
-                data={solutionCards}
-                legend={legend}
-                $cardsDirection={$cardsDirection}
-              ></SolutionCards>
-            </GridItemRight>
-          </Grid>
-        </MarginWrapper>
-        <Grid>
-          <GridItemLeft leftCols={'4'} orderLeft={'0'}>
-            <h1>TAKEAWAY</h1>
-          </GridItemLeft>
-          <GridItemRight rightCols={'8'} orderRight={'1'}>
-            <Paragraph1 color={'inherit'}>{takeaway}</Paragraph1>
-          </GridItemRight>
-        </Grid>
+        <Headline
+          title={`Challenge #${challengeNum}`}
+          text={challengeText}
+        ></Headline>
+        <Headline
+          title="solution"
+          text={solution}
+          $hasBottomMargin={false}
+        ></Headline>
+        <SolutionCards
+          data={solutionCards}
+          legend={legend}
+          $cardsDirection={$cardsDirection}
+        ></SolutionCards>
+        <Headline
+          title="takeaway"
+          text={takeaway}
+          $hasBottomMargin={false}
+        ></Headline>
       </Container>
     </Section>
   );

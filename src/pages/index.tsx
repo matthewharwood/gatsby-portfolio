@@ -13,8 +13,6 @@ const IndexPage = () => {
   return (
     <>
       <PostHeader
-        // $backgroundColor={'green'}
-        // $color={'red'}
         main={{ text: 'Nike Jordan Editor' }}
         sub={{
           text:
@@ -135,37 +133,37 @@ const IndexPage = () => {
           {
             heading: '1. adding images',
             subheading: 'drag and drop',
-            $accentColor: theme.colors.accent350,
+            $accentColor: theme.colors.accent300,
           },
           {
             heading: '2. load images',
             subheading: 'base64 to <canvas>',
-            $accentColor: theme.colors.accent350,
+            $accentColor: theme.colors.accent300,
           },
           {
             heading: '3. transform images',
             subheading: 'jpg to base64',
-            $accentColor: theme.colors.accent350,
+            $accentColor: theme.colors.accent300,
           },
           {
             heading: '4.transform images',
             subheading: 'base64 to jpg',
-            $accentColor: theme.colors.negative450,
+            $accentColor: theme.colors.accent,
           },
           {
             heading: '5. save images',
             subheading: 'jpg to base 64',
-            $accentColor: theme.colors.negative450,
+            $accentColor: theme.colors.accent,
           },
           {
             heading: '6. download images',
             subheading: 'zip all images on a page',
-            $accentColor: theme.colors.negative450,
+            $accentColor: theme.colors.accent,
           },
         ]}
         legend={[
-          { name: 'add', color: theme.colors.accent350 },
-          { name: 'extract', color: theme.colors.negative450 },
+          { name: 'add', color: theme.colors.accent300 },
+          { name: 'extract', color: theme.colors.accent },
         ]}
       />
 
