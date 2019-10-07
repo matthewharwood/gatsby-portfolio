@@ -1,34 +1,9 @@
 import React from 'react';
-import { Section, Container, Grid } from '../grid-system';
+import { Section, Container, Grid, GridItemLeft, GridItemRight } from '../grid-system';
+import { Headline } from '../headline';
 
 import { useStyletron } from 'baseui';
-import { H4, Paragraph1, Label2, Label4 } from 'baseui/typography';
-
-const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      order: orderLeft,
-      display: 'grid',
-      gridColumn: `span ${leftCols}`,
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
-};
-
-const GridItemRight = ({ rightCols, orderRight, children }: any) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      order: orderRight,
-      display: 'grid',
-      gridColumn: `span ${rightCols}`,
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
-};
+import { Paragraph1, Label2, Label4 } from 'baseui/typography';
 
 const CardItem = ({
   $accentColor = 'transparent',
@@ -187,31 +162,6 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
         </Grid>
       </div>
     </>
-  );
-};
-
-const Headline = ({ title, text, $hasBottomMargin = true }: any) => {
-  const [css, theme] = useStyletron();
-  const marginBottom = $hasBottomMargin ? theme.sizing.scale1600 : 0;
-  return (
-    <div className={css({ marginBottom })}>
-      <Grid>
-        <GridItemLeft leftCols={'4'} orderLeft={'0'}>
-          <H4
-            margin="0"
-            alignSelf="start"
-            $style={{ textTransform: 'uppercase' }}
-          >
-            {title}
-          </H4>
-        </GridItemLeft>
-        <GridItemRight rightCols={'8'} orderRight={'1'}>
-          <Paragraph1 margin="0" color={'inherit'}>
-            {text}
-          </Paragraph1>
-        </GridItemRight>
-      </Grid>
-    </div>
   );
 };
 
