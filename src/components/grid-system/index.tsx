@@ -63,6 +63,32 @@ export const Container = ({ children, $borderBottom, $color }: any) => {
   return <div className={className}>{children}</div>;
 };
 
+export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
+  const [css, theme] = useStyletron();
+  const c = {
+    className: css({
+      order: orderLeft,
+      display: 'grid',
+      gridColumn: `span ${leftCols}`,
+    }),
+  };
+
+  return <div {...c}>{children}</div>;
+};
+
+export const GridItemRight = ({ rightCols, orderRight, children }: any) => {
+  const [css, theme] = useStyletron();
+  const c = {
+    className: css({
+      order: orderRight,
+      display: 'grid',
+      gridColumn: `span ${rightCols}`,
+    }),
+  };
+
+  return <div {...c}>{children}</div>;
+};
+
 export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
   const [css, theme] = useStyletron();
 
