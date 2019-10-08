@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PostHeader } from '../components/post-header';
 import { Summary } from '../components/summary';
 import { Process } from '../components/process';
@@ -9,7 +9,18 @@ import { Highlight } from '../components/highlight';
 import { PostPagination } from '../components/post-pagination';
 import { useStyletron } from 'baseui';
 
+export const ActiveVideoContext = React.createContext();
+
 const IndexPage = () => {
+  const [activeVideoID, setActiveVideoId] = useState('0');
+  return (
+    <ActiveVideoContext.Provider value={{ activeVideoID, setActiveVideoId }}>
+      <WorkPage />
+    </ActiveVideoContext.Provider>
+  );
+};
+
+const WorkPage = () => {
   const [css, theme] = useStyletron();
   return (
     <>
@@ -125,6 +136,7 @@ const IndexPage = () => {
       />
 
       <Video
+        videoID={'1'}
         title={'making a project'}
         caption={
           'We needed a view that would allow authors to create project and view them all at a glance. There were many stakeholders all collaborating.  The idea was to enable any of them to rapidly prototype a page and the best way to do this was to clone and version control another project.'
@@ -132,6 +144,7 @@ const IndexPage = () => {
       />
 
       <Video
+        videoID={'2'}
         title={'image editor'}
         caption={
           'Drag and drop images from your desktop directly onto the browser for the fastest workflow.  Just like photoshop, scale and transform image directly in the browser using bracket and arrow keys.'
@@ -139,6 +152,7 @@ const IndexPage = () => {
       />
 
       <Video
+        videoID={'3'}
         title={'text editor'}
         caption={
           'Double click inline text editing. Drag and Drop text elements to change text lock ups. Update grid alignments of text. Add and style buttons to any text lockup.'
@@ -146,6 +160,7 @@ const IndexPage = () => {
       />
 
       <Video
+        videoID={'4'}
         title={'grid editor'}
         caption={
           'Layout out main content by adding or removing rows. Control layout with drag- and-drop reordering. Grid out content by adding or removing items to a row.  Double click on items and select their how items span on the 4 column grid.'
@@ -153,6 +168,7 @@ const IndexPage = () => {
       />
 
       <Video
+        videoID={'5'}
         title={'rich media editor'}
         caption={
           'Support for rich video media on element backgrounds. Our text authoring allows markdown, text alignment and granular control to margins spacing'

@@ -1,4 +1,6 @@
-import React, { useRef, useCallback, useEffect, useState } from 'react';
+import React, { useRef, useContext, useEffect, useState } from 'react';
+import { ActiveVideoContext }  from '../../pages/index';
+
 import {
   Section,
   Container,
@@ -44,7 +46,6 @@ const VideoButton = ({
   };
 
   const currentState = stateMap[videoState];
-  console.log(videoState, currentState);
 
   return (
     <div
@@ -68,23 +69,47 @@ const VideoButton = ({
   );
 };
 
-const VideoItem = ({ src, state }:any) => {
+const VideoItem = ({ id, src }:any) => {
   const [css, theme] = useStyletron();
-
   const videoPlayer = useRef();
 
+  const { activeVideoID, setActiveVideoId } = useContext(ActiveVideoContext);
+
+  const isVideoActive = (id === activeVideoID);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [videoState, setVideoState] = useState('initial');
   const progress = (currentTime / duration * 100);
 
   const playVideo = () => {
+    enableVideo();
+    setVideoState('play');
     videoPlayer.current.play();
   };
 
   const pauseVideo = () => {
+    setVideoState('pause');
     videoPlayer.current.pause();
   };
+
+  const stopVideo = () => {
+    setVideoState('stop');
+  }
+
+  const enableVideo = () => {
+    setActiveVideoId(id);
+  }
+
+  // Checks if change in global activeVideoID enables the video
+  useEffect(() => {
+    if(isVideoActive && videoState === 'play'){
+      playVideo();
+    } else {
+      if(videoState !== 'stop'){
+        pauseVideo();
+      }
+    }
+  },[activeVideoID]);
 
   return (
     <div>
@@ -92,9 +117,7 @@ const VideoItem = ({ src, state }:any) => {
         ref={videoPlayer}
         onLoadedMetadata={e => setDuration(e.target.duration)}
         onTimeUpdate={e => setCurrentTime(e.target.currentTime)}
-        onPlaying={() => setVideoState('play')}
-        onPause={() => setVideoState('pause')}
-        onEnded={() => setVideoState('stop')}
+        onEnded={() => stopVideo()}
         className={css({ width: '100%' })}
         src={src}
       ></video>
@@ -102,7 +125,7 @@ const VideoItem = ({ src, state }:any) => {
         value={progress}
         overrides={{
           BarProgress: {
-            style: ({ $theme }) => ({
+            style: () => ({
               backgroundColor:
                 videoState == 'stop'
                   ? theme.colors.positive200
@@ -110,7 +133,7 @@ const VideoItem = ({ src, state }:any) => {
             }),
           },
           Bar: {
-            style: ({ $theme }) => ({
+            style: () => ({
               marginTop: 0,
               marginBottom: 0,
               marginLeft: 0,
@@ -125,6 +148,7 @@ const VideoItem = ({ src, state }:any) => {
         playVideo={playVideo}
         pauseVideo={pauseVideo}
         replayVideo={playVideo}
+        enableVideo={enableVideo}
       />
     </div>
   );
@@ -136,6 +160,7 @@ export const Video = ({
   title,
   caption,
   videoSrc = 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4',
+  videoID,
 }:any) => {
   const [css, theme] = useStyletron();
   const color = $color || theme.colors.primary700;
@@ -147,7 +172,8 @@ export const Video = ({
         <Grid>
           <GridItemLeft leftCols={8} orderLeft={0}>
             <VideoItem
-              src={ videoSrc }
+              id={videoID}
+              src={videoSrc}
             />
           </GridItemLeft>
           <GridItemRight rightCols={4} orderRight={1}>
