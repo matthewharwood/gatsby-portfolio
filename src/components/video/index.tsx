@@ -19,6 +19,7 @@ const VideoTitle = ({ title }: { title: string }) => {
         color: theme.colors.primary500,
         textTransform: 'uppercase',
       })}
+      font="inherit"
     >
       {title}
     </Label2>
@@ -44,6 +45,7 @@ export const Video = ({
   poster,
 }: Props) => {
   const [css, theme] = useStyletron();
+  const lg = theme.mq.lg;
   const color = $color || theme.colors.primary700;
   const bgColor = $backgroundColor || theme.colors.primary50;
 
@@ -55,9 +57,18 @@ export const Video = ({
             <Player videoId={videoId} videoSrc={videoSrc} poster={poster} />
           </GridItemLeft>
           <GridItemRight rightCols={4} orderRight={1}>
-            <div>
+            <div className={css({
+              textAlign: 'center',
+              marginTop: theme.sizing.scale1200,
+              fontSize: theme.sizing.scale700,
+              [lg]:{
+                textAlign: 'initial',
+                marginTop: 0,
+                fontSize: theme.sizing.scale600,
+              }
+            })}>
               <VideoTitle title={title} />
-              <Paragraph2>{caption}</Paragraph2>
+              <Paragraph2 font="inherit" className={css({lineHeight:theme.sizing.scale900})}>{caption}</Paragraph2>
             </div>
           </GridItemRight>
         </Grid>
