@@ -9,7 +9,7 @@ import { Highlight } from '../components/highlight';
 import { PostPagination } from '../components/post-pagination';
 import { useStyletron } from 'baseui';
 
-export const ActiveVideoContext = React.createContext();
+export const ActiveVideoContext = React.createContext('0');
 
 const IndexPage = () => {
   const [activeVideoID, setActiveVideoId] = useState('0');
@@ -141,6 +141,8 @@ const WorkPage = () => {
         caption={
           'We needed a view that would allow authors to create project and view them all at a glance. There were many stakeholders all collaborating.  The idea was to enable any of them to rapidly prototype a page and the best way to do this was to clone and version control another project.'
         }
+        videoSrc={'https://archive.org/download/NASA-Ultra-High-Definition/Scott4kUhd.mov'}
+          poster={'https://via.placeholder.com/1280x720?text=Poster+Sample'}
       />
 
       <Video
@@ -149,6 +151,7 @@ const WorkPage = () => {
         caption={
           'Drag and drop images from your desktop directly onto the browser for the fastest workflow.  Just like photoshop, scale and transform image directly in the browser using bracket and arrow keys.'
         }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
       />
 
       <Video
@@ -157,6 +160,7 @@ const WorkPage = () => {
         caption={
           'Double click inline text editing. Drag and Drop text elements to change text lock ups. Update grid alignments of text. Add and style buttons to any text lockup.'
         }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
       />
 
       <Video
@@ -165,6 +169,7 @@ const WorkPage = () => {
         caption={
           'Layout out main content by adding or removing rows. Control layout with drag- and-drop reordering. Grid out content by adding or removing items to a row.  Double click on items and select their how items span on the 4 column grid.'
         }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
       />
 
       <Video
@@ -173,6 +178,7 @@ const WorkPage = () => {
         caption={
           'Support for rich video media on element backgrounds. Our text authoring allows markdown, text alignment and granular control to margins spacing'
         }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
       />
 
       <Challenge
