@@ -21,7 +21,10 @@ exports.createPages = ({ actions, graphql }) => {
   // Queries all Mdx files with appropriate data fields
   return graphql(`
     {
-      markdowns: allMdx {
+      workPages: allMdx(
+        filter: { frontmatter: { templateKey: { eq: "workTemplate" } } }
+        sort: { fields: frontmatter___date }
+      ) {
         edges {
           node {
             id
@@ -30,6 +33,8 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               templateKey
+              title
+              description
             }
           }
         }
@@ -41,13 +46,20 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     // Create pages for the markdown files by using the data queried earlier
-    result.data.markdowns.edges.forEach(({ node }) => {
+    const workFiles = result.data.workPages.edges;
+    workFiles.forEach(({ node }, index) => {
+      console.log(index, node.fields.slug);
       createPage({
         path: node.fields.slug,
         component: path.resolve(
-          `./src/templates/${String(node.frontmatter.templateKey)}.js`
+          `./src/templates/${String(node.frontmatter.templateKey)}.tsx`
         ),
-        context: { id: node.id },
+        context: {
+          id: node.id,
+          prev: index === 0 ? null : workFiles[index - 1].node,
+          next:
+            index === workFiles.length - 1 ? null : workFiles[index + 1].node,
+        },
       });
     });
   });

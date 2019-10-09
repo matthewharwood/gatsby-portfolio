@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { useStyletron } from 'baseui';
 import { Label1, Display2, Paragraph1 } from 'baseui/typography';
@@ -42,9 +43,13 @@ const NextProjectText = ({ children }: any) => {
   return <div className={css({ flexGrow: '1' })}>{children}</div>;
 };
 
+const PrevGroupElement = ({ children, $backgroundColor }: any) => {
+  return <div> {children}</div>;
+};
+
 export const PostPagination = ({
-  title,
-  description,
+  prevLink,
+  nextLink,
   $backgroundColor,
   $color,
 }: any) => {
@@ -67,6 +72,18 @@ export const PostPagination = ({
     <Section $backgroundColor={backgroundColor} $color={color}>
       <Container>
         <Grid>
+          <PrevGroupElement>
+            <Link
+              to={prevLink.link}
+              className={css({
+                color: theme.colors.mono100,
+                textDecoration: 'none',
+              })}
+            >
+              <Display2 color="inherit">{prevLink.title}</Display2>
+              <Paragraph1 color="inherit">{prevLink.description}</Paragraph1>
+            </Link>
+          </PrevGroupElement>
           <NextGroupElement>
             <NextProjectText>
               <Label1
@@ -79,31 +96,39 @@ export const PostPagination = ({
               >
                 Next Project
               </Label1>
-              <Display2
-                color={'inherit'}
+              <Link
+                to={nextLink.link}
                 className={css({
-                  [md]: {
-                    marginTop: theme.sizing.scale600,
-                    marginBottom: theme.sizing.scale600,
-                  },
-                  [lg]: {
-                    marginTop: theme.sizing.scale900,
-                    marginBottom: theme.sizing.scale600,
-                  },
+                  color: theme.colors.mono100,
+                  textDecoration: 'none',
                 })}
               >
-                {title}
-              </Display2>
-              <Paragraph1
-                color={'inherit'}
-                className={css({
-                  display: theme.display.none,
-                  [md]: { display: theme.display.block },
-                  [lg]: { display: theme.display.block },
-                })}
-              >
-                {description}
-              </Paragraph1>
+                <Display2
+                  color={'inherit'}
+                  className={css({
+                    [md]: {
+                      marginTop: theme.sizing.scale600,
+                      marginBottom: theme.sizing.scale600,
+                    },
+                    [lg]: {
+                      marginTop: theme.sizing.scale900,
+                      marginBottom: theme.sizing.scale600,
+                    },
+                  })}
+                >
+                  {nextLink.title}
+                </Display2>
+                <Paragraph1
+                  color={'inherit'}
+                  className={css({
+                    display: theme.display.none,
+                    [md]: { display: theme.display.block },
+                    [lg]: { display: theme.display.block },
+                  })}
+                >
+                  {nextLink.description}
+                </Paragraph1>
+              </Link>
             </NextProjectText>
             <ArrowRight
               size={70}
