@@ -31,7 +31,7 @@ interface Props {
   title: string;
   caption: string;
   videoSrc: string;
-  videoId?: string;
+  videoId: string;
   poster?: string;
 }
 export const Video = ({
