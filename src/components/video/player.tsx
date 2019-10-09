@@ -29,7 +29,7 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [videoState, setVideoState] = useState(State.initial);
-  const progress = (currentTime / duration) * 100;
+  const progress = Math.ceil((currentTime / duration) * 100);
 
   const playVideo = () => {
     enableVideo();
@@ -86,7 +86,8 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
                     videoState === State.stop
                       ? theme.colors.positive200
                       : theme.colors.accent,
-                  transition: '0.1s ease 0s',
+                  transition: 'background-color 0.5s ease-out',
+                  borderRadius: 0,
                 }),
               },
               Bar: {
@@ -107,8 +108,6 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
         videoState={videoState}
         playVideo={playVideo}
         pauseVideo={pauseVideo}
-        replayVideo={playVideo}
-        enableVideo={enableVideo}
       />
     </>
   );
