@@ -8,11 +8,11 @@ import { VideoButton } from './button';
 import { ActiveVideoContext } from '../../pages/index';
 
 interface Props {
-  id: string;
-  src: string;
+  videoId: string;
+  videoSrc: string;
   poster?: string;
 }
-export const Player = ({ id, src, poster }: Props) => {
+export const Player = ({ videoId, videoSrc, poster }: Props) => {
   const [css, theme] = useStyletron();
   const videoPlayer = useRef();
 
@@ -25,7 +25,7 @@ export const Player = ({ id, src, poster }: Props) => {
 
   const { activeVideoID, setActiveVideoId } = useContext(ActiveVideoContext);
 
-  const isVideoActive = id === activeVideoID;
+  const isVideoActive = videoId === activeVideoID;
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [videoState, setVideoState] = useState(State.initial);
@@ -47,7 +47,7 @@ export const Player = ({ id, src, poster }: Props) => {
   };
 
   const enableVideo = () => {
-    setActiveVideoId(id);
+    setActiveVideoId(videoId);
   };
 
   // Checks if change in global activeVideoID enables the video
@@ -73,7 +73,7 @@ export const Player = ({ id, src, poster }: Props) => {
             className={css({
               width: '100%',
             })}
-            src={src}
+            src={videoSrc}
             poster={poster}
           ></video>
           <ProgressBar

@@ -31,7 +31,7 @@ interface Props {
   title: string;
   caption: string;
   videoSrc: string;
-  videoID?: string;
+  videoId?: string;
   poster?: string;
 }
 export const Video = ({
@@ -40,7 +40,7 @@ export const Video = ({
   title,
   caption,
   videoSrc,
-  videoID,
+  videoId,
   poster,
 }: Props) => {
   const [css, theme] = useStyletron();
@@ -52,7 +52,7 @@ export const Video = ({
       <Container $color={theme.colors.primary300} $borderBottom={false}>
         <Grid>
           <GridItemLeft leftCols={8} orderLeft={0}>
-            <Player id={videoID} src={videoSrc} poster={poster} />
+            <Player videoId={videoId} videoSrc={videoSrc} poster={poster} />
           </GridItemLeft>
           <GridItemRight rightCols={4} orderRight={1}>
             <div>
