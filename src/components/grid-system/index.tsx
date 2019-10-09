@@ -95,7 +95,7 @@ export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
   const className = css({
     background: 'inherit',
     display: theme.display.grid,
-    gridGap: theme.sizing.scale800,
+    gridGap: `minmax(${theme.sizing.scale800}, 1fr)`,
     gridTemplateColumns: 'repeat(4, 1fr)',
     width: '100%',
     gridColumn: $gridColumn,
