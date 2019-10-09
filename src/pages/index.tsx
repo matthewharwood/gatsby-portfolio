@@ -1,14 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PostHeader } from '../components/post-header';
 import { Summary } from '../components/summary';
 import { Process } from '../components/process';
 import { Challenge } from '../components/challenge';
+import { Video } from '../components/video';
 
 import { Highlight } from '../components/highlight';
 import { PostPagination } from '../components/post-pagination';
 import { useStyletron } from 'baseui';
 
+export const ActiveVideoContext = React.createContext('0');
+
 const IndexPage = () => {
+  const [activeVideoID, setActiveVideoId] = useState('0');
+  return (
+    <ActiveVideoContext.Provider value={{ activeVideoID, setActiveVideoId }}>
+      <WorkPage />
+    </ActiveVideoContext.Provider>
+  );
+};
+
+const WorkPage = () => {
   const [css, theme] = useStyletron();
   return (
     <>
@@ -123,11 +135,63 @@ const IndexPage = () => {
         $borderBottom={true}
       />
 
+      <Video
+        videoId={'1'}
+        title={'making a project'}
+        caption={
+          'We needed a view that would allow authors to create project and view them all at a glance. There were many stakeholders all collaborating.  The idea was to enable any of them to rapidly prototype a page and the best way to do this was to clone and version control another project.'
+        }
+        videoSrc={'https://archive.org/download/NASA-Ultra-High-Definition/Scott4kUhd.mov'}
+          poster={'https://via.placeholder.com/1280x720?text=Poster+Sample'}
+      />
+
+      <Video
+        videoId={'2'}
+        title={'image editor'}
+        caption={
+          'Drag and drop images from your desktop directly onto the browser for the fastest workflow.  Just like photoshop, scale and transform image directly in the browser using bracket and arrow keys.'
+        }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
+      />
+
+      <Video
+        videoId={'3'}
+        title={'text editor'}
+        caption={
+          'Double click inline text editing. Drag and Drop text elements to change text lock ups. Update grid alignments of text. Add and style buttons to any text lockup.'
+        }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
+      />
+
+      <Video
+        videoId={'4'}
+        title={'grid editor'}
+        caption={
+          'Layout out main content by adding or removing rows. Control layout with drag- and-drop reordering. Grid out content by adding or removing items to a row.  Double click on items and select their how items span on the 4 column grid.'
+        }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
+      />
+
+      <Video
+        videoId={'5'}
+        title={'rich media editor'}
+        caption={
+          'Support for rich video media on element backgrounds. Our text authoring allows markdown, text alignment and granular control to margins spacing'
+        }
+        videoSrc={'http://techslides.com/demos/sample-videos/small.webm'}
+      />
+
       <Challenge
-        challengeNum={ '1' }
-        challengeText={ 'How to synchronize user interaction across many applications' }
-        solution={ 'Real time interactively is a hard problem, so we relied proven libraries to manage it for use.' }
-        takeaway={ 'When doing realtime data on every change you need to make sure you’re doing change detection and sending over the only data that has changed.  We made a critical mistake in not doing proper change detection. Our app started to suffer when templates had large images because we were sending base64 image strings on every change to the document.' }
+        challengeNum={'1'}
+        challengeText={
+          'How to synchronize user interaction across many applications'
+        }
+        solution={
+          'Real time interactively is a hard problem, so we relied proven libraries to manage it for use.'
+        }
+        takeaway={
+          'When doing realtime data on every change you need to make sure you’re doing change detection and sending over the only data that has changed.  We made a critical mistake in not doing proper change detection. Our app started to suffer when templates had large images because we were sending base64 image strings on every change to the document.'
+        }
         $cardsDirection={'column'}
         solutionCards={[
           {
@@ -168,10 +232,16 @@ const IndexPage = () => {
       />
 
       <Challenge
-        challengeNum={ '2' }
-        challengeText={ 'How to synchronize user interaction across many applications' }
-        solution={ 'Real time interactively is a hard problem, so we relied proven libraries to manage it for use.' }
-        takeaway={ 'When doing realtime data on every change you need to make sure you’re doing change detection and sending over the only data that has changed.  We made a critical mistake in not doing proper change detection. Our app started to suffer when templates had large images because we were sending base64 image strings on every change to the document.' }
+        challengeNum={'2'}
+        challengeText={
+          'How to synchronize user interaction across many applications'
+        }
+        solution={
+          'Real time interactively is a hard problem, so we relied proven libraries to manage it for use.'
+        }
+        takeaway={
+          'When doing realtime data on every change you need to make sure you’re doing change detection and sending over the only data that has changed.  We made a critical mistake in not doing proper change detection. Our app started to suffer when templates had large images because we were sending base64 image strings on every change to the document.'
+        }
         solutionCards={[
           {
             heading: 'angularjs',
@@ -189,10 +259,16 @@ const IndexPage = () => {
       />
 
       <Challenge
-        challengeNum={ '3' }
-        challengeText={ 'We didn’t have time or permission to integrate a proper authorization and authentication story; however, we needed an application that private and easily shareable.' }
-        solution={ 'Using Node-WebKit JS we were able to make web application a run on a native operating system. Our application was only accessible if you had the latest executable and users could easily share the executable.' }
-        takeaway={ 'Node-Webkit enables a new way of writing applications with all Web technologies. However, as of writing this article the library is a bit dated, if interested in writing native operating system level web apps I would suggest using Electron.  Moreover, if you want to write native mobile apps in the same workflow I would suggest Ionic or React Native.' }
+        challengeNum={'3'}
+        challengeText={
+          'We didn’t have time or permission to integrate a proper authorization and authentication story; however, we needed an application that private and easily shareable.'
+        }
+        solution={
+          'Using Node-WebKit JS we were able to make web application a run on a native operating system. Our application was only accessible if you had the latest executable and users could easily share the executable.'
+        }
+        takeaway={
+          'Node-Webkit enables a new way of writing applications with all Web technologies. However, as of writing this article the library is a bit dated, if interested in writing native operating system level web apps I would suggest using Electron.  Moreover, if you want to write native mobile apps in the same workflow I would suggest Ionic or React Native.'
+        }
         solutionCards={[
           {
             heading: 'node-webkit js',
