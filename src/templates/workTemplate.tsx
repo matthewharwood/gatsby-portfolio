@@ -6,6 +6,7 @@ import { Summary } from '../components/summary';
 import { Process } from '../components/process';
 import { Challenge } from '../components/challenge';
 import { Video } from '../components/video';
+import { Quote } from '../components/quote';
 
 import { Highlight } from '../components/highlight';
 import { PostPagination } from '../components/post-pagination';
@@ -128,6 +129,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
         }
         $borderBottom={true}
       />
+
+      <Quote body={'“I want to design Nike web pages that are responsive without making a bunch of mocks photoshop.  I want to inline-edit copy and be able to drag and drop images directly from my desktop into the page.”'} name={'jimmy soat'} title={'design director'} date={'february 2015 '}/>
 
       <Video
         videoId={'1'}
