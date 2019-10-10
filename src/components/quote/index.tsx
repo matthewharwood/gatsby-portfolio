@@ -4,20 +4,29 @@ import { Grid, Section, Container } from '../grid-system/';
 import { Paragraph1, Paragraph4 } from 'baseui/typography';
 
 interface Props {
-  body: string;
+  body?: string;
+  name?: string;
+  title?: string;
+  date?: string;
 }
-export const Quote = ({ body, name, title, date }: Props) => {
+export const Quote = ({
+  body = 'Default Quote',
+  name = 'Default Name',
+  title = 'Director',
+  date = 'July 2015',
+}: Props) => {
   const [css, theme] = useStyletron();
   const md = theme.mq.md;
   const lg = theme.mq.lg;
   return (
     <Section>
       <Container>
-        <div
+        <blockquote
           className={css({
             display: theme.display.grid,
             gridTemplateRows: '2fr 1fr',
             gridTemplateColumns: 'repeat(4, 1fr)',
+            margin: 0,
             [md]: {
               gridTemplateColumns: 'repeat(6, 1fr)',
             },
@@ -26,7 +35,7 @@ export const Quote = ({ body, name, title, date }: Props) => {
             },
           })}
         >
-          <Paragraph1
+          <span
             className={css({
               fontStyle: 'italic',
               fontSize: theme.sizing.scale800,
@@ -34,41 +43,39 @@ export const Quote = ({ body, name, title, date }: Props) => {
               gridRow: '1/2',
               gridColumn: '1/-1',
               alignSelf: 'end',
-              [md]: {
-                gridColumn: '2/6',
-              },
-              [lg]: {
-                gridColumn: '3/11',
-              },
-            })}
-            color={theme.colors.primary600}
-          >
-            {body}
-          </Paragraph1>
-          <Paragraph4
-            color={theme.colors.primary500}
-            className={css({
-              gridRow: '2/3',
-              gridColumn: '-3/-1',
-              justifySelf: 'end',
-              textAlign: 'right',
-              textTransform: 'uppercase',
-              fontFamily: 'mono',
-              [md]: {
-                gridColumn: '4/6',
-              },
               [lg]: {
                 gridColumn: '3/11',
               },
             })}
           >
-            {name}
-            <br />
-            {title}
-            <br />
-            {date}
-          </Paragraph4>
-        </div>
+            <Paragraph1 color={theme.colors.primary600} font={'inherit'}>
+              "{body}"
+            </Paragraph1>
+          </span>
+          <div
+              className={css({
+                gridRow: '2/3',
+                gridColumn: '-3/-1',
+                justifySelf: 'end',
+                textAlign: 'right',
+                textTransform: 'uppercase',
+                fontFamily: 'mono',
+                [lg]: {
+                  gridColumn: '3/11',
+                },
+              })}
+          >
+            <Paragraph4
+              color={theme.colors.primary500}
+            >
+              {name}
+              <br />
+              {title}
+              <br />
+              {date}
+            </Paragraph4>
+          </div>
+        </blockquote>
       </Container>
     </Section>
   );

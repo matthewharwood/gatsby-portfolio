@@ -1,24 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hello renders correctly 1`] = `
-Array [
-  <div
-    className=""
-    data-baseweb="typo-display4"
-  >
-    Web Application
-  </div>,
-  <div
-    className=""
-    data-baseweb="typo-display1"
-  >
-    Nike Jordan Editor
-  </div>,
-  <div
-    className=""
-    data-baseweb="typo-display3"
-  >
-    A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.
-  </div>,
-]
+<a
+  href="/work/work-1"
+>
+  Go to Work-1
+</a>
 `;

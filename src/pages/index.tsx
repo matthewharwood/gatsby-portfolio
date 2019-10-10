@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import { WorkTemplate } from '../templates/workTemplate';
 
-export const ActiveVideoContext = React.createContext('0');
+export const ActiveVideoContext = React.createContext({activeVideoID: '0', setActiveVideoId: {} });
 const IndexPage = () => {
   const [activeVideoID, setActiveVideoId] = useState('0');
   return (

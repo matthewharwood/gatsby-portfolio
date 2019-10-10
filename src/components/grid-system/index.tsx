@@ -41,23 +41,25 @@ export const Section = ({
   return <section className={className}>{children}</section>;
 };
 
-export const Container = ({ children, $borderBottom, $color }: any) => {
+export const Container = ({ children, $borderBottom, $color, $backgroundColor, $paddingBottom }: any) => {
   const [css, theme] = useStyletron();
   const borderBottom = $borderBottom ? `${$color} 1px solid` : 'none';
-
+  const backgroundColor = $backgroundColor || 'inherit';
   const className = css({
     margin: '0 auto',
     borderBottom: borderBottom,
     background: 'inherit',
     maxWidth: '599px',
     paddingBottom: borderBottom !== 'none' ? theme.sizing.scale1000 : 0,
+    backgroundColor: backgroundColor,
     [theme.mq.md]: {
       maxWidth: '1039px',
       paddingBottom: borderBottom !== 'none' ? theme.sizing.scale1400 : 0,
     },
     [theme.mq.lg]: {
       maxWidth: '1032px',
-      paddingBottom: borderBottom !== 'none' ? theme.sizing.scale1600 : 0,
+      padding: theme.sizing.scale1600,
+      paddingBottom: $paddingBottom || borderBottom !== 'none' ? theme.sizing.scale1600 : 0,
     },
   });
   return <div className={className}>{children}</div>;
@@ -76,12 +78,12 @@ export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-export const GridItemRight = ({ rightCols, orderRight, children }: any) => {
+export const GridItemRight = ({ rightCols, orderRight, children, hidden=false }: any) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
       order: orderRight,
-      display: 'grid',
+      display: hidden ? 'hidden' : 'grid',
       gridColumn: `span ${rightCols}`,
     }),
   };

@@ -9,6 +9,7 @@ import { Video } from '../components/video';
 import { Quote } from '../components/quote';
 
 import { Highlight } from '../components/highlight';
+import { HighlightBold } from '../components/highlight-bold';
 import { PostPagination } from '../components/post-pagination';
 import { useStyletron } from 'baseui';
 
@@ -106,13 +107,15 @@ const WorkTemplate = ({ data, pageContext }: any) => {
             `}
       />
       {/* Update this to Highlight Bold BLock */}
-      <Highlight
+      <HighlightBold
         eyebrow={'03'}
         title={'Proposed Solution'}
-        leftCols={4}
-        rightCols={8}
+        leftCols={8}
+        rightCols={4}
         orderLeft={0}
         orderRight={1}
+        $backgroundColor={theme.colors.mono100}
+        $backgroundInner={theme.colors.primary50}
         src={
           'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
         }
@@ -130,7 +133,7 @@ const WorkTemplate = ({ data, pageContext }: any) => {
         $borderBottom={true}
       />
 
-      <Quote body={'“I want to design Nike web pages that are responsive without making a bunch of mocks photoshop.  I want to inline-edit copy and be able to drag and drop images directly from my desktop into the page.”'} name={'jimmy soat'} title={'design director'} date={'february 2015 '}/>
+      <Quote body={'I want to design Nike web pages that are responsive without making a bunch of mocks photoshop.  I want to inline-edit copy and be able to drag and drop images directly from my desktop into the page.”'} name={'jimmy soat'} title={'design director'} date={'february 2015 '}/>
 
       <Video
         videoId={'1'}
@@ -304,13 +307,11 @@ const WorkTemplate = ({ data, pageContext }: any) => {
         $backgroundColor={theme.colors.mono100}
       />
 
-      <Highlight
+      <HighlightBold
+        full={true}
+        $backgroundColor={theme.colors.mono100}
         eyebrow={'08'}
         title={'Result'}
-        leftCols={10}
-        rightCols={2}
-        orderLeft={0}
-        orderRight={1}
         body={
           'From lunch room small talk about robots and leaving empolyees to a functional real-time WYSIWYG editor. We set out to make a tool that helped reduce the friction between AKQA and NIke, with hopes that AKQA could get more creative ownership with Nike Jordan.  In the end, we made a product that did just that.'
         }
