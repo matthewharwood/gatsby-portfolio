@@ -78,7 +78,13 @@ export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
     className: css({
       order: orderLeft,
       display: 'grid',
-      gridColumn: `span ${leftCols}`,
+      gridColumn: `span ${leftCols[0]}`,
+      [theme.mq.md]: {
+        gridColumn: `span ${leftCols[1]}`,
+      },
+      [theme.mq.lg]: {
+        gridColumn: `span ${leftCols[2]}`,
+      },
     }),
   };
 
@@ -96,7 +102,13 @@ export const GridItemRight = ({
     className: css({
       order: orderRight,
       display: hidden ? 'hidden' : 'grid',
-      gridColumn: `span ${rightCols}`,
+      gridColumn: `span ${rightCols[0]}`,
+      [theme.mq.md]: {
+        gridColumn: `span ${rightCols[1]}`,
+      },
+      [theme.mq.lg]: {
+        gridColumn: `span ${rightCols[2]}`,
+      },
     }),
   };
 
@@ -109,12 +121,13 @@ export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
   const className = css({
     background: 'inherit',
     display: theme.display.grid,
-    gridGap: `minmax(${theme.sizing.scale800}, 1fr)`,
+    gridGap: theme.sizing.scale800,
     gridTemplateColumns: 'repeat(4, 1fr)',
     width: '100%',
     gridColumn: $gridColumn,
     [theme.mq.md]: {
-      gridGap: `minmax(${theme.sizing.scale1200}, 1fr)`,
+      width: '100%',
+      gridGap: theme.sizing.scale1200,
       gridTemplateColumns: 'repeat(6, 1fr)',
     },
     [theme.mq.lg]: {

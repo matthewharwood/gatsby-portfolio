@@ -9,7 +9,7 @@ export const Headline = ({ title, text, $hasBottomMargin = true }: any) => {
   return (
     <div className={css({ marginBottom })}>
       <Grid>
-        <GridItemLeft leftCols={'4'} orderLeft={'0'}>
+        <GridItemLeft leftCols={[4,6,4]} orderLeft={'0'}>
           <H4
             margin="0"
             alignSelf="start"
@@ -18,7 +18,7 @@ export const Headline = ({ title, text, $hasBottomMargin = true }: any) => {
             {title}
           </H4>
         </GridItemLeft>
-        <GridItemRight rightCols={'8'} orderRight={'1'}>
+        <GridItemRight rightCols={[4,6,8]} orderRight={'1'}>
           <Paragraph1 margin="0" color={'inherit'}>
             {text}
           </Paragraph1>

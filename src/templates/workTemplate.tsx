@@ -14,7 +14,6 @@ import { PostPagination } from '../components/post-pagination';
 import { useStyletron } from 'baseui';
 
 const WorkTemplate = ({ data, pageContext }: any) => {
-  console.log(pageContext);
   const [css, theme] = useStyletron();
   const { title } = data.mdx.frontmatter;
   return (
@@ -72,8 +71,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <Highlight
         eyebrow={'01'}
         title={'Getting Started'}
-        leftCols={4}
-        rightCols={8}
+        leftCols={[4, 6, 4]}
+        rightCols={[4, 6, 8]}
         orderLeft={0}
         orderRight={1}
         src={
@@ -86,8 +85,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <Highlight
         eyebrow={'02'}
         title={'Identifing Pain Points.'}
-        leftCols={8}
-        rightCols={4}
+        leftCols={[4, 6, 8]}
+        rightCols={[4, 6, 8]}
         orderLeft={1}
         orderRight={0}
         src={
@@ -110,8 +109,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <HighlightBold
         eyebrow={'03'}
         title={'Proposed Solution'}
-        leftCols={8}
-        rightCols={4}
+        leftCols={[4, 6, 8]}
+        rightCols={[4, 6, 4]}
         orderLeft={0}
         orderRight={1}
         $backgroundColor={theme.colors.mono100}
@@ -133,7 +132,14 @@ const WorkTemplate = ({ data, pageContext }: any) => {
         $borderBottom={true}
       />
 
-      <Quote body={'I want to design Nike web pages that are responsive without making a bunch of mocks photoshop.  I want to inline-edit copy and be able to drag and drop images directly from my desktop into the page.”'} name={'jimmy soat'} title={'design director'} date={'february 2015 '}/>
+      <Quote
+        body={
+          'I want to design Nike web pages that are responsive without making a bunch of mocks photoshop.  I want to inline-edit copy and be able to drag and drop images directly from my desktop into the page.”'
+        }
+        name={'jimmy soat'}
+        title={'design director'}
+        date={'february 2015 '}
+      />
 
       <Video
         videoId={'1'}
@@ -284,8 +290,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <Highlight
         eyebrow={'06'}
         title={'Presentation'}
-        leftCols={5}
-        rightCols={7}
+        leftCols={[4, 6, 5]}
+        rightCols={[4, 6, 7]}
         orderLeft={0}
         orderRight={1}
         body={
@@ -297,8 +303,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <Highlight
         eyebrow={'07'}
         title={'Test / Measure / Iterate'}
-        leftCols={7}
-        rightCols={5}
+        leftCols={[4, 6, 7]}
+        rightCols={[4, 6, 5]}
         orderLeft={1}
         orderRight={0}
         body={
@@ -320,8 +326,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
       <Highlight
         eyebrow={'09'}
         title={'Retrospective'}
-        leftCols={6}
-        rightCols={6}
+        leftCols={[4, 6, 6]}
+        rightCols={[4, 6, 6]}
         orderLeft={1}
         orderRight={0}
         src={'https://via.placeholder.com/400'}

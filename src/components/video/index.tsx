@@ -53,22 +53,29 @@ export const Video = ({
     <Section $backgroundColor={bgColor} $color={color}>
       <Container $color={theme.colors.primary300} $borderBottom={false}>
         <Grid>
-          <GridItemLeft leftCols={8} orderLeft={0}>
+          <GridItemLeft leftCols={[4, 6, 8]} orderLeft={0}>
             <Player videoId={videoId} videoSrc={videoSrc} poster={poster} />
           </GridItemLeft>
-          <GridItemRight rightCols={4} orderRight={1}>
-            <div className={css({
-              textAlign: 'center',
-              marginTop: theme.sizing.scale1200,
-              fontSize: theme.sizing.scale700,
-              [lg]:{
-                textAlign: 'initial',
-                marginTop: 0,
-                fontSize: theme.sizing.scale600,
-              }
-            })}>
+          <GridItemRight rightCols={[4, 6, 4]} orderRight={1}>
+            <div
+              className={css({
+                textAlign: 'center',
+                marginTop: theme.sizing.scale1200,
+                fontSize: theme.sizing.scale700,
+                [lg]: {
+                  textAlign: 'initial',
+                  marginTop: 0,
+                  fontSize: theme.sizing.scale600,
+                },
+              })}
+            >
               <VideoTitle title={title} />
-              <Paragraph2 font="inherit" className={css({lineHeight:theme.sizing.scale900})}>{caption}</Paragraph2>
+              <Paragraph2
+                font="inherit"
+                className={css({ lineHeight: theme.sizing.scale900 })}
+              >
+                {caption}
+              </Paragraph2>
             </div>
           </GridItemRight>
         </Grid>

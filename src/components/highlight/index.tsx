@@ -1,34 +1,15 @@
 import React from 'react';
-import { Section, Container, Grid } from '../grid-system';
+import {
+  Section,
+  Container,
+  Grid,
+  GridItemLeft,
+  GridItemRight,
+} from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import Img from 'gatsby-image';
-import { type } from 'os';
-const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      order: orderLeft,
-      display: 'grid',
-      gridColumn: `span ${leftCols}`,
-    }),
-  };
 
-  return <div {...c}>{children}</div>;
-};
-
-const GridItemRight = ({ rightCols, orderRight, children }: any) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      order: orderRight,
-      display: 'grid',
-      gridColumn: `span ${rightCols}`,
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
-};
 const contentTypeLeft = (
   type: string,
   accent: string,

@@ -43,14 +43,14 @@ const HighlightBold = ({
           }
         })}>
           <Grid>
-            <GridItemLeft leftCols={full ? 10 : leftCols} orderLeft={orderLeft}>
+            <GridItemLeft leftCols={full ? [4,6,10] : leftCols} orderLeft={orderLeft}>
               <>
                 <Label1 color={accent}>{eyebrow}</Label1>
                 <Display4 color={'inheirt'}>{title}</Display4>
                 <Paragraph1 color={'inheirt'}>{body}</Paragraph1>
               </>
             </GridItemLeft>
-            <GridItemRight rightCols={full ? 2 : rightCols} orderRight={orderRight} hidden={hidden}>
+            <GridItemRight rightCols={full ? [4,6,2] : rightCols} orderRight={orderRight} hidden={hidden}>
               <Img
                 style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
                 fluid={src}

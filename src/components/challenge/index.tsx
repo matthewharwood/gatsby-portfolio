@@ -135,8 +135,8 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
     <>
       <div className={css({ marginBottom: theme.sizing.scale1600 })}>
         <Grid>
-          <GridItemLeft leftCols={'4'} orderLeft={'0'} />
-          <GridItemRight rightCols={'8'} orderRight={'1'}>
+          <GridItemLeft leftCols={[4,6,4]} orderLeft={'0'} />
+          <GridItemRight rightCols={[4,6,8]} orderRight={'1'}>
             <div
               className={css({
                 display: 'grid',
