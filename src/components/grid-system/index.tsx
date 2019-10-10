@@ -41,7 +41,13 @@ export const Section = ({
   return <section className={className}>{children}</section>;
 };
 
-export const Container = ({ children, $borderBottom, $color, $backgroundColor, $paddingBottom }: any) => {
+export const Container = ({
+  children,
+  $borderBottom,
+  $color,
+  $backgroundColor,
+  $paddingBottom,
+}: any) => {
   const [css, theme] = useStyletron();
   const borderBottom = $borderBottom ? `${$color} 1px solid` : 'none';
   const backgroundColor = $backgroundColor || 'inherit';
@@ -59,7 +65,8 @@ export const Container = ({ children, $borderBottom, $color, $backgroundColor, $
     [theme.mq.lg]: {
       maxWidth: '1032px',
       padding: theme.sizing.scale1600,
-      paddingBottom: $paddingBottom || borderBottom !== 'none' ? theme.sizing.scale1600 : 0,
+      paddingBottom:
+        $paddingBottom || borderBottom !== 'none' ? theme.sizing.scale1600 : 0,
     },
   });
   return <div className={className}>{children}</div>;
@@ -78,7 +85,12 @@ export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-export const GridItemRight = ({ rightCols, orderRight, children, hidden=false }: any) => {
+export const GridItemRight = ({
+  rightCols,
+  orderRight,
+  children,
+  hidden = false,
+}: any) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
@@ -102,11 +114,10 @@ export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
     width: '100%',
     gridColumn: $gridColumn,
     [theme.mq.md]: {
-      gridGap: theme.sizing.scale1200,
+      gridGap: `minmax(${theme.sizing.scale1200}, 1fr)`,
       gridTemplateColumns: 'repeat(6, 1fr)',
     },
     [theme.mq.lg]: {
-      gridGap: theme.sizing.scale1200,
       gridTemplateColumns: 'repeat(12, 1fr)',
     },
   });
