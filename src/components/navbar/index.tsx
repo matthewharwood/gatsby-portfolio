@@ -107,7 +107,7 @@ const NavList = ({ children }: { children: React.ReactNode }) => {
     <ul
       className={css({
         listStyle: 'none',
-        display: 'none',
+        display: theme.display.none,
         [lg]: {
           display: theme.display.flex,
         },
