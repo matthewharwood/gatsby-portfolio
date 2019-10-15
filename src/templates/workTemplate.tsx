@@ -8,6 +8,7 @@ import { Challenge } from '../components/challenge';
 import { Video } from '../components/video';
 import { Quote } from '../components/quote';
 
+import { Navbar } from '../components/navbar';
 import { Highlight } from '../components/highlight';
 import { HighlightBold } from '../components/highlight-bold';
 import { PostPagination } from '../components/post-pagination';
@@ -19,6 +20,7 @@ const WorkTemplate = ({ data, pageContext }: any) => {
   return (
     <>
       {/* <MDXRenderer>{data.mdx.body}</MDXRenderer> */}
+      <Navbar/>
       <PostHeader
         main={{ text: title }}
         sub={{
