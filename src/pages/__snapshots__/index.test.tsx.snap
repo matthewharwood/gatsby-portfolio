@@ -1,53 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hello renders correctly 1`] = `
-<nav
-  className=""
->
-  <a
+Array [
+  <nav
     className=""
-    href="/work"
   >
-    <span
+    <a
       className=""
+      href="/work"
     >
-      Work
-    </span>
-    <i
+      <span
+        className=""
+      >
+        Work
+      </span>
+      <i
+        className=""
+      >
+        00
+      </i>
+    </a>
+    <a
       className=""
+      href="/lab"
     >
-      00
-    </i>
-  </a>
-  <a
-    className=""
-    href="/lab"
-  >
-    <span
+      <span
+        className=""
+      >
+        Lab
+      </span>
+      <i
+        className=""
+      >
+        01
+      </i>
+    </a>
+    <a
       className=""
+      href="/profile"
     >
-      Lab
-    </span>
-    <i
+      <span
+        className=""
+      >
+        Profile
+      </span>
+      <i
+        className=""
+      >
+        02
+      </i>
+    </a>
+  </nav>,
+  <footer>
+    <h6
       className=""
+      data-baseweb="typo-h6"
     >
-      01
-    </i>
-  </a>
-  <a
-    className=""
-    href="/profile"
-  >
-    <span
+      Good Morning Harwood
+    </h6>
+    <p
       className=""
+      data-baseweb="typo-p4"
     >
-      Profile
-    </span>
-    <i
-      className=""
-    >
-      02
-    </i>
-  </a>
-</nav>
+      <span>
+        A creative playground by
+      </span>
+      <a
+        className=""
+        href="#"
+      >
+         
+        Matthew Harwood
+      </a>
+    </p>
+  </footer>,
+]
 `;

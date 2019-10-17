@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create Nav with children renders correctly 1`] = `
+<footer>
+  <h6
+    className=""
+    data-baseweb="typo-h6"
+  >
+    Good Morning Harwood
+  </h6>
+  <p
+    className=""
+    data-baseweb="typo-p4"
+  >
+    <span>
+      A creative playground by
+    </span>
+    <a
+      className=""
+      href="#"
+    >
+       
+      Matthew Harwood
+    </a>
+  </p>
+</footer>
+`;
