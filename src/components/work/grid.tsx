@@ -14,7 +14,8 @@ export const Grid = props => {
         position: 'relative',
         height: '100%',
         gridTemplateRows: '20% 80%',
-        gridTemplateColumns: 'unset', gridTemplateAreas: `"menuTitle" "menu"`,
+        gridTemplateColumns: 'unset',
+        gridTemplateAreas: `"menuTitle" "menu"`,
 
         [med]: {
           gridTemplateRows: '20% 13.333% 66.6666%',
@@ -23,7 +24,7 @@ export const Grid = props => {
         },
         [lg]: {
           gridTemplateColumns: '40% 60%',
-          gridTemplateRows: '33.3333% 66.6666%',
+          gridTemplateRows: '20% 80%',
           gridTemplateAreas: `
           "menuTitle post"
           "menu post"`,
@@ -59,14 +60,14 @@ export const GridItemInner = props => {
     <div
       className={css({
         paddingLeft: theme.sizing.scale700,
-        paddingTop: theme.sizing.scale700,
+        paddingTop: theme.sizing.scale2400,
         [md]: {
           paddingLeft: theme.sizing.scale700,
           paddingTop: theme.sizing.scale800,
         },
         [lg]: {
           paddingLeft: theme.sizing.scale1600,
-          paddingTop: theme.sizing.scale1600,
+          paddingTop: theme.sizing.scale2400,
         },
       })}
     >
@@ -92,7 +93,7 @@ export const GridPostItem = props => {
         [lg]: {
           display: 'grid',
           gridArea: 'post',
-        }
+        },
       })}
     >
       {props.children}

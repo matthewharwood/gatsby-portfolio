@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Menu, MenuGrid } from '../components/work/menu';
+import { Navbar } from '../components/navbar';
 import {
   Grid,
   GridItem,
@@ -41,14 +42,12 @@ const Work = ({ data }) => {
 
   return (
     <>
+      <div style={{ position: 'fixed', width: '100%', zIndex: '10000' }}>
+        <Navbar />
+      </div>
       <MenuGridInnerShadow />
       <Grid>
-        <GridItem gridArea={'menuTitle'}>
-          <GridItemInner>
-            <Display2>Work</Display2>
-            <Paragraph1>Check out some of my work</Paragraph1>
-          </GridItemInner>
-        </GridItem>
+        <GridItem gridArea={'menuTitle'}></GridItem>
         <GridItem gridArea={'menu'}>
           <MenuGrid>
             <Menu
