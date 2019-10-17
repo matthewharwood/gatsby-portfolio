@@ -8,7 +8,9 @@ const RunningHeader: FunctionComponent = () => {
   let [count, setCount] = useState(0);
 
   useInterval(() => {
-    setCount(count + 1);
+    const len = interests.length - 1;
+    const next = count + 1;
+    setCount(next % len);
   }, 1000);
   return (
     <dl>
