@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create Nav with children renders correctly 1`] = `
+<a
+  className=""
+  href="/hello"
+>
+  <span
+    className=""
+  >
+    Hello
+  </span>
+  <i
+    className=""
+  >
+    01
+  </i>
+</a>
+`;

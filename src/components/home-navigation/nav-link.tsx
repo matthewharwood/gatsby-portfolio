@@ -2,6 +2,12 @@ import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Link } from 'gatsby';
 
+type NavLinkProps = {
+  to: string;
+  text: string;
+  index: string;
+};
+
 const NavLinkIndex: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   const c = css({
@@ -11,11 +17,6 @@ const NavLinkIndex: FunctionComponent = ({ children }) => {
   return <i className={c}>{children}</i>;
 };
 
-type NavLinkProps = {
-  to: string;
-  text: string;
-  index: string;
-};
 const NavLinkSpan: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   const c = css({

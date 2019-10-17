@@ -1,9 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hello renders correctly 1`] = `
-<a
-  href="/work/work-1"
+<nav
+  className=""
 >
-  Go to Work-1
-</a>
+  <a
+    className=""
+    href="/work"
+  >
+    <span
+      className=""
+    >
+      Work
+    </span>
+    <i
+      className=""
+    >
+      00
+    </i>
+  </a>
+  <a
+    className=""
+    href="/lab"
+  >
+    <span
+      className=""
+    >
+      Lab
+    </span>
+    <i
+      className=""
+    >
+      01
+    </i>
+  </a>
+  <a
+    className=""
+    href="/profile"
+  >
+    <span
+      className=""
+    >
+      Profile
+    </span>
+    <i
+      className=""
+    >
+      02
+    </i>
+  </a>
+</nav>
 `;
