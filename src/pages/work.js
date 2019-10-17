@@ -14,7 +14,7 @@ import { BoxShadow, MenuGridInnerShadow } from '../components/work/utils';
 
 import { useStyletron } from 'baseui';
 import { Button, KIND, SIZE } from 'baseui/button';
-import { Display2, Display3, Paragraph1 } from 'baseui/typography';
+import { Display2, Display3, Display4, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
 
 const InsetShadow = props => {
@@ -47,7 +47,11 @@ const Work = ({ data }) => {
       </div>
       <MenuGridInnerShadow />
       <Grid>
-        <GridItem gridArea={'menuTitle'}></GridItem>
+        <GridItem gridArea={'menuTitle'}>
+          <GridItemInner>
+            <Display4>Work</Display4>
+          </GridItemInner>
+        </GridItem>
         <GridItem gridArea={'menu'}>
           <MenuGrid>
             <Menu

@@ -67,7 +67,7 @@ export const GridItemInner = props => {
         },
         [lg]: {
           paddingLeft: theme.sizing.scale1600,
-          paddingTop: theme.sizing.scale2400,
+          paddingTop: theme.sizing.scale3200,
         },
       })}
     >
