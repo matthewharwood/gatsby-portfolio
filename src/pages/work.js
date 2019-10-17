@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Menu, MenuGrid } from '../components/work/menu';
-import { Grid, GridItem, GridPostItem, GridItemInner } from '../components/work/grid';
+import {
+  Grid,
+  GridItem,
+  GridPostItem,
+  GridItemInner,
+} from '../components/work/grid';
 import { FloatingDetails } from '../components/work/details';
 import { BoxShadow, MenuGridInnerShadow } from '../components/work/utils';
 
@@ -65,7 +70,7 @@ const Work = ({ data }) => {
             <Paragraph1 color="primary50">{currentItem.description}</Paragraph1>
             <Button
               $as="a"
-              href="https://styletron.org"
+              href="/work/work-1"
               kind={KIND.secondary}
               size={SIZE.large}
               endEnhancer={() => <ArrowRight size={24} />}
@@ -91,7 +96,10 @@ const Work = ({ data }) => {
 
 export const PageQuery = graphql`
   {
-  allMdx(filter: {frontmatter: {templateKey: {eq: "workTemplate"}}}, sort: {fields: id, order: ASC}) {
+    allMdx(
+      filter: { frontmatter: { templateKey: { eq: "workTemplate" } } }
+      sort: { fields: id, order: ASC }
+    ) {
       edges {
         node {
           id

@@ -29,12 +29,15 @@ export const Navbar = () => {
         },
       })}
     >
-      <Hamburger isNavToggle={isNavToggle} toggleNav={() => setNavToggle(!isNavToggle)} />
+      <Hamburger
+        isNavToggle={isNavToggle}
+        toggleNav={() => setNavToggle(!isNavToggle)}
+      />
       <NavHeader />
       <NavList>
         <ListItem title={'work'} />
         <ListItem title={'lab'} />
-        <ListItem title={'about'} />
+        <ListItem title={'profile'} />
       </NavList>
       <div
         className={css({
@@ -50,7 +53,13 @@ export const Navbar = () => {
   );
 };
 
-const Hamburger = ({ isNavToggle, toggleNav }: { isNavToggle: Boolean, toggleNav: Function }) => {
+const Hamburger = ({
+  isNavToggle,
+  toggleNav,
+}: {
+  isNavToggle: Boolean;
+  toggleNav: Function;
+}) => {
   const [css, theme] = useStyletron();
   const lg = theme.mq.lg;
   return (

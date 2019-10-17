@@ -1,10 +1,16 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
+import { Navbar } from '../components/navbar';
 
 class Lab extends Component {
-  state = {}
+  state = {};
   render() {
-    return <h1>Lab</h1>
+    return (
+      <>
+        <Navbar />
+        <h1>Lab</h1>
+      </>
+    );
   }
 }
 
-export default Lab
+export default Lab;
