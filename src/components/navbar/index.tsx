@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../icons/logo';
+import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
 import { H5, Label2 } from 'baseui/typography';
 import Grab from 'baseui/icon/grab';
+import Delete from 'baseui/icon/delete';
 
 export const Navbar = () => {
   const [css, theme] = useStyletron();
   const lg = theme.mq.lg;
+  const [isNavToggle, setNavToggle] = useState(false);
   return (
     <nav
       className={css({
@@ -26,7 +29,7 @@ export const Navbar = () => {
         },
       })}
     >
-      <Hamburger />
+      <Hamburger isNavToggle={isNavToggle} toggleNav={() => setNavToggle(!isNavToggle)} />
       <NavHeader />
       <NavList>
         <ListItem title={'work'} />
@@ -47,18 +50,19 @@ export const Navbar = () => {
   );
 };
 
-const Hamburger = () => {
+const Hamburger = ({ isNavToggle, toggleNav }: { isNavToggle: Boolean, toggleNav: Function }) => {
   const [css, theme] = useStyletron();
   const lg = theme.mq.lg;
   return (
     <span
+      onClick={() => toggleNav()}
       className={css({
         [lg]: {
           display: theme.display.none,
         },
       })}
     >
-      <Grab size={32} />
+      {isNavToggle ? <Delete size={32} /> : <Grab size={32} />}
     </span>
   );
 };
@@ -121,20 +125,28 @@ const NavList = ({ children }: { children: React.ReactNode }) => {
 const ListItem = ({ title }: { title: string }) => {
   const [css, theme] = useStyletron();
   return (
-    <li
+    <Link
       className={css({
-        marginLeft: theme.sizing.scale1600,
+        textDecoration: 'none',
+        color: 'inherit',
       })}
+      to={title}
     >
-      <Label2
-        color={'inherit'}
-        margin={0}
+      <li
         className={css({
-          fontSize: theme.sizing.scale600,
+          marginLeft: theme.sizing.scale1600,
         })}
       >
-        {title}
-      </Label2>
-    </li>
+        <Label2
+          color={'inherit'}
+          margin={0}
+          className={css({
+            fontSize: theme.sizing.scale600,
+          })}
+        >
+          {title}
+        </Label2>
+      </li>
+    </Link>
   );
 };
