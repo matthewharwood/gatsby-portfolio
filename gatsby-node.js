@@ -14,13 +14,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: require.resolve('@babel/plugin-proposal-optional-chaining'),
-  })
-}
-
 // Create pages for respective markdown files
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
