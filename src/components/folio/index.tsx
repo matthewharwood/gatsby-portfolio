@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
-import { Paragraph4 } from 'baseui/typography';
+import { Paragraph4, Label4 } from 'baseui/typography';
 
 type FolioProps = {
   headline: string;
@@ -40,22 +40,25 @@ const Folio: FunctionComponent<FolioProps> = ({
           bottom: 0,
           left: 0,
           marginLeft: theme.sizing.scale3200,
-        }
+        },
       })}
     >
-      <span className={css({ color: theme.colors.accent })}>{headline}</span>
+      <Label4 $as="span" className={css({ color: theme.colors.accent })}>
+        {headline}
+      </Label4>
       <Paragraph4 margin={0}>
-        <span
+        <Label4
+          $as="span"
           className={css({
             color: theme.colors.primary600,
           })}
         >
           {subheadline}
-        </span>
-        <a className={a} href={link && link.href}>
+        </Label4>
+        <Label4 $as="a" className={a} href={link && link.href}>
           {' '}
           {link && link.text}
-        </a>
+        </Label4>
       </Paragraph4>
     </footer>
   );

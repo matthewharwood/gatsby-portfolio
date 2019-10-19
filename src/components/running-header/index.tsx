@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { useStyletron } from 'baseui';
+import { Label4 } from 'baseui/typography';
 import { useInterval } from './use-interval';
 import { interests } from './interests';
 
@@ -27,7 +28,7 @@ const RunningHeader: FunctionComponent = () => {
       borderLeft: 'none',
       marginLeft: theme.sizing.scale700,
       marginTop: theme.sizing.scale1600,
-      listStyleType: "&#128077;",
+      listStyleType: '&#128077;',
     },
   });
   const cItem = css({
@@ -37,7 +38,7 @@ const RunningHeader: FunctionComponent = () => {
     fontSize: theme.sizing.scale500,
     [lg]: {
       paddingLeft: theme.sizing.scale700,
-    }
+    },
   });
   const a = css({
     textDecoration: 'none',
@@ -45,12 +46,13 @@ const RunningHeader: FunctionComponent = () => {
   return (
     <ul className={cList}>
       <li className={cItem}>
-        <a className={a} href="tel:1-415-486-6018">
+        <Label4 $as="a" className={a} href="tel:1-415-486-6018">
           Contact
-        </a>
+        </Label4>
       </li>
       <li className={cItem}>
-        <a
+        <Label4
+          $as="a"
           className={a}
           href={`mailto:matthhar12@gmail.com?subject=`}
           target={'_blank'}
@@ -59,7 +61,7 @@ const RunningHeader: FunctionComponent = () => {
           <span>
             ✉ <i>{interests[count].name}</i>
           </span>
-        </a>
+        </Label4>
       </li>
     </ul>
   );

@@ -94,16 +94,22 @@ const NavHeader = () => {
         },
       })}
     >
-      <Logo />
       <Link
         to="/"
-        className={css({ textDecoration: 'none', color: 'inherit' })}
+        className={css({
+          textDecoration: 'none',
+          color: 'inherit',
+          display: 'flex',
+        })}
       >
+        <Logo />
         <H5
           color={'inherit'}
-          marginLeft={theme.sizing.scale600}
-          margin={0}
           className={css({
+            marginLeft: theme.sizing.scale600,
+            marginRight: 0,
+            marginTop: 0,
+            marginBottom: 0,
             display: theme.display.none,
             [md]: {
               display: theme.display.block,

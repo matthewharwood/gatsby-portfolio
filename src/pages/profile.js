@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styles/profile.scss';
 import { Navbar } from '../components/navbar';
 import { H1, H2, H4, Label1, Paragraph2, Paragraph3 } from 'baseui/typography';
 import portrait from '../images/me4-sq.jpg';
@@ -73,9 +72,7 @@ const Technical = () => {
   return (
     <>
       <SectionHeading heading="Technical" />
-      <Paragraph3>
-        {techniques.join(', ')}
-      </Paragraph3>
+      <Paragraph3>{techniques.join(', ')}</Paragraph3>
     </>
   );
 };
@@ -84,9 +81,7 @@ const Interests = () => {
   return (
     <>
       <SectionHeading heading="Interests" />
-      <Paragraph3 margin={0}>
-        {interests.join(', ')}
-      </Paragraph3>
+      <Paragraph3 margin={0}>{interests.join(', ')}</Paragraph3>
     </>
   );
 };
@@ -153,8 +148,10 @@ const RecentlyVisited = () => {
           padding: 0,
         })}
       >
-        {visited.map(( { flag, countryName } ) => (
-          <li>{flag} {countryName}</li>
+        {visited.map(({ flag, countryName }) => (
+          <li>
+            {flag} {countryName}
+          </li>
         ))}
       </ul>
     </>
@@ -164,7 +161,7 @@ const RecentlyVisited = () => {
 const ExperienceItem = ({
   place = 'Company',
   title = 'Senio Design Engineer',
-  dateRange= 'December 2018 ~ July 2019',
+  dateRange = 'December 2018 ~ July 2019',
   jobDescription = 'Works on building and maintaining uber.com',
 }) => {
   const [css, theme] = useStyletron();
@@ -182,9 +179,7 @@ const ExperienceItem = ({
       >
         {title}
       </Paragraph3>
-      <Paragraph3 margin={0}>
-        {dateRange}
-      </Paragraph3>
+      <Paragraph3 margin={0}>{dateRange}</Paragraph3>
       <Paragraph3 margin={0}>{jobDescription}</Paragraph3>
     </div>
   );
@@ -242,45 +237,45 @@ const ResumeHeader = () => {
     color: theme.colors.accent,
   });
   return (
-      <section
+    <section
+      className={css({
+        display: theme.display.flex,
+        justifyContent: 'space-between',
+      })}
+    >
+      <header>
+        <H1 margin={0} className={css({ fontSize: theme.sizing.scale1400 })}>
+          Résumé
+        </H1>
+      </header>
+      <ul
         className={css({
-          display: theme.display.flex,
-          justifyContent: 'space-between',
+          fontSize: theme.sizing.scale500,
+          lineHeight: theme.sizing.scale800,
+          listStyleType: 'none',
+          textAlign: 'right',
         })}
       >
-        <header>
-          <H1 margin={0} className={css({ fontSize: theme.sizing.scale1400 })}>
-            Résumé
-          </H1>
-        </header>
-        <ul
-          className={css({
-            fontSize: theme.sizing.scale500,
-            lineHeight: theme.sizing.scale800,
-            listStyleType: 'none',
-            textAlign: 'right',
-          })}
-        >
-          <li>
-            <a className={aStyle} href={me.fullDomain}>
-              {me.domain}
-            </a>
-          </li>
-          <li>
-            <a
-              className={aStyle}
-              href={`mailto:${me.email}?subject=Hello Matthew`}
-            >
-              {me.email}
-            </a>
-          </li>
-          <li>
-            <a className={aStyle}>{me.phone}</a>
-          </li>
-        </ul>
-      </section>
-  )
-}
+        <li>
+          <a className={aStyle} href={me.fullDomain}>
+            {me.domain}
+          </a>
+        </li>
+        <li>
+          <a
+            className={aStyle}
+            href={`mailto:${me.email}?subject=Hello Matthew`}
+          >
+            {me.email}
+          </a>
+        </li>
+        <li>
+          <a className={aStyle}>{me.phone}</a>
+        </li>
+      </ul>
+    </section>
+  );
+};
 
 const ResumeSection = () => {
   const [css, theme] = useStyletron();
@@ -295,7 +290,7 @@ const ResumeSection = () => {
         padding: `${theme.sizing.scale3200} ${theme.sizing.scale1200}`,
       })}
     >
-      <ResumeHeader/>
+      <ResumeHeader />
       <Grid>
         <ProfileSection>
           <Experiences />
