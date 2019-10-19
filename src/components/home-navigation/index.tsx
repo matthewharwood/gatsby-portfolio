@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import { useStyletron } from 'baseui';
+import React from 'react';
 import { Nav } from './nav';
 import { NavLink } from './nav-link';
 const HomeNavigation = () => {
-  const [css, theme] = useStyletron();
-  const c = css({});
   return (
     <Nav>
       <NavLink to="/work" index="00" text="Work" />

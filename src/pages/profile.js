@@ -195,7 +195,7 @@ const IntroSection = () => {
   return (
     <section
       className={css({
-        display: 'flex',
+        display: theme.display.flex,
         position: 'fixed',
         top: 0,
         width: '100vw',
@@ -204,7 +204,7 @@ const IntroSection = () => {
       <header
         className={css({
           width: '50vw',
-          display: 'flex',
+          display: theme.display.flex,
           flexDirection: 'column',
           justifyContent: 'center',
           padding: `0 ${theme.sizing.scale3200}`,
@@ -239,12 +239,12 @@ const ResumeHeader = () => {
   const [css, theme] = useStyletron();
   const aStyle = css({
     textDecoration: 'none',
-    color: 'tomato',
+    color: theme.colors.accent,
   });
   return (
       <section
         className={css({
-          display: 'flex',
+          display: theme.display.flex,
           justifyContent: 'space-between',
         })}
       >

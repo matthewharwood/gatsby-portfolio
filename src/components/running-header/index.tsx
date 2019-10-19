@@ -15,7 +15,7 @@ const RunningHeader: FunctionComponent = () => {
   }, 1000);
 
   const cList = css({
-    borderLeft: `${theme.sizing.scale100} solid tomato`,
+    borderLeft: `${theme.sizing.scale100} solid ${theme.colors.accent}`,
     margin: 0,
     paddingLeft: theme.sizing.scale500,
     paddingTop: theme.sizing.scale800,

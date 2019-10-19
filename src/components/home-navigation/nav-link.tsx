@@ -24,7 +24,7 @@ const NavLinkSpan: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   const lg = theme.mq.lg;
   const c = css({
-    display:'flex',
+    display: theme.display.flex,
     fontSize: theme.sizing.scale900,
     paddingBottom: theme.sizing.scale500,
     paddingRight: theme.sizing.scale4800,
@@ -41,24 +41,22 @@ const NavLink: FunctionComponent<NavLinkProps> = ({
   text = '',
   index = '',
   to = '/',
-  children,
 }) => {
   const [css, theme] = useStyletron();
   const lg = theme.mq.lg;
   const c = css({
     cursor: 'pointer',
-    display: 'flex',
+    display: theme.display.flex,
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
     textDecoration: 'none',
-    borderBottom: `1px solid ${theme.colors.primary600}`,
+    borderBottom: `${theme.sizing.scale0} solid ${theme.colors.primary600}`,
     marginBottom: theme.sizing.scale600,
     ":hover": {
-      color: 'tomato',
+      color: theme.colors.accent,
     },
     [lg]: {
       justifyContent: 'flex-end',
-      borderBottom: `2px solid ${theme.colors.primary600}`,
     }
   });
   return (
