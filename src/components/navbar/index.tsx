@@ -23,6 +23,8 @@ export const Navbar = () => {
         paddingRight: theme.sizing.scale600,
         paddingTop: theme.sizing.scale500,
         paddingBottom: theme.sizing.scale500,
+        zIndex: theme.zIndex.modal,
+        position: 'relative',
         [lg]: {
           paddingLeft: theme.sizing.scale1600,
           paddingRight: theme.sizing.scale1600,
