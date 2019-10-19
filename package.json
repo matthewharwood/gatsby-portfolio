@@ -15,7 +15,6 @@
     "gatsby-plugin-sass": "^2.1.17",
     "gatsby-plugin-sharp": "^2.2.11",
     "gatsby-plugin-styletron": "^4.1.2",
-    "gatsby-source-cloudinary": "^0.1.8",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.6.24",
     "gatsby-transformer-sharp": "^2.2.6",

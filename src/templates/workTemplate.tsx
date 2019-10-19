@@ -20,8 +20,8 @@ const WorkTemplate = ({ data, pageContext }: any) => {
   const { title } = data.mdx.frontmatter;
   return (
     <>
+      <Navbar />
       {/* <MDXRenderer>{data.mdx.body}</MDXRenderer> */}
-      <Navbar/>
       <PostHeader
         main={{ text: title }}
         sub={{
@@ -356,7 +356,7 @@ const WorkTemplate = ({ data, pageContext }: any) => {
             : '',
         }}
       />
-      <Footer/>
+      <Footer />
     </>
   );
 };

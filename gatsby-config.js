@@ -1,6 +1,6 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -43,19 +43,19 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    {
-      resolve: `gatsby-source-cloudinary`,
-      options: {
-        cloudName: process.env.cloudinary_cloudName,
-        apiKey: process.env.cloudinary_apiKey,
-        apiSecret: process.env.cloudinary_apiSecret,
-        // resourceType: `image`,
-        // type: `type Value`,
-        // maxResults: `Max result`,
-        // tags: `fetch image tags?`,
-        // prefix: `abc-xyz/`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-cloudinary`,
+    //   options: {
+    //     cloudName: process.env.cloudinary_cloudName,
+    //     apiKey: process.env.cloudinary_apiKey,
+    //     apiSecret: process.env.cloudinary_apiSecret,
+    //     // resourceType: `image`,
+    //     // type: `type Value`,
+    //     // maxResults: `Max result`,
+    //     // tags: `fetch image tags?`,
+    //     // prefix: `abc-xyz/`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
