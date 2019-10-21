@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Paragraph4, Label4 } from 'baseui/typography';
+import { mq, display, positions } from '../styles';
 
 type FolioProps = {
   headline: string;
@@ -17,7 +18,7 @@ const Folio: FunctionComponent<FolioProps> = ({
   link,
 }) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   const a = css({
     borderLeft: 'none',
     paddingTop: theme.sizing.scale500,
@@ -28,15 +29,15 @@ const Folio: FunctionComponent<FolioProps> = ({
   return (
     <footer
       className={css({
-        display: theme.display.none,
+        display: display.none,
         [lg]: {
-          display: theme.display.block,
+          display: display.block,
           fontSize: theme.sizing.scale500,
           borderLeft: `${theme.sizing.scale100} solid ${theme.colors.accent}`,
           paddingLeft: theme.sizing.scale700,
           transform: 'rotate(-90deg)',
           transformOrigin: 'left bottom',
-          position: theme.positions.fixed,
+          position: positions.fixed,
           bottom: 0,
           left: 0,
           marginLeft: theme.sizing.scale3200,

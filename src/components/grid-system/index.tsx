@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStyletron } from 'baseui';
+import { mq, display, colors } from '../styles';
 
 export const Section = ({
   $backgroundColor,
@@ -17,20 +18,20 @@ export const Section = ({
     backgroundColor: bgColor,
     boxSizing: 'border-box',
     color: color,
-    display: theme.display.block,
+    display: display.block,
     paddingTop: $collapsePaddingTop ? 0 : theme.sizing.scale1000,
     paddingBottom: $collapsePaddingBottom ? 0 : theme.sizing.scale1000,
     paddingLeft: theme.sizing.scale800,
     paddingRight: theme.sizing.scale800,
     width: '100%',
-    [theme.mq.md]: {
+    [mq.md]: {
       background: bgColor,
       paddingTop: $collapsePaddingTop ? 0 : theme.sizing.scale1400,
       paddingBottom: $collapsePaddingBottom ? 0 : theme.sizing.scale1400,
       paddingLeft: theme.sizing.scale1200,
       paddingRight: theme.sizing.scale1200,
     },
-    [theme.mq.lg]: {
+    [mq.lg]: {
       background: bgColor,
       paddingTop: $collapsePaddingTop ? 0 : theme.sizing.scale1600,
       paddingBottom: $collapsePaddingBottom ? 0 : theme.sizing.scale1600,
@@ -58,11 +59,11 @@ export const Container = ({
     maxWidth: '599px',
     paddingBottom: borderBottom !== 'none' ? theme.sizing.scale1000 : 0,
     backgroundColor: backgroundColor,
-    [theme.mq.md]: {
+    [mq.md]: {
       maxWidth: '1039px',
       paddingBottom: borderBottom !== 'none' ? theme.sizing.scale1400 : 0,
     },
-    [theme.mq.lg]: {
+    [mq.lg]: {
       maxWidth: '1032px',
       padding: theme.sizing.scale1600,
       paddingBottom:
@@ -79,10 +80,10 @@ export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
       order: orderLeft,
       display: 'grid',
       gridColumn: `span ${leftCols[0]}`,
-      [theme.mq.md]: {
+      [mq.md]: {
         gridColumn: `span ${leftCols[1]}`,
       },
-      [theme.mq.lg]: {
+      [mq.lg]: {
         gridColumn: `span ${leftCols[2]}`,
       },
     }),
@@ -103,10 +104,10 @@ export const GridItemRight = ({
       order: orderRight,
       display: hidden ? 'hidden' : 'grid',
       gridColumn: `span ${rightCols[0]}`,
-      [theme.mq.md]: {
+      [mq.md]: {
         gridColumn: `span ${rightCols[1]}`,
       },
-      [theme.mq.lg]: {
+      [mq.lg]: {
         gridColumn: `span ${rightCols[2]}`,
       },
     }),
@@ -120,17 +121,17 @@ export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
 
   const className = css({
     background: 'inherit',
-    display: theme.display.grid,
+    display: display.grid,
     gridGap: theme.sizing.scale800,
     gridTemplateColumns: 'repeat(4, 1fr)',
     width: '100%',
     gridColumn: $gridColumn,
-    [theme.mq.md]: {
+    [mq.md]: {
       width: '100%',
       gridGap: theme.sizing.scale1200,
       gridTemplateColumns: 'repeat(6, 1fr)',
     },
-    [theme.mq.lg]: {
+    [mq.lg]: {
       gridTemplateColumns: 'repeat(12, 1fr)',
     },
   });

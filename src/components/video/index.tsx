@@ -10,6 +10,7 @@ import {
 } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Paragraph2, Label2 } from 'baseui/typography';
+import { mq } from '../styles';
 
 const VideoTitle = ({ title }: { title: string }) => {
   const [css, theme] = useStyletron();
@@ -45,7 +46,7 @@ export const Video = ({
   poster,
 }: Props) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   const color = $color || theme.colors.primary700;
   const bgColor = $backgroundColor || theme.colors.primary50;
 

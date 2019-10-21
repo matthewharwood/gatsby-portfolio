@@ -1,11 +1,18 @@
 import React from 'react';
-import { Section, Container, Grid, GridItemRight, GridItemLeft } from '../grid-system';
+import {
+  Section,
+  Container,
+  Grid,
+  GridItemRight,
+  GridItemLeft,
+} from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
 import Img from 'gatsby-image';
+import { mq } from '../styles';
 
 const HighlightBold = ({
-  full=false,
+  full = false,
   $backgroundColor,
   $backgroundInner,
   $color,
@@ -32,27 +39,43 @@ const HighlightBold = ({
       $color={color}
       $collapsePaddingBottom={!!$borderBottom}
     >
-      <Container $borderBottom={$borderBottom} $color={color} $backgroundColor={backgroundInner} $paddingBottom={true}>
-        <div className={css({
-          padding: `${theme.sizing.scale1200} ${theme.sizing.scale800}`,
-          [theme.mq.md]: {
-            padding: `${theme.sizing.scale1600}`,
-          },
-          [theme.mq.lg]: {
-            padding: 0,
-          }
-        })}>
+      <Container
+        $borderBottom={$borderBottom}
+        $color={color}
+        $backgroundColor={backgroundInner}
+        $paddingBottom={true}
+      >
+        <div
+          className={css({
+            padding: `${theme.sizing.scale1200} ${theme.sizing.scale800}`,
+            [mq.md]: {
+              padding: `${theme.sizing.scale1600}`,
+            },
+            [mq.lg]: {
+              padding: 0,
+            },
+          })}
+        >
           <Grid>
-            <GridItemLeft leftCols={full ? [4,6,10] : leftCols} orderLeft={orderLeft}>
+            <GridItemLeft
+              leftCols={full ? [4, 6, 10] : leftCols}
+              orderLeft={orderLeft}
+            >
               <>
                 <Label1 color={accent}>{eyebrow}</Label1>
                 <Display4 color={'inheirt'}>{title}</Display4>
                 <Paragraph1 color={'inheirt'}>{body}</Paragraph1>
               </>
             </GridItemLeft>
-            <GridItemRight rightCols={full ? [4,6,2] : rightCols} orderRight={orderRight} hidden={hidden}>
+            <GridItemRight
+              rightCols={full ? [4, 6, 2] : rightCols}
+              orderRight={orderRight}
+              hidden={hidden}
+            >
               <Img
-                style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}
+                style={{
+                  boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)',
+                }}
                 fluid={src}
               />
             </GridItemRight>

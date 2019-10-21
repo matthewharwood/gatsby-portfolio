@@ -1,9 +1,16 @@
 import React from 'react';
-import { Section, Container, Grid, GridItemLeft, GridItemRight } from '../grid-system';
+import {
+  Section,
+  Container,
+  Grid,
+  GridItemLeft,
+  GridItemRight,
+} from '../grid-system';
 import { Headline } from '../headline';
 
 import { useStyletron } from 'baseui';
 import { Paragraph1, Label2, Label4 } from 'baseui/typography';
+import { mq, display, positions } from '../styles';
 
 const CardItem = ({
   $accentColor = 'transparent',
@@ -22,12 +29,12 @@ const CardItem = ({
       borderRadius: theme.sizing.scale100,
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1);',
       gridColumn: '1 span 1',
-      position: theme.positions.relative,
+      position: positions.relative,
       '::before': {
         content: '""',
         height: theme.sizing.scale100,
         backgroundColor: $accentColor,
-        position: theme.positions.absolute,
+        position: positions.absolute,
         top: 0,
         left: 0,
         width: '100%',
@@ -39,7 +46,7 @@ const CardItem = ({
     <div {...c}>
       <div
         className={css({
-          display: theme.display.flex,
+          display: display.flex,
           alignItems: 'center',
         })}
       >
@@ -72,7 +79,7 @@ const CardItem = ({
       <Paragraph1
         color={'inherit'}
         className={css({
-          display: text ? theme.display.flex : theme.display.none,
+          display: text ? display.flex : display.none,
           flexDirection: 'column',
           lineHeight: theme.sizing.scale900,
         })}
@@ -88,7 +95,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
   const color = $color || theme.colors.primary700;
   const gridAutoFlow = $cardsDirection || 'row';
 
-  const cardItems = data.map(cardItem => (
+  const cardItems = data.map((cardItem: any) => (
     <div>
       <CardItem
         {...cardItem}
@@ -101,15 +108,15 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
   const legendItems = (
     <div
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         justifyContent: 'flex-end',
         marginTop: theme.sizing.scale1000,
       })}
     >
-      {legend.map(legendItem => (
+      {legend.map((legendItem: any) => (
         <div
           className={css({
-            display: theme.display.flex,
+            display: display.flex,
             marginRight: theme.sizing.scale1200,
           })}
         >
@@ -129,14 +136,14 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
     </div>
   );
 
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   return (
     <>
       <div className={css({ marginBottom: theme.sizing.scale1600 })}>
         <Grid>
-          <GridItemLeft leftCols={[4,6,4]} orderLeft={'0'} />
-          <GridItemRight rightCols={[4,6,8]} orderRight={'1'}>
+          <GridItemLeft leftCols={[4, 6, 4]} orderLeft={'0'} />
+          <GridItemRight rightCols={[4, 6, 8]} orderRight={'1'}>
             <div
               className={css({
                 display: 'grid',
@@ -152,7 +159,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
                 [lg]: {
                   gridTemplateColumns: '1fr 1fr',
                   gridAutoFlow: gridAutoFlow,
-                }
+                },
               })}
             >
               {cardItems}

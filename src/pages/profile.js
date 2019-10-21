@@ -3,7 +3,7 @@ import { Navbar } from '../components/navbar';
 import { H1, H2, H4, Label1, Paragraph2, Paragraph3 } from 'baseui/typography';
 import portrait from '../images/me4-sq.jpg';
 import { Grid } from '../components/grid-system';
-
+import { display, mq } from '../components/styles';
 import {
   awards,
   education,
@@ -18,14 +18,14 @@ import { useStyletron } from 'baseui';
 
 const ProfileSection = ({ children }) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   return (
     <section
       className={css({
         gridColumn: '1/-1',
         [lg]: {
           gridColumn: 'span 4',
-        }
+        },
       })}
     >
       {children}
@@ -103,7 +103,7 @@ const Socials = () => {
       <div>
         <dl
           className={css({
-            display: theme.display.flex,
+            display: display.flex,
             justifyContent: 'space-between',
             flexWrap: 'wrap',
           })}
@@ -191,23 +191,23 @@ const ExperienceItem = ({
 
 const IntroSection = () => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   return (
     <section
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         flexDirection: 'column',
         top: 0,
         width: '100vw',
         [lg]: {
           flexDirection: 'row',
           position: 'fixed',
-        }
+        },
       })}
     >
       <header
         className={css({
-          display: theme.display.flex,
+          display: display.flex,
           flexDirection: 'column',
           justifyContent: 'center',
           padding: `0 ${theme.sizing.scale800}`,
@@ -218,7 +218,7 @@ const IntroSection = () => {
             padding: `0 ${theme.sizing.scale3200}`,
             order: 0,
             paddingTop: 0,
-          }
+          },
         })}
       >
         <H1
@@ -242,7 +242,7 @@ const IntroSection = () => {
           [lg]: {
             width: '50vw',
             height: '100vh',
-          }
+          },
         })}
       />
     </section>
@@ -251,7 +251,7 @@ const IntroSection = () => {
 
 const ResumeHeader = () => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   const aStyle = css({
     textDecoration: 'none',
     color: theme.colors.accent,
@@ -259,12 +259,12 @@ const ResumeHeader = () => {
   return (
     <section
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         flexDirection: 'column',
         justifyContent: 'space-between',
         [lg]: {
           flexDirection: 'row',
-        }
+        },
       })}
     >
       <header>
@@ -280,7 +280,7 @@ const ResumeHeader = () => {
           padding: 0,
           [lg]: {
             textAlign: 'right',
-          }
+          },
         })}
       >
         <li>
@@ -306,7 +306,7 @@ const ResumeHeader = () => {
 
 const ResumeSection = () => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   return (
     <article
       className={css({
@@ -319,7 +319,7 @@ const ResumeSection = () => {
           marginBottom: theme.sizing.scale2400,
           backgroundColor: theme.colors.primary50,
           top: `calc(100vh - ${theme.sizing.scale4800})`,
-        }
+        },
       })}
     >
       <ResumeHeader />

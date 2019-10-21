@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { useStyletron } from 'baseui';
 import { Navigation } from 'baseui/side-navigation';
-
-export const Menu = ({ items, currentItemId, setCurrentItemId }) => {
+import {mq} from '../styles'
+export const Menu: FunctionComponent<any> = ({
+  items,
+  currentItemId,
+  setCurrentItemId,
+}) => {
   const [, theme] = useStyletron();
-  const menuItems = items.map((i, index) => ({
-      index,
-      title: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
-      itemId: `#${index}`,
-    }));
+  const menuItems = items.map((i: any, index: any) => ({
+    index,
+    title: `${index < 10 ? '0' + index + `:   ` : index + `:   `} ${i.label}`,
+    itemId: `#${index}`,
+  }));
 
   const location = menuItems[currentItemId].itemId;
 
@@ -24,7 +28,7 @@ export const Menu = ({ items, currentItemId, setCurrentItemId }) => {
         NavLink: {
           style: () => {
             return {
-              borderLeftColor: theme.colors.navAccent,
+              borderLeftColor: '#449922',
             };
           },
         },
@@ -33,10 +37,10 @@ export const Menu = ({ items, currentItemId, setCurrentItemId }) => {
   );
 };
 
-export const MenuGrid = props => {
+export const MenuGrid:FunctionComponent = props => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
-  const md = theme.mq.md;
+  const lg = mq.lg;
+  const md = mq.md;
   return (
     <div
       className={css({
@@ -58,4 +62,3 @@ export const MenuGrid = props => {
     </div>
   );
 };
-

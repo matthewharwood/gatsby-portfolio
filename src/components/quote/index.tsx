@@ -2,6 +2,7 @@ import React from 'react';
 import { useStyletron } from 'baseui';
 import { Grid, Section, Container } from '../grid-system/';
 import { Paragraph1, Paragraph4 } from 'baseui/typography';
+import { display, mq } from '../styles';
 
 interface Props {
   body?: string;
@@ -16,14 +17,14 @@ export const Quote = ({
   date = 'July 2015',
 }: Props) => {
   const [css, theme] = useStyletron();
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   return (
     <Section>
       <Container>
         <blockquote
           className={css({
-            display: theme.display.grid,
+            display: display.grid,
             gridTemplateRows: '2fr 1fr',
             gridTemplateColumns: 'repeat(4, 1fr)',
             margin: 0,
@@ -53,21 +54,19 @@ export const Quote = ({
             </Paragraph1>
           </span>
           <div
-              className={css({
-                gridRow: '2/3',
-                gridColumn: '-3/-1',
-                justifySelf: 'end',
-                textAlign: 'right',
-                textTransform: 'uppercase',
-                fontFamily: 'mono',
-                [lg]: {
-                  gridColumn: '3/11',
-                },
-              })}
+            className={css({
+              gridRow: '2/3',
+              gridColumn: '-3/-1',
+              justifySelf: 'end',
+              textAlign: 'right',
+              textTransform: 'uppercase',
+              fontFamily: 'mono',
+              [lg]: {
+                gridColumn: '3/11',
+              },
+            })}
           >
-            <Paragraph4
-              color={theme.colors.primary500}
-            >
+            <Paragraph4 color={theme.colors.primary500}>
               {name}
               <br />
               {title}

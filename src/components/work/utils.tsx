@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useStyletron } from 'baseui';
-
+import { positions } from '../styles';
 export const MenuGridInnerShadow = () => {
   const [css, theme] = useStyletron();
   return (
@@ -10,7 +10,7 @@ export const MenuGridInnerShadow = () => {
         position: 'fixed',
         width: '100%',
         bottom: '1px',
-        zIndex: '1',
+        zIndex: 1,
         boxShadow: '0px 0px 8px 10px rgba(255,255,255,0.4)',
       })}
     />
@@ -22,7 +22,7 @@ export const BoxShadow = () => {
   return (
     <div
       className={css({
-        position: theme.positions.absolute,
+        position: positions.absolute,
         top: theme.sizing.scale0,
         bottom: theme.sizing.scale0,
         left: theme.sizing.scale0,

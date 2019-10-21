@@ -6,7 +6,7 @@ import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
 
 import { VideoButton } from './button';
 import { ActiveVideoContext } from '../../pages/index';
-
+import { colors } from '../styles';
 interface Props {
   videoId: string;
   videoSrc: string;
@@ -97,7 +97,7 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
                   marginBottom: 0,
                   marginLeft: 0,
                   marginRight: 0,
-                  backgroundColor: theme.colors.transparent,
+                  backgroundColor: colors.transparent,
                 }),
               },
             }}

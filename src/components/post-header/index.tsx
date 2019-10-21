@@ -9,12 +9,12 @@ import {
 import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
-
+import { mq, display } from '../styles';
 const TopElement = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
-      display: theme.display.grid,
+      display: display.grid,
       gridColumn: '1/-1',
       paddingBottom: theme.sizing.scale800,
       borderBottom: `${$borderColor} 1px solid`,
@@ -29,7 +29,7 @@ const ListItem = ({ $borderColor, children }: any) => {
 
   const c = {
     className: css({
-      display: theme.display.grid,
+      display: display.grid,
       gridColumn: 'span 3',
       alignContent: 'start',
     }),
@@ -80,7 +80,7 @@ const PostHeader = ({
             <Paragraph1 color={'inheirt'}>{sub.text}</Paragraph1>
           </TopElement>
           <Grid>
-            {Object.entries(projectOverview).map(([key, { data }]) => {
+            {Object.entries(projectOverview).map(([key, { data }]: any) => {
               return (
                 <ListItem>
                   <Label2

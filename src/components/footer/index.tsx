@@ -5,15 +5,15 @@ import { FacebookIcon } from '../icons/facebook';
 import { InstagramIcon } from '../icons/instagram';
 import { LinkedinIcon } from '../icons/linkedin';
 import { TwitterIcon } from '../icons/twitter';
-
+import { mq, display, positions } from '../styles';
 export const Footer = () => {
   const [css, theme] = useStyletron();
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   return (
     <footer
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         flexDirection: 'column',
         alignItems: 'center',
         paddingTop: theme.sizing.scale900,
@@ -58,12 +58,12 @@ const FooterLeft = () => {
 
 const FooterRight = () => {
   const [css, theme] = useStyletron();
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   return (
     <div
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         width: theme.sizing.scale4800,
         justifyContent: 'space-between',
         order: -1,

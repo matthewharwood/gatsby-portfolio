@@ -3,10 +3,11 @@ import { useStyletron } from 'baseui';
 import { Label4 } from 'baseui/typography';
 import { useInterval } from './use-interval';
 import { interests } from './interests';
+import { mq } from '../styles';
 
 const RunningHeader: FunctionComponent = () => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   let [count, setCount] = useState(0);
 
   useInterval(() => {

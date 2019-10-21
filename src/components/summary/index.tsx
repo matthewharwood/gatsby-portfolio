@@ -4,6 +4,8 @@ import { useStyletron } from 'baseui';
 import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
 import ArrowRight from 'baseui/icon/arrow-right';
+import { display } from '../styles';
+
 import {
   Modal,
   ModalHeader,
@@ -16,7 +18,7 @@ const TopElement = ({ children }: any) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
-      display: theme.display.grid,
+      display: display.grid,
       gridColumn: 'span 8',
     }),
   };
@@ -28,7 +30,7 @@ const BottomElement = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
-      display: theme.display.grid,
+      display: display.grid,
       gridColumn: '1/-1',
       paddingBottom: theme.sizing.scale1600,
     }),

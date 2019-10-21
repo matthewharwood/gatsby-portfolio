@@ -4,7 +4,7 @@ import { useStyletron } from 'baseui';
 import iconReplay from '../icons/replay';
 import iconPause from '../icons/pause';
 import iconPlay from '../icons/play';
-
+import { display } from '../styles';
 enum State {
   initial = 'INITIAL',
   play = 'PLAY',
@@ -58,7 +58,7 @@ export const VideoButton = ({
         height: theme.sizing.scale1000,
         background: currentState.backgroundColor,
         borderRadius: '100%',
-        display: theme.display.flex,
+        display: display.flex,
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: theme.sizing.scale700,
@@ -68,13 +68,13 @@ export const VideoButton = ({
         border: 0,
         boxShadow: theme.lighting.shadow500,
         transition: 'background-color 200ms linear',
-        ":hover": {
+        ':hover': {
           backgroundColor: currentState.hoverBg,
-        }
+        },
       })}
       onClick={() => currentState.trigger()}
     >
-      <currentState.icon/>
+      <currentState.icon />
     </button>
   );
 };

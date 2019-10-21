@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { useStyletron } from 'baseui';
+import { mq, positions } from '../styles';
 
-export const Grid = props => {
+export const Grid = (props: any) => {
   const [css, theme] = useStyletron();
 
-  const lg = theme.mq.lg;
-  const med = theme.mq.md;
+  const lg = mq.lg;
+  const med = mq.md;
   return (
     <div
       className={css({
@@ -36,13 +37,13 @@ export const Grid = props => {
   );
 };
 
-export const GridItem = props => {
+export const GridItem = (props: any) => {
   const [css, theme] = useStyletron();
   return (
     <div
       className={css({
         display: 'grid',
-        position: theme.positions.relative,
+        position: positions.relative,
         gridArea: props.gridArea,
       })}
     >
@@ -51,10 +52,10 @@ export const GridItem = props => {
   );
 };
 
-export const GridItemInner = props => {
+export const GridItemInner = (props: any) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
-  const md = theme.mq.md;
+  const lg = mq.lg;
+  const md = mq.md;
 
   return (
     <div
@@ -76,15 +77,15 @@ export const GridItemInner = props => {
   );
 };
 
-export const GridPostItem = props => {
+export const GridPostItem = (props: any) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
-  const md = theme.mq.md;
+  const lg = mq.lg;
+  const md = mq.md;
 
   return (
     <div
       className={css({
-        position: theme.positions.relative,
+        position: positions.relative,
         display: 'none',
         [md]: {
           display: 'grid',

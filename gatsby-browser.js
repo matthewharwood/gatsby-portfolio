@@ -26,7 +26,6 @@ const MorningHarwood = createTheme(
     colors: {
       ...darkThemePrimitives.colors,
       accent: 'tomato',
-      navAccent: '#449922',
       transparent: 'rgba(255,255,255,0)',
     },
     breakpoints: {

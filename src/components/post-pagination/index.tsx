@@ -6,16 +6,17 @@ import { Label1, Display2, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
 
 import { Section, Container, Grid } from '../grid-system';
+import { mq, display } from '../styles';
 
 const NextGroupElement = ({ children, $backgroundColor }: any) => {
   const [css, theme] = useStyletron();
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   const backgroundColor = $backgroundColor || theme.colors.primary700;
 
   const c = {
     className: css({
-      display: theme.display.flex,
+      display: display.flex,
       alignItems: 'center',
       justifyContent: 'space-between',
       gridColumn: '1/-1',
@@ -40,7 +41,7 @@ const NextGroupElement = ({ children, $backgroundColor }: any) => {
 
 const NextProjectText = ({ children }: any) => {
   const [css] = useStyletron();
-  return <div className={css({ flexGrow: '1' })}>{children}</div>;
+  return <div className={css({ flexGrow: 1 })}>{children}</div>;
 };
 
 const PrevGroupElement = ({ children, $backgroundColor }: any) => {
@@ -55,7 +56,7 @@ export const PostPagination = ({
 }: any) => {
   const [css, theme] = useStyletron();
 
-  let width;
+  let width = 0;
   if (typeof window !== `undefined`) {
     width = window.innerWidth;
   }
@@ -65,8 +66,8 @@ export const PostPagination = ({
       : theme.colors.primary50;
   const color = $color || theme.colors.primary100;
 
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
 
   return (
     <Section $backgroundColor={backgroundColor} $color={color}>
@@ -121,9 +122,9 @@ export const PostPagination = ({
                 <Paragraph1
                   color={'inherit'}
                   className={css({
-                    display: theme.display.none,
-                    [md]: { display: theme.display.block },
-                    [lg]: { display: theme.display.block },
+                    display: display.none,
+                    [md]: { display: display.block },
+                    [lg]: { display: display.block },
                   })}
                 >
                   {nextLink.description}
@@ -133,10 +134,10 @@ export const PostPagination = ({
             <ArrowRight
               size={70}
               className={css({
-                flexShrink: '0',
-                display: theme.display.block,
-                [md]: { display: theme.display.none },
-                [lg]: { display: theme.display.none },
+                flexShrink: 0,
+                display: display.block,
+                [md]: { display: display.none },
+                [lg]: { display: display.none },
               })}
             />
           </NextGroupElement>

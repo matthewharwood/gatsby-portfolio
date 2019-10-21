@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { useStyletron } from 'baseui';
+import { mq, positions } from '../styles';
 
-export const FloatingDetails = props => {
+export const FloatingDetails = (props: any) => {
   const [css, theme] = useStyletron();
-  const { colors, sizing, positions } = theme;
-  const lg = theme.mq.lg;
-  const md = theme.mq.md;
+  const { colors, sizing } = theme;
+  const lg = mq.lg;
+  const md = mq.md;
 
   return (
     <div

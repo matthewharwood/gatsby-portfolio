@@ -5,10 +5,11 @@ import { useStyletron } from 'baseui';
 import { H5, Label2 } from 'baseui/typography';
 import Grab from 'baseui/icon/grab';
 import Delete from 'baseui/icon/delete';
-
+import { mq, display, colors } from '../styles';
 export const Navbar = () => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+
+  const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
   return (
     <nav
@@ -16,7 +17,7 @@ export const Navbar = () => {
         backgroundColor: theme.colors.primary,
         color: theme.colors.mono100,
         textTransform: 'uppercase',
-        display: theme.display.flex,
+        display: display.flex,
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingLeft: theme.sizing.scale600,
@@ -45,9 +46,9 @@ export const Navbar = () => {
         className={css({
           width: theme.sizing.scale900,
           height: theme.sizing.scale900,
-          backgroundColor: theme.colors.transparent,
+          backgroundColor: colors.transparent,
           [lg]: {
-            display: theme.display.none,
+            display: display.none,
           },
         })}
       ></div>
@@ -63,13 +64,13 @@ const Hamburger = ({
   toggleNav: Function;
 }) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   return (
     <span
       onClick={() => toggleNav()}
       className={css({
         [lg]: {
-          display: theme.display.none,
+          display: display.none,
         },
       })}
     >
@@ -80,12 +81,12 @@ const Hamburger = ({
 
 const NavHeader = () => {
   const [css, theme] = useStyletron();
-  const md = theme.mq.md;
-  const lg = theme.mq.lg;
+  const md = mq.md;
+  const lg = mq.lg;
   return (
     <div
       className={css({
-        display: theme.display.flex,
+        display: display.flex,
         alignItems: 'center',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -110,12 +111,12 @@ const NavHeader = () => {
             marginRight: 0,
             marginTop: 0,
             marginBottom: 0,
-            display: theme.display.none,
+            display: display.none,
             [md]: {
-              display: theme.display.block,
+              display: display.block,
             },
             [lg]: {
-              display: theme.display.block,
+              display: display.block,
             },
           })}
         >
@@ -128,14 +129,14 @@ const NavHeader = () => {
 
 const NavList = ({ children }: { children: React.ReactNode }) => {
   const [css, theme] = useStyletron();
-  const lg = theme.mq.lg;
+  const lg = mq.lg;
   return (
     <ul
       className={css({
         listStyle: 'none',
-        display: theme.display.none,
+        display: display.none,
         [lg]: {
-          display: theme.display.flex,
+          display: display.flex,
         },
       })}
     >
