@@ -1,16 +1,21 @@
 import React from 'react';
 import { useStyletron } from 'baseui';
-import { mq, display, colors } from '../styles';
+import { mq, display } from '../styles';
+import { useInView } from 'react-intersection-observer';
+import {useSpring, animated} from 'react-spring';
 
 export const Section = ({
   $backgroundColor,
   $color,
-  $borderBottom,
   $collapsePaddingBottom,
   $collapsePaddingTop,
   children,
 }: any) => {
   const [css, theme] = useStyletron();
+  const [ref, inView] = useInView({triggerOnce: true});
+  const props = useSpring({opacity: inView ? 1 : 0});
+  const FadeInSection = animated.div;
+
   const bgColor = $backgroundColor || 'inherit';
   const color = $color || 'inherit';
 
@@ -39,7 +44,11 @@ export const Section = ({
       paddingRight: theme.sizing.scale1200,
     },
   });
-  return <section className={className}>{children}</section>;
+  return (
+    <FadeInSection style={props}>
+      <section className={className} ref={ref}>{children}</section>
+    </FadeInSection>
+  )
 };
 
 export const Container = ({
