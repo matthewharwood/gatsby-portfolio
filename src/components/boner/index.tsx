@@ -1,4 +1,3 @@
-// TODO use useRef from preact/hooks.
 import React, { createRef, useEffect } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
 import {useStyletron} from 'baseui';
@@ -31,22 +30,22 @@ const fs = `
   }
 `;
 
-let gl,
-  shaderProgram,
+let gl: any,
+  shaderProgram: any,
   vertices,
   matrix = mat4.create(),
-  vertexCount;
+  vertexCount: any;
 
 let q = quat.create(),
   translate = [-3, 0, -10],
   scale = [1, 1, 1],
   pivot = [-1, 0, 0],
   translate2 = [-2, 0, -10],
-  q2 = [0, 0, 0.8, 0],
+  q2: number[] = [0, 0, 0.8, 0],
   scale2 = [3, 1, 1],
   pivot2 = [-1, 0, 0];
 
-function initGL(canvasRef) {
+function initGL(canvasRef: any) {
   const { current: canvas } = canvasRef;
 
   canvas.width = document.body.clientWidth;
@@ -79,7 +78,7 @@ function createShaders() {
   gl.useProgram(shaderProgram);
 }
 
-function createVertices(canvasRef) {
+function createVertices(canvasRef: any) {
   const { current: canvas } = canvasRef;
   vertices = [
     [-1, -1, -1, 1, 0, 0, 1], // 0
@@ -175,8 +174,8 @@ function createVertices(canvasRef) {
   mat4.translate(matrix, matrix, [0, 0, -4]);
 }
 
-let rafId = null;
-const easeInCirc = t => t * t * t;
+let rafId:any = null;
+const easeInCirc = (t:any) => t * t * t;
 let quat_t = null;
 const offset = 0.5;
 let trans_t = null;
@@ -185,7 +184,7 @@ let pivot_t = null;
 let start = 0;
 const finishTimeMs = 1500;
 
-function draw(timeMs) {
+function draw(timeMs: number) {
   if (!start) {
     start = timeMs;
   }
@@ -224,7 +223,7 @@ function draw(timeMs) {
 }
 
 const Boner = () => {
-  const canvasRef = createRef(null);
+  const canvasRef: any = createRef();
   const [css] = useStyletron();
   useEffect(() => {
     initGL(canvasRef);
