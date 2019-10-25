@@ -11,9 +11,9 @@ export const Section = ({
   $collapsePaddingTop,
   children,
 }: any) => {
-  const [css, theme] = useStyletron();
-  const [ref, inView] = useInView({triggerOnce: true});
-  const props = useSpring({opacity: inView ? 1 : 0});
+    const [css, theme] = useStyletron();
+    const [ref, inView] = useInView({triggerOnce: true});
+    const props = useSpring({opacity: inView ? 1 : 0});
   const FadeInSection = animated.div;
 
   const bgColor = $backgroundColor || 'inherit';
