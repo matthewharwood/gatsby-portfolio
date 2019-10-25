@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Navbar } from '../components/navbar';
-import { H1, H2, H4, Label1, Paragraph2, Paragraph3 } from 'baseui/typography';
+import { H1, H2, H4, Paragraph2, Paragraph3 } from 'baseui/typography';
 import portrait from '../images/me4-sq.jpg';
 import { Grid } from '../components/grid-system';
 import { display, mq } from '../components/styles';
@@ -17,7 +17,7 @@ import {
 import { useStyletron } from 'baseui';
 
 const ProfileSection = ({ children }) => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const lg = mq.lg;
   return (
     <section
@@ -56,7 +56,6 @@ const Education = () => {
 };
 
 const Awards = () => {
-  const [css, theme] = useStyletron();
   return (
     <>
       <SectionHeading heading="Awards" />
@@ -68,7 +67,7 @@ const Awards = () => {
 };
 
 const SectionHeading = ({ heading = 'Heading' }) => {
-  const [css, theme] = useStyletron();
+  const [, theme] = useStyletron();
   return <H2 marginBottom={theme.sizing.scale700}>{heading}</H2>;
 };
 
@@ -141,7 +140,7 @@ const Socials = () => {
 };
 
 const RecentlyVisited = () => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   return (
     <>
       <SectionHeading heading="Recently Visited" />
@@ -297,7 +296,7 @@ const ResumeHeader = () => {
           </a>
         </li>
         <li>
-          <a className={aStyle}>{me.phone}</a>
+          <a href="tel:1-415-486-6018" className={aStyle}>{me.phone}</a>
         </li>
       </ul>
     </section>

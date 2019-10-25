@@ -14,24 +14,12 @@ import { BoxShadow, MenuGridInnerShadow } from '../components/work/utils';
 
 import { useStyletron } from 'baseui';
 import { Button, KIND, SIZE } from 'baseui/button';
-import { Display2, Display3, Display4, Paragraph1 } from 'baseui/typography';
+import { Display3, Display4, Paragraph1 } from 'baseui/typography';
 import ArrowRight from 'baseui/icon/arrow-right';
 
-const InsetShadow = props => {
-  const [css, theme] = useStyletron();
-  return (
-    <div
-      className={css({
-        boxShadow: theme.lighting.overlay500,
-      })}
-    >
-      {props.children}
-    </div>
-  );
-};
 
 const Work = ({ data }) => {
-  const [items, setItems] = useState(
+  const [items] = useState(
     data.allMdx.edges.map(edge => edge.node.frontmatter)
   );
 

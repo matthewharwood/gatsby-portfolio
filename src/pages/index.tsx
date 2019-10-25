@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import { HomeNavigation } from '../components/home-navigation';
 import { Folio } from '../components/folio';
 import { RunningHeader } from '../components/running-header';
 import { Boner } from '../components/boner';
-import { useStyletron } from 'styletron-react';
+import { useStyletron } from 'baseui';
 
 export const ActiveVideoContext = React.createContext({
   activeVideoID: '0',
@@ -12,7 +11,7 @@ export const ActiveVideoContext = React.createContext({
 });
 const IndexPage = () => {
   const [activeVideoID, setActiveVideoId] = useState('0');
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   return (
     <ActiveVideoContext.Provider value={{ activeVideoID, setActiveVideoId }}>
       <main

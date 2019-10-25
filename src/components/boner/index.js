@@ -1,7 +1,7 @@
 // TODO use useRef from preact/hooks.
-import React, { FunctionComponent, createRef, useEffect } from 'react';
+import React, { createRef, useEffect } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
-import {useStyletron} from 'styletron-react';
+import {useStyletron} from 'baseui';
 
 const vs = `
   attribute vec4 coords;
@@ -35,8 +35,7 @@ let gl,
   shaderProgram,
   vertices,
   matrix = mat4.create(),
-  vertexCount,
-  indexCount;
+  vertexCount;
 
 let q = quat.create(),
   translate = [-3, 0, -10],
@@ -226,7 +225,7 @@ function draw(timeMs) {
 
 const Boner = () => {
   const canvasRef = createRef(null);
-  const [css,theme] = useStyletron();
+  const [css] = useStyletron();
   useEffect(() => {
     initGL(canvasRef);
     createShaders();
