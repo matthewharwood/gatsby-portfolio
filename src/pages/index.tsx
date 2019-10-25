@@ -12,6 +12,8 @@ export const ActiveVideoContext = React.createContext({
 const IndexPage = () => {
   const [activeVideoID, setActiveVideoId] = useState('0');
   const [css] = useStyletron();
+
+  console.log(img);
   return (
     <ActiveVideoContext.Provider value={{ activeVideoID, setActiveVideoId }}>
       <main
@@ -33,5 +35,6 @@ const IndexPage = () => {
     </ActiveVideoContext.Provider>
   );
 };
+
 
 export default IndexPage;
