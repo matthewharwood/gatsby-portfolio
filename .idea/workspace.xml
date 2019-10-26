@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/components/home-navigation/nav-link.tsx" description="[lg]: {" line="71" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c878d062-c1c2-4400-ab93-cf9176f7bd99" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/content/work/work-1.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/work/work-1.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/work/work-2.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/work/work-2.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/workTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/workTemplate.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="c878d062-c1c2-4400-ab93-cf9176f7bd99" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -294,7 +290,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15076000" />
+    <option name="totallyTimeSpent" value="15152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="0" />
