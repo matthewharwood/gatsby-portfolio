@@ -1,11 +1,52 @@
 ---
-title: Work 2!
+title: Google Pathfinder
 description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 image: ../../images/work-2.jpg
-path: /work-2
+path: /google-pathfinder
 date: 2019-10-04
 templateKey: workTemplate
 ---
 
-# Work 2
+import { PostHeader } from '../../components/post-header';
+
+<PostHeader
+  main={{ text: 'Google Pathfinder' }}
+  sub={{
+    text:
+      '',
+  }}
+  eyebrow={{ text: 'Web Application', textColor: 'red' }}
+  projectOverview={{
+    company: { data: 'R/GA', type: 'default' },
+    client: { data: 'Google', type: 'default' },
+    'my role': { data: 'Frontend Engineer', type: 'default' },
+    when: { data: 'Feb 2014 - Mar 2014 (8 weeks)', type: 'default' },
+    collaborators: {
+      data: {
+        items: [
+          'Jimmy Soat (Creative Director)',
+          'Stanley Yeung (Visual Designer)',
+          'Jeffrey Qua (Developer)',
+        ],
+        type: 'list',
+      },
+    },
+    technology: {
+      data: {
+        items: ['AngularJS', 'Mysql'],
+        type: 'list',
+      },
+    },
+    resources: {
+      data: {
+        items: [
+          { text: 'Github', href: 'uber.com' },
+          { text: 'Design Files', href: 'uber.com' },
+          { text: 'Website', href: 'uber.com' },
+        ],
+        type: 'link',
+      },
+    },
+  }}
+/>
 
