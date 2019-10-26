@@ -61,7 +61,7 @@ const Work = ({ data }) => {
             <Paragraph1 color="primary50">{currentItem.description}</Paragraph1>
             <Button
               $as="a"
-              href="/work/work-1"
+              href="/work/nike-jordan-editor"
               kind={KIND.secondary}
               size={SIZE.large}
               endEnhancer={() => <ArrowRight size={24} />}
