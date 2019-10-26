@@ -1,20 +1,39 @@
-import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { useStyletron } from 'baseui';
 import { Label4 } from 'baseui/typography';
 import { useInterval } from './use-interval';
 import { interests } from './interests';
 import { mq } from '../styles';
+import {useTransition, animated} from 'react-spring';
+
 
 const RunningHeader: FunctionComponent = () => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   let [count, setCount] = useState(0);
+  let [hovered, setHover] = useState(false);
 
   useInterval(() => {
-    const len = interests.length - 1;
-    const next = count + 1;
-    setCount(next % len);
+    if (!hovered) {
+      const len = interests.length - 1;
+      const next = count + 1;
+      setCount(0);
+      setCount(next % len);
+    }
   }, 1000);
+
+
+  const renderTrans = (name: string) => {
+    const transitions = useTransition(!!count, null, {
+      from:  { position: 'absolute', transform: 'translate3d(0, 20px, 0)', opacity: 0 },
+      enter: { position: 'absolute', transform: 'translate3d(0, 0px, 0)', opacity: 1 },
+      leave: { color: '#fff' },
+    });
+
+    return transitions.map(({ item, key, props }) =>
+      item && <animated.span key={key} style={props}> {name}️</animated.span>
+    )
+  }
 
   const cList = css({
     borderLeft: `${theme.sizing.scale100} solid ${theme.colors.accent}`,
@@ -23,6 +42,10 @@ const RunningHeader: FunctionComponent = () => {
     paddingTop: theme.sizing.scale800,
     paddingBottom: theme.sizing.scale500,
     listStyleType: 'none',
+    width: '25%',
+    ':hover': {
+      color: theme.colors.accent,
+    },
     [lg]: {
       paddingTop: 0,
       paddingBottom: 0,
@@ -37,31 +60,51 @@ const RunningHeader: FunctionComponent = () => {
     paddingLeft: theme.sizing.scale100,
     paddingBottom: theme.sizing.scale300,
     fontSize: theme.sizing.scale500,
+    color: 'inherit',
+    [lg]: {
+      paddingLeft: theme.sizing.scale700,
+    },
+  });
+  const cItemLink = css({
+    marginLeft: 0,
+    paddingLeft: theme.sizing.scale100,
+    paddingBottom: theme.sizing.scale300,
+    fontSize: theme.sizing.scale500,
+    cursor: 'pointer',
+    color: 'inherit',
     [lg]: {
       paddingLeft: theme.sizing.scale700,
     },
   });
   const a = css({
+    color: 'inherit',
     textDecoration: 'none',
   });
+
+  const s = css({
+    color: 'inherit',
+  });
+
   return (
     <ul className={cList}>
       <li className={cItem}>
-        <Label4 $as="a" className={a} href="tel:1-415-486-6018">
+        <Label4 className={a}>
           Contact
         </Label4>
       </li>
-      <li className={cItem}>
+      <li className={cItemLink} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <Label4
-          $as="a"
+          as="a"
           className={a}
-          href={`mailto:matthhar12@gmail.com?subject=`}
+          href={`mailto:matthhar12@gmail.com?subject=${interests[count].name}`}
           target={'_blank'}
+          color={'inherit'}
         >
-          <span>Let's talk about </span>
-          <span>
-            ✉ <i>{interests[count].name}</i>
+          <span className={s}>Let's talk about </span>
+          <span className={s}>
+            ✉ <i>{renderTrans(interests[count].name)}</i>
           </span>
+          {}
         </Label4>
       </li>
     </ul>

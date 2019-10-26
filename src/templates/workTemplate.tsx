@@ -8,7 +8,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
 import { PostPagination } from '../components/post-pagination';
-import { useStyletron } from 'baseui';
 
 const WorkTemplate = ({ data, pageContext }: any) => {
   return (
