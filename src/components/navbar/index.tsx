@@ -112,6 +112,8 @@ const NavHeader = () => {
             marginTop: 0,
             marginBottom: 0,
             display: display.none,
+            position: 'relative',
+            top: '5px',
             [md]: {
               display: display.block,
             },

@@ -2,7 +2,6 @@ import { shuffle } from './shuffle';
 
 export const interests: Array<{ name: string }> = shuffle([
   { name: 'the future' },
-  { name: 'the future' },
   { name: 'architecture' },
   { name: 'my work' },
   { name: 'your work' },
@@ -16,9 +15,11 @@ export const interests: Array<{ name: string }> = shuffle([
   { name: 'travel' },
   { name: 'singularity' },
   { name: 'creativity' },
+  { name: 'coding' },
   { name: 'mixed, virtual, augmented reality' },
   { name: 'art' },
   { name: 'imagination' },
+  { name: 'installation art' },
   { name: 'problem solving' },
   { name: 'space' },
   { name: 'cooking' },
@@ -40,4 +41,8 @@ export const interests: Array<{ name: string }> = shuffle([
   { name: 'ethereum' },
   { name: 'university' },
   { name: 'engineering software' },
+  { name: 'game development' },
+  { name: 'sound design' },
+  { name: 'lofi hiphop' },
+  { name: 'lofi hiphop' },
 ]);
