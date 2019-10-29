@@ -40,7 +40,7 @@ export default {
         },
         {
             name: 'leftType',
-            title: "Left TYpe",
+            title: "Left Type",
             type: "string",
         },
         {
@@ -50,7 +50,7 @@ export default {
         },
         {
             name: 'rightType',
-            title: "Right TYpe",
+            title: "Right Type",
             type: "string",
         },
         {
@@ -61,7 +61,7 @@ export default {
         {
             name: 'body',
             title: "Body Text",
-            type: "string",
+            type: "text",
         },
         {
             name: 'backgroundColor',
