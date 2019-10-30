@@ -47,6 +47,41 @@ export const list = [
   }
 ];
 
+export const collaborator = [
+  {
+    name: 'data',
+    type: 'object',
+    title: 'data',
+    fields: [
+      {
+        name: 'items',
+        title: 'items',
+        type: 'array',
+        of: [
+          {
+            type: 'reference',
+            to: [
+              {type: 'person'},
+            ]
+          }
+        ]
+      },
+      {
+        name: 'type',
+        title: 'Type',
+        type: 'string',
+        options: {
+          list: [
+            {title: 'default', value: 'default'},
+            {title: 'list', value: 'list'},
+            {title: 'link', value: 'link'}
+          ],
+        }
+      }
+    ]
+  }
+];
+
 export const linklist = [
   {
     name: 'data',

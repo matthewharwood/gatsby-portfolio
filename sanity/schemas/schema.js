@@ -19,12 +19,13 @@ import projectOverviewSchema from './work/postHeader/projectOverview'
 import resource from './work/postHeader/resource'
 import label from './baseui/label';
 import link from './baseui/link';
+import person from './person';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     label,
-
+    person,
     link,
     post,
     author,
