@@ -72,12 +72,12 @@ const HighlightBold = ({
               orderRight={orderRight}
               hidden={hidden}
             >
-              <Img
-                style={{
-                  boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)',
-                }}
-                fluid={src}
-              />
+              {/*<Img*/}
+              {/*  style={{*/}
+              {/*    boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)',*/}
+              {/*  }}*/}
+              {/*  fluid={src}*/}
+              {/*/>*/}
             </GridItemRight>
           </Grid>
         </div>

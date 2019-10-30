@@ -3,6 +3,7 @@ import { Section, Container, Grid } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
+// @ts-ignore
 import ArrowRight from 'baseui/icon/arrow-right';
 import { display } from '../styles';
 
@@ -15,7 +16,7 @@ import {
 } from 'baseui/modal';
 
 const TopElement = ({ children }: any) => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const c = {
     className: css({
       display: display.grid,
@@ -26,20 +27,9 @@ const TopElement = ({ children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const BottomElement = ({ $borderColor, children }: any) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      display: display.grid,
-      gridColumn: '1/-1',
-      paddingBottom: theme.sizing.scale1600,
-    }),
-  };
 
-  return <div {...c}>{children}</div>;
-};
 const VideoThumbnail = ({ children }: any) => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const c = {
     className: css({
       display: 'grid',
@@ -96,6 +86,7 @@ export const Summary = ({
                 <AspectRatioBox aspectRatio={16 / 9}>
                   <AspectRatioBoxBody
                     {...bodyProps}
+                    // @ts-ignore
                     onClick={() => setIsOpen(true)}
                   >
                     <ArrowRight size={36} />
@@ -107,6 +98,7 @@ export const Summary = ({
                 <AspectRatioBox aspectRatio={16 / 9}>
                   <AspectRatioBoxBody
                     {...bodyProps}
+                    // @ts-ignore
                     onClick={() => setIsOpen(true)}
                   >
                     <ArrowRight size={36} />

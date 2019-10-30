@@ -5,7 +5,7 @@ import { ProgressBar } from 'baseui/progress-bar';
 import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
 
 import { VideoButton } from './button';
-import { ActiveVideoContext } from '../../pages/index';
+import { ActiveVideoContext } from '../../pages';
 import { colors } from '../styles';
 interface Props {
   videoId: string;
@@ -34,11 +34,13 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
   const playVideo = () => {
     enableVideo();
     setVideoState(State.play);
+    // @ts-ignore
     videoPlayer.current.play();
   };
 
   const pauseVideo = () => {
     setVideoState(State.pause);
+    // @ts-ignore
     videoPlayer.current.pause();
   };
 
@@ -47,6 +49,7 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
   };
 
   const enableVideo = () => {
+    // @ts-ignore
     setActiveVideoId(videoId);
   };
 
@@ -66,8 +69,11 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
       <AspectRatioBox aspectRatio={16 / 9}>
         <AspectRatioBoxBody>
           <video
+            // @ts-ignore
             ref={videoPlayer}
+            // @ts-ignore
             onLoadedMetadata={e => setDuration(e.target.duration)}
+            // @ts-ignore
             onTimeUpdate={e => setCurrentTime(e.target.currentTime)}
             onEnded={() => stopVideo()}
             className={css({

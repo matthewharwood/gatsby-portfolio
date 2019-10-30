@@ -4,13 +4,15 @@ import { graphql } from 'gatsby';
 import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
 import { PostPagination } from '../components/post-pagination';
+import {pageRenderer} from '../services/page-renderer';
 
 const WorkTemplate = ({ data, pageContext }: any) => {
   const flattenedData = data.sanityWork;
   return (
     <>
       <Navbar />
-      <pre>{JSON.stringify(flattenedData, null, 4)}</pre>
+      {pageRenderer(flattenedData)}
+      {/*<pre>{JSON.stringify(flattenedData, null, 4)}</pre>*/}
       {/* <MDXRenderer>{data.mdx.body}</MDXRenderer> */}
       {/* <PostPagination */}
       {/*  prevLink={{ */}

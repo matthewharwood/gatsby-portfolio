@@ -16,6 +16,7 @@ const VideoTitle = ({ title }: { title: string }) => {
   const [css, theme] = useStyletron();
   return (
     <Label2
+      // @ts-ignore
       className={css({
         color: theme.colors.primary500,
         textTransform: 'uppercase',
@@ -73,6 +74,7 @@ export const Video = ({
               <VideoTitle title={title} />
               <Paragraph2
                 font="inherit"
+                // @ts-ignore
                 className={css({ lineHeight: theme.sizing.scale900 })}
               >
                 {caption}

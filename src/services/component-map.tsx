@@ -3,13 +3,21 @@ import {Boner} from '../components/boner';
 import {Challenge} from '../components/challenge'
 import React from 'react';
 import {PostHeader} from "../components/post-header";
+import {Summary} from "../components/summary"
+import {Process} from "../components/process"
+import {Highlight} from "../components/highlight"
+import {HighlightBold} from "../components/highlight-bold"
+import {Quote} from "../components/quote";
+import {Video} from "../components/video"
 
 export const componentMap = {
-  "postHeader": (props: any) => {
-    console.log(props);
-    return <PostHeader {...props} />
-  },
-  "summary": (props: any) => "SUMMARY",
+  "postHeader": (props: any, key: number) => (<PostHeader {...props} key={key}/>),
+  "summary": (props: any, key: number) => (<Summary {...props} key={key}/>),
+  "process": (props: any, key: number) => (<Process {...props} key={key}/>),
+  "highlight": (props: any, key: number) => (<Highlight {...props} key={key}/>),
+  "highlightBold": (props: any, key: number) => (<HighlightBold {...props} key={key}/>),
+  "quote": (props: any, key: number) => (<Quote {...props} key={key}/>),
+  "video": (props: any, key: number) => (<Video {...props} key={key}/>),
 }
 
 export function componentMapFactory() {
