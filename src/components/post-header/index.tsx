@@ -40,8 +40,8 @@ const ListItem = ({children }: any) => {
 
 const PostHeader = ({
   eyebrow,
-  main,
-  sub,
+  mainText,
+  subText,
   projectOverview,
   $backgroundColor,
   $color,
@@ -79,8 +79,8 @@ const PostHeader = ({
         <Grid>
           <TopElement $borderColor={color}>
             <Label1 color={'inheirt'}>{eyebrow && eyebrow.text}</Label1>
-            <Display2 color={'inheirt'}>{main && main.text}</Display2>
-            <Paragraph1 color={'inheirt'}>{sub && sub.text}</Paragraph1>
+            <Display2 color={'inheirt'}>{mainText && mainText.text}</Display2>
+            <Paragraph1 color={'inheirt'}>{subText && subText.text}</Paragraph1>
           </TopElement>
           <Grid>
             {projectOverview && Object.entries(projectOverview).filter(([key]) => (key !== '_type')).map(([key, { data }]: any, k: any) => {
