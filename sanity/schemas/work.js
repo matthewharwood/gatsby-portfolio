@@ -24,7 +24,7 @@ export default {
             type: 'string',
         },
         {
-            name: 'data',
+            name: 'date',
             title: 'Date',
             type: 'datetime',
         },
