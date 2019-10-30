@@ -1,4 +1,7 @@
-export const SANITY_RAW_CONTENT = [
+export const SANITY_RAW_CONTENT = {
+  "id": "9b7c0d59-fb3a-54ce-ab11-7a7dae85bcaf",
+  "title": "Sangeet Test",
+  "_rawContent": [
     {
       "_key": "99cf0fa54eb7",
       "_type": "postHeader",
@@ -8,7 +11,7 @@ export const SANITY_RAW_CONTENT = [
         "_type": "projectOverviewSchema",
         "client": "khatri",
         "collaborators": [
-          "Sangeet Khatri",
+          "Sangeet Khatri"
         ],
         "company": "Sanity",
         "myRole": "developer",
@@ -17,17 +20,18 @@ export const SANITY_RAW_CONTENT = [
             "_key": "5f935920079f",
             "_type": "resource",
             "href": "https://uber.com",
-            "text": "Uber",
-          },
+            "text": "Uber"
+          }
         ],
         "technology": [
-          "graphql",
+          "graphql"
         ],
-        "when": "January",
+        "when": "January"
       },
-      "subText": "Test SubText",
-    },
-  ];
+      "subText": "Test SubText"
+    }
+  ]
+};
 export const SANITY_FLAT = [{
   "title": "Sangeet Test",
   "description": "Test for checkiing graphql query in Gatsby",
@@ -175,6 +179,7 @@ export const SANITY = {
                   "collaborators": [
                     "Sangeet Khatri",
                   ],
+                  "date": "jan 2017 - jan 2018",
                   "company": "Sanity",
                   "myRole": "developer",
                   "resources": [

@@ -9,7 +9,7 @@ import {
 import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
-import { mq, display } from '../styles';
+import { display } from '../styles';
 const TopElement = ({ $borderColor, children }: any) => {
   const [css, theme] = useStyletron();
   const c = {
@@ -24,8 +24,8 @@ const TopElement = ({ $borderColor, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const ListItem = ({ $borderColor, children }: any) => {
-  const [css, theme] = useStyletron();
+const ListItem = ({children }: any) => {
+  const [css] = useStyletron();
 
   const c = {
     className: css({
@@ -49,24 +49,27 @@ const PostHeader = ({
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary700;
   const color = $color || theme.colors.primary100;
-  const Layout = (data: any) => {
-    switch (data.type) {
+  const Layout = (date: any) => {
+    if(!date) {
+      return date;
+    }
+    switch (date.type) {
       case 'link':
-        return data.items.map((d: any) => (
+        return date.items.map((d: any, key: any) => (
           <>
-            <StyledLink href={d.href}>{d.text}</StyledLink>
+            <StyledLink key={key} href={d.href}>{d.text}</StyledLink>
             <br />
           </>
         ));
       case 'list':
-        return data.items.map((d: any) => (
-          <>
+        return date.items.map((d: any, key: any) => (
+          <span key={key} >
             {d}
             <br />
-          </>
+          </span>
         ));
       default:
-        return data;
+        return date;
     }
   };
 
@@ -75,21 +78,22 @@ const PostHeader = ({
       <Container>
         <Grid>
           <TopElement $borderColor={color}>
-            <Label1 color={'inheirt'}>{eyebrow.text}</Label1>
-            <Display2 color={'inheirt'}>{main.text}</Display2>
-            <Paragraph1 color={'inheirt'}>{sub.text}</Paragraph1>
+            <Label1 color={'inheirt'}>{eyebrow && eyebrow.text}</Label1>
+            <Display2 color={'inheirt'}>{main && main.text}</Display2>
+            <Paragraph1 color={'inheirt'}>{sub && sub.text}</Paragraph1>
           </TopElement>
           <Grid>
-            {Object.entries(projectOverview).map(([key, { data }]: any) => {
+            {projectOverview && Object.entries(projectOverview).map(([key, { date }]: any, k: any) => {
               return (
-                <ListItem>
+                <ListItem key={k}>
                   <Label2
-                    color={'inheirt'}
+                    color={'inherit'}
+                    // @ts-ignore
                     style={{ textTransform: 'capitalize' }}
                   >
                     {key}
                   </Label2>
-                  <Paragraph4 color={'inheirt'}>{Layout(data)}</Paragraph4>
+                  <Paragraph4 color={'inheirt'}>{Layout(date)}</Paragraph4>
                 </ListItem>
               );
             })}
