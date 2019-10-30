@@ -7,6 +7,10 @@ describe('Page Renderer ', () => {
   it('should be _type postHeader', () => {
     const _typeArr = SANITY_RAW_CONTENT.map(({_type}) => _type);
     expect(_typeArr[0]).toBe('postHeader');
-    // expect(pageRenderer()).toBe(true);
-  })
+  });
+
+  it('should render postHeader', () => {
+    const _typeArr = SANITY_RAW_CONTENT.map(({_type}) => _type);
+    expect(_typeArr[0]).toBe('postHeader');
+  });
 });
