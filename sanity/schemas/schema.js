@@ -15,6 +15,8 @@ import highlightBold from './work/highlightBold'
 import process from './work/process'
 import quote from './work/quote'
 import video from './work/video'
+import projectOverviewSchema from './work/postHeader/projectOverview'
+import resource from './work/postHeader/resource'
 
 export default createSchema({
   name: 'default',
@@ -30,6 +32,8 @@ export default createSchema({
     process,
     quote,
     video,
-    blockContent
+    projectOverviewSchema,
+    resource,
+    blockContent,
   ])
 })

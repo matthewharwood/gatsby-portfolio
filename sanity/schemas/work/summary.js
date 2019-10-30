@@ -16,7 +16,7 @@ export default {
         {
             name: 'body',
             title: 'Body',
-            type: 'string',
+            type: 'text',
         },
         {
             name: 'accentColor',
@@ -24,14 +24,14 @@ export default {
             type: 'string',
         },
         {
-            name: 'backgroundCOlor',
+            name: 'backgroundColor',
             title: 'Background Color',
             type: 'string',
         },
         {
             name: 'borderBottom',
             title: 'Border Bottom',
-            type: 'string',
+            type: 'boolean',
         },
         {
             name: 'color',

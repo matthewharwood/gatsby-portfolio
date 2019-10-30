@@ -23,6 +23,16 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '42nykw3g',
+        dataset: 'production',
+        // a token with read permissions is required
+        // if you have a private dataset
+        // token: process.env.MY_SANITY_TOKEN,
+      },
+    },
     `gatsby-plugin-mdx`,
     // {
     //   resolve: `gatsby-plugin-page-creator`,
