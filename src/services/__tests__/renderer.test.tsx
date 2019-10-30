@@ -1,5 +1,5 @@
 import React from 'react';
-import { componentMapFactory } from '../component-map';
+import { componentMapFactory, componentMapfn } from '../component-map';
 import { SANITY_RAW_CONTENT } from "../__fixtures__/sanity"
 import renderer from "react-test-renderer"
 
@@ -10,7 +10,18 @@ function component(index:number){
 
   return componentMap[_typeArr[index]](SANITY_RAW_CONTENT._rawContent[index]);
 }
+describe('componentFn', () => {
+  it('should Should render postHeader', () => {
+    const props = SANITY_RAW_CONTENT._rawContent[0];
+    const key = 0;
 
+    const Component = componentMapfn(props, key);
+    const tree = renderer
+      .create(Component)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  })
+});
 describe('Page Renderer ', () => {
   it('should be _type postHeader', () => {
     const _typeArr = SANITY_RAW_CONTENT._rawContent.map(({_type}) => _type);

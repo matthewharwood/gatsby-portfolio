@@ -1252,3 +1252,93 @@ exports[`Page Renderer  should render summary 3 1`] = `
   </section>
 </div>
 `;
+
+exports[`componentFn should Should render postHeader 1`] = `
+<PostHeader
+  _key="5e34c56ea1ab"
+  _type="postHeader"
+  eyebrow={
+    Object {
+      "_type": "label",
+      "text": "Web Application",
+    }
+  }
+  mainText={
+    Object {
+      "_type": "label",
+      "text": "Stanley CMS",
+    }
+  }
+  projectOverview={
+    Object {
+      "_type": "projectOverviewSchema",
+      "client": Object {
+        "data": "Nike Jordan",
+        "type": "default",
+      },
+      "collaborators": Object {
+        "data": Object {
+          "items": Array [
+            "Jimmy Soat (Creative Director)",
+            "Stanley Yeung (Visual Designer)",
+            "Jeffrey Qua (Developer)",
+          ],
+          "type": "list",
+        },
+      },
+      "company": Object {
+        "data": "AKQA",
+        "type": "default",
+      },
+      "resources": Object {
+        "data": Object {
+          "items": Array [
+            Object {
+              "_key": "2ffcb130e25c",
+              "_type": "link",
+              "href": "https://www.github.com",
+              "text": "Github",
+            },
+            Object {
+              "_key": "3b8092dce9b1",
+              "_type": "link",
+              "href": "https://google.com",
+              "text": "Design Files",
+            },
+            Object {
+              "_key": "6fd4a0fadb35",
+              "_type": "link",
+              "href": "http://www.google.com",
+              "text": "Website",
+            },
+          ],
+          "type": "link",
+        },
+      },
+      "role": Object {
+        "data": "Developer/Designer",
+        "type": "default",
+      },
+      "technology": Object {
+        "data": Object {
+          "items": Array [
+            "AngularJS",
+            "Firebase",
+          ],
+          "type": "list",
+        },
+      },
+      "when": Object {
+        "data": "Feb 2014 - Mar 2014 (8 weeks)",
+        "type": "default",
+      },
+    }
+  }
+  subText={
+    Object {
+      "_type": "label",
+      "text": "A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.",
+    }
+  }
+/>
+`;

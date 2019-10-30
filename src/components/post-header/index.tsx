@@ -83,7 +83,7 @@ const PostHeader = ({
             <Paragraph1 color={'inheirt'}>{sub && sub.text}</Paragraph1>
           </TopElement>
           <Grid>
-            {projectOverview && Object.entries(projectOverview).map(([key, { data }]: any, k: any) => {
+            {projectOverview && Object.entries(projectOverview).filter(([key]) => (key !== '_type')).map(([key, { data }]: any, k: any) => {
               return (
                 <ListItem key={k}>
                   <Label2

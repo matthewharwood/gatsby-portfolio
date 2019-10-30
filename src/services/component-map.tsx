@@ -1,6 +1,3 @@
-import { Folio } from '../components/folio';
-import {Boner} from '../components/boner';
-import {Challenge} from '../components/challenge'
 import React from 'react';
 import {PostHeader} from "../components/post-header";
 import {Summary} from "../components/summary"
@@ -9,6 +6,7 @@ import {Highlight} from "../components/highlight"
 import {HighlightBold} from "../components/highlight-bold"
 import {Quote} from "../components/quote";
 import {Video} from "../components/video"
+const inflection = require( 'inflection' );
 
 export const componentMap = {
   "postHeader": (props: any, key: number) => (<PostHeader {...props} key={key}/>),
@@ -18,6 +16,13 @@ export const componentMap = {
   "highlightBold": (props: any, key: number) => (<HighlightBold {...props} key={key}/>),
   "quote": (props: any, key: number) => (<Quote {...props} key={key}/>),
   "video": (props: any, key: number) => (<Video {...props} key={key}/>),
+}
+
+
+// This will not work yet
+export const componentMapfn = (props: any, key: number) => {
+  const ComponentName = inflection.classify(props._type);
+  return <ComponentName {...props} key={key} />;
 }
 
 export function componentMapFactory() {
