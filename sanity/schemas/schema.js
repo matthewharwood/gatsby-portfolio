@@ -17,10 +17,16 @@ import quote from './work/quote'
 import video from './work/video'
 import projectOverviewSchema from './work/postHeader/projectOverview'
 import resource from './work/postHeader/resource'
+import label from './baseui/label';
+import link from './baseui/link';
+import {collaborators} from './work/postHeader/collaborators';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    label,
+    collaborators,
+    link,
     post,
     author,
     category,

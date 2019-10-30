@@ -49,27 +49,27 @@ const PostHeader = ({
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary700;
   const color = $color || theme.colors.primary100;
-  const Layout = (date: any) => {
-    if(!date) {
-      return date;
+  const Layout = (data: any) => {
+    if(!data) {
+      return data;
     }
-    switch (date.type) {
+    switch (data.type) {
       case 'link':
-        return date.items.map((d: any, key: any) => (
+        return data.items.map((d: any, key: any) => (
           <>
             <StyledLink key={key} href={d.href}>{d.text}</StyledLink>
             <br />
           </>
         ));
       case 'list':
-        return date.items.map((d: any, key: any) => (
+        return data.items.map((d: any, key: any) => (
           <span key={key} >
             {d}
             <br />
           </span>
         ));
       default:
-        return date;
+        return data;
     }
   };
 
@@ -83,7 +83,7 @@ const PostHeader = ({
             <Paragraph1 color={'inheirt'}>{sub && sub.text}</Paragraph1>
           </TopElement>
           <Grid>
-            {projectOverview && Object.entries(projectOverview).map(([key, { date }]: any, k: any) => {
+            {projectOverview && Object.entries(projectOverview).map(([key, { data }]: any, k: any) => {
               return (
                 <ListItem key={k}>
                   <Label2
@@ -93,7 +93,7 @@ const PostHeader = ({
                   >
                     {key}
                   </Label2>
-                  <Paragraph4 color={'inheirt'}>{Layout(date)}</Paragraph4>
+                  <Paragraph4 color={'inherit'}>{Layout(data)}</Paragraph4>
                 </ListItem>
               );
             })}

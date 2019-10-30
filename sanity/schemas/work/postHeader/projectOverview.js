@@ -28,8 +28,27 @@ export default {
     {
       name: 'collaborators',
       title: 'Collaborators',
-      type: 'array',
-      of: [{ type: 'string' }],
+      type: 'object',
+      fields: [
+        {
+          name: 'data',
+          type: 'object',
+          title: 'data',
+          fields: [
+            {
+              name: 'items',
+              title: 'items',
+              type: 'array',
+              of: [{type: 'string'}]
+            },
+            {
+              name: 'type',
+              title: 'Type',
+              type: 'string',
+            }
+          ]
+        }
+      ]
     },
     {
       name: 'technology',

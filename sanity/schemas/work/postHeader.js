@@ -2,21 +2,24 @@ export default {
   name: 'postHeader',
   title: 'Post Header',
   type: 'document',
+  initialValue: () => ({
+    mainText: 'Hello Main Text'
+  }),
   fields: [
     {
       name: 'mainText',
       title: 'Main Text',
-      type: 'string',
+      type: 'label',
     },
     {
       name: 'subText',
       title: 'Sub Text',
-      type: 'string',
+      type: 'label',
     },
     {
       name: 'eyebrow',
       title: 'Eyebrow Text',
-      type: 'string',
+      type: 'label',
     },
     {
       name: 'projectOverview',

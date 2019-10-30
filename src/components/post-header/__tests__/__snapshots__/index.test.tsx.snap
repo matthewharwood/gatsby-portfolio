@@ -91,7 +91,20 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              <span>
+                Jimmy Soat (Creative Director)
+                <br />
+              </span>
+              <span>
+                Stanley Yeung (Visual Designer)
+                <br />
+              </span>
+              <span>
+                Jeffrey Qua (Developer)
+                <br />
+              </span>
+            </p>
           </div>
           <div
             className=""

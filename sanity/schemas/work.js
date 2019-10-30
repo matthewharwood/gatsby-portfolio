@@ -2,11 +2,15 @@ export default {
     name: 'work',
     title: 'Work',
     type: 'document',
+    initialValue: () => ({
+        title: 'Hello world'
+    }),
     fields: [
         {
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: Rule => Rule.required().min(3).max(80),
         },
         {
             name: 'description',
@@ -22,6 +26,7 @@ export default {
             name: 'path',
             title: 'Path',
             type: 'string',
+            validation: Rule => Rule.required().min(3).max(80),
         },
         {
             name: 'date',
@@ -32,6 +37,7 @@ export default {
             name: 'templateKey',
             title: 'Template Key',
             type: 'string',
+            validation: Rule => Rule.required().min(3).max(80),
         },
         {
             name: 'content',
