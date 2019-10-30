@@ -1,7 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hello renders correctly 1`] = `
-Array [
+<main
+  className=""
+>
+  <ul
+    className=""
+  >
+    <li
+      className=""
+    >
+      // @ts-ignore
+      <div
+        className=""
+        data-baseweb="typo-label4"
+      >
+        Contact
+      </div>
+    </li>
+    <li
+      className=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <a
+        className=""
+        data-baseweb="typo-label4"
+        href="mailto:matthhar12@gmail.com?subject=javascript fatigue"
+        target="_blank"
+      >
+        <span
+          className=""
+        >
+          Let's talk about 
+        </span>
+        <span
+          className=""
+        >
+          ✉ 
+          <i />
+        </span>
+      </a>
+    </li>
+  </ul>
   <nav
     className=""
   >
@@ -9,70 +50,110 @@ Array [
       className=""
       href="/work"
     >
+      <div
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateY(100%)",
+          }
+        }
+      >
+        <span
+          className=""
+        >
+          Work
+        </span>
+      </div>
       <span
         className=""
       >
-        Work
+        01
       </span>
-      <i
-        className=""
-      >
-        00
-      </i>
     </a>
     <a
       className=""
       href="/lab"
     >
+      <div
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateY(100%)",
+          }
+        }
+      >
+        <span
+          className=""
+        >
+          Lab
+        </span>
+      </div>
       <span
         className=""
       >
-        Lab
+        02
       </span>
-      <i
-        className=""
-      >
-        01
-      </i>
     </a>
     <a
       className=""
       href="/profile"
     >
+      <div
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateY(100%)",
+          }
+        }
+      >
+        <span
+          className=""
+        >
+          Profile
+        </span>
+      </div>
       <span
         className=""
       >
-        Profile
+        03
       </span>
-      <i
-        className=""
-      >
-        02
-      </i>
     </a>
-  </nav>,
-  <footer>
-    <h6
+  </nav>
+  <canvas
+    className=""
+    height="500"
+    width="500"
+  />
+  <footer
+    className=""
+  >
+    // @ts-ignore
+    <span
       className=""
-      data-baseweb="typo-h6"
+      data-baseweb="typo-label4"
     >
       Good Morning Harwood
-    </h6>
+    </span>
     <p
       className=""
       data-baseweb="typo-p4"
     >
-      <span>
+      <span
+        className=""
+        data-baseweb="typo-label4"
+      >
         A creative playground by
       </span>
+      // @ts-ignore
       <a
         className=""
+        data-baseweb="typo-label4"
         href="#"
       >
          
         Matthew Harwood
       </a>
     </p>
-  </footer>,
-]
+  </footer>
+</main>
 `;

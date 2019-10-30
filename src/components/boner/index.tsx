@@ -197,6 +197,7 @@ function draw(timeMs: number) {
   scale_t = vec3.lerp(vec3.create(), scale, scale2, t);
   pivot_t = vec3.lerp(vec3.create(), pivot, pivot2, t);
   if (t >= offset) {
+    // @ts-ignore
     quat_t = quat.slerp(quat.create(), q, q2, easeInCirc(t - offset));
   } else {
     quat_t = quat.create();

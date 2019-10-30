@@ -5,15 +5,24 @@ exports[`Should create Nav with children renders correctly 1`] = `
   className=""
   href="/hello"
 >
+  <div
+    style={
+      Object {
+        "opacity": 0,
+        "transform": "translateY(100%)",
+      }
+    }
+  >
+    <span
+      className=""
+    >
+      Hello
+    </span>
+  </div>
   <span
     className=""
   >
-    Hello
+    02
   </span>
-  <i
-    className=""
-  >
-    01
-  </i>
 </a>
 `;

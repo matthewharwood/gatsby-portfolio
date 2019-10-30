@@ -1,22 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should create Nav with children renders correctly 1`] = `
-<footer>
-  <h6
+<footer
+  className=""
+>
+  // @ts-ignore
+  <span
     className=""
-    data-baseweb="typo-h6"
+    data-baseweb="typo-label4"
   >
     Good Morning Harwood
-  </h6>
+  </span>
   <p
     className=""
     data-baseweb="typo-p4"
   >
-    <span>
+    <span
+      className=""
+      data-baseweb="typo-label4"
+    >
       A creative playground by
     </span>
+    // @ts-ignore
     <a
       className=""
+      data-baseweb="typo-label4"
       href="#"
     >
        

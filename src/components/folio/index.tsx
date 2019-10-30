@@ -44,19 +44,22 @@ const Folio: FunctionComponent<FolioProps> = ({
         },
       })}
     >
-      <Label4 $as="span" className={css({ color: theme.colors.accent })}>
+      // @ts-ignore
+      <Label4 as="span" className={css({ color: theme.colors.accent })}>
         {headline}
       </Label4>
       <Paragraph4 margin={0}>
         <Label4
-          $as="span"
+          as="span"
+          // @ts-ignore
           className={css({
             color: theme.colors.primary600,
           })}
         >
           {subheadline}
         </Label4>
-        <Label4 $as="a" className={a} href={link && link.href}>
+        // @ts-ignore
+        <Label4 as="a" className={a} href={link && link.href}>
           {' '}
           {link && link.text}
         </Label4>

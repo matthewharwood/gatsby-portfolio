@@ -88,13 +88,16 @@ const RunningHeader: FunctionComponent = () => {
   return (
     <ul className={cList}>
       <li className={cItem}>
+        // @ts-ignore
         <Label4 className={a}>
           Contact
         </Label4>
       </li>
       <li className={cItemLink} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+
         <Label4
           as="a"
+          // @ts-ignore
           className={a}
           href={`mailto:matthhar12@gmail.com?subject=${interests[count].name}`}
           target={'_blank'}

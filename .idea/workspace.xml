@@ -4,7 +4,16 @@
     <bookmark url="file://$PROJECT_DIR$/src/components/home-navigation/nav-link.tsx" description="[lg]: {" line="71" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c878d062-c1c2-4400-ab93-cf9176f7bd99" name="Default Changelist" comment="" />
+    <list default="true" id="c878d062-c1c2-4400-ab93-cf9176f7bd99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/renderer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boner/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boner/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/folio/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folio/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home-navigation/__tests__/__snapshots__/nav-link.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-navigation/__tests__/__snapshots__/nav-link.test.tsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/running-header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/running-header/index.tsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,42 +26,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/profile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5145">
-              <caret line="245" column="8" selection-start-line="234" selection-start-column="5" selection-end-line="245" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/work.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jest.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gatsby-config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
@@ -61,11 +34,87 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/content/work/google-pathfinder.mdx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/renderer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/folio/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/running-header/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/boner/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="198" column="20" lean-forward="true" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index.test.tsx">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/folio/__tests__/index.test.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="10" lean-forward="true" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>react&quot;:</find>
       <find>react</find>
       <find>&quot;react&quot;:</find>
       <find>styletron-r</find>
@@ -95,6 +144,7 @@
       <find>{s</find>
       <find>coding</find>
       <find>visual</find>
+      <find>$as</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/pages</dir>
@@ -124,18 +174,24 @@
         <option value="$PROJECT_DIR$/src/pages/profile.js" />
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/src/pages/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/boner/index.tsx" />
         <option value="$PROJECT_DIR$/src/content/work/work-1.mdx" />
         <option value="$PROJECT_DIR$/src/content/work/work-2.mdx" />
         <option value="$PROJECT_DIR$/src/pages/work.js" />
         <option value="$PROJECT_DIR$/src/templates/workTemplate.tsx" />
         <option value="$PROJECT_DIR$/src/components/grid-system/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/running-header/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/navbar/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/lab.js" />
         <option value="$PROJECT_DIR$/src/components/running-header/interests.ts" />
         <option value="$PROJECT_DIR$/gatsby-config.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/content/work/google-pathfinder.mdx" />
+        <option value="$PROJECT_DIR$/src/services/renderer.ts" />
+        <option value="$PROJECT_DIR$/src/services/__tests__/renderer.test.ts" />
+        <option value="$PROJECT_DIR$/src/services/renderer.tsx" />
+        <option value="$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx" />
+        <option value="$PROJECT_DIR$/src/components/folio/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/running-header/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/boner/index.tsx" />
       </list>
     </option>
   </component>
@@ -146,7 +202,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="53" />
     <option name="width" value="1680" />
     <option name="height" value="995" />
   </component>
@@ -165,11 +221,6 @@
             <path>
               <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="sanity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -182,7 +233,42 @@
               <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="challenge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="folio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="folio" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,6 +297,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services" />
+      <recent name="$PROJECT_DIR$/src/services/renderer" />
       <recent name="$PROJECT_DIR$/src/images" />
     </key>
   </component>
@@ -245,10 +333,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21980000" />
+    <option name="totallyTimeSpent" value="24096000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="995" extended-state="0" />
+    <frame x="0" y="53" width="1680" height="995" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
@@ -425,16 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/boner/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/content/work/nike-jordan-editor.mdx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -446,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/content/work/google-pathfinder.mdx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -487,13 +558,6 @@
     <entry file="file://$PROJECT_DIR$/src/templates/labTemplate.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/running-header/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
-          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/work.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -526,6 +590,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/content/work/google-pathfinder.mdx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/folio/__tests__/index.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="10" lean-forward="true" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/renderer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.test.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/folio/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/running-header/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/boner/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="198" column="20" lean-forward="true" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
         </state>
       </provider>
     </entry>
