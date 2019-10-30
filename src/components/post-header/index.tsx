@@ -56,10 +56,10 @@ const PostHeader = ({
     switch (data.type) {
       case 'link':
         return data.items.map((d: any, key: any) => (
-          <>
-            <StyledLink key={key} href={d.href}>{d.text}</StyledLink>
+          <span key={key}>
+            <StyledLink href={d.href}>{d.text}</StyledLink>
             <br />
-          </>
+          </span>
         ));
       case 'list':
         return data.items.map((d: any, key: any) => (

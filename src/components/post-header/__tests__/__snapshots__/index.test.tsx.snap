@@ -23,7 +23,9 @@ exports[`Page Renderer  should render postHeader 1`] = `
           <div
             className=""
             data-baseweb="typo-label1"
-          />
+          >
+            Web Application
+          </div>
           <div
             className=""
             data-baseweb="typo-display2"
@@ -72,7 +74,9 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              Google
+            </p>
           </div>
           <div
             className=""
@@ -123,7 +127,9 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              AKQA
+            </p>
           </div>
           <div
             className=""
@@ -137,12 +143,14 @@ exports[`Page Renderer  should render postHeader 1`] = `
                 }
               }
             >
-              myRole
+              role
             </div>
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              Frontend Engineer
+            </p>
           </div>
           <div
             className=""
@@ -161,7 +169,18 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              <span>
+                <a
+                  className=""
+                  data-baseweb="link"
+                  href="https://www.github.com"
+                >
+                  Github
+                </a>
+                <br />
+              </span>
+            </p>
           </div>
           <div
             className=""
@@ -180,7 +199,12 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              <span>
+                Angular
+                <br />
+              </span>
+            </p>
           </div>
           <div
             className=""
@@ -199,7 +223,9 @@ exports[`Page Renderer  should render postHeader 1`] = `
             <p
               className=""
               data-baseweb="typo-p4"
-            />
+            >
+              Feb 2014
+            </p>
           </div>
         </div>
       </div>

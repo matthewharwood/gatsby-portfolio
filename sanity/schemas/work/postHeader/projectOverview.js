@@ -1,5 +1,4 @@
-import resource from './resource';
-
+import {list, single, linklist} from './overview-type';
 export default {
   name: 'projectOverviewSchema',
   title: 'Project Overview',
@@ -8,59 +7,44 @@ export default {
     {
       name: 'company',
       title: 'Company',
-      type: 'string',
+      type: 'object',
+      fields: single,
     },
     {
       name: 'client',
       title: 'Client',
-      type: 'string',
+      type: 'object',
+      fields: single,
     },
     {
-      name: 'myRole',
+      name: 'role',
       title: 'My Role',
-      type: 'string',
+      type: 'object',
+      fields: single,
     },
     {
       name: 'when',
       title: 'When',
-      type: 'string',
+      type: 'object',
+      fields: single,
     },
     {
       name: 'collaborators',
       title: 'Collaborators',
       type: 'object',
-      fields: [
-        {
-          name: 'data',
-          type: 'object',
-          title: 'data',
-          fields: [
-            {
-              name: 'items',
-              title: 'items',
-              type: 'array',
-              of: [{type: 'string'}]
-            },
-            {
-              name: 'type',
-              title: 'Type',
-              type: 'string',
-            }
-          ]
-        }
-      ]
+      fields: list,
     },
     {
       name: 'technology',
       title: 'Technology',
-      type: 'array',
-      of: [{ type: 'string' }],
+      type: 'object',
+      fields: list,
     },
     {
       name: 'resources',
       title: 'Resources',
-      type: 'array',
-      of: [{ type: 'resource' }],
+      type: 'object',
+      fields: linklist,
     },
   ],
 };

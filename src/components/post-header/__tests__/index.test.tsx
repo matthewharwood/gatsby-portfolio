@@ -6,11 +6,20 @@ import { PostHeader } from "../"
 const FIXTURE = {
   _key: "99cf0fa54eb7",
   _type: "postHeader",
-  eyebrow: "eyebrow",
-  mainText: "Test header",
+  "eyebrow": {
+    "_type": "label",
+    "text": "Web Application"
+  },
+  "mainText": {
+    "_type": "label",
+    "text": "Nike CMS"
+  },
   projectOverview: {
     _type: "projectOverviewSchema",
-    client: "khatri",
+    client: {
+      "data": "Google",
+      "type": "default"
+    },
     collaborators: {
       data: {
         items: [
@@ -21,18 +30,47 @@ const FIXTURE = {
         type: 'list',
       },
     },
-    company: "Sanity",
-    myRole: "developer",
-    resources: [[Object]],
-    technology: ["graphql"],
-    when: "January",
+    "company": {
+      "data": "AKQA",
+      "type": "default"
+    },
+    "role": {
+      "data": "Frontend Engineer",
+      "type": "default"
+    },
+    "resources": {
+      "data": {
+        "items": [
+          {
+            "_key": "77fb5c027206",
+            "_type": "link",
+            "href": "https://www.github.com",
+            "text": "Github"
+          }
+        ],
+        "type": "link"
+      }
+    },
+    "technology": {
+      "data": {
+        "items": [
+          "Angular"
+        ],
+        "type": "list"
+      }
+    },
+    "when": {
+      "data": "Feb 2014",
+      "type": "default"
+    }
   },
-  subText: "Test SubText",
+  "subText": {
+    "_type": "label",
+    "text": "Some sub text here"
+  }
 }
 
-
 describe("Page Renderer ", () => {
-
   it("should render postHeader", () => {
     const tree = renderer
       .create(<PostHeader {...FIXTURE} />)
