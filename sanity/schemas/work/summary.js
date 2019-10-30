@@ -24,7 +24,7 @@ export default {
             type: 'string',
         },
         {
-            name: 'backgroundCOlor',
+            name: 'backgroundColor',
             title: 'Background Color',
             type: 'string',
         },
