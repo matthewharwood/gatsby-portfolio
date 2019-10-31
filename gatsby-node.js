@@ -36,7 +36,6 @@ exports.createPages = ({actions, graphql}) => {
   `).then(result => {
     const root = {
       'workTemplate': 'work/',
-      'labTemplate': 'lab/'
     };
     const workFiles = result.data.allSanityWork.edges;
     workFiles.forEach(({node}, index) => {

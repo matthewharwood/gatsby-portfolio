@@ -8,8 +8,6 @@ import {Quote} from "../components/quote";
 import {Video} from "../components/video"
 import {Challenge} from "../components/challenge"
 
-const inflection = require( 'inflection' );
-
 export const componentMap = {
   "postHeader": (props: any, key: number) => (<PostHeader {...props} key={key}/>),
   "summary": (props: any, key: number) => (<Summary {...props} key={key}/>),
@@ -20,6 +18,22 @@ export const componentMap = {
   "video": (props: any, key: number) => (<Video {...props} key={key}/>),
   "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />)
 }
+
+
+export function componentMapFactory() {
+  let defaultValueHandler = {
+    get: function(target: any, name: any) {
+      return target.hasOwnProperty(name)
+        ? target[name]
+        : (props: any) => console.warn(
+          "We are missing a component type: ", props._type, "is not found"
+        );
+    },
+  }
+
+  return new Proxy(componentMap, defaultValueHandler)
+}
+
 
 // export const componentMap2 = {
 //   "postHeader": PostHeader,
@@ -42,22 +56,3 @@ export const componentMap = {
 //   const SpecificStory = components[props.storyType];
 //   return <SpecificStory story={props.story} />;
 // }
-
-export const componentMapfn = (props: any, key: number) => {
-  const ComponentName = inflection.classify(props._type);
-  return <ComponentName {...props} key={key} />;
-}
-
-export function componentMapFactory() {
-  let defaultValueHandler = {
-    get: function(target: any, name: any) {
-      return target.hasOwnProperty(name)
-        ? target[name]
-        : (props: any) => console.warn(
-          "We are missing a component type: ", props._type, "is not found"
-        );
-    },
-  }
-
-  return new Proxy(componentMap, defaultValueHandler)
-}

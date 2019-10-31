@@ -88,8 +88,10 @@ const RunningHeader: FunctionComponent = () => {
   return (
     <ul className={cList}>
       <li className={cItem}>
-        // @ts-ignore
-        <Label4 className={a}>
+
+        <Label4
+          // @ts-ignore
+          className={a}>
           Contact
         </Label4>
       </li>

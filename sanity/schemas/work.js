@@ -53,15 +53,11 @@ export default {
             title: 'Content',
             type: 'array',
             of: [
-
                 { type: 'block' },
                 { type: 'postHeader' },
                 { type: 'process' },
                 { type: 'summary' },
-                {
-                    type: 'reference',
-                    to: [{ type: 'highlight' }]
-                },
+                { type: 'highlight' },
                 { type: 'highlightBold' },
                 { type: 'quote' },
                 { type: 'video' },
