@@ -26,7 +26,6 @@ module.exports = {
         // token: process.env.MY_SANITY_TOKEN,
       },
     },
-    `gatsby-plugin-mdx`,
     // {
     //   resolve: `gatsby-plugin-page-creator`,
     //   options: {

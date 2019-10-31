@@ -8,13 +8,11 @@ import {pageRenderer} from '../services/page-renderer';
 
 const WorkTemplate = ({ data, pageContext }: any) => {
   const flattenedData = data.sanityWork;
-  console.log(flattenedData);
   return (
     <>
       <Navbar />
       {pageRenderer(flattenedData)}
       {/*<pre>{JSON.stringify(flattenedData, null, 4)}</pre>*/}
-      {/* <MDXRenderer>{data.mdx.body}</MDXRenderer> */}
       {/* <PostPagination */}
       {/*  prevLink={{ */}
       {/*    link: pageContext.prev ? pageContext.prev.fields.slug : '', */}
