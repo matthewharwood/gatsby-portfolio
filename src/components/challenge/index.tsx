@@ -101,7 +101,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
         {...cardItem}
         $labelColor={theme.colors.primary500}
         $color={color}
-      ></CardItem>
+      />
     </div>
   ));
 
@@ -127,7 +127,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
               backgroundColor: legendItem.color,
               marginRight: theme.sizing.scale600,
             })}
-          ></div>
+          />
           <span className={css({ textTransform: 'uppercase' })}>
             {legendItem.name}
           </span>
