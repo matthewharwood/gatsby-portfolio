@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/client.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/collaborators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/company.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/resources.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/role.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/technology.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/when.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_archive/work/work.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/js/app.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/dist/static/js/app.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/js/vendor.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/dist/static/js/vendor.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/work/postHeader/overview-type.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/overview-type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/work/postHeader/projectOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/work/postHeader/projectOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/component-map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/component-map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/lab/lab-1.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/_archive/lab/lab-1.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/profile/profile-1.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/_archive/profile/profile-1.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/profile/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/_archive/profile/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/google-pathfinder.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/_archive/work/google-pathfinder.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/nike-jordan-editor.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/_archive/work/nike-jordan-editor.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,92 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/projectOverview.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/resources.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/technology.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/collaborators.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/overview-type.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/when.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/schema.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/workTemplate.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="50" column="14" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gatsby-node.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/work.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanity/schemas/work/postHeader/role.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="189">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -130,13 +45,19 @@
       <find>company</find>
       <find>SanityWork</find>
       <find>SanityWorkFieldsEnum</find>
+      <find>image</find>
       <find>data</find>
+      <find>label</find>
+      <find>title</find>
+      <find>menu</find>
+      <find>file</find>
+      <find>&lt;Link</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/sanity/schemas</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/sanity/schemas/work</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -161,6 +82,11 @@
         <option value="$PROJECT_DIR$/sanity/schemas/schema.js" />
         <option value="$PROJECT_DIR$/src/templates/workTemplate.tsx" />
         <option value="$PROJECT_DIR$/gatsby-node.js" />
+        <option value="$PROJECT_DIR$/gatsby-config.js" />
+        <option value="$PROJECT_DIR$/src/content/profile.js" />
+        <option value="$PROJECT_DIR$/src/pages/profile.js" />
+        <option value="$PROJECT_DIR$/_archive/work/work.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/work.js" />
       </list>
     </option>
   </component>
@@ -182,6 +108,28 @@
               <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="_archive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="_archive" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -192,6 +140,11 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -212,7 +165,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3558000" />
+    <option name="totallyTimeSpent" value="5038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -261,7 +214,7 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/content/work/nike-jordan-editor.mdx">
+    <entry file="file://$PROJECT_DIR$/_archive/work/nike-jordan-editor.mdx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="913">
           <caret line="223" column="20" selection-start-line="223" selection-start-column="13" selection-end-line="223" selection-end-column="20" />
@@ -316,9 +269,6 @@
           <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/profileTemplate.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/labTemplate.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -417,6 +367,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_archive/work/google-pathfinder.mdx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="1" column="5" selection-start-line="1" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_archive/profile/profile.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_archive/profile/profile-1.mdx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_archive/work/work.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/work/menu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/content/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="81" column="2" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/profileTemplate.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/sanity/schemas/schema.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
@@ -426,8 +423,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gatsby-node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="171">
+          <caret line="19" selection-start-line="19" selection-end-line="34" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gatsby-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/work.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>

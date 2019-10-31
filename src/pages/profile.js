@@ -13,7 +13,7 @@ import {
   interests,
   socials,
   visited,
-} from '../content/profile/profile';
+} from '../content/profile';
 import { useStyletron } from 'baseui';
 
 const ProfileSection = ({ children }) => {

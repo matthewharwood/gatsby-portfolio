@@ -17,13 +17,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mdxFiles`,
-        path: `${__dirname}/src/content`,
-      },
-    },
-    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: '42nykw3g',
