@@ -1,4 +1,4 @@
-import {list, single, linklist,collaborator} from './overview-type';
+import {list, single, linklist} from './overview-type';
 export default {
   name: 'projectOverviewSchema',
   title: 'Project Overview',
@@ -7,45 +7,38 @@ export default {
     {
       name: 'company',
       title: 'Company',
-      type: 'object',
-      fields: single,
+      type: 'company'
     },
+
     {
       name: 'client',
       title: 'Client',
-      type: 'object',
-      fields: single,
+      type: 'client',
     },
     {
       name: 'role',
       title: 'My Role',
-      type: 'object',
-      fields: single,
+      type: 'role',
     },
     {
       name: 'when',
       title: 'When',
-      type: 'object',
-      fields: single,
+      type: 'when',
     },
     {
       name: 'collaborators',
       title: 'Collaborators',
-      type: 'object',
-      // fields: collaborator, this doesn't work yet with renderer
-      fields: list,
+      type: 'collaborators',
     },
     {
       name: 'technology',
       title: 'Technology',
-      type: 'object',
-      fields: list,
+      type: 'technology',
     },
     {
       name: 'resources',
       title: 'Resources',
-      type: 'object',
-      fields: linklist,
+      type: 'resources',
     },
   ],
 };

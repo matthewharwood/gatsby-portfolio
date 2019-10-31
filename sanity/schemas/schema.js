@@ -23,10 +23,27 @@ import person from './person';
 import challenge  from './work/challenge/challenge';
 import legend  from './work/challenge/legend';
 import solutionCard from './work/challenge/solution-card';
+import client from './work/postHeader/client';
+import collaborators from './work/postHeader/collaborators';
+import company from './work/postHeader/company';
+import resources from './work/postHeader/resources';
+import role from './work/postHeader/role';
+import technology from './work/postHeader/technology';
+import when from './work/postHeader/when';
+import {listLinkData, listData} from "./work/postHeader/overview-type"
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    client,
+    listLinkData,
+    listData,
+    collaborators,
+    company,
+    resources,
+    role,
+    technology,
+    when,
     label,
     legend,
     solutionCard,

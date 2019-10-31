@@ -21,8 +21,28 @@ export const componentMap = {
   "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />)
 }
 
+// export const componentMap2 = {
+//   "postHeader": PostHeader,
+//   "summary": Summary,
+//   "process": Process,
+//   "highlight": Highlight,
+//   "highlightBold": HighlightBold,
+//   "quote": Quote,
+//   "video": Video,
+//   "challenge": Challenge,
+// }
+//
+// const components = {
+//   photo: PhotoStory,
+//   video: VideoStory
+// };
 
-// This will not work yet
+// function Story(props) {
+//   // Correct! JSX type can be a capitalized variable.
+//   const SpecificStory = components[props.storyType];
+//   return <SpecificStory story={props.story} />;
+// }
+
 export const componentMapfn = (props: any, key: number) => {
   const ComponentName = inflection.classify(props._type);
   return <ComponentName {...props} key={key} />;

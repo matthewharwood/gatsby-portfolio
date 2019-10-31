@@ -14,80 +14,41 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-// Create pages for respective markdown files
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
-
-  // Queries all Mdx files with appropriate data fields
+exports.createPages = ({actions, graphql}) => {
+  const {createPage} = actions;
   return graphql(`
     {
-      workPages: allMdx(
-        filter: { frontmatter: { templateKey: { eq: "workTemplate" } } }
-        sort: { fields: frontmatter___date }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              templateKey
-              title
-              description
-            }
-          }
-        }
-      }
-      workPages2: allSanityWork(sort: { fields: data }) {
-        edges {
-          node {
-            id
-            templateKey
-            title
-            description
-            path
-            data
-          }
+  
+    allSanityWork {
+      edges {
+        node {
+         id
+         templateKey
+         slug {
+           _key
+           _type
+           current
+         }
         }
       }
     }
+  }
   `).then(result => {
-    if (result.errors) {
-      Promise.reject(result.errors);
-    }
 
-    // // Create pages for the markdown files by using the data queried earlier
-    // const workFiles = result.data.workPages.edges;
-    // workFiles.forEach(({ node }, index) => {
-    //   // console.log(index, node.fields.slug);
-    //   createPage({
-    //     path: node.fields.slug,
-    //     component: path.resolve(
-    //       `./src/templates/${String(node.frontmatter.templateKey)}.tsx`
-    //     ),
-    //     context: {
-    //       id: node.id,
-    //       prev: index === 0 ? null : workFiles[index - 1].node,
-    //       next:
-    //         index === workFiles.length - 1 ? null : workFiles[index + 1].node,
-    //     },
-    //   });
-    // });
-    const workFiles = result.data.workPages2.edges;
+    const workFiles = result.data.allSanityWork.edges;
     workFiles.forEach(({node}, index) => {
-      createPage({
-        path: `/work2${node.path}`,
-        component: path.resolve(
-          `./src/templates/${String(node.templateKey)}.tsx`
-        ),
-        context: {
-          id: node.id,
-          prev: index === 0 ? null : workFiles[index - 1].node,
-          next:
-            index === workFiles.length - 1 ? null : workFiles[index + 1].node,
-        },
-      })
+        createPage({
+          path: path.join('/work2', node.slug.current),
+          component: path.resolve(
+            `./src/templates/${String(node.templateKey)}.tsx`
+          ),
+          context: {
+            id: node.id,
+            prev: index === 0 ? null : workFiles[index - 1].node,
+            next:
+              index === workFiles.length - 1 ? null : workFiles[index + 1].node,
+          },
+        })
     })
-  });
-};
+  })
+}
