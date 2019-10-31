@@ -8,6 +8,7 @@ import {pageRenderer} from '../services/page-renderer';
 
 const WorkTemplate = ({ data, pageContext }: any) => {
   const flattenedData = data.sanityWork;
+  console.log(flattenedData);
   return (
     <>
       <Navbar />
