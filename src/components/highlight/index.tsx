@@ -8,7 +8,7 @@ import {
 } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
-import Img from 'gatsby-image';
+import Image from 'gatsby-image';
 
 
 const Highlight = ({
@@ -23,8 +23,9 @@ const Highlight = ({
   rightCols = 8,
   orderLeft = 0,
   orderRight = 1,
-   src = 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
+  image,
 }: any) => {
+  const hasImage = Boolean(image && image.asset && image.asset._ref);
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary100;
   const color = $color || theme.colors.primary700;
@@ -45,9 +46,10 @@ const Highlight = ({
             </>
           </GridItemLeft>
           <GridItemRight rightCols={rightCols} orderRight={orderRight}>
-            {/*<Img*/}
+            {hasImage && <img src={'https://cdn.sanity.io/images/42nykw3g/production/cb360e99f80ff8a5521fa62de2c833b5d1d37258-935x523.png'} alt=""/>}
+            {/*<Image*/}
             {/*  style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}*/}
-            {/*  fluid={src}*/}
+            {/*  // fluid={image.asset.fluid}*/}
             {/*/>*/}
           </GridItemRight>
         </Grid>

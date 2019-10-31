@@ -9,6 +9,14 @@ export default {
             type: 'string',
         },
         {
+            name: 'image',
+            title: 'Main image',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string',
@@ -52,11 +60,6 @@ export default {
             name: 'rightType',
             title: "Right Type",
             type: "string",
-        },
-        {
-            name: 'src',
-            title: "Image Source",
-            type: "url",
         },
         {
             name: 'body',
