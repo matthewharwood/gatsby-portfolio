@@ -13,7 +13,7 @@ import { Paragraph1, Label2, Label4 } from 'baseui/typography';
 import { mq, display, positions } from '../styles';
 
 const CardItem = ({
-  $accentColor = 'transparent',
+  accentColor = 'transparent',
   $color,
   $labelColor,
   heading,
@@ -33,7 +33,7 @@ const CardItem = ({
       '::before': {
         content: '""',
         height: theme.sizing.scale100,
-        backgroundColor: $accentColor,
+        backgroundColor: accentColor,
         position: positions.absolute,
         top: 0,
         left: 0,
@@ -178,7 +178,7 @@ export const Challenge = ({
   solution,
   takeaway,
   $color,
-  $cardsDirection,
+  cardsDirection,
   solutionCards = [],
   legend,
 }: any) => {
@@ -190,22 +190,22 @@ export const Challenge = ({
         <Headline
           title={`Challenge #${challengeNum}`}
           text={challengeText}
-        ></Headline>
+        />
         <Headline
           title="solution"
           text={solution}
           $hasBottomMargin={false}
-        ></Headline>
+        />
         <SolutionCards
           data={solutionCards}
           legend={legend}
-          $cardsDirection={$cardsDirection}
-        ></SolutionCards>
+          cardsDirection={cardsDirection}
+        />
         <Headline
           title="takeaway"
           text={takeaway}
           $hasBottomMargin={false}
-        ></Headline>
+        />
       </Container>
     </Section>
   );

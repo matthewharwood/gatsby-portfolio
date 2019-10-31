@@ -52,6 +52,7 @@ export default {
                 { type: 'highlightBold' },
                 { type: 'quote' },
                 { type: 'video' },
+                { type: 'challenge' },
             ],
         },
     ],

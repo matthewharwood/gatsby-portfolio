@@ -20,12 +20,18 @@ import resource from './work/postHeader/resource'
 import label from './baseui/label';
 import link from './baseui/link';
 import person from './person';
+import challenge  from './work/challenge/challenge';
+import legend  from './work/challenge/legend';
+import solutionCard from './work/challenge/solution-card';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     label,
+    legend,
+    solutionCard,
     person,
+    challenge,
     link,
     post,
     author,
