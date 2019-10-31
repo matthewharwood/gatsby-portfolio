@@ -18,7 +18,8 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "default", value: "blue" },
+          { title: "blue", value: "blue" },
+          { title: "red", value: "tomato" },
         ],
       },
     }],

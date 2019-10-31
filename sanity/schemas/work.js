@@ -29,6 +29,15 @@ export default {
             validation: Rule => Rule.required().min(3).max(80),
         },
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 96
+            }
+        },
+        {
             name: 'date',
             title: 'Date',
             type: 'datetime',

@@ -6,6 +6,8 @@ import {Highlight} from "../components/highlight"
 import {HighlightBold} from "../components/highlight-bold"
 import {Quote} from "../components/quote";
 import {Video} from "../components/video"
+import {Challenge} from "../components/challenge"
+
 const inflection = require( 'inflection' );
 
 export const componentMap = {
@@ -16,6 +18,7 @@ export const componentMap = {
   "highlightBold": (props: any, key: number) => (<HighlightBold {...props} key={key}/>),
   "quote": (props: any, key: number) => (<Quote {...props} key={key}/>),
   "video": (props: any, key: number) => (<Video {...props} key={key}/>),
+  "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />)
 }
 
 
