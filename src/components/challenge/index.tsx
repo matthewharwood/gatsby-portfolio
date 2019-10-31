@@ -196,16 +196,16 @@ export const Challenge = ({
           text={solution}
           $hasBottomMargin={false}
         />
-        <SolutionCards
+        {!!solutionCards.length && <SolutionCards
           data={solutionCards}
           legend={legend}
           cardsDirection={cardsDirection}
-        />
-        <Headline
+        />}
+        {takeaway && <Headline
           title="takeaway"
           text={takeaway}
           $hasBottomMargin={false}
-        />
+        />}
       </Container>
     </Section>
   );
