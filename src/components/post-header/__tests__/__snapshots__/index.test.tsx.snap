@@ -29,34 +29,19 @@ exports[`Page Renderer  should render postHeader 1`] = `
           <div
             className=""
             data-baseweb="typo-display2"
-          />
+          >
+            Nike CMS
+          </div>
           <p
             className=""
             data-baseweb="typo-p1"
-          />
+          >
+            Some sub text here
+          </p>
         </div>
         <div
           className=""
         >
-          <div
-            className=""
-          >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              _type
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            />
-          </div>
           <div
             className=""
           >

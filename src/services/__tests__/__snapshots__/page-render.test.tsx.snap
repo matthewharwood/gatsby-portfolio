@@ -30,34 +30,19 @@ Array [
             <div
               className=""
               data-baseweb="typo-display2"
-            />
+            >
+              Stanley CMS
+            </div>
             <p
               className=""
               data-baseweb="typo-p1"
-            />
+            >
+              A real-time WYSIWYG editor for project owners, designers, copywriters to rapid prototype pages.
+            </p>
           </div>
           <div
             className=""
           >
-            <div
-              className=""
-            >
-              <div
-                className=""
-                data-baseweb="typo-label2"
-                style={
-                  Object {
-                    "textTransform": "capitalize",
-                  }
-                }
-              >
-                _type
-              </div>
-              <p
-                className=""
-                data-baseweb="typo-p4"
-              />
-            </div>
             <div
               className=""
             >

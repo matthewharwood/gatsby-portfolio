@@ -78,6 +78,7 @@ const CardItem = ({
       </div>
       <Paragraph1
         color={'inherit'}
+        // @ts-ignore
         className={css({
           display: text ? display.flex : display.none,
           flexDirection: 'column',
@@ -182,10 +183,12 @@ export const Challenge = ({
   solutionCards = [],
   legend,
 }: any) => {
-  const [css, theme] = useStyletron();
+  const [theme] = useStyletron();
+  // @ts-ignore
   const color = $color || theme.colors.primary700;
   return (
     <Section $collapsePaddingBottom={true} $color={color}>
+      // @ts-ignore
       <Container $color={theme.colors.primary300} $borderBottom={true}>
         <Headline
           title={`Challenge #${challengeNum}`}
