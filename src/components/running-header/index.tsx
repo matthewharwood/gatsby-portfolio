@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useStyletron } from 'baseui';
 import { Label4 } from 'baseui/typography';
-import { useInterval } from './use-interval';
-import { interests } from './interests';
+import { useInterval } from '../utils/use-interval';
+import { interests } from '../../content/interests';
 import { mq } from '../styles';
 import {useTransition, animated} from 'react-spring';
 

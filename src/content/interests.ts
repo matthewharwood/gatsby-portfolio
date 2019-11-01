@@ -1,4 +1,4 @@
-import { shuffle } from './shuffle';
+import { shuffle } from '../components/utils/shuffle';
 
 export const interests: Array<{ name: string }> = shuffle([
   { name: 'the future' },
