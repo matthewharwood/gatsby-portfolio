@@ -5,7 +5,7 @@ import { useInterval } from '../utils/use-interval';
 import { interests } from '../../content/interests';
 import { mq } from '../styles';
 import {useTransition, animated} from 'react-spring';
-
+import { StyledLink } from "baseui/link";
 
 const RunningHeader: FunctionComponent = () => {
   const [css, theme] = useStyletron();
@@ -76,10 +76,6 @@ const RunningHeader: FunctionComponent = () => {
       paddingLeft: theme.sizing.scale700,
     },
   });
-  const a = css({
-    color: 'inherit',
-    textDecoration: 'none',
-  });
 
   const s = css({
     color: 'inherit',
@@ -88,19 +84,13 @@ const RunningHeader: FunctionComponent = () => {
   return (
     <ul className={cList}>
       <li className={cItem}>
-
-        <Label4
-          // @ts-ignore
-          className={a}>
+        <Label4 color={'inherit'}>
           Contact
         </Label4>
       </li>
       <li className={cItemLink} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-
-        <Label4
-          as="a"
-          // @ts-ignore
-          className={a}
+        <StyledLink
+          style={{textDecoration:'none'}}
           href={`mailto:matthhar12@gmail.com?subject=${interests[count].name}`}
           target={'_blank'}
           color={'inherit'}
@@ -109,8 +99,7 @@ const RunningHeader: FunctionComponent = () => {
           <span className={s}>
             ✉ <i>{renderTrans(interests[count].name)}</i>
           </span>
-          {}
-        </Label4>
+        </StyledLink>
       </li>
     </ul>
   );
