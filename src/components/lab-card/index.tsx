@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 
-const LabCardWrapper = ({ isImage, children }) => {
+const LabCardWrapper = ({
+  isImage,
+  children,
+}: {
+  isImage: Boolean;
+  children: React.ReactNode;
+}) => {
   const [css, theme] = useStyletron();
   return (
     <div
       className={css({
         backgroundColor: theme.colors.primary50,
-        boxShadow: theme.lighting.shadow600,
+        boxShadow: theme.lighting.shadow500,
         position: 'relative',
         height: isImage ? '430px' : '215px',
         maxWidth: '400px',
@@ -23,8 +29,8 @@ const LabCardWrapper = ({ isImage, children }) => {
   );
 };
 
-const LabCardImage = ({ image }) => {
-  const [css, theme] = useStyletron();
+const LabCardImage = ({ image }: { image: string }) => {
+  const [css] = useStyletron();
   return (
     <img
       src={image}
@@ -39,7 +45,18 @@ const LabCardImage = ({ image }) => {
   );
 };
 
-const LabCardContents = ({ isImage, title, tags }) => {
+type LabCardDataContents = {
+  isImage: Boolean;
+  title: string;
+  tags: Array<string>;
+};
+
+type LabCardContentsType = {
+  data: LabCardDataContents;
+};
+
+const LabCardContents: FunctionComponent<LabCardContentsType> = ({ data }) => {
+  const { isImage, title, tags } = data;
   const [css, theme] = useStyletron();
   return (
     <div
@@ -56,19 +73,21 @@ const LabCardContents = ({ isImage, title, tags }) => {
           padding: theme.sizing.scale700,
         })}
       >
-        <Tags tags={tags}/>
+        <Tags tags={tags} />
         <H3>{title}</H3>
       </div>
     </div>
   );
 };
 
-const Tags = ({ tags }) => {
+const Tags = ({ tags }: { tags: Array<string> }) => {
   const [css, theme] = useStyletron();
   return (
-    <div className={css({
-      height: theme.sizing.scale700,
-    })}>
+    <div
+      className={css({
+        height: theme.sizing.scale700,
+      })}
+    >
       {tags.map(tag => (
         <div
           className={css({
@@ -89,23 +108,44 @@ const Tags = ({ tags }) => {
   );
 };
 
-const LabCard = ({ ui, data = {} }) => {
-  const [css,theme] = useStyletron();
-  const image = data.image || null;
+type LabCardType = {
+  data: LabCardDataType;
+};
+
+type LabCardDataType = {
+  image: string;
+  tags: Array<string>;
+  title: string;
+};
+
+const LabCard: FunctionComponent<LabCardType> = ({ data }) => {
+  const [css, theme] = useStyletron();
+  const image = data.image || '';
   const tags = data.tags || [];
   const title = data.title || 'Test Title 1';
 
-  const isImage = image !== null;
+  const isImage = image !== '';
   return (
-    <div className={css({
-        width:'100%',
+    <div
+      className={css({
+        width: '100%',
         gridColumn: 'span 4',
-        border: '1px solid black',
-    })}>
+        borderTop: `1px solid ${theme.colors.primary300}`,
+        borderBottom: `1px solid ${theme.colors.primary300}`,
+        marginTop: theme.sizing.scale300,
+        marginBottom: theme.sizing.scale300,
+      })}
+    >
       <LabCardWrapper isImage={isImage}>
-        <LabCardImage image={image} />
-        <LabCardContents isImage={isImage} title={title} tags={tags} />
-    </LabCardWrapper>
+        {isImage && <LabCardImage image={image} />}
+        <LabCardContents
+          data={{
+            isImage: isImage,
+            title: title,
+            tags: tags,
+          }}
+        />
+      </LabCardWrapper>
     </div>
   );
 };
