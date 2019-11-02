@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import { useStyletron } from 'baseui';
-import { Paragraph4, Label4 } from 'baseui/typography';
-import { mq, display, positions } from '../styles';
+import React, { FunctionComponent } from "react"
+import { useStyletron } from "baseui"
+import { Paragraph4, Label4 } from "baseui/typography"
+import { mq, display, positions } from "../styles"
 
 type FolioProps = {
   headline: string;
@@ -13,18 +13,12 @@ type FolioProps = {
 };
 
 const Folio: FunctionComponent<FolioProps> = ({
-  headline,
-  subheadline,
-  link,
-}) => {
-  const [css, theme] = useStyletron();
-  const lg = mq.lg;
-  const a = css({
-    borderLeft: 'none',
-    paddingTop: theme.sizing.scale500,
-    paddingLeft: 0,
-    paddingRight: 0,
-  });
+                                                headline,
+                                                subheadline,
+                                                link,
+                                              }) => {
+  const [css, theme] = useStyletron()
+  const lg = mq.lg
 
   return (
     <footer
@@ -35,8 +29,8 @@ const Folio: FunctionComponent<FolioProps> = ({
           fontSize: theme.sizing.scale500,
           borderLeft: `${theme.sizing.scale100} solid ${theme.colors.accent}`,
           paddingLeft: theme.sizing.scale700,
-          transform: 'rotate(-90deg)',
-          transformOrigin: 'left bottom',
+          transform: "rotate(-90deg)",
+          transformOrigin: "left bottom",
           position: positions.fixed,
           bottom: 0,
           left: 0,
@@ -44,28 +38,28 @@ const Folio: FunctionComponent<FolioProps> = ({
         },
       })}
     >
-      // @ts-ignore
-      <Label4 as="span" className={css({ color: theme.colors.accent })}>
+
+      <Label4 as="span" color={"accent"}>
         {headline}
       </Label4>
       <Paragraph4 margin={0}>
         <Label4
           as="span"
-          // @ts-ignore
-          className={css({
-            color: theme.colors.primary600,
-          })}
-        >
+          color={"primary600"}>
           {subheadline}
         </Label4>
-        // @ts-ignore
-        <Label4 as="a" className={a} href={link && link.href}>
-          {' '}
+        <Label4 as="a"
+            paddingTop={theme.sizing.scale500}
+            paddingLeft={0}
+            paddingRight={0}
+            // @ts-ignore
+            href={link && link.href}>
+          {" "}
           {link && link.text}
         </Label4>
       </Paragraph4>
     </footer>
-  );
-};
+  )
+}
 
-export { Folio };
+export { Folio }
