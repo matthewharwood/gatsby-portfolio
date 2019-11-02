@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from "react"
 import { graphql } from 'gatsby';
 
 import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
 import {pageRenderer} from '../services/page-renderer';
+import useScroll from "../components/utils/use-scroll"
 
 const WorkTemplate = ({ data }: any) => {
   const flattenedData = data.sanityWork;
-  console.log(flattenedData);
+  const scrolled = useScroll();
+
   return (
     <>
-      <Navbar />
+      <Navbar show={scrolled} />
       {pageRenderer(flattenedData)}
       <Footer />
     </>

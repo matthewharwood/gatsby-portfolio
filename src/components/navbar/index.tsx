@@ -6,7 +6,8 @@ import { H5, Label2 } from 'baseui/typography';
 import Grab from 'baseui/icon/grab';
 import Delete from 'baseui/icon/delete';
 import { mq, display, colors } from '../styles';
-export const Navbar = () => {
+
+export const Navbar = ({show = true}: any) => {
   const [css, theme] = useStyletron();
 
   const lg = mq.lg;
@@ -14,6 +15,14 @@ export const Navbar = () => {
   return (
     <nav
       className={css({
+        position: 'fixed',
+        // position: 'relative',
+        top: 0,
+        right: 0,
+        left: 0,
+        visibility: show ? 'visible' : 'hidden',
+        transition: 'all .75s cubic-bezier(0.4, 0.0, 0.2, 1)',
+        transform: show ? 'none' : 'translate(0, -100%)',
         backgroundColor: theme.colors.primary,
         color: theme.colors.mono100,
         textTransform: 'uppercase',
@@ -25,7 +34,6 @@ export const Navbar = () => {
         paddingTop: theme.sizing.scale500,
         paddingBottom: theme.sizing.scale500,
         zIndex: theme.zIndex.modal,
-        position: 'relative',
         [lg]: {
           paddingLeft: theme.sizing.scale1600,
           paddingRight: theme.sizing.scale1600,

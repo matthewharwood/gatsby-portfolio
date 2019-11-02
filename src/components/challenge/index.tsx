@@ -183,7 +183,7 @@ export const Challenge = ({
   solutionCards = [],
   legend,
 }: any) => {
-  const [theme] = useStyletron();
+  const [,theme] = useStyletron();
   // @ts-ignore
   const color = $color || theme.colors.primary700;
   return (
