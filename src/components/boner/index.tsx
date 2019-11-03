@@ -239,8 +239,8 @@ const Boner:FunctionComponent<Size> = React.memo(({size, pos}) => {
 
   return <canvas className={css({
     position:'fixed',
-    top: pos[0] || 0,
-    left: pos[3] || 0,
+    top: pos ? pos[0] : 0,
+    left: pos ? pos[3] : 0,
     zIndex: -1,
   })} width="500" height="500" ref={canvasRef} />;
 });
