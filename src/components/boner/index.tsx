@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react';
+import React, { createRef, useEffect, FunctionComponent } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
 import {useStyletron} from 'baseui';
 
@@ -45,11 +45,11 @@ let q = quat.create(),
   scale2 = [3, 1, 1],
   pivot2 = [-1, 0, 0];
 
-function initGL(canvasRef: any) {
+function initGL(canvasRef: any, size: number) {
   const { current: canvas } = canvasRef;
 
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight;
+  canvas.width = size || document.body.clientWidth;
+  canvas.height = size || document.body.clientHeight;
   gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
   if (!gl) {
     alert(
@@ -222,12 +222,12 @@ function draw(timeMs: number) {
   gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
 }
-
-const Boner = () => {
+type Size = {size: number, pos: string[]}
+const Boner:FunctionComponent<Size> = React.memo(({size, pos}) => {
   const canvasRef: any = createRef();
   const [css] = useStyletron();
   useEffect(() => {
-    initGL(canvasRef);
+    initGL(canvasRef, size);
     createShaders();
     createVertices(canvasRef);
     rafId = requestAnimationFrame(draw);
@@ -239,9 +239,10 @@ const Boner = () => {
 
   return <canvas className={css({
     position:'fixed',
-    top: 0,
+    top: pos[0] || 0,
+    left: pos[3] || 0,
     zIndex: -1,
   })} width="500" height="500" ref={canvasRef} />;
-};
+});
 
 export { Boner };

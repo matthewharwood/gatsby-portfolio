@@ -12,7 +12,7 @@ const WorkTemplate = ({ data }: any) => {
 
   return (
     <>
-      <Navbar show={scrolled} />
+      <Navbar show={scrolled}/>
       {pageRenderer(flattenedData)}
       <Footer />
     </>
