@@ -4,7 +4,6 @@ exports[`Should create Nav with children renders correctly 1`] = `
 <footer
   className=""
 >
-  // @ts-ignore
   <span
     className=""
     data-baseweb="typo-label4"
@@ -21,7 +20,6 @@ exports[`Should create Nav with children renders correctly 1`] = `
     >
       A creative playground by
     </span>
-    // @ts-ignore
     <a
       className=""
       data-baseweb="typo-label4"
