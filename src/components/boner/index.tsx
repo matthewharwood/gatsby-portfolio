@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, FunctionComponent } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
-import {useStyletron} from 'baseui';
+import { useStyletron } from 'baseui';
 
 const vs = `
   attribute vec4 coords;
@@ -174,8 +174,8 @@ function createVertices(canvasRef: any) {
   mat4.translate(matrix, matrix, [0, 0, -4]);
 }
 
-let rafId:any = null;
-const easeInCirc = (t:any) => t * t * t;
+let rafId: any = null;
+const easeInCirc = (t: any) => t * t * t;
 let quat_t = null;
 const offset = 0.5;
 let trans_t = null;
@@ -222,8 +222,8 @@ function draw(timeMs: number) {
   gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
 }
-type Size = {size: number, pos: string[]}
-const Boner:FunctionComponent<Size> = React.memo(({size, pos}) => {
+type Size = { size: number; pos: string[] };
+const Boner: FunctionComponent<Size> = React.memo(({ size, pos }) => {
   const canvasRef: any = createRef();
   const [css] = useStyletron();
   useEffect(() => {
@@ -237,12 +237,20 @@ const Boner:FunctionComponent<Size> = React.memo(({size, pos}) => {
     };
   });
 
-  return <canvas className={css({
-    position:'fixed',
-    top: pos ? pos[0] : 0,
-    left: pos ? pos[3] : 0,
-    zIndex: -1,
-  })} width="500" height="500" ref={canvasRef} />;
+  return (
+    <canvas
+      className={css({
+        position: 'fixed',
+        top: pos ? pos[0] : 0,
+        left: pos ? pos[3] : 0,
+        zIndex: -1,
+        background: 'transparent',
+      })}
+      width="500"
+      height="500"
+      ref={canvasRef}
+    />
+  );
 });
 
 export { Boner };

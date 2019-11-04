@@ -6,11 +6,11 @@ import { H5, Label2 } from 'baseui/typography';
 import Grab from 'baseui/icon/grab';
 import Delete from 'baseui/icon/delete';
 import { mq, display, colors } from '../styles';
-import { Boner } from "../boner"
+import { Boner } from '../boner';
 
-export const Navbar = memo(({show = true}: any) => {
+export const Navbar = memo(({ show = true }: any) => {
   const [css, theme] = useStyletron();
-  console.log('rerendere')
+  console.log('rerendere');
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
   return (
@@ -111,7 +111,7 @@ const NavHeader = () => {
           display: 'flex',
         })}
       >
-        <Boner size={80} pos={['6px','auto', 'auto', '6px']} />
+        <Boner size={70} pos={['6px', 'auto', 'auto', '6px']} />
         <H5
           color={'inherit'}
           className={css({

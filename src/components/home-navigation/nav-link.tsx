@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Link } from 'gatsby';
 import { mq, display, fontFamily } from '../styles';
-import {useSpring, animated} from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import BezierEasing from 'bezier-easing';
 
 type NavLinkProps = {
@@ -74,22 +74,20 @@ const NavLink: FunctionComponent<NavLinkProps> = ({
     },
   });
   const easing = BezierEasing(0.4, 0.0, 0.2, 1);
-  const props = useSpring(
-    {
-      opacity: 1,
-      transform: 'translateY(0)',
-      from: {opacity: 0, transform: 'translateY(100%)'},
-      delay: ((parseInt(index , 10)) * 300),
-      config: {easing},
-    },
-  );
+  const props = useSpring({
+    opacity: 1,
+    transform: 'translateY(0)',
+    from: { opacity: 0, transform: 'translateY(100%)' },
+    delay: parseInt(index, 10) * 300,
+    config: { easing },
+  });
   return (
-
-      <Link to={to} className={c}>
-        <animated.div style={props}><NavLinkSpan>{text}</NavLinkSpan></animated.div>
-        <NavLinkIndex>{`0${parseInt(index) + 1}`}</NavLinkIndex>
-      </Link>
-
+    <Link to={to} className={c} state={{ update: to }}>
+      <animated.div style={props}>
+        <NavLinkSpan>{text}</NavLinkSpan>
+      </animated.div>
+      <NavLinkIndex>{`0${parseInt(index) + 1}`}</NavLinkIndex>
+    </Link>
   );
 };
 
