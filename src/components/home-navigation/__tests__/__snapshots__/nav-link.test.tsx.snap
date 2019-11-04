@@ -4,6 +4,11 @@ exports[`Should create Nav with children renders correctly 1`] = `
 <a
   className=""
   href="/hello"
+  state={
+    Object {
+      "update": "/hello",
+    }
+  }
 >
   <div
     style={
