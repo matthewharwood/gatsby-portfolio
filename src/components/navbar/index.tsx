@@ -10,7 +10,7 @@ import { Boner } from '../boner';
 
 export const Navbar = memo(({ show = true }: any) => {
   const [css, theme] = useStyletron();
-  console.log('rerendere');
+  console.log('rerendere', show);
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
   return (
