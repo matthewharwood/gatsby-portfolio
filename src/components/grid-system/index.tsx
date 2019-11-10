@@ -125,16 +125,17 @@ export const GridItemRight = ({
   return <div {...c}>{children}</div>;
 };
 
-export const Grid = ({ children, $gridColumn = '1/-1' }: any) => {
+export const Grid = ({ children, $gridColumn = '1/-1', $gridGap, $alignItems }: any) => {
   const [css, theme] = useStyletron();
 
   const className = css({
     background: 'inherit',
     display: display.grid,
-    gridGap: theme.sizing.scale800,
+    gridGap: $gridGap || theme.sizing.scale800,
     gridTemplateColumns: 'repeat(4, 1fr)',
     width: '100%',
     gridColumn: $gridColumn,
+    alignItems: $alignItems || 'normal',
     [mq.md]: {
       width: '100%',
       gridGap: theme.sizing.scale1200,
