@@ -23,4 +23,5 @@ export const display = {
 
 export const colors = {
   transparent: 'transparent',
+  primary300Opacity: 'rgba(247,247,247,0.9)',
 };
