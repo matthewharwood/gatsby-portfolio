@@ -5,7 +5,7 @@ import useComponentSize from '@rehooks/component-size';
 import { colors } from '../styles';
 import { mq } from '../styles';
 
-import { CardDataType } from '../lab-card'
+import { CardDataType } from '../../pages/lab'
 
 // Structure:
 // ----------
