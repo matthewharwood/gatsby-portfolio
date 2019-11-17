@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, FunctionComponent } from 'react';
+import Img from 'gatsby-image';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 import useComponentSize from '@rehooks/component-size';
@@ -37,7 +38,7 @@ const LabCard: FunctionComponent<{data:CardDataType}> = ({ data }) => {
         }
       })}
     >
-      <CardInner image={image} title={title} tags={tags} />
+      <CardInner image={image.asset.fluid} title={title} tags={tags} />
     </div>
   );
 };
@@ -69,7 +70,7 @@ const Image: FunctionComponent<{image:string}> = ({ image }) => {
     objectFit: 'cover',
     zIndex: 0,
   });
-  return <img className={c} src={image} alt="" />;
+  return <img className={c} src={image.src} alt="" />;
 };
 
 type CardBodyDataType = {
