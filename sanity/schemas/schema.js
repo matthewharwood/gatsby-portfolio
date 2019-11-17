@@ -7,6 +7,7 @@ import category from './category'
 import post from './post'
 import author from './author'
 
+import lab from '../schemas/lab'
 import work from './work'
 import summary from './work/summary'
 import postHeader from './work/postHeader'
@@ -62,6 +63,7 @@ export default createSchema({
     quote,
     video,
     projectOverviewSchema,
+    lab,
     resource,
     blockContent,
   ])

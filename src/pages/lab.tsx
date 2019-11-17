@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { graphql } from 'gatsby';
 
 import { H1, H3, H5 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
@@ -17,66 +18,26 @@ import { mq } from '../components/styles';
 //    CardsColumn * 3 (Todo, Doing, Done)
 //        LabCard * n (number of cards)
 
-const Lab = () => {
-  const data = {
+const Lab = ({ data }) => {
+  const allCards = data.allSanityLab.edges.map(edge => edge.node);
+  const todoItems = allCards.filter(card => card.status === 'todo');
+  const doingItems = allCards.filter(card => card.status === 'doing');
+  const doneItems = allCards.filter(card => card.status === 'done');
+  const structuredData = {
     todoCards: {
       heading: 'Todo',
-      cards: [
-        {
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          image: 'https://picsum.photos/350/700',
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-      ],
+      cards: todoItems,
     },
     doingCards: {
       heading: 'Doing',
-      cards: [
-        {
-          image: 'https://picsum.photos/350/700',
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          image: 'https://picsum.photos/350/700',
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-      ],
+      cards: doingItems,
     },
     doneCards: {
       heading: 'Done',
-      cards: [
-        {
-          image: 'https://picsum.photos/350/700',
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-        {
-          image: 'https://picsum.photos/350/700',
-          tags: ['art', 'wasm'],
-          title: 'Lab Card Title',
-        },
-      ],
+      cards: doneItems,
     },
   };
-  return <LabCardsGrid data={data} />;
+  return <LabCardsGrid data={structuredData} />;
 };
 
 type LabCardsGridType = {
@@ -111,7 +72,9 @@ const LabHeader = () => {
   return (
     <>
       <GridSpanFour>
-        <H1 marginBottom={0} color={'inherit'}>Labs</H1>
+        <H1 marginBottom={0} color={'inherit'}>
+          Labs
+        </H1>
         <H5 marginTop={0}>A Laboratory of Experiments</H5>
       </GridSpanFour>
       <GridSpanFour />
@@ -120,7 +83,7 @@ const LabHeader = () => {
   );
 };
 
-const GridSpanFour : FunctionComponent = ({ children }) => {
+const GridSpanFour: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   return (
     <div
@@ -181,5 +144,26 @@ const CardsColumn: FunctionComponent<CardsColumnType> = ({ data }) => {
     </div>
   );
 };
+
+export const PageQuery = graphql`
+  {
+    allSanityLab {
+      edges {
+        node {
+          title
+          tags
+          status
+          image {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid_withWebp
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Lab;
