@@ -10,10 +10,9 @@ export const Animate = () => {
     iterations: 1,
     easing: 'ease-in-out',
   };
-  const isClient = typeof window === 'object' ;
-  if(isClient) {
+  const isClient = typeof window === 'object';
+  if (isClient) {
     setTimeout(() => {
-
       // document.getElementById('animate-white').animate(keyWhite, timingWhite);
       // @ts-ignore
       document.getElementById('animate-tomato').animate(keyTomato, timings);

@@ -23,6 +23,9 @@ module.exports = {
     jestPuppeteer: true,
   },
   extends: [
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard",
     "eslint:recommended",
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',

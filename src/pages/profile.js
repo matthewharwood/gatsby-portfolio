@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Navbar } from '../components/navbar';
 import { H1, H2, H4, Paragraph2, Paragraph3 } from 'baseui/typography';
 import portrait from '../images/me4-sq.jpg';
@@ -296,7 +296,9 @@ const ResumeHeader = () => {
           </a>
         </li>
         <li>
-          <a href="tel:1-415-486-6018" className={aStyle}>{me.phone}</a>
+          <a href="tel:1-415-486-6018" className={aStyle}>
+            {me.phone}
+          </a>
         </li>
       </ul>
     </section>
