@@ -1,5 +1,7 @@
 import React from 'react';
 import { Folio } from './';
+// @ts-ignore
+
 export default {
   title: 'Folio',
 };

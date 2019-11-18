@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import {
   Section,
   Container,
@@ -11,8 +11,9 @@ import { Headline } from '../headline';
 import { useStyletron } from 'baseui';
 import { Paragraph1, Label2, Label4 } from 'baseui/typography';
 import { mq, display, positions } from '../styles';
+import { CardItemProps, ChallengeProps, SolutionCardsProp } from './type';
 
-const CardItem = ({
+const CardItem: FunctionComponent<CardItemProps> = ({
   accentColor = 'transparent',
   $color,
   $labelColor,
@@ -91,13 +92,18 @@ const CardItem = ({
   );
 };
 
-const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
+const SolutionCards: FunctionComponent<SolutionCardsProp> = ({
+  data,
+  legend = [],
+  $color,
+  cardsDirection,
+}) => {
   const [css, theme] = useStyletron();
   const color = $color || theme.colors.primary700;
-  const gridAutoFlow = $cardsDirection || 'row';
+  const gridAutoFlow = cardsDirection || 'row';
 
-  const cardItems = data.map((cardItem: any) => (
-    <div>
+  const cardItems = data.map((cardItem: CardItemProps, key: number) => (
+    <div key={key}>
       <CardItem
         {...cardItem}
         $labelColor={theme.colors.primary500}
@@ -114,8 +120,9 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
         marginTop: theme.sizing.scale1000,
       })}
     >
-      {legend.map((legendItem: any) => (
+      {legend.map((legendItem: any, key: number) => (
         <div
+          key={key}
           className={css({
             display: display.flex,
             marginRight: theme.sizing.scale1200,
@@ -150,7 +157,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
                 display: 'grid',
                 gridTemplateColumns: '1fr',
                 gridTemplateRows:
-                  $cardsDirection == 'column' ? '1fr 1fr 1fr' : '',
+                  cardsDirection == 'column' ? '1fr 1fr 1fr' : '',
                 gridGap: theme.sizing.scale700,
                 marginTop: theme.sizing.scale700,
                 [md]: {
@@ -173,7 +180,7 @@ const SolutionCards = ({ data, legend = [], $color, $cardsDirection }: any) => {
   );
 };
 
-export const Challenge = ({
+export const Challenge: FunctionComponent<ChallengeProps> = ({
   challengeNum = '1',
   challengeText,
   solution,
@@ -182,33 +189,25 @@ export const Challenge = ({
   cardsDirection,
   solutionCards = [],
   legend,
-}: any) => {
-  const [,theme] = useStyletron();
+}) => {
+  const [, theme] = useStyletron();
   // @ts-ignore
   const color = $color || theme.colors.primary700;
   return (
     <Section $collapsePaddingBottom={true} $color={color}>
-      // @ts-ignore
       <Container $color={theme.colors.primary300} $borderBottom={true}>
-        <Headline
-          title={`Challenge #${challengeNum}`}
-          text={challengeText}
-        />
-        <Headline
-          title="solution"
-          text={solution}
-          $hasBottomMargin={false}
-        />
-        {!!solutionCards.length && <SolutionCards
-          data={solutionCards}
-          legend={legend}
-          cardsDirection={cardsDirection}
-        />}
-        {takeaway && <Headline
-          title="takeaway"
-          text={takeaway}
-          $hasBottomMargin={false}
-        />}
+        <Headline title={`Challenge #${challengeNum}`} text={challengeText} />
+        <Headline title="solution" text={solution} $hasBottomMargin={false} />
+        {!!solutionCards.length && (
+          <SolutionCards
+            data={solutionCards}
+            legend={legend}
+            cardsDirection={cardsDirection}
+          />
+        )}
+        {takeaway && (
+          <Headline title="takeaway" text={takeaway} $hasBottomMargin={false} />
+        )}
       </Container>
     </Section>
   );
