@@ -1,15 +1,15 @@
-import { useStyletron } from "baseui"
-import { display, mq } from "../styles"
-import { StatefulPopover, TRIGGER_TYPE } from "baseui/popover"
-import { FacebookIcon } from "../icons/facebook"
-import { InstagramIcon } from "../icons/instagram"
-import { LinkedinIcon } from "../icons/linkedin"
-import { TwitterIcon } from "../icons/twitter"
-import React from "react"
+import { useStyletron } from 'baseui';
+import { display, mq } from '../styles';
+import { StatefulPopover, TRIGGER_TYPE } from 'baseui/popover';
+import { FacebookIcon } from '../icons/facebook';
+import { InstagramIcon } from '../icons/instagram';
+import { LinkedinIcon } from '../icons/linkedin';
+import { TwitterIcon } from '../icons/twitter';
+import React from 'react';
 
 export const FooterRight = () => {
-  const [css, theme] = useStyletron()
-  const md = mq.md
+  const [css, theme] = useStyletron();
+  const md = mq.md;
   const lg = mq.lg;
 
   return (
@@ -17,7 +17,7 @@ export const FooterRight = () => {
       className={css({
         display: display.flex,
         width: theme.sizing.scale4800,
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         order: -1,
         marginBottom: theme.sizing.scale600,
         [md]: {
@@ -30,14 +30,18 @@ export const FooterRight = () => {
         },
       })}
     >
-      <StatefulPopover content={() => "Hello, there! 👋"} triggerType={TRIGGER_TYPE.hover} showArrow>
+      <StatefulPopover
+        content={() => 'Hello, there! 👋'}
+        triggerType={TRIGGER_TYPE.hover}
+        showArrow
+      >
         <div>
-          <FacebookIcon/>
+          <FacebookIcon />
         </div>
       </StatefulPopover>
-      <InstagramIcon/>
-      <LinkedinIcon/>
-      <TwitterIcon/>
+      <InstagramIcon />
+      <LinkedinIcon />
+      <TwitterIcon />
     </div>
-  )
-}
+  );
+};
