@@ -15,9 +15,9 @@ const WorkItemWrapper = ({ children }) => {
     listStyleType: 'none',
     margin: 0,
     paddingTop: 0,
-    paddingBottom: theme.sizing.scale1200,
-    paddingLeft: theme.sizing.scale1200,
-    paddingRight: theme.sizing.scale1200,
+    paddingBottom: theme.sizing.scale1600,
+    paddingLeft: theme.sizing.scale1600,
+    paddingRight: theme.sizing.scale1600,
   });
   const inner = css({
     width: '100%',
@@ -32,9 +32,9 @@ const WorkItemWrapper = ({ children }) => {
 };
 
 const WorkItemsWrapper = ({ children }) => {
-  const [css] = useStyletron();
+  const [css, theme] = useStyletron();
   const c = css({
-    background: 'white',
+    background: theme.colors.white,
     listStyleType: 'none',
     margin: 0,
     padding: 0,

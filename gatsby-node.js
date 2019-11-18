@@ -14,43 +14,42 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = ({actions, graphql}) => {
-  const {createPage} = actions;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
   return graphql(`
     {
-  
-    allSanityWork {
-      edges {
-        node {
-         id
-         templateKey
-         slug {
-           _key
-           _type
-           current
-         }
+      allSanityWork {
+        edges {
+          node {
+            id
+            templateKey
+            slug {
+              _key
+              _type
+              current
+            }
+          }
         }
       }
     }
-  }
   `).then(result => {
     const root = {
-      'workTemplate': 'work/',
+      workTemplate: 'work/',
     };
     const workFiles = result.data.allSanityWork.edges;
-    workFiles.forEach(({node}, index) => {
-        createPage({
-          path: path.join(root[node.templateKey], node.slug.current),
-          component: path.resolve(
-            `./src/templates/${String(node.templateKey)}.tsx`
-          ),
-          context: {
-            id: node.id,
-            prev: index === 0 ? null : workFiles[index - 1].node,
-            next:
-              index === workFiles.length - 1 ? null : workFiles[index + 1].node,
-          },
-        })
-    })
-  })
-}
+    workFiles.forEach(({ node }, index) => {
+      createPage({
+        path: path.join(root[node.templateKey], node.slug.current),
+        component: path.resolve(
+          `./src/templates/${String(node.templateKey)}.tsx`
+        ),
+        context: {
+          id: node.id,
+          prev: index === 0 ? null : workFiles[index - 1].node,
+          next:
+            index === workFiles.length - 1 ? null : workFiles[index + 1].node,
+        },
+      });
+    });
+  });
+};
