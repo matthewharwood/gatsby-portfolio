@@ -10,6 +10,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-eslint',
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+    //   options: {
+    //     devMode: true,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
