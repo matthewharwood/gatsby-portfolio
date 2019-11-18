@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Paragraph4, Label4 } from 'baseui/typography';
 import { mq, display, positions } from '../styles';
+import { StyledLink } from 'baseui/link';
 
 type FolioProps = {
   headline: string;
@@ -45,17 +46,15 @@ const Folio: FunctionComponent<FolioProps> = ({
         <Label4 as="span" color={'primary600'}>
           {subheadline}
         </Label4>
-        <Label4
-          as="a"
+        <StyledLink
           paddingTop={theme.sizing.scale500}
           paddingLeft={0}
           paddingRight={0}
-          // @ts-ignore
           href={link && link.href}
         >
           {' '}
           {link && link.text}
-        </Label4>
+        </StyledLink>
       </Paragraph4>
     </footer>
   );
