@@ -18,7 +18,7 @@ export type ChallengeProps = {
   challengeNum: string;
   challengeText: string;
   solution: string;
-  takeaway: string;
+  takeaway?: string;
   $color?: string;
   cardsDirection?: string;
   solutionCards?: any[];
