@@ -6,6 +6,7 @@
   "author": "Matthew Harwood <matthhar12@gmail.com>",
   "dependencies": {
     "@rehooks/component-size": "^1.0.3",
+    "babel-plugin-remove-graphql-queries": "^2.7.16",
     "baseui": "^9.10.0",
     "bezier-easing": "^2.1.0",
     "gatsby": "^2.17.4",
@@ -33,9 +34,14 @@
     "react-spring": "^8.0.27"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
     "@types/gl-matrix": "^2.4.5",
     "@types/jest": "^24.0.19",
     "@types/node": "^12.11.7",
@@ -45,6 +51,7 @@
     "@types/styletron-react": "^5.0.2",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.20",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
@@ -76,6 +83,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
-    "lint": "eslint ./src/* --fix"
+    "lint": "eslint ./src/* --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
