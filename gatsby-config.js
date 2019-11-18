@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-eslint',
+    // WORKS AS INTENDED BUT MAKE SURE YOU COMMENT BEFORE COMMITING! TEST LOCAL ONLY WITH `gatsby build`
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     //   options: {
