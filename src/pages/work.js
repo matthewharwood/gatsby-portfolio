@@ -5,6 +5,7 @@ import { join } from 'path';
 import { useStyletron } from 'baseui';
 import { Display1, Display4 } from 'baseui/typography';
 import { Button, SIZE } from 'baseui/button';
+import { Navbar } from '../components/navbar';
 const WorkItemWrapper = ({ children }) => {
   const [css, theme] = useStyletron();
   const c = css({
@@ -79,28 +80,31 @@ const Work = ({
 }) => {
   const [css] = useStyletron();
   return (
-    <WorkItemsWrapper>
-      {' '}
-      {edges.map(({ node }, key) => {
-        return (
-          <WorkItemWrapper key={key} first={key === 0}>
-            <WorkItemLink node={node}>
-              <WorkItemHeader>
-                <div className={css({ width: '66%', margin: '0 auto' })}>
-                  <Display1>{node.title}</Display1>
-                </div>
-                <div className={css({ width: '80%', margin: '0 auto' })}>
-                  <Display4>{node.description}</Display4>
-                </div>
-                <div className={css({ width: '15%', margin: '0 auto' })}>
-                  <Button size={SIZE.large}>Enter</Button>
-                </div>
-              </WorkItemHeader>
-            </WorkItemLink>
-          </WorkItemWrapper>
-        );
-      })}{' '}
-    </WorkItemsWrapper>
+    <>
+      <Navbar />
+      <WorkItemsWrapper>
+        {' '}
+        {edges.map(({ node }, key) => {
+          return (
+            <WorkItemWrapper key={key} first={key === 0}>
+              <WorkItemLink node={node}>
+                <WorkItemHeader>
+                  <div className={css({ width: '66%', margin: '0 auto' })}>
+                    <Display1>{node.title}</Display1>
+                  </div>
+                  <div className={css({ width: '80%', margin: '0 auto' })}>
+                    <Display4>{node.description}</Display4>
+                  </div>
+                  <div className={css({ width: '15%', margin: '0 auto' })}>
+                    <Button size={SIZE.large}>Enter</Button>
+                  </div>
+                </WorkItemHeader>
+              </WorkItemLink>
+            </WorkItemWrapper>
+          );
+        })}{' '}
+      </WorkItemsWrapper>
+    </>
   );
 };
 
