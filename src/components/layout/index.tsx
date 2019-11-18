@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const Animate = () => {
   const keyTomato = [
@@ -10,11 +10,15 @@ export const Animate = () => {
     iterations: 1,
     easing: 'ease-in-out',
   };
+  const isClient = typeof window === 'object' ;
+  if(isClient) {
+    setTimeout(() => {
 
-  setTimeout(() => {
-    // document.getElementById('animate-white').animate(keyWhite, timingWhite);
-    document.getElementById('animate-tomato').animate(keyTomato, timings);
-  }, 0);
+      // document.getElementById('animate-white').animate(keyWhite, timingWhite);
+      // @ts-ignore
+      document.getElementById('animate-tomato').animate(keyTomato, timings);
+    }, 0);
+  }
 
   return (
     <>
