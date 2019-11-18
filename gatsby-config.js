@@ -9,6 +9,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-eslint',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

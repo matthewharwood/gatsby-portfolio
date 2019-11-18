@@ -37,8 +37,8 @@ const Experiences = () => {
   return (
     <>
       <SectionHeading heading="Experiences" />
-      {experiences.map(experience => (
-        <ExperienceItem {...experience} />
+      {experiences.map((experience, i) => (
+        <ExperienceItem key={i} {...experience} />
       ))}
     </>
   );
@@ -48,8 +48,8 @@ const Education = () => {
   return (
     <>
       <SectionHeading heading="Education" />
-      {education.map(experience => (
-        <ExperienceItem {...experience} />
+      {education.map((experience, i) => (
+        <ExperienceItem key={i} {...experience} />
       ))}
     </>
   );
@@ -59,8 +59,8 @@ const Awards = () => {
   return (
     <>
       <SectionHeading heading="Awards" />
-      {awards.map(award => (
-        <ExperienceItem {...award} />
+      {awards.map((award, i) => (
+        <ExperienceItem key={i} {...award} />
       ))}
     </>
   );
@@ -151,8 +151,8 @@ const RecentlyVisited = () => {
           padding: 0,
         })}
       >
-        {visited.map(({ flag, countryName }) => (
-          <li>
+        {visited.map(({ flag, countryName }, key) => (
+          <li key={key}>
             {flag} {countryName}
           </li>
         ))}

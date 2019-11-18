@@ -1,25 +1,15 @@
 import React, { useState } from 'react';
 
 export const Animate = () => {
-  var keyTomato = [
+  const keyTomato = [
     { transform: 'translate3D(-100%, 0, 0)' },
     { transform: 'translate3D(100%, 0, 0)' },
   ];
-  var timings = {
+  const timings = {
     duration: 1000,
     iterations: 1,
     easing: 'ease-in-out',
   };
-  var timingWhite = {
-    duration: 800,
-    iterations: 1,
-  };
-
-  var keyWhite = [
-    { transform: 'translateX(0)', opacity: 1, offset: 0 },
-    { transform: 'translateX(0)', opacity: 1, offset: 0.7 },
-    { transform: 'translateX(0)', opacity: 0, offset: 1 },
-  ];
 
   setTimeout(() => {
     // document.getElementById('animate-white').animate(keyWhite, timingWhite);

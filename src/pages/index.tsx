@@ -4,9 +4,6 @@ import { Folio } from '../components/folio';
 import { RunningHeader } from '../components/running-header';
 import { Boner } from '../components/boner';
 import { useStyletron } from 'baseui';
-import { Layer } from 'baseui/layer';
-
-const layerRef = React.createRef();
 
 export const ActiveVideoContext = React.createContext({
   activeVideoID: '0',
