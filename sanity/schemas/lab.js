@@ -2,12 +2,31 @@ export default {
   name: 'lab',
   title: 'Lab',
   type: 'document',
+  initialValue: () => ({
+    templateKey: 'labTemplate',
+  }),
   fields: [
+    {
+      name: 'templateKey',
+      title: 'Template Key',
+      type: 'string',
+      required: true,
+      hidden: true,
+    },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
       required: true,
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
