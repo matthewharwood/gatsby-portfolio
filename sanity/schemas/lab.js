@@ -20,6 +20,12 @@ export default {
       required: true,
     },
     {
+      name: 'Subline',
+      title: 'subline',
+      type: 'string',
+      required: false,
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -46,6 +52,18 @@ export default {
       options: {
         list: ['todo', 'doing', 'done'],
       },
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        { type: 'block' },
+        { type: 'imageSection' },
+        { type: 'centeredHeading' },
+        { type: 'imageGallery' },
+        { type: 'codeComponent' },
+      ],
     },
   ],
 };
