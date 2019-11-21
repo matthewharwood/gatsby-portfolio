@@ -20,8 +20,8 @@ export default {
       required: true,
     },
     {
-      name: 'Subline',
-      title: 'subline',
+      name: 'subline',
+      title: 'Subline',
       type: 'string',
       required: false,
     },

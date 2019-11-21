@@ -8,6 +8,11 @@ import {Quote} from "../components/quote";
 import {Video} from "../components/video"
 import {Challenge} from "../components/challenge"
 
+import ImageSection from '../components/image-section';
+import ImageGallery from '../components/image-gallery';
+import CenteredHeading from '../components/centered-heading';
+import CodeComponent from '../components/code-component';
+
 export const componentMap = {
   "postHeader": (props: any, key: number) => (<PostHeader {...props} key={key}/>),
   "summary": (props: any, key: number) => (<Summary {...props} key={key}/>),
@@ -16,7 +21,11 @@ export const componentMap = {
   "highlightBold": (props: any, key: number) => (<HighlightBold {...props} key={key}/>),
   "quote": (props: any, key: number) => (<Quote {...props} key={key}/>),
   "video": (props: any, key: number) => (<Video {...props} key={key}/>),
-  "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />)
+  "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />),
+  "imageSection": (props:any, key:number) => (<ImageSection {...props} key={key}/>),
+  "centeredHeading": (props:any, key:number) => (<CenteredHeading {...props} key={key}/>),
+  "imageGallery": (props:any, key:number) => (<ImageGallery {...props} key={key}/>),
+  "codeComponent": (props:any, key:number) => (<CodeComponent {...props} key={key}/>),
 }
 
 
