@@ -2,6 +2,7 @@ import React, { useRef, FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { mq, display } from '../styles';
 import useComponentSize from '@rehooks/component-size';
+import SanityImgFluid from '../SanityImgFluid'
 
 type imageType = {
   src: string;
@@ -47,13 +48,7 @@ const ImageGallery: FunctionComponent<{ images: Array<imageType> }> = ({
   return (
     <div className={gridStyle}>
       {images.map(image => (
-        <img
-          ref={ref}
-          key={image._key}
-          className={imgStyle}
-          src={image.image.asset.url}
-          alt={image.altText}
-        />
+        <SanityImgFluid assetId={image.image.asset.id} className={imgStyle}/>
       ))}
     </div>
   );
