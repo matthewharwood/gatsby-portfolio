@@ -2,12 +2,37 @@ export default {
   name: 'lab',
   title: 'Lab',
   type: 'document',
+  initialValue: () => ({
+    templateKey: 'labTemplate',
+  }),
   fields: [
+    {
+      name: 'templateKey',
+      title: 'Template Key',
+      type: 'string',
+      required: true,
+      hidden: true,
+    },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
       required: true,
+    },
+    {
+      name: 'subline',
+      title: 'Subline',
+      type: 'string',
+      required: false,
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 69,
+      },
     },
     {
       name: 'image',
@@ -27,6 +52,18 @@ export default {
       options: {
         list: ['todo', 'doing', 'done'],
       },
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        { type: 'block' },
+        { type: 'imageSection' },
+        { type: 'centeredHeading' },
+        { type: 'imageGallery' },
+        { type: 'codeComponent' },
+      ],
     },
   ],
 };
