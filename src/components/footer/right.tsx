@@ -55,20 +55,20 @@ export const FooterRight: FunctionComponent<{ setIsOpen: Function }> = ({
         showArrow
       >
         <FooterButton setIsOpen={setIsOpen}>
-          <FacebookIcon />
+          <FacebookIcon scale={0.8}/>
         </FooterButton>
       </StatefulPopover>
       <FooterButton setIsOpen={setIsOpen}>
-        <InstagramIcon />
+        <InstagramIcon scale={0.8}/>
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <LinkedinIcon />
+        <LinkedinIcon scale={0.8}/>
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <TwitterIcon />
+        <TwitterIcon scale={0.8}/>
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <More />
+        <More scale={0.8}/>
       </FooterButton>
     </div>
   );

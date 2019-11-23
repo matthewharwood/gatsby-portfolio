@@ -1,13 +1,17 @@
 import React from 'react';
 
-export const TwitterIcon = () => {
+type twitterIconType = {
+  scale?: number;
+};
 
+export const TwitterIcon = ({ scale = 1 }: twitterIconType) => {
   return (
     <svg
       width="24"
       height="20"
       viewBox="0 0 24 20"
       fill="none"
+      transform={`scale(${scale})`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

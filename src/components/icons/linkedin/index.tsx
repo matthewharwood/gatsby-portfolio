@@ -1,11 +1,16 @@
 import React from 'react';
 
-export const LinkedinIcon = () => {
+type linkedInIconType = {
+  scale?: number,
+}
+
+export const LinkedinIcon = ({scale=1}:linkedInIconType) => {
   return (
     <svg
       role="img"
       width="24"
       height="24"
+      transform={`scale(${scale})`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

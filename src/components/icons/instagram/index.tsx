@@ -1,14 +1,23 @@
 import React from 'react';
 
+type igIconType = {
+  width?: number,
+  height?: number,
+  scale?: number,
+  fill?: string,
+}
+
 export const InstagramIcon = ({
   width = 24,
   height = 24,
+  scale=1,
   fill = '#000',
-}) => {
+}:igIconType) => {
   return (
     <svg
       width={width}
       height={height}
+      transform={`scale(${scale})`}
       viewBox={`0 0 24 24`}
       fill={fill}
       xmlns="http://www.w3.org/2000/svg"
