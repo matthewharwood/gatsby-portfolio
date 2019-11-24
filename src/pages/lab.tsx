@@ -18,7 +18,18 @@ import { mq } from '../components/styles';
 //    CardsColumn * 3 (Todo, Doing, Done)
 //        LabCard * n (number of cards)
 
-const Lab = ({ data }) => {
+type LabDataType = {
+  data: {
+    allSanityLab: {
+      edges: Array<{
+        node: CardDataType;
+      }>;
+    };
+  };
+};
+
+const Lab = ({ data }: LabDataType) => {
+  console.log(data);
   const allCards = data.allSanityLab.edges.map(edge => edge.node);
   const todoItems = allCards.filter(card => card.status === 'todo');
   const doingItems = allCards.filter(card => card.status === 'doing');
@@ -105,8 +116,10 @@ type CardsColumnType = {
 };
 
 export type CardDataType = {
-  image?: string;
+  image?: any;
   tags?: Array<string>;
+  slug: { current: string };
+  status: string;
   title: string;
 };
 
@@ -153,6 +166,9 @@ export const PageQuery = graphql`
           title
           tags
           status
+          slug {
+            current
+          }
           image {
             asset {
               fluid {

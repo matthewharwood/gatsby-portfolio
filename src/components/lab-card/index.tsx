@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, FunctionComponent } from 'react';
+import React, { useRef, FunctionComponent } from 'react';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
@@ -6,7 +7,7 @@ import useComponentSize from '@rehooks/component-size';
 import { colors } from '../styles';
 import { mq } from '../styles';
 
-import { CardDataType } from '../../pages/lab'
+import { CardDataType } from '../../pages/lab';
 
 // Structure:
 // ----------
@@ -19,7 +20,8 @@ import { CardDataType } from '../../pages/lab'
 //                 Tags
 //                 Body
 
-const LabCard: FunctionComponent<{data:CardDataType}> = ({ data }) => {
+const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
+  const labPageLink = `/lab/${data.slug.current}`;
   const [css, theme] = useStyletron();
   const image = data.image || '';
   // const image = 'https://picsum.photos/500';
@@ -35,15 +37,28 @@ const LabCard: FunctionComponent<{data:CardDataType}> = ({ data }) => {
         padding: `${theme.sizing.scale1200} 0`,
         [mq.lg]: {
           padding: `${theme.sizing.scale1200}`,
-        }
+        },
       })}
     >
-      <CardInner image={image.asset.fluid} title={title} tags={tags} />
+      <Link
+        to={labPageLink}
+        className={css({
+          textDecoration: 'none',
+        })}
+      >
+        <CardInner image={image.asset.fluid} title={title} tags={tags} />
+      </Link>
     </div>
   );
 };
 
-const CardInner: FunctionComponent<CardDataType> = ({ image, tags, title }) => {
+type CardInnerType = {
+  image?: any;
+  tags?: Array<string>;
+  title: string;
+}
+
+const CardInner: FunctionComponent<CardInnerType> = ({ image, tags, title }) => {
   const [css, theme] = useStyletron();
   const c = css({
     position: 'relative',
@@ -54,13 +69,13 @@ const CardInner: FunctionComponent<CardDataType> = ({ image, tags, title }) => {
   return (
     <div className={c}>
       <Image image={image} />
-      <CardBody isImage={image !== ''} tags={tags} title={title}/>
+      <CardBody isImage={image !== ''} tags={tags} title={title} />
     </div>
   );
 };
 
-const Image: FunctionComponent<{image:string}> = ({ image }) => {
-  const [css, ] = useStyletron();
+const Image: FunctionComponent<{ image: any }> = ({ image }) => {
+  const [css] = useStyletron();
   const c = css({
     position: 'absolute',
     top: 0,
@@ -74,11 +89,15 @@ const Image: FunctionComponent<{image:string}> = ({ image }) => {
 };
 
 type CardBodyDataType = {
-  isImage: Boolean,
+  isImage: Boolean;
   tags?: Array<string>;
   title: string;
-}
-const CardBody: FunctionComponent<CardBodyDataType> = ({ isImage, tags, title }) => {
+};
+const CardBody: FunctionComponent<CardBodyDataType> = ({
+  isImage,
+  tags,
+  title,
+}) => {
   const [css, theme] = useStyletron();
   const c = css({
     zIndex: 10,
@@ -96,13 +115,16 @@ const CardBody: FunctionComponent<CardBodyDataType> = ({ isImage, tags, title })
           padding: '20px',
         }}
       >
-        <Content tags={tags} title={title}/>
+        <Content tags={tags} title={title} />
       </div>
     </div>
   );
 };
 
-const Content: FunctionComponent<{tags? : Array<string>; title: string}> = ({ tags, title }) => {
+const Content: FunctionComponent<{ tags?: Array<string>; title: string }> = ({
+  tags,
+  title,
+}) => {
   const [css] = useStyletron();
   const ref = useRef(null);
   const size = useComponentSize(ref);
@@ -123,7 +145,7 @@ const Content: FunctionComponent<{tags? : Array<string>; title: string}> = ({ ta
   );
 };
 
-const ImageWindow: FunctionComponent<{isImage:Boolean}> = ({ isImage }) => {
+const ImageWindow: FunctionComponent<{ isImage: Boolean }> = ({ isImage }) => {
   const ref = useRef(null);
   const size = useComponentSize(ref);
   const { width } = size;
@@ -141,7 +163,7 @@ const ImageWindow: FunctionComponent<{isImage:Boolean}> = ({ isImage }) => {
   );
 };
 
-const Tags: FunctionComponent<{tags?: Array<string>}> = ({ tags }) => {
+const Tags: FunctionComponent<{ tags?: Array<string> }> = ({ tags }) => {
   const [css, theme] = useStyletron();
   return (
     <div
@@ -149,22 +171,23 @@ const Tags: FunctionComponent<{tags?: Array<string>}> = ({ tags }) => {
         height: theme.sizing.scale700,
       })}
     >
-      {tags && tags.map(tag => (
-        <div
-          className={css({
-            fontSize: theme.sizing.scale500,
-            backgroundColor: theme.colors.primary300,
-            fontWeight: 'bold',
-            padding: `${theme.sizing.scale0} ${theme.sizing.scale300}`,
-            borderRadius: theme.sizing.scale100,
-            color: theme.colors.primary700,
-            display: 'inline-block',
-            marginRight: theme.sizing.scale300,
-          })}
-        >
-          {tag}
-        </div>
-      ))}
+      {tags &&
+        tags.map(tag => (
+          <div
+            className={css({
+              fontSize: theme.sizing.scale500,
+              backgroundColor: theme.colors.primary300,
+              fontWeight: 'bold',
+              padding: `${theme.sizing.scale0} ${theme.sizing.scale300}`,
+              borderRadius: theme.sizing.scale100,
+              color: theme.colors.primary700,
+              display: 'inline-block',
+              marginRight: theme.sizing.scale300,
+            })}
+          >
+            {tag}
+          </div>
+        ))}
     </div>
   );
 };
