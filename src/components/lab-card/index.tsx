@@ -4,10 +4,10 @@ import Img from 'gatsby-image';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 import useComponentSize from '@rehooks/component-size';
-import { colors } from '../styles';
-import { mq } from '../styles';
+import { mq, display, positions, colors } from '../styles';
 
-import { ImageType, CardDataType } from '../../pages/lab/types';
+import { CardDataType } from '../../pages/lab/types';
+import { MediaType } from './types';
 
 // Structure:
 // ----------
@@ -41,10 +41,10 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
 
   const labCardWrapper = css({
     boxShadow: theme.lighting.shadow600,
-    display: 'block',
+    display: display.block,
     marginTop: theme.sizing.scale2400,
     marginBottom: theme.sizing.scale2400,
-    position: 'relative',
+    position: positions.relative,
     height: `${windowHeight + contentHeight}px`,
     [mq.lg]: {
       marginLeft: theme.sizing.scale1200,
@@ -53,7 +53,7 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
   });
 
   const imageOverlay = css({
-    position: 'absolute',
+    position: positions.absolute,
     height: `${contentHeight}px`,
     top: 0,
     right: 0,
@@ -62,7 +62,7 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
 
   const windowClass = css({
     height: `${windowHeight}px`,
-    background: 'transparent',
+    background: colors.transparent,
   });
 
   const content = css({
@@ -86,16 +86,6 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
       </div>
     </Link>
   );
-};
-
-type MediaType = {
-  image: ImageType;
-  video: {
-    asset: {
-      url: string;
-    };
-  };
-  mediaType?: string;
 };
 
 const Media: FunctionComponent<MediaType> = ({ image, video, mediaType }) => {
