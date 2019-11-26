@@ -7,159 +7,121 @@ import useComponentSize from '@rehooks/component-size';
 import { colors } from '../styles';
 import { mq } from '../styles';
 
-import { CardDataType } from '../../pages/lab';
+import { ImageType, CardDataType } from '../../pages/lab/types';
 
 // Structure:
 // ----------
 // Labcard
-//     CardInner
-//         Image
-//         CardBody
-//             ImageWindow
-//             Content
-//                 Tags
-//                 Body
+//     Img
+//     imageOverlay
+//         window
+//         content
+//             tags
 
 const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
+  const [css, theme] = useStyletron();
+
+  // Variables
   const labPageLink = `/lab/${data.slug.current}`;
-  const [css, theme] = useStyletron();
-  const image = data.image || '';
-  // const image = 'https://picsum.photos/500';
+  const { image, video, title } = data;
   const tags = data.tags || [];
-  const title = data.title || 'Test Title 1';
+  const defaultMediaPreference = data.video ? 'video' : 'image';
+  const mediaType = data.labCardBackgroundType
+    ? data.labCardBackgroundType
+    : defaultMediaPreference;
 
-  return (
-    <div
-      className={css({
-        gridColumn: 'span 4',
-        marginTop: theme.sizing.scale300,
-        marginBottom: theme.sizing.scale300,
-        padding: `${theme.sizing.scale1200} 0`,
-        [mq.lg]: {
-          padding: `${theme.sizing.scale1200}`,
-        },
-      })}
-    >
-      <Link
-        to={labPageLink}
-        className={css({
-          textDecoration: 'none',
-        })}
-      >
-        <CardInner image={image.asset.fluid} title={title} tags={tags} />
-      </Link>
-    </div>
-  );
-};
+  // Tracking window height
+  const cardRef = useRef(null);
+  const { width: cardWidth } = useComponentSize(cardRef);
+  const windowHeight = cardWidth / 2;
 
-type CardInnerType = {
-  image?: any;
-  tags?: Array<string>;
-  title: string;
-}
+  // Tracking content height
+  const contentRef = useRef(null);
+  const { height: contentHeight } = useComponentSize(contentRef);
 
-const CardInner: FunctionComponent<CardInnerType> = ({ image, tags, title }) => {
-  const [css, theme] = useStyletron();
-  const c = css({
-    position: 'relative',
-    overflow: 'hidden',
+  const labCardWrapper = css({
     boxShadow: theme.lighting.shadow600,
-  });
-
-  return (
-    <div className={c}>
-      <Image image={image} />
-      <CardBody isImage={image !== ''} tags={tags} title={title} />
-    </div>
-  );
-};
-
-const Image: FunctionComponent<{ image: any }> = ({ image }) => {
-  const [css] = useStyletron();
-  const c = css({
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    zIndex: 0,
-  });
-  return <img className={c} src={image.src} alt="" />;
-};
-
-type CardBodyDataType = {
-  isImage: Boolean;
-  tags?: Array<string>;
-  title: string;
-};
-const CardBody: FunctionComponent<CardBodyDataType> = ({
-  isImage,
-  tags,
-  title,
-}) => {
-  const [css, theme] = useStyletron();
-  const c = css({
-    zIndex: 10,
+    display: 'block',
+    marginTop: theme.sizing.scale2400,
+    marginBottom: theme.sizing.scale2400,
     position: 'relative',
+    height: `${windowHeight + contentHeight}px`,
+    [mq.lg]: {
+      marginLeft: theme.sizing.scale1200,
+      marginRight: theme.sizing.scale1200,
+    },
+  });
+
+  const imageOverlay = css({
+    position: 'absolute',
+    height: `${contentHeight}px`,
+    top: 0,
+    right: 0,
+    left: 0,
+  });
+
+  const windowClass = css({
+    height: `${windowHeight}px`,
+    background: 'transparent',
+  });
+
+  const content = css({
+    minHeight: `${windowHeight}px`,
+    background: colors.primary300Opacity,
+    paddingLeft: theme.sizing.scale500,
+    paddingRight: theme.sizing.scale500,
+    paddingTop: theme.sizing.scale900,
+    paddingBottom: theme.sizing.scale500,
   });
 
   return (
-    <div className={c}>
-      <ImageWindow isImage={isImage} />
-      <div
-        style={{
-          background: colors.primary300Opacity,
-          color: theme.colors.primary700,
-          margin: 0,
-          padding: '20px',
-        }}
-      >
-        <Content tags={tags} title={title} />
+    <Link to={labPageLink} className={labCardWrapper} ref={cardRef}>
+      <Media image={image} video={video} mediaType={mediaType} />
+      <div className={imageOverlay}>
+        <div className={windowClass}></div>
+        <div className={content} ref={contentRef}>
+          <Tags tags={tags} />
+          <H3>{title}</H3>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
-const Content: FunctionComponent<{ tags?: Array<string>; title: string }> = ({
-  tags,
-  title,
-}) => {
-  const [css] = useStyletron();
-  const ref = useRef(null);
-  const size = useComponentSize(ref);
-  const { width } = size;
-  return (
-    <div
-      className={css({
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        minHeight: `${width / 3}px`,
-      })}
-      ref={ref}
-    >
-      <Tags tags={tags} />
-      <H3 color={'inherit'}>{title}</H3>
-    </div>
-  );
+type MediaType = {
+  image: ImageType;
+  video: {
+    asset: {
+      url: string;
+    };
+  };
+  mediaType?: string;
 };
 
-const ImageWindow: FunctionComponent<{ isImage: Boolean }> = ({ isImage }) => {
-  const ref = useRef(null);
-  const size = useComponentSize(ref);
-  const { width } = size;
-
+const Media: FunctionComponent<MediaType> = ({ image, video, mediaType }) => {
   const [css] = useStyletron();
 
+  const img = css({
+    height: '100%',
+    width: '100%',
+    position: 'relative',
+    objectFit: 'cover',
+  });
+
   return (
-    <div
-      ref={ref}
-      className={css({
-        height: isImage ? `${width * 0.6}px` : 0,
-        width: '100%',
-      })}
-    ></div>
+    <>
+      {mediaType === 'image' ? (
+        <Img fluid={image.asset.fluid} className={img} />
+      ) : (
+        <video
+          src={video.asset.url}
+          className={img}
+          autoPlay={true}
+          muted={true}
+          loop={true}
+        ></video>
+      )}
+    </>
   );
 };
 

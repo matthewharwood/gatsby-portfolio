@@ -40,6 +40,20 @@ export default {
       type: 'image',
     },
     {
+      name: 'video',
+      title: 'Video',
+      type: 'file',
+    },
+    {
+      name: 'labCardBackgroundType',
+      title: 'LabCard Background Type',
+      type: 'string',
+      options: {
+        list: ['video', 'image'],
+      },
+    },
+
+    {
       name: 'tags',
       title: 'Tags',
       type: 'array',

@@ -4,11 +4,13 @@ import { graphql } from 'gatsby';
 import { H1, H3, H5 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 
-import { Grid, Section } from '../components/grid-system';
-import { Navbar } from '../components/navbar';
-import { Footer } from '../components/footer';
-import LabCard from '../components/lab-card';
-import { mq } from '../components/styles';
+import { Grid, Section } from '../../components/grid-system';
+import { Navbar } from '../../components/navbar';
+import { Footer } from '../../components/footer';
+import LabCard from '../../components/lab-card';
+import { mq } from '../../components/styles';
+
+import { LabDataType, LabCardsGridType, CardsColumnType } from './types'
 
 //Structure:
 //---------
@@ -17,16 +19,6 @@ import { mq } from '../components/styles';
 //        GridSpanFour * 3 (1 Title + 2 Blanks)
 //    CardsColumn * 3 (Todo, Doing, Done)
 //        LabCard * n (number of cards)
-
-type LabDataType = {
-  data: {
-    allSanityLab: {
-      edges: Array<{
-        node: CardDataType;
-      }>;
-    };
-  };
-};
 
 const Lab = ({ data }: LabDataType) => {
   console.log(data);
@@ -49,16 +41,6 @@ const Lab = ({ data }: LabDataType) => {
     },
   };
   return <LabCardsGrid data={structuredData} />;
-};
-
-type LabCardsGridType = {
-  data: LabCardsGridDataType;
-};
-
-type LabCardsGridDataType = {
-  todoCards: CardsColumnDataType;
-  doingCards: CardsColumnDataType;
-  doneCards: CardsColumnDataType;
 };
 
 export const LabCardsGrid: FunctionComponent<LabCardsGridType> = ({ data }) => {
@@ -111,23 +93,6 @@ const GridSpanFour: FunctionComponent = ({ children }) => {
   );
 };
 
-type CardsColumnType = {
-  data: CardsColumnDataType;
-};
-
-export type CardDataType = {
-  image?: any;
-  tags?: Array<string>;
-  slug: { current: string };
-  status: string;
-  title: string;
-};
-
-type CardsColumnDataType = {
-  heading: string;
-  cards: Array<CardDataType>;
-};
-
 const CardsColumn: FunctionComponent<CardsColumnType> = ({ data }) => {
   const { heading, cards } = data;
   const [css, theme] = useStyletron();
@@ -176,6 +141,12 @@ export const PageQuery = graphql`
               }
             }
           }
+          video {
+            asset {
+              url
+            }
+          }
+          labCardBackgroundType
         }
       }
     }
