@@ -10,8 +10,8 @@ import {Challenge} from "../components/challenge"
 
 import ImageSection from '../components/image-section';
 import ImageGallery from '../components/image-gallery';
-import CenteredHeading from '../components/centered-heading';
-import CodeComponent from '../components/code-component';
+import {CenteredHeading} from '../components/centered-heading';
+import {CodeComponent} from '../components/code-component';
 
 export const componentMap = {
   "postHeader": (props: any, key: number) => (<PostHeader {...props} key={key}/>),

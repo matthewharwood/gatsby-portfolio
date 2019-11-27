@@ -2,11 +2,10 @@ import React, { FunctionComponent } from 'react';
 
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
+import { Props } from './types';
 
-const CenteredHeading: FunctionComponent<{ heading: string }> = ({
-  heading,
-}) => {
-  const [css,theme] = useStyletron();
+const CenteredHeading: FunctionComponent<Props> = ({ heading }) => {
+  const [css, theme] = useStyletron();
   return (
     <div
       className={css({
@@ -20,4 +19,4 @@ const CenteredHeading: FunctionComponent<{ heading: string }> = ({
   );
 };
 
-export default CenteredHeading;
+export { CenteredHeading };
