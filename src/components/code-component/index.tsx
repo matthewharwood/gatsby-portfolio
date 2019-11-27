@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { mq } from '../styles';
+import { Props } from './types';
 
-const CodeComponent: FunctionComponent<{ code: string }> = ({ code }) => {
+const CodeComponent: FunctionComponent<Props> = ({ code }) => {
   const [css, theme] = useStyletron();
 
   const c = css({
@@ -27,4 +28,4 @@ const CodeComponent: FunctionComponent<{ code: string }> = ({ code }) => {
   );
 };
 
-export default CodeComponent;
+export { CodeComponent };

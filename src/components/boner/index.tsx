@@ -1,6 +1,7 @@
 import React, { createRef, useEffect, FunctionComponent } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
 import { useStyletron } from 'baseui';
+import { Props } from './types';
 
 const vs = `
   attribute vec4 coords;
@@ -184,6 +185,7 @@ let start = 0;
 const finishTimeMs = 1500;
 
 function draw(timeMs: number) {
+  console.log('hello')
   if (!start) {
     start = timeMs;
   }
@@ -221,15 +223,14 @@ function draw(timeMs: number) {
   gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
 }
-type Size = { size?: number; pos?: string[] };
 
-const Boner: FunctionComponent<Size> = ({ size, pos }) => {
+const Boner: FunctionComponent<Props> = ({ size, pos }) => {
   const canvasRef: any = createRef();
   const [css] = useStyletron();
   const isClient = typeof window === 'object';
 
   useEffect(() => {
-    if(isClient) {
+    if (isClient) {
       initGL(canvasRef, size);
       createShaders();
       createVertices(canvasRef);
@@ -241,7 +242,7 @@ const Boner: FunctionComponent<Size> = ({ size, pos }) => {
     }
   });
 
-
+  console.log('Boner');
 
   return (
     <canvas
