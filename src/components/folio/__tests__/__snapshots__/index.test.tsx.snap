@@ -22,8 +22,11 @@ exports[`Should create Nav with children renders correctly 1`] = `
     </span>
     <a
       className=""
-      data-baseweb="typo-label4"
+      data-baseweb="link"
       href="#"
+      paddingLeft={0}
+      paddingRight={0}
+      paddingTop="12px"
     >
        
       Matthew Harwood

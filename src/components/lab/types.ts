@@ -1,6 +1,6 @@
 export type LabDataType = {
   data: {
-    allSanityLab: {
+    allSanityLab?: {
       edges: Array<{
         node: CardDataType;
       }>;
@@ -22,10 +22,7 @@ export type CardsColumnType = {
   data: CardsColumnDataType;
 };
 
-export enum labCardBackgroundType {
-  image = 'image',
-  video = 'video',
-}
+export type labCardBackgroundType = 'image' | 'video';
 
 export type ImageType = {
   asset: {
