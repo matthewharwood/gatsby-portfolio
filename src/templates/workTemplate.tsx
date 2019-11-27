@@ -1,21 +1,27 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
-import {pageRenderer} from '../services/page-renderer';
-import useScroll from "../components/utils/use-scroll"
+import { pageRenderer } from '../services/page-renderer';
+import useScroll from '../components/utils/use-scroll';
+import { useSpring, animated } from 'react-spring';
 
 const WorkTemplate = ({ data }: any) => {
+  const props = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 1000,
+  });
   const flattenedData = data.sanityWork;
   const scrolled = useScroll();
 
   return (
-    <>
+    <animated.div style={props}>
       <Navbar show={scrolled} />
       {pageRenderer(flattenedData)}
       <Footer />
-    </>
+    </animated.div>
   );
 };
 
@@ -26,12 +32,10 @@ export const pageQuery = graphql`
     sanityWork(id: { eq: $id }) {
       id
       title
-      _rawContent(resolveReferences: {maxDepth: 10})
+      _rawContent(resolveReferences: { maxDepth: 10 })
     }
   }
 `;
-
-
 
 /**
  * import { PostPagination } from '../components/post-pagination';

@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
-import { Section, Container, Grid } from '../grid-system';
+import React, { FunctionComponent, useState } from 'react';
+import { Section, Container, Grid, GridItemHalf } from '../grid-system';
 import { useStyletron } from 'baseui';
-import { Display4} from 'baseui/typography';
+import { Display4 } from 'baseui/typography';
 import { ProgressSteps, Step } from 'baseui/progress-steps';
+import { Props, step } from './types';
 
-const GridItemHalf = ({ children }: any) => {
-  const [css] = useStyletron();
-  const c = {
-    className: css({
-      display: 'grid',
-      gridColumn: 'span 6',
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
-};
-export const Process = ({
+export const Process: FunctionComponent<Props> = ({
   $backgroundColor,
   $color,
   $borderBottom,
+  headline,
+  steps,
 }: any) => {
   const [, theme] = useStyletron();
   const [current] = useState(0);
@@ -33,22 +25,16 @@ export const Process = ({
       <Container $borderBottom={$borderBottom} $color={color}>
         <Grid>
           <GridItemHalf>
-            <Display4>Process</Display4>
+            <Display4>{headline}</Display4>
           </GridItemHalf>
           <GridItemHalf>
             <ProgressSteps
               current={current}
               overrides={{ Root: { style: { backgroundColor: 'inherit' } } }}
             >
-              <Step key={'step-0'} title="Getting started"></Step>
-              <Step key={'step-1'} title="Identify painpoints"></Step>
-              <Step key={'step-2'} title="Proposed Solution"></Step>
-              <Step key={'step-3'} title="Execution - Design"></Step>
-              <Step key={'step-4'} title="Execution - Development"></Step>
-              <Step key={'step-5'} title="Test / Measure / Iterate"></Step>
-              <Step key={'step-6'} title="Pitch"></Step>
-              <Step key={'step-7'} title="Result"></Step>
-              <Step key={'step-8'} title="Retrospective"></Step>
+              {steps.map((step: step, index: number) => {
+                return <Step key={`step-${index}`} title={step.title} />;
+              })}
             </ProgressSteps>
           </GridItemHalf>
         </Grid>

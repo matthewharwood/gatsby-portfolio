@@ -9,6 +9,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-eslint',
+    // WORKS AS INTENDED BUT MAKE SURE YOU COMMENT BEFORE COMMITING! TEST LOCAL ONLY WITH `gatsby build`
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+    //   options: {
+    //     devMode: true,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,15 +33,9 @@ module.exports = {
         // if you have a private dataset
         // token: process.env.MY_SANITY_TOKEN,
         watchMode: true,
-        overlayDrafts: true
+        overlayDrafts: true,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-page-creator`,
-    //   options: {
-    //     path: `${__dirname}/content/work`,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-styletron',
       options: {
@@ -48,19 +50,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    // {
-    //   resolve: `gatsby-source-cloudinary`,
-    //   options: {
-    //     cloudName: process.env.cloudinary_cloudName,
-    //     apiKey: process.env.cloudinary_apiKey,
-    //     apiSecret: process.env.cloudinary_apiSecret,
-    //     // resourceType: `image`,
-    //     // type: `type Value`,
-    //     // maxResults: `Max result`,
-    //     // tags: `fetch image tags?`,
-    //     // prefix: `abc-xyz/`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

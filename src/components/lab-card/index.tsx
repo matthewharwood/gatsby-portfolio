@@ -1,153 +1,79 @@
-import React, { FunctionComponent } from 'react';
+import React, { useRef, FunctionComponent } from 'react';
+import { Link } from 'gatsby';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
+import useComponentSize from '@rehooks/component-size';
+import { mq, display, positions } from '../styles';
+import { Window } from './window';
+import { Tag, VARIANT } from 'baseui/tag';
+import { CardDataType } from '../../pages/lab/types';
+import { Media } from './media';
+import { ImageOverlay } from './image-overlay';
 
-const LabCardWrapper = ({
-  isImage,
-  children,
-}: {
-  isImage: Boolean;
-  children: React.ReactNode;
-}) => {
+const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
   const [css, theme] = useStyletron();
-  return (
-    <div
-      className={css({
-        backgroundColor: theme.colors.primary50,
-        boxShadow: theme.lighting.shadow500,
-        position: 'relative',
-        height: isImage ? '430px' : '215px',
-        maxWidth: '400px',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: theme.sizing.scale1200,
-        marginBottom: theme.sizing.scale1200,
-      })}
-    >
-      {children}
-    </div>
-  );
-};
 
-const LabCardImage = ({ image }: { image: string }) => {
-  const [css] = useStyletron();
-  return (
-    <img
-      src={image}
-      alt=""
-      className={css({
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-      })}
-    />
-  );
-};
-
-type LabCardDataContents = {
-  isImage: Boolean;
-  title: string;
-  tags: Array<string>;
-};
-
-type LabCardContentsType = {
-  data: LabCardDataContents;
-};
-
-const LabCardContents: FunctionComponent<LabCardContentsType> = ({ data }) => {
-  const { isImage, title, tags } = data;
-  const [css, theme] = useStyletron();
-  return (
-    <div
-      className={css({
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-        backgroundColor: `${theme.colors.primary50}E6`,
-        height: isImage ? '50%' : '100%',
-      })}
-    >
-      <div
-        className={css({
-          padding: theme.sizing.scale700,
-        })}
-      >
-        <Tags tags={tags} />
-        <H3>{title}</H3>
-      </div>
-    </div>
-  );
-};
-
-const Tags = ({ tags }: { tags: Array<string> }) => {
-  const [css, theme] = useStyletron();
-  return (
-    <div
-      className={css({
-        height: theme.sizing.scale700,
-      })}
-    >
-      {tags.map(tag => (
-        <div
-          className={css({
-            fontSize: theme.sizing.scale500,
-            backgroundColor: theme.colors.primary300,
-            fontWeight: 'bold',
-            padding: `${theme.sizing.scale0} ${theme.sizing.scale300}`,
-            borderRadius: theme.sizing.scale100,
-            color: theme.colors.mono1000,
-            display: 'inline-block',
-            marginRight: theme.sizing.scale300,
-          })}
-        >
-          {tag}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-type LabCardType = {
-  data: LabCardDataType;
-};
-
-type LabCardDataType = {
-  image: string;
-  tags: Array<string>;
-  title: string;
-};
-
-const LabCard: FunctionComponent<LabCardType> = ({ data }) => {
-  const [css, theme] = useStyletron();
-  const image = data.image || '';
+  // Variables
+  const labPageLink = `/lab/${data.slug.current}`;
+  const { image, video, title } = data;
   const tags = data.tags || [];
-  const title = data.title || 'Test Title 1';
+  const defaultMediaPreference = data.video ? 'video' : 'image';
+  const mediaType = data.labCardBackgroundType
+    ? data.labCardBackgroundType
+    : defaultMediaPreference;
 
-  const isImage = image !== '';
+  // Tracking window height
+  const cardRef = useRef(null);
+  const { width: cardWidth } = useComponentSize(cardRef);
+  const windowHeight = cardWidth / 2;
+
+  // Tracking content height
+  const contentRef = useRef(null);
+  const { height: contentHeight } = useComponentSize(contentRef);
+
+  const labCardWrapper = css({
+    boxShadow: theme.lighting.shadow600,
+    display: display.block,
+    marginTop: theme.sizing.scale2400,
+    marginBottom: theme.sizing.scale2400,
+    position: positions.relative,
+    height: `${windowHeight + contentHeight}px`,
+    [mq.lg]: {
+      marginLeft: theme.sizing.scale1200,
+      marginRight: theme.sizing.scale1200,
+    },
+  });
+
+  const content = css({
+    minHeight: `${windowHeight}px`,
+    background: 'rgba(255,255,255,0.95)',
+    paddingLeft: theme.sizing.scale500,
+    paddingRight: theme.sizing.scale500,
+    paddingTop: theme.sizing.scale900,
+    paddingBottom: theme.sizing.scale500,
+  });
+
   return (
-    <div
-      className={css({
-        width: '100%',
-        gridColumn: 'span 4',
-        borderTop: `1px solid ${theme.colors.primary300}`,
-        borderBottom: `1px solid ${theme.colors.primary300}`,
-        marginTop: theme.sizing.scale300,
-        marginBottom: theme.sizing.scale300,
-      })}
-    >
-      <LabCardWrapper isImage={isImage}>
-        {isImage && <LabCardImage image={image} />}
-        <LabCardContents
-          data={{
-            isImage: isImage,
-            title: title,
-            tags: tags,
-          }}
-        />
-      </LabCardWrapper>
-    </div>
+    <Link to={labPageLink} className={labCardWrapper} ref={cardRef}>
+      <Media image={image} video={video} mediaType={mediaType} />
+      <ImageOverlay contentHeight={contentHeight}>
+        <Window windowHeight={windowHeight} />
+        <div className={content} ref={contentRef}>
+          {tags.map((t, i) => (
+            <Tag
+              variant={VARIANT.outlined}
+              closeable={false}
+              kind="primary"
+              key={i}
+            >
+              {t}
+            </Tag>
+          ))}
+          <H3>{title}</H3>
+        </div>
+      </ImageOverlay>
+    </Link>
   );
 };
 
-export default LabCard;
+export { LabCard };

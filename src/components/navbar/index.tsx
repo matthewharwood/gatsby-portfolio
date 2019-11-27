@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Logo from '../icons/logo';
 import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
@@ -6,25 +6,25 @@ import { H5, Label2 } from 'baseui/typography';
 import Grab from 'baseui/icon/grab';
 import Delete from 'baseui/icon/delete';
 import { mq, display, colors } from '../styles';
+import { Boner } from '../boner';
 
-export const Navbar = ({show = true}: any) => {
+export const Navbar = memo(({ show = true }: any) => {
   const [css, theme] = useStyletron();
-
+  console.log('rerendere', show);
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
   return (
     <nav
       className={css({
         position: 'fixed',
-        // position: 'relative',
         top: 0,
         right: 0,
         left: 0,
         visibility: show ? 'visible' : 'hidden',
         transition: 'all .75s cubic-bezier(0.4, 0.0, 0.2, 1)',
         transform: show ? 'none' : 'translate(0, -100%)',
-        backgroundColor: theme.colors.primary,
-        color: theme.colors.mono100,
+        backgroundColor: theme.colors.white,
+        color: theme.colors.mono1000,
         textTransform: 'uppercase',
         display: display.flex,
         alignItems: 'center',
@@ -59,10 +59,10 @@ export const Navbar = ({show = true}: any) => {
             display: display.none,
           },
         })}
-      ></div>
+      />
     </nav>
   );
-};
+});
 
 const Hamburger = ({
   isNavToggle,
@@ -111,7 +111,7 @@ const NavHeader = () => {
           display: 'flex',
         })}
       >
-        <Logo />
+        <Boner size={70} pos={['6px', 'auto', 'auto', '6px']} />
         <H5
           color={'inherit'}
           className={css({
@@ -121,7 +121,7 @@ const NavHeader = () => {
             marginBottom: 0,
             display: display.none,
             position: 'relative',
-            top: '5px',
+            top: '0px',
             [md]: {
               display: display.block,
             },

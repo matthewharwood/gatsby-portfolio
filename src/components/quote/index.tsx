@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
-import { Grid, Section, Container } from '../grid-system/';
+import { Section, Container } from '../grid-system/';
 import { Paragraph1, Paragraph4 } from 'baseui/typography';
 import { display, mq } from '../styles';
+import { Props } from './types';
 
-interface Props {
-  body?: string;
-  name?: string;
-  title?: string;
-  date?: string;
-}
-export const Quote = ({
+export const Quote: FunctionComponent<Props> = ({
   body = 'Default Quote',
   name = 'Default Name',
   title = 'Director',
   date = 'July 2015',
-}: Props) => {
+}) => {
   const [css, theme] = useStyletron();
   const md = mq.md;
   const lg = mq.lg;

@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react';
+import { MorningHarwood } from './plugin-values';
+import './src/styles/global.css';
 
-// You can delete this file if you're not using it
+import { Animate } from './src/components/layout';
+import { BaseProvider } from 'baseui';
+
+export const wrapRootElement = ({ element }) => (
+  <BaseProvider id="baseui" theme={MorningHarwood}>
+    <Animate />
+    {element}
+  </BaseProvider>
+);

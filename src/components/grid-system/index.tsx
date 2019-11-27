@@ -147,3 +147,15 @@ export const Grid = ({ children, $gridColumn = '1/-1', $gridGap, $alignItems }: 
   });
   return <div className={className}>{children}</div>;
 };
+
+export const GridItemHalf = ({ children }: any) => {
+  const [css] = useStyletron();
+  const c = {
+    className: css({
+      display: 'grid',
+      gridColumn: 'span 6',
+    }),
+  };
+
+  return <div {...c}>{children}</div>;
+};

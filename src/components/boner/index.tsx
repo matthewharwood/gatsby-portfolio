@@ -1,6 +1,6 @@
-import React, { createRef, useEffect } from 'react';
+import React, { createRef, useEffect, FunctionComponent } from 'react';
 import { mat4, vec3, quat } from 'gl-matrix';
-import {useStyletron} from 'baseui';
+import { useStyletron } from 'baseui';
 
 const vs = `
   attribute vec4 coords;
@@ -45,11 +45,10 @@ let q = quat.create(),
   scale2 = [3, 1, 1],
   pivot2 = [-1, 0, 0];
 
-function initGL(canvasRef: any) {
+function initGL(canvasRef: any, size?: number) {
   const { current: canvas } = canvasRef;
-
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight;
+  canvas.width = size || document.body.clientWidth;
+  canvas.height = size || document.body.clientHeight;
   gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
   if (!gl) {
     alert(
@@ -91,7 +90,7 @@ function createVertices(canvasRef: any) {
     [1, -1, 1, 0.5, 0, 1, 1], // 7
   ];
 
-  var normals = [
+  let normals = [
     [0, 0, 1],
     [0, 1, 0],
     [0, 0, -1],
@@ -100,7 +99,7 @@ function createVertices(canvasRef: any) {
     [1, 0, 0],
   ];
 
-  var indices = [
+  let indices = [
     [0, 1, 2, 1, 2, 3],
     [2, 3, 4, 3, 4, 5],
     [4, 5, 6, 5, 6, 7],
@@ -109,7 +108,7 @@ function createVertices(canvasRef: any) {
     [1, 3, 7, 3, 7, 5],
   ];
 
-  var attributes = [];
+  let attributes = [];
   for (let side = 0; side < indices.length; ++side) {
     for (let vi = 0; vi < indices[side].length; ++vi) {
       attributes.push(...vertices[indices[side][vi]]);
@@ -123,7 +122,7 @@ function createVertices(canvasRef: any) {
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(attributes), gl.STATIC_DRAW);
 
-  var coords = gl.getAttribLocation(shaderProgram, 'coords');
+  let coords = gl.getAttribLocation(shaderProgram, 'coords');
   gl.vertexAttribPointer(
     coords,
     3,
@@ -134,7 +133,7 @@ function createVertices(canvasRef: any) {
   );
   gl.enableVertexAttribArray(coords);
 
-  var colorsLocation = gl.getAttribLocation(shaderProgram, 'colors');
+  let colorsLocation = gl.getAttribLocation(shaderProgram, 'colors');
   gl.vertexAttribPointer(
     colorsLocation,
     4,
@@ -145,7 +144,7 @@ function createVertices(canvasRef: any) {
   );
   gl.enableVertexAttribArray(colorsLocation);
 
-  var normalLocation = gl.getAttribLocation(shaderProgram, 'normal');
+  let normalLocation = gl.getAttribLocation(shaderProgram, 'normal');
   gl.vertexAttribPointer(
     normalLocation,
     3,
@@ -158,15 +157,15 @@ function createVertices(canvasRef: any) {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-  var lightColor = gl.getUniformLocation(shaderProgram, 'lightColor');
+  let lightColor = gl.getUniformLocation(shaderProgram, 'lightColor');
   gl.uniform3f(lightColor, 1, 1, 1);
 
-  var lightDirection = gl.getUniformLocation(shaderProgram, 'lightDirection');
+  let lightDirection = gl.getUniformLocation(shaderProgram, 'lightDirection');
   gl.uniform3f(lightDirection, 0.5, 0.5, -1);
 
-  var perspectiveMatrix = mat4.create();
+  let perspectiveMatrix = mat4.create();
   mat4.perspective(perspectiveMatrix, 1, canvas.width / canvas.height, 0.1, 11);
-  var perspectiveLoc = gl.getUniformLocation(
+  let perspectiveLoc = gl.getUniformLocation(
     shaderProgram,
     'perspectiveMatrix'
   );
@@ -174,8 +173,8 @@ function createVertices(canvasRef: any) {
   mat4.translate(matrix, matrix, [0, 0, -4]);
 }
 
-let rafId:any = null;
-const easeInCirc = (t:any) => t * t * t;
+let rafId: any = null;
+const easeInCirc = (t: any) => t * t * t;
 let quat_t = null;
 const offset = 0.5;
 let trans_t = null;
@@ -216,32 +215,48 @@ function draw(timeMs: number) {
     );
   }
 
-  var transformMatrix = gl.getUniformLocation(shaderProgram, 'transformMatrix');
+  let transformMatrix = gl.getUniformLocation(shaderProgram, 'transformMatrix');
   gl.uniformMatrix4fv(transformMatrix, false, matrix);
 
   gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
 }
+type Size = { size?: number; pos?: string[] };
 
-const Boner = () => {
+const Boner: FunctionComponent<Size> = ({ size, pos }) => {
   const canvasRef: any = createRef();
   const [css] = useStyletron();
-  useEffect(() => {
-    initGL(canvasRef);
-    createShaders();
-    createVertices(canvasRef);
-    rafId = requestAnimationFrame(draw);
+  const isClient = typeof window === 'object';
 
-    return () => {
-      cancelAnimationFrame(rafId);
-    };
+  useEffect(() => {
+    if(isClient) {
+      initGL(canvasRef, size);
+      createShaders();
+      createVertices(canvasRef);
+      rafId = window.requestAnimationFrame(draw);
+
+      return () => {
+        window.cancelAnimationFrame(rafId);
+      };
+    }
   });
 
-  return <canvas className={css({
-    position:'fixed',
-    top: 0,
-    zIndex: -1,
-  })} width="500" height="500" ref={canvasRef} />;
+
+
+  return (
+    <canvas
+      className={css({
+        position: 'fixed',
+        top: pos ? pos[0] : 0,
+        left: pos ? pos[3] : 0,
+        zIndex: -1,
+        background: 'transparent',
+      })}
+      width="500"
+      height="500"
+      ref={canvasRef}
+    />
+  );
 };
 
 export { Boner };
