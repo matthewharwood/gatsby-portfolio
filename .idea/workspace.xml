@@ -2,132 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/addons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin-values.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/lab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/lab/centeredHeading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/lab/codeComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/lab/imageGallery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/lab/imageSection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanity/schemas/shared/imageAsset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SanityImgFluid/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SanityImgFluid/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/centered-heading/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/challenge/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/challenge/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/code-component/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/folio/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/footer.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/amazon/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/buy-me-coffee/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/cash-app/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/codesandbox/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/dev-to/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/discord/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/email/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/etherum/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/github/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/good-reads/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/google-pay/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/itch/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/kaggle/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/line/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/medium/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/messenger/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/more/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/netflix/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/npm/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/paypal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/reddit/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/search/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/skype/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/snapchat/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/stackoverflow/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/stadia/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/steam/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/strava/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/switch/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/twitch/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/uber/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/venmo/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/we-chat/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/youtube/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/image-gallery/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/image-section/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lab-card/image-overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lab-card/media.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lab-card/styles.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lab-card/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lab-card/window.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/process/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/process/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/process/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quote/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quote/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/lab/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/lab/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/labTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/portfolio.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/cards-columns.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/grid-span-four.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/lab-cards-grid.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lab/lab-header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_archive/work/work.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-ssr.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-ssr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/js/app.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/dist/static/js/vendor.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/work.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boner/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boner/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/challenge/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/challenge/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/folio/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folio/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/left.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/left.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/right.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/right.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/grid-system/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/grid-system/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home-navigation/__tests__/__snapshots__/nav-link.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-navigation/__tests__/__snapshots__/nav-link.test.tsx.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home-navigation/nav-link.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-navigation/nav-link.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icons/facebook/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/facebook/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icons/instagram/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/instagram/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icons/linkedin/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/linkedin/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icons/twitter/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/twitter/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lab-card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lab-card/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/process/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/process/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quote/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quote/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/labDev.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__tests__/__snapshots__/page-render.test.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__tests__/__snapshots__/renderer.test.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__tests__/page-render.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/__tests__/page-render.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/__tests__/renderer.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/component-map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/component-map.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/page-renderer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/page-renderer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/labTemplate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/workTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/workTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lab/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lab/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lab/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,11 +27,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="53" />
-    <option name="width" value="1680" />
-    <option name="height" value="995" />
-  </component>
   <component name="ProjectId" id="1UBLimjfrKEbc0iRrmdvG0u1v2Q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -158,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -168,7 +48,11 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/lab" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/lab" />
       <recent name="$PROJECT_DIR$/src/content" />
       <recent name="$PROJECT_DIR$/src/components/utils" />
       <recent name="$PROJECT_DIR$" />
@@ -197,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572563050319</updated>
       <workItem from="1572563054782" duration="7704000" />
-      <workItem from="1574825171557" duration="2196000" />
+      <workItem from="1574825171557" duration="4504000" />
     </task>
     <servers />
   </component>
@@ -205,13 +89,19 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="500" height="445" key="SwitcherDM" timestamp="1574828326772">
-      <screen x="0" y="23" width="1680" height="995" />
+    <state width="572" height="459" key="SwitcherDM" timestamp="1574877361669">
+      <screen x="0" y="23" width="1920" height="1025" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1680.995@0.23.1680.995" timestamp="1574828326772" />
-    <state x="497" y="266" width="685" height="508" key="find.popup" timestamp="1574828347732">
-      <screen x="0" y="23" width="1680" height="995" />
+    <state width="572" height="459" key="SwitcherDM/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877361669" />
+    <state x="568" y="273" width="783" height="524" key="find.popup" timestamp="1574877828000">
+      <screen x="0" y="23" width="1920" height="1025" />
     </state>
     <state x="497" y="266" width="685" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1574828347732" />
+    <state x="568" y="273" width="783" height="524" key="find.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877828000" />
+    <state x="505" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1574877826655">
+      <screen x="0" y="23" width="1920" height="1025" />
+    </state>
+    <state x="505" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877826655" />
   </component>
 </project>
