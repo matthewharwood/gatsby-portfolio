@@ -42,7 +42,7 @@ export type GatsbySanityImageFluid_withWebp = {
 
 export type CardDataType = {
   image: ImageType;
-  video: {
+  video?: {
     asset: {
       url: string;
     };
@@ -52,6 +52,7 @@ export type CardDataType = {
   status: string;
   title: string;
   labCardBackgroundType?: labCardBackgroundType;
+  maxWidth?: number;
 };
 
 export type CardsColumnDataType = {

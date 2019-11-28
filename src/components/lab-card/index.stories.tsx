@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { LabCard } from './';
 
 export default {
@@ -37,10 +37,28 @@ const dataFromSanity = {
   },
 };
 
-const FIXTURE: any = { ...dataFromSanity.data.sanityLab, maxWidth:500 };
+const dataForLabCardWithImage = {
+  ...dataFromSanity.data.sanityLab,
+  maxWidth:500,
+};
 
-export const toStorybook = () => <LabCard data={FIXTURE} />;
+const dataForLabCardWithVideo = {
+  ...dataFromSanity.data.sanityLab,
+  video: {
+    asset: {
+      url: 'http://techslides.com/demos/sample-videos/small.webm',
+    },
+  },
+  maxWidth:500,
+};
 
-toStorybook.story = {
+export const labCardWithImage = () => <LabCard data={dataForLabCardWithImage} />;
+export const labCardWithVideo = () => <LabCard data={dataForLabCardWithVideo} />;
+
+labCardWithImage.story = {
   name: 'LabCard with Image',
+};
+
+labCardWithImage.story = {
+  name: 'LabCard with Video',
 };
