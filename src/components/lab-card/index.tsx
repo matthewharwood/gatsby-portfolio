@@ -18,6 +18,8 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
   const { image, video, title } = data;
   const tags = data.tags || [];
   const defaultMediaPreference = data.video ? 'video' : 'image';
+  const maxWidth = data.maxWidth ? `${ data.maxWidth }px` : 'auto';
+
   const mediaType = data.labCardBackgroundType
     ? data.labCardBackgroundType
     : defaultMediaPreference;
@@ -37,6 +39,7 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
     marginTop: theme.sizing.scale2400,
     marginBottom: theme.sizing.scale2400,
     position: positions.relative,
+    width: maxWidth,
     height: `${windowHeight + contentHeight}px`,
     [mq.lg]: {
       marginLeft: theme.sizing.scale1200,

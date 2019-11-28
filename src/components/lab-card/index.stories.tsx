@@ -37,13 +37,9 @@ const dataFromSanity = {
   },
 };
 
-const FIXTURE: any = dataFromSanity.data.sanityLab;
+const FIXTURE: any = { ...dataFromSanity.data.sanityLab, maxWidth:500 };
 
-const ConstrainedDiv: FunctionComponent = ({children}) => (
-  <div style={{width:'500px'}}>{children}</div>
-)
-
-export const toStorybook = () => <ConstrainedDiv><LabCard data={FIXTURE} /></ConstrainedDiv>;
+export const toStorybook = () => <LabCard data={FIXTURE} />;
 
 toStorybook.story = {
   name: 'LabCard with Image',
