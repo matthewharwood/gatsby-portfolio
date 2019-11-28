@@ -8,6 +8,7 @@ import { H1, Paragraph1 } from 'baseui/typography';
 import { Button } from 'baseui/button';
 import { BlockContainer } from './block-container';
 import { GridItem } from './block-layout';
+import SanityImgFluid from '../SanityImgFluid';
 
 const storyModule = storiesOf('System/block-container', module);
 const { colors } = LightThemeMove;
@@ -49,12 +50,7 @@ const bgImageSmall = {
   rtlMirror: true,
 };
 
-const imageLarge = {
-  title: 'This is a test caption',
-  src:
-    'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco/v1544128494/assets/67/1acd72-4945-4d85-8d57-f9ff945f58af/original/Global-Rider-Bike-crossing-street.png',
-  rtlMirror: true,
-};
+
 
 // @ts-ignore
 storyModule.add('with Basic Layout', () => (
@@ -104,7 +100,11 @@ storyModule.add('with Basic Layout', () => (
     <GridItem $gridColumn={['1/-1', '1/-1', 'span 4', '7 / span 6']}>
       <AspectRatioBox aspectRatio={3 / 4}>
         <AspectRatioBoxBody>
-          <img src={imageLarge.src} alt={'any'} />
+          <SanityImgFluid
+            assetId={
+              'image-614fcc394f8b0057c04e5cd332b542e0a8ed1ffb-2560x1600-jpg'
+            }
+          />
         </AspectRatioBoxBody>
       </AspectRatioBox>
     </GridItem>
@@ -606,7 +606,11 @@ storyModule.add(
       <GridItem $gridColumn={['1/-1', '1/-1', 'span 4', '7 / span 6']}>
         <AspectRatioBox aspectRatio={3 / 4}>
           <AspectRatioBoxBody>
-            <img src={imageLarge.src} alt={'wtf'} />
+            <SanityImgFluid
+              assetId={
+                'image-614fcc394f8b0057c04e5cd332b542e0a8ed1ffb-2560x1600-jpg'
+              }
+            />
           </AspectRatioBoxBody>
         </AspectRatioBox>
       </GridItem>
