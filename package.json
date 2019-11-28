@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Matthew Harwood <matthhar12@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.7.0",
     "@rehooks/component-size": "^1.0.3",
     "babel-plugin-remove-graphql-queries": "^2.7.16",
     "baseui": "^9.22.0",
@@ -24,6 +25,7 @@
     "gatsby-transformer-remark": "^2.6.37",
     "gatsby-transformer-sharp": "^2.3.0",
     "gl-matrix": "^3.1.0",
+    "hex-to-rgba": "^2.0.1",
     "inflection": "^1.12.0",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
@@ -40,6 +42,7 @@
     "@mdx-js/react": "^1.5.1",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-backgrounds": "^5.2.6",
+    "@storybook/addon-knobs": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.2.6",

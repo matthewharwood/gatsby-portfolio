@@ -1,5 +1,6 @@
 import React from 'react';
 import { addDecorator, configure,addParameters } from "@storybook/react"
+import {withKnobs} from '@storybook/addon-knobs';
 import {Client as Styletron} from 'styletron-engine-atomic';
 import {Provider as StyletronProvider, DebugEngine} from 'styletron-react';
 import {BaseProvider} from 'baseui';
@@ -16,7 +17,7 @@ global.__PATH_PREFIX__ = ""
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
-
+addDecorator(withKnobs);
 addParameters({
   viewport: {
     viewports: INITIAL_VIEWPORTS,
