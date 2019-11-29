@@ -8,7 +8,7 @@ import { H1, Paragraph1 } from 'baseui/typography';
 import { Button } from 'baseui/button';
 import { BlockContainer } from './block-container';
 import { GridItem } from './block-layout';
-import SanityImgFluid from '../SanityImgFluid';
+import SanityImgFluid from '../sanity-img-fluid';
 
 const storyModule = storiesOf('System/block-container', module);
 const { colors } = LightThemeMove;

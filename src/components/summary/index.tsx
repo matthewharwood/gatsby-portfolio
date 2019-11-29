@@ -48,7 +48,7 @@ const bodyProps = {
   backgroundColor: 'primary300',
 };
 
-export const Summary = ({
+export const Summary:FunctionComponent<PropTypes> = ({
   eyebrow,
   title,
   body,
@@ -56,7 +56,7 @@ export const Summary = ({
   $backgroundColor,
   $borderBottom,
   $color,
-}: PropTypes) => {
+}) => {
   const [, theme] = useStyletron();
   const [isOpen, setIsOpen] = useState(false);
 

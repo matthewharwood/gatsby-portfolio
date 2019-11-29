@@ -1,5 +1,5 @@
 import React, { useRef, FunctionComponent } from 'react';
-import SanityImgFluid from '../SanityImgFluid'
+import SanityImgFluid from '../sanity-img-fluid'
 
 import { Container } from '../grid-system';
 import { PropType } from './types'

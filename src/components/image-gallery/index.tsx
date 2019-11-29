@@ -2,7 +2,7 @@ import React, { useRef, FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { mq, display } from '../styles';
 import useComponentSize from '@rehooks/component-size';
-import SanityImgFluid from '../SanityImgFluid'
+import SanityImgFluid from '../sanity-img-fluid'
 
 import { PropTypes } from './types'
 
