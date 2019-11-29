@@ -6,10 +6,11 @@ import { H1, Label1 } from 'baseui/typography';
 import { Section } from '../components/grid-system';
 import { pageRenderer } from '../services/page-renderer';
 
+import { PropTypes } from './labTemplate.types'
 
-const LabTemplate = ({ data }:any) => {
+const LabTemplate: FunctionComponent<PropTypes> = ({ data }) => {
+  console.log(data);
   const flattenedData = data.sanityLab;
-  console.log(flattenedData);
   return (
     <>
       <Navbar />
@@ -18,7 +19,7 @@ const LabTemplate = ({ data }:any) => {
           headline={flattenedData.title}
           subline={flattenedData.subline}
         />
-      {pageRenderer(flattenedData)}
+        {pageRenderer(flattenedData)}
       </Section>
       <Footer />
     </>

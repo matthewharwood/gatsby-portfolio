@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import { Section, Container, Grid } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
@@ -6,6 +6,8 @@ import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
 // @ts-ignore
 import ArrowRight from 'baseui/icon/arrow-right';
 import { display } from '../styles';
+
+import { PropTypes } from './types';
 
 import {
   Modal,
@@ -15,7 +17,7 @@ import {
   ModalButton,
 } from 'baseui/modal';
 
-const TopElement = ({ children }: any) => {
+const TopElement: FunctionComponent = ({ children }) => {
   const [css] = useStyletron();
   const c = {
     className: css({
@@ -27,8 +29,7 @@ const TopElement = ({ children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-
-const VideoThumbnail = ({ children }: any) => {
+const VideoThumbnail: FunctionComponent = ({ children }) => {
   const [css] = useStyletron();
   const c = {
     className: css({
@@ -47,7 +48,7 @@ const bodyProps = {
   backgroundColor: 'primary300',
 };
 
-export const Summary = ({
+export const Summary:FunctionComponent<PropTypes> = ({
   eyebrow,
   title,
   body,
@@ -55,7 +56,7 @@ export const Summary = ({
   $backgroundColor,
   $borderBottom,
   $color,
-}: any) => {
+}) => {
   const [, theme] = useStyletron();
   const [isOpen, setIsOpen] = useState(false);
 

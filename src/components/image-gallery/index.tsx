@@ -2,18 +2,13 @@ import React, { useRef, FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { mq, display } from '../styles';
 import useComponentSize from '@rehooks/component-size';
-import SanityImgFluid from '../SanityImgFluid'
+import SanityImgFluid from '../sanity-img-fluid'
 
-type imageType = {
-  src: string;
-  id: string;
-  altText: string;
-};
+import { PropTypes } from './types'
 
-const ImageGallery: FunctionComponent<{ images: Array<imageType> }> = ({
+const ImageGallery: FunctionComponent<PropTypes> = ({
   images,
 }) => {
-  /* console.log(images); */
   const [css, theme] = useStyletron();
   const { sm, md, lg } = mq;
 
@@ -48,10 +43,10 @@ const ImageGallery: FunctionComponent<{ images: Array<imageType> }> = ({
   return (
     <div className={gridStyle}>
       {images.map(image => (
-        <SanityImgFluid assetId={image.image.asset.id} className={imgStyle}/>
+        <div ref={ref}><SanityImgFluid assetId={image.image.asset.id} className={imgStyle}/></div>
       ))}
     </div>
   );
 };
 
-export default ImageGallery;
+export { ImageGallery };

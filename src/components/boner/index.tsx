@@ -185,7 +185,6 @@ let start = 0;
 const finishTimeMs = 1500;
 
 function draw(timeMs: number) {
-  console.log('hello')
   if (!start) {
     start = timeMs;
   }
@@ -241,8 +240,6 @@ const Boner: FunctionComponent<Props> = ({ size, pos }) => {
       };
     }
   });
-
-  console.log('Boner');
 
   return (
     <canvas

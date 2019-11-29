@@ -8,8 +8,8 @@ import {Quote} from "../components/quote";
 import {Video} from "../components/video"
 import {Challenge} from "../components/challenge"
 
-import ImageSection from '../components/image-section';
-import ImageGallery from '../components/image-gallery';
+import { ImageSection } from '../components/image-section';
+import { ImageGallery } from '../components/image-gallery';
 import {CenteredHeading} from '../components/centered-heading';
 import {CodeComponent} from '../components/code-component';
 
