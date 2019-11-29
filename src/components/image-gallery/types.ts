@@ -8,5 +8,5 @@ export type ImageType = {
 
 export type PropTypes = {
   images: Array<ImageType>;
-  aspectRatio: number;
+  aspectRatio?: number;
 };
