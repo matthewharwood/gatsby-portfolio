@@ -59,6 +59,6 @@ labCardWithImage.story = {
   name: 'LabCard with Image',
 };
 
-labCardWithImage.story = {
+labCardWithVideo.story = {
   name: 'LabCard with Video',
 };

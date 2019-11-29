@@ -9,7 +9,6 @@ import { pageRenderer } from '../services/page-renderer';
 
 const LabTemplate = ({ data }:any) => {
   const flattenedData = data.sanityLab;
-  console.log(flattenedData);
   return (
     <>
       <Navbar />
