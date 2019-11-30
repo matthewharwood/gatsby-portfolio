@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { H4, Paragraph1, } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 import { GridItemLeft, GridItemRight, Grid } from '../grid-system';
 
-export const Headline = ({ title, text, $hasBottomMargin = true }: any) => {
+import { PropTypes } from './types'
+
+export const Headline:FunctionComponent<PropTypes> = ({ title, text, $hasBottomMargin = true }) => {
   const [css, theme] = useStyletron();
   const marginBottom = $hasBottomMargin ? theme.sizing.scale1600 : 0;
   return (

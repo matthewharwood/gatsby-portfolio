@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {
   Section,
   Container,
@@ -8,10 +8,12 @@ import {
 } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
-import Image from 'gatsby-image';
+/* import Image from 'gatsby-image'; */
+
+import { PropTypes } from './types'
 
 
-const Highlight = ({
+const Highlight:FunctionComponent<PropTypes> = ({
   $backgroundColor,
   $color,
   $accentColor,
@@ -24,7 +26,7 @@ const Highlight = ({
   orderLeft = 0,
   orderRight = 1,
   image,
-}: any) => {
+}) => {
   const hasImage = Boolean(image && image.asset && image.asset._ref);
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary100;
