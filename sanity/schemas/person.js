@@ -6,7 +6,7 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'slug',
@@ -14,21 +14,21 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'jobTitle',
       title: 'Job Title',
       type: 'string',
     },
-  ]
-}
+  ],
+};
