@@ -5,11 +5,7 @@ import { mq, display, fontFamily } from '../styles';
 import { useSpring, animated } from 'react-spring';
 import BezierEasing from 'bezier-easing';
 
-type NavLinkProps = {
-  to: string;
-  text: string;
-  index: string;
-};
+import { NavLinkProps } from './types'
 
 const NavLinkIndex: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();

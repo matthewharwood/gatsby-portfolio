@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { mq, display, positions } from '../styles';
+
 const Nav: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;

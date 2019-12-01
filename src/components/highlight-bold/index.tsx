@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {
   Section,
   Container,
@@ -8,10 +8,12 @@ import {
 } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
-import Img from 'gatsby-image';
+/* import Img from 'gatsby-image'; */
 import { mq } from '../styles';
 
-const HighlightBold = ({
+import { PropTypes } from './types'
+
+const HighlightBold:FunctionComponent<PropTypes> = ({
   full = false,
   $backgroundColor,
   $backgroundInner,
@@ -25,8 +27,8 @@ const HighlightBold = ({
   rightCols = 8,
   orderLeft = 0,
   orderRight = 1,
-  src = 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
-}: any) => {
+  /* src = 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', */
+}) => {
   const [css, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary100;
   const backgroundInner = $backgroundInner || theme.colors.primary50;

@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, FunctionComponent } from 'react';
 import Logo from '../icons/logo';
 import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
@@ -8,7 +8,9 @@ import Delete from 'baseui/icon/delete';
 import { mq, display, colors } from '../styles';
 import { Boner } from '../boner';
 
-export const Navbar = memo(({ show = true }: any) => {
+import { NavbarType, HamburgerType, ListItemType } from './types';
+
+export const Navbar:FunctionComponent<NavbarType> = memo(({ show = true }) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
@@ -63,14 +65,12 @@ export const Navbar = memo(({ show = true }: any) => {
   );
 });
 
-const Hamburger = ({
+
+const Hamburger:FunctionComponent<HamburgerType> = ({
   isNavToggle,
   toggleNav,
-}: {
-  isNavToggle: Boolean;
-  toggleNav: Function;
 }) => {
-  const [css, theme] = useStyletron();
+  const [css,] = useStyletron();
   const lg = mq.lg;
   return (
     <span
@@ -136,8 +136,8 @@ const NavHeader = () => {
   );
 };
 
-const NavList = ({ children }: { children: React.ReactNode }) => {
-  const [css, theme] = useStyletron();
+const NavList:FunctionComponent = ({ children }) => {
+  const [css,] = useStyletron();
   const lg = mq.lg;
   return (
     <ul
@@ -154,7 +154,7 @@ const NavList = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const ListItem = ({ title }: { title: string }) => {
+const ListItem:FunctionComponent<ListItemType> = ({ title }) => {
   const [css, theme] = useStyletron();
   return (
     <Link

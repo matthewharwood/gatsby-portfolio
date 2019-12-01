@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import {
   Display2,
   Label2,
@@ -10,7 +10,15 @@ import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
 import { display } from '../styles';
-const TopElement = ({ $borderColor, children }: any) => {
+import {
+  PostHeaderType,
+  TopElementType,
+} from './types';
+
+const TopElement: FunctionComponent<TopElementType> = ({
+  $borderColor,
+  children,
+}) => {
   const [css, theme] = useStyletron();
   const c = {
     className: css({
@@ -24,7 +32,7 @@ const TopElement = ({ $borderColor, children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const ListItem = ({children }: any) => {
+const ListItem: FunctionComponent = ({ children }) => {
   const [css] = useStyletron();
 
   const c = {
@@ -38,19 +46,21 @@ const ListItem = ({children }: any) => {
   return <div {...c}>{children}</div>;
 };
 
-const PostHeader = ({
+const PostHeader: FunctionComponent<PostHeaderType> = ({
   eyebrow,
   mainText,
   subText,
   projectOverview,
   $backgroundColor,
   $color,
-}: any) => {
+}) => {
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary700;
   const color = $color || theme.colors.primary100;
-  const Layout = (data: any) => {
-    if(!data) {
+  const Layout = (
+    data: any 
+  ) => {
+    if (!data) {
       return data;
     }
     switch (data.type) {
@@ -63,7 +73,7 @@ const PostHeader = ({
         ));
       case 'list':
         return data.items.map((d: any, key: any) => (
-          <span key={key} >
+          <span key={key}>
             {d}
             <br />
           </span>
@@ -83,20 +93,22 @@ const PostHeader = ({
             <Paragraph1 color={'inheirt'}>{subText && subText.text}</Paragraph1>
           </TopElement>
           <Grid>
-            {projectOverview && Object.entries(projectOverview).filter(([key]) => (key !== '_type')).map(([key, { data }]: any, k: any) => {
-              return (
-                <ListItem key={k}>
-                  <Label2
-                    color={'inherit'}
-                    // @ts-ignore
-                    style={{ textTransform: 'capitalize' }}
-                  >
-                    {key}
-                  </Label2>
-                  <Paragraph4 color={'inherit'}>{Layout(data)}</Paragraph4>
-                </ListItem>
-              );
-            })}
+            {projectOverview &&
+              Object.entries(projectOverview)
+                .filter(([key]) => key !== '_type')
+                .map(([key, { data }]: any, k: any) => {
+                  return (
+                    <ListItem key={k}>
+                      <Label2
+                        color={'inherit'}
+                        $style={{ textTransform: 'capitalize' }}
+                      >
+                        {key}
+                      </Label2>
+                      <Paragraph4 color={'inherit'}>{Layout(data)}</Paragraph4>
+                    </ListItem>
+                  );
+                })}
           </Grid>
         </Grid>
       </Container>

@@ -1,24 +1,23 @@
-import React from "react"
-import renderer from "react-test-renderer"
-import { PostHeader } from "../"
-
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { PostHeader } from '../';
 
 const FIXTURE = {
-  _key: "99cf0fa54eb7",
-  _type: "postHeader",
-  "eyebrow": {
-    "_type": "label",
-    "text": "Web Application"
+  _key: '99cf0fa54eb7',
+  _type: 'postHeader',
+  eyebrow: {
+    _type: 'label',
+    text: 'Web Application',
   },
-  "mainText": {
-    "_type": "label",
-    "text": "Nike CMS"
+  mainText: {
+    _type: 'label',
+    text: 'Nike CMS',
   },
   projectOverview: {
-    _type: "projectOverviewSchema",
+    _type: 'projectOverviewSchema',
     client: {
-      "data": "Google",
-      "type": "default"
+      data: 'Google',
+      type: 'default',
     },
     collaborators: {
       data: {
@@ -30,51 +29,47 @@ const FIXTURE = {
         type: 'list',
       },
     },
-    "company": {
-      "data": "AKQA",
-      "type": "default"
+    company: {
+      data: 'AKQA',
+      type: 'default',
     },
-    "role": {
-      "data": "Frontend Engineer",
-      "type": "default"
+    role: {
+      data: 'Frontend Engineer',
+      type: 'default',
     },
-    "resources": {
-      "data": {
-        "items": [
+    resources: {
+      data: {
+        items: [
           {
-            "_key": "77fb5c027206",
-            "_type": "link",
-            "href": "https://www.github.com",
-            "text": "Github"
-          }
+            _key: '77fb5c027206',
+            _type: 'link',
+            href: 'https://www.github.com',
+            text: 'Github',
+          },
         ],
-        "type": "link"
-      }
+        type: 'link',
+      },
     },
-    "technology": {
-      "data": {
-        "items": [
-          "Angular"
-        ],
-        "type": "list"
-      }
+    technology: {
+      data: {
+        items: ['Angular'],
+        type: 'list',
+      },
     },
-    "when": {
-      "data": "Feb 2014",
-      "type": "default"
-    }
+    when: {
+      data: 'Feb 2014',
+      type: 'default',
+    },
   },
-  "subText": {
-    "_type": "label",
-    "text": "Some sub text here"
-  }
-}
+  subText: {
+    _type: 'label',
+    text: 'Some sub text here',
+  },
+};
 
-describe("Page Renderer ", () => {
-  it("should render postHeader", () => {
-    const tree = renderer
-      .create(<PostHeader {...FIXTURE} />)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})
+describe('Page Renderer ', () => {
+  it('should render postHeader', () => {
+    const tree = renderer.create(<PostHeader {...FIXTURE} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

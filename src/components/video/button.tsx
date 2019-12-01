@@ -1,47 +1,39 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 
 import iconReplay from '../icons/replay';
 import iconPause from '../icons/pause';
 import iconPlay from '../icons/play';
 import { display } from '../styles';
-enum State {
-  initial = 'INITIAL',
-  play = 'PLAY',
-  pause = 'PAUSE',
-  stop = 'STOP',
-}
-interface VideoButton {
-  videoState: State;
-  playVideo: () => void;
-  pauseVideo: () => void;
-}
-export const VideoButton = ({
+
+import { VideoButtonType } from './types';
+
+export const VideoButton: FunctionComponent<VideoButtonType> = ({
   videoState,
   playVideo,
   pauseVideo,
-}: VideoButton) => {
+}) => {
   const [css, theme] = useStyletron();
   const stateMap = {
-    [State.initial]: {
+    'INITIAL': {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: playVideo,
       icon: iconPlay,
     },
-    [State.play]: {
+    'PLAY': {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: pauseVideo,
       icon: iconPause,
     },
-    [State.pause]: {
+    'PAUSE': {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: playVideo,
       icon: iconPlay,
     },
-    [State.stop]: {
+    'STOP': {
       backgroundColor: theme.colors.positive200,
       hoverBg: theme.colors.positive300,
       trigger: playVideo,

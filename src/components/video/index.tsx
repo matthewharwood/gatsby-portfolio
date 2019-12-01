@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Player } from './player';
 
 import {
@@ -12,7 +12,10 @@ import { useStyletron } from 'baseui';
 import { Paragraph2, Label2 } from 'baseui/typography';
 import { mq } from '../styles';
 
-const VideoTitle = ({ title }: { title: string }) => {
+import { VideoType, VideoTitleType } from './types'
+
+
+const VideoTitle:FunctionComponent<VideoTitleType> = ({ title }) => {
   const [css, theme] = useStyletron();
   return (
     <Label2
@@ -28,16 +31,7 @@ const VideoTitle = ({ title }: { title: string }) => {
   );
 };
 
-interface Props {
-  $color?: string;
-  $backgroundColor?: string;
-  title: string;
-  caption: string;
-  videoSrc: string;
-  videoId: string;
-  poster?: string;
-}
-export const Video = ({
+export const Video: FunctionComponent<VideoType> = ({
   $color,
   $backgroundColor,
   title,
@@ -45,7 +39,7 @@ export const Video = ({
   videoSrc,
   videoId,
   poster,
-}: Props) => {
+}) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   const color = $color || theme.colors.primary700;

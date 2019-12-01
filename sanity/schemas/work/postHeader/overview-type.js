@@ -7,9 +7,11 @@ export const listData = {
       name: 'items',
       title: 'items',
       type: 'array',
-      of: [{
-        type: 'string',
-      }]
+      of: [
+        {
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'type',
@@ -17,14 +19,14 @@ export const listData = {
       type: 'string',
       options: {
         list: [
-          {title: 'default', value: 'default'},
-          {title: 'list', value: 'list'},
-          {title: 'link', value: 'link'}
+          { title: 'default', value: 'default' },
+          { title: 'list', value: 'list' },
+          { title: 'link', value: 'link' },
         ],
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
 export const listLinkData = {
   name: 'listLinkData',
   type: 'object',
@@ -34,7 +36,7 @@ export const listLinkData = {
       name: 'items',
       title: 'items',
       type: 'array',
-      of: [{type: 'link'}]
+      of: [{ type: 'link' }],
     },
     {
       name: 'type',
@@ -42,14 +44,14 @@ export const listLinkData = {
       type: 'string',
       options: {
         list: [
-          {title: 'default', value: 'default'},
-          {title: 'list', value: 'list'},
-          {title: 'link', value: 'link'}
+          { title: 'default', value: 'default' },
+          { title: 'list', value: 'list' },
+          { title: 'link', value: 'link' },
         ],
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
 export const single = [
   {
     name: 'data',
@@ -62,19 +64,19 @@ export const single = [
     type: 'string',
     options: {
       list: [
-        {title: 'default', value: 'default'},
-        {title: 'list', value: 'list'},
-        {title: 'link', value: 'link'}
+        { title: 'default', value: 'default' },
+        { title: 'list', value: 'list' },
+        { title: 'link', value: 'link' },
       ], // <-- predefined values
-    }
-  }
-]
+    },
+  },
+];
 export const list = [
   {
     name: 'data',
     type: 'listData',
     title: 'data',
-  }
+  },
 ];
 
 // export const collaborator = [
@@ -117,5 +119,6 @@ export const linklist = [
     name: 'data',
     type: 'listLinkData',
     title: 'data',
-  }
+  },
 ];
+
