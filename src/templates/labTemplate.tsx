@@ -9,7 +9,6 @@ import { pageRenderer } from '../services/page-renderer';
 import { PropTypes } from './labTemplate.types'
 
 const LabTemplate: FunctionComponent<PropTypes> = ({ data }) => {
-  console.log(data);
   const flattenedData = data.sanityLab;
   return (
     <>

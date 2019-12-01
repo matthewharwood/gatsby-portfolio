@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 
 import iconReplay from '../icons/replay';
 import iconPause from '../icons/pause';
 import iconPlay from '../icons/play';
 import { display } from '../styles';
-enum State {
-  initial = 'INITIAL',
-  play = 'PLAY',
-  pause = 'PAUSE',
-  stop = 'STOP',
-}
-interface VideoButton {
-  videoState: State;
-  playVideo: () => void;
-  pauseVideo: () => void;
-}
-export const VideoButton = ({
+
+import { State, VideoButtonType } from './types';
+
+export const VideoButton: FunctionComponent<VideoButtonType> = ({
   videoState,
   playVideo,
   pauseVideo,
-}: VideoButton) => {
+}) => {
   const [css, theme] = useStyletron();
   const stateMap = {
     [State.initial]: {
