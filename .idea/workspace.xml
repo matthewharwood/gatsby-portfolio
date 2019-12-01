@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/base-schemas/step/schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/process/schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-header/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-header/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-header/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-header/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/author.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/author.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/blockContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/blockContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/person.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/person.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/work.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/work/highlight.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/work/highlight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/work/process.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/process/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/process/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/process/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/process/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +89,7 @@
       <workItem from="1572563054782" duration="7704000" />
       <workItem from="1574825171557" duration="4504000" />
       <workItem from="1574915259821" duration="9431000" />
+      <workItem from="1575227682061" duration="2824000" />
     </task>
     <servers />
   </component>
@@ -87,23 +97,27 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="551" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1574949900386">
+    <state x="304" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575228980497">
       <screen x="0" y="23" width="1680" height="995" />
     </state>
-    <state x="551" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.995@0.23.1680.995" timestamp="1574949900386" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1574951491067">
+    <state x="304" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.995@0.23.1680.995" timestamp="1575228980497" />
+    <state x="551" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575228817666">
       <screen x="0" y="23" width="1680" height="995" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1680.995@0.23.1680.995" timestamp="1574951491067" />
+    <state x="551" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.995@0.23.1680.995" timestamp="1575228817666" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1575235630551">
+      <screen x="0" y="23" width="1680" height="995" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1680.995@0.23.1680.995" timestamp="1575235630551" />
     <state width="572" height="459" key="SwitcherDM/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877361669" />
     <state x="628" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1574950570688">
       <screen x="0" y="23" width="1680" height="995" />
     </state>
     <state x="628" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.995@0.23.1680.995" timestamp="1574950570688" />
-    <state x="497" y="266" width="835" height="508" key="find.popup" timestamp="1574920373707">
+    <state x="497" y="266" width="835" height="508" key="find.popup" timestamp="1575229465871">
       <screen x="0" y="23" width="1680" height="995" />
     </state>
-    <state x="497" y="266" width="835" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1574920373707" />
+    <state x="497" y="266" width="835" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1575229465871" />
     <state x="568" y="273" width="783" height="524" key="find.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877828000" />
     <state x="442" y="265" width="670" height="657" key="search.everywhere.popup" timestamp="1575174963809">
       <screen x="0" y="23" width="1680" height="995" />

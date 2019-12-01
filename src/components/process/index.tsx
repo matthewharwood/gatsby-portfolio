@@ -1,42 +1,28 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Section, Container, Grid, GridItemHalf } from '../grid-system';
-import { useStyletron } from 'baseui';
+import { Section, Container, Grid, GridItem } from '../system/block-layout';
 import { Display4 } from 'baseui/typography';
 import { ProgressSteps, Step } from 'baseui/progress-steps';
-import { Props, step } from './types';
+import { Props } from './types';
 
-export const Process: FunctionComponent<Props> = ({
-  $backgroundColor,
-  $color,
-  $borderBottom,
-  headline,
-  steps,
-}: any) => {
-  const [, theme] = useStyletron();
+export const Process: FunctionComponent<Props> = ({ headline, steps }: any) => {
   const [current] = useState(0);
-  const backgroundColor = $backgroundColor || theme.colors.primary100;
-  const color = $color || theme.colors.primary700;
   return (
-    <Section
-      $backgroundColor={backgroundColor}
-      $color={color}
-      $collapsePaddingBottom={!!$borderBottom}
-    >
-      <Container $borderBottom={$borderBottom} $color={color}>
+    <Section>
+      <Container>
         <Grid>
-          <GridItemHalf>
+          <GridItem $gridColumn={['span 6']} $alignSelf={'start'}>
             <Display4>{headline}</Display4>
-          </GridItemHalf>
-          <GridItemHalf>
+          </GridItem>
+          <GridItem $gridColumn={['span 6']}>
             <ProgressSteps
               current={current}
               overrides={{ Root: { style: { backgroundColor: 'inherit' } } }}
             >
-              {steps.map((step: step, index: number) => {
+              {steps.map((step: any, index: number) => {
                 return <Step key={`step-${index}`} title={step.title} />;
               })}
             </ProgressSteps>
-          </GridItemHalf>
+          </GridItem>
         </Grid>
       </Container>
     </Section>

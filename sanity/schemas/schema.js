@@ -11,7 +11,7 @@ import imageAsset from './shared/imageAsset';
 
 import lab from '../schemas/lab';
 import work from './work';
-
+import process from '../../src/components/process/schema';
 import imageSection from './lab/imageSection';
 import centeredHeading from './lab/centeredHeading';
 import imageGallery from './lab/imageGallery';
@@ -21,7 +21,6 @@ import summary from './work/summary';
 import postHeader from './work/postHeader';
 import highlight from './work/highlight';
 import highlightBold from './work/highlightBold';
-import process from './work/process';
 import quote from './work/quote';
 import video from './work/video';
 import projectOverviewSchema from './work/postHeader/projectOverview';
@@ -40,10 +39,11 @@ import role from './work/postHeader/role';
 import technology from './work/postHeader/technology';
 import when from './work/postHeader/when';
 import { listLinkData, listData } from './work/postHeader/overview-type';
-
+import step from '../../src/components/base-schemas/step/schema';
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    step,
     client,
     listLinkData,
     listData,
@@ -67,7 +67,6 @@ export default createSchema({
     postHeader,
     highlight,
     highlightBold,
-    process,
     quote,
     video,
     projectOverviewSchema,
@@ -79,5 +78,6 @@ export default createSchema({
     imageAsset,
     codeComponent,
     blockContent,
+    process,
   ]),
 });
