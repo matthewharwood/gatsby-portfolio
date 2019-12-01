@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/post-pagination/index.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/post-pagination/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-pagination/.index.tsx.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-pagination/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-pagination/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/post-header/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-header/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/post-header/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-header/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
@@ -79,7 +79,7 @@
       <updated>1572563050319</updated>
       <workItem from="1572563054782" duration="7704000" />
       <workItem from="1574825171557" duration="4504000" />
-      <workItem from="1574915259821" duration="7234000" />
+      <workItem from="1574915259821" duration="9431000" />
     </task>
     <servers />
   </component>
@@ -105,9 +105,10 @@
     </state>
     <state x="497" y="266" width="835" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1574920373707" />
     <state x="568" y="273" width="783" height="524" key="find.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877828000" />
-    <state x="505" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1574877826655">
-      <screen x="0" y="23" width="1920" height="1025" />
+    <state x="442" y="265" width="670" height="657" key="search.everywhere.popup" timestamp="1575174963809">
+      <screen x="0" y="23" width="1680" height="995" />
     </state>
+    <state x="442" y="265" width="670" height="657" key="search.everywhere.popup/0.23.1680.995@0.23.1680.995" timestamp="1575174963809" />
     <state x="505" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877826655" />
   </component>
 </project>

@@ -65,8 +65,8 @@ export type PostHeaderType = {
   mainText: LabelType;
   subText: LabelType;
   projectOverview: ProjectOverviewType;
-  $backgroundColor: string;
-  $color: string;
+  $backgroundColor?: string;
+  $color?: string;
 };
 
 export type TopElementType = {
