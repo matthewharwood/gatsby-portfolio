@@ -8,15 +8,12 @@ export type VideoType = {
   poster?: string;
 };
 
-export enum State {
-  initial = 'INITIAL',
-  play = 'PLAY',
-  pause = 'PAUSE',
-  stop = 'STOP',
-}
-
 export type VideoButtonType = {
-  videoState: State;
+  videoState: 'INITIAL' | 'PLAY' | 'PAUSE' | 'STOP';
   playVideo: () => void;
   pauseVideo: () => void;
+};
+
+export type VideoTitleType = {
+  title: string;
 };

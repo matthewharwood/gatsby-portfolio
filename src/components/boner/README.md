@@ -2,4 +2,4 @@
 --
 # Boner
 
-This is the animated gradient bar that is intende to be used used in the homapage and Navbar.
+This is the animated gradient bar that is intended to be used in the homepage and Navbar.

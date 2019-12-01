@@ -10,7 +10,10 @@ import { StyledLink } from 'baseui/link';
 import { useStyletron } from 'baseui';
 import { Section, Container, Grid } from '../grid-system';
 import { display } from '../styles';
-import { PostHeaderType, TopElementType } from './types';
+import {
+  PostHeaderType,
+  TopElementType,
+} from './types';
 
 const TopElement: FunctionComponent<TopElementType> = ({
   $borderColor,
@@ -54,7 +57,9 @@ const PostHeader: FunctionComponent<PostHeaderType> = ({
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary700;
   const color = $color || theme.colors.primary100;
-  const Layout = (data: any) => {
+  const Layout = (
+    data: any 
+  ) => {
     if (!data) {
       return data;
     }
@@ -96,8 +101,7 @@ const PostHeader: FunctionComponent<PostHeaderType> = ({
                     <ListItem key={k}>
                       <Label2
                         color={'inherit'}
-                        // @ts-ignore
-                        style={{ textTransform: 'capitalize' }}
+                        $style={{ textTransform: 'capitalize' }}
                       >
                         {key}
                       </Label2>

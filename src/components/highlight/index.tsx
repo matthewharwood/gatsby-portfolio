@@ -8,6 +8,7 @@ import {
 } from '../grid-system';
 import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
+import { SanityImgFluid } from '../sanity-img-fluid';
 /* import Image from 'gatsby-image'; */
 
 import { PropTypes } from './types'
@@ -27,6 +28,7 @@ const Highlight:FunctionComponent<PropTypes> = ({
   orderRight = 1,
   image,
 }) => {
+  console.log(image);
   const hasImage = Boolean(image && image.asset && image.asset._ref);
   const [, theme] = useStyletron();
   const backgroundColor = $backgroundColor || theme.colors.primary100;

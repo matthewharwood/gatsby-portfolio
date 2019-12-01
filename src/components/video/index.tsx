@@ -12,9 +12,10 @@ import { useStyletron } from 'baseui';
 import { Paragraph2, Label2 } from 'baseui/typography';
 import { mq } from '../styles';
 
-import { VideoType } from './types'
+import { VideoType, VideoTitleType } from './types'
 
-const VideoTitle:FunctionComponent<{title:string}> = ({ title }) => {
+
+const VideoTitle:FunctionComponent<VideoTitleType> = ({ title }) => {
   const [css, theme] = useStyletron();
   return (
     <Label2
