@@ -16,7 +16,7 @@ export default {
         {
           title: 'Step',
           type: 'step',
-        },e
+        },
       ],
     },
   ],
