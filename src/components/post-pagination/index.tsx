@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
 import { Label1, Display2, Paragraph1 } from 'baseui/typography';
 
-import { Section, Container, Grid, GridItem } from '../system/block-layout';
+import { Section, Container, Grid, GridItem } from '../@design-system/block-layout';
 import { mq } from '../styles';
 import { Props } from './types';
 

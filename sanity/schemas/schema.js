@@ -39,7 +39,7 @@ import role from './work/postHeader/role';
 import technology from './work/postHeader/technology';
 import when from './work/postHeader/when';
 import { listLinkData, listData } from './work/postHeader/overview-type';
-import step from '../../src/components/base-schemas/step/schema';
+import step from '../../src/components/@design-system/steps/schema';
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([

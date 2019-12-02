@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Section, Container, Grid, GridItem } from '../system/block-layout';
+import { Section, Container, Grid, GridItem } from '../@design-system/block-layout';
 import { Display4 } from 'baseui/typography';
 import { ProgressSteps, Step } from 'baseui/progress-steps';
 import { Props } from './types';
