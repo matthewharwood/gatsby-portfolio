@@ -1,6 +1,6 @@
 export default {
-  name: 'centered-headline',
-  title: 'Centered Headline',
+  name: 'centeredHeading',
+  title: 'Centered Heading',
   type: 'document',
   fields: [
     {
