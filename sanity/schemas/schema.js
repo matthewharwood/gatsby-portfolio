@@ -28,6 +28,7 @@ import resource from '../../src/components/post-header/schema/resource';
 import label from './baseui/label';
 import link from './baseui/link';
 import person from './person';
+
 import challenge from '../../src/components/challenge/schema/index';
 import legend from '../../src/components/challenge/schema/legend';
 import solutionCard from '../../src/components/challenge/schema/solution-card';
@@ -43,6 +44,7 @@ import {
   listData,
 } from '../../src/components/post-header/schema/overview-type';
 import step from '../../src/components/base-schemas/step/schema';
+
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([

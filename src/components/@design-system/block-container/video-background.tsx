@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Block } from 'baseui/block';
 
-import { useMediaQuery } from '../use-media-query';
+import { useMediaQuery } from '../../utils/use-media-query';
 
 import { AutoplayVideoProps } from '../types';
 
