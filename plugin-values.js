@@ -14,15 +14,14 @@ export const MorningHarwood = createTheme(
       transparent: 'rgba(255,255,255,0)',
     },
     breakpoints: {
-      small: 599,
-      medium: 600,
-      mediumUpper: 1139,
-      large: 1140,
+      small: 600,
+      medium: 768,
+      large: 1280,
     },
     mq: {
       sm: '@media (max-width: 599px)',
-      md: '@media (min-width: 600px) and (max-width: 1139px)',
-      lg: '@media (min-width: 1140px)',
+      md: '@media (min-width: 600px) and (max-width: 1279px)',
+      lg: '@media (min-width: 1280px)',
     },
     positions: {
       absolute: 'absolute',

@@ -43,7 +43,7 @@ import {
   listLinkData,
   listData,
 } from '../../src/components/post-header/schema/overview-type';
-import step from '../../src/components/base-schemas/step/schema';
+import step from '../../src/components/@design-system/steps/schema.js';
 
 export default createSchema({
   name: 'default',

@@ -1,10 +1,9 @@
 export type PropTypes = {
   full?: boolean;
-  $backgroundColor?: string;
-  $backgroundInner?: string;
-  $color?: string;
-  $accentColor?: string;
-  $borderBottom?: boolean;
+  backgroundColor?: string;
+  color?: string;
+  accentColor?: string;
+  borderBottom?: boolean;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -12,4 +11,9 @@ export type PropTypes = {
   rightCols?: Array<number>;
   orderLeft?: number;
   orderRight?: number;
+  image?: {
+    asset: {
+      id: string;
+    };
+  };
 };

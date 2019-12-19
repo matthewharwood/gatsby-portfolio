@@ -79,6 +79,8 @@ export type GridType = {
   $backgroundColor?: string;
   $cols?: Array<string>;
   $justifyItems?: JustifyItemsT;
+  $marginTop?: SpacingT;
+  $marginBottom?: SpacingT;
 };
 
 export type GridItemType = {
