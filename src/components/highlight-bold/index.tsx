@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { Section, Container, Grid } from '../@design-system/block-layout/';
 import { Block } from 'baseui/block';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
-/* import Img from 'gatsby-image'; */
 import SanityImgFluid from '../sanity-img-fluid';
 
 import { PropTypes } from './types';
@@ -22,13 +21,14 @@ const HighlightBold: FunctionComponent<PropTypes> = ({
   orderLeft = 0,
   orderRight = 1,
 }) => {
-  const bgColor = backgroundColor || "primary50";
-  const textColor = color || "primary700";
-  const accent = accentColor || "accent";
+  const bgColor = backgroundColor || 'primary50';
+  const textColor = color || 'primary700';
+  const accent = accentColor || 'accent';
   const isImageVisible = full ? false : true;
 
   const leftColsMap = leftCols.map(colVal => `span ${colVal}`);
   const rightColsMap = rightCols.map(colVal => `span ${colVal}`);
+  console.log('image', image);
 
   return (
     <Section>

@@ -1,3 +1,5 @@
+import { RawImageType } from '../sanity-img-fluid/types';
+
 export type PropTypes = {
   full?: boolean;
   backgroundColor?: string;
@@ -11,9 +13,5 @@ export type PropTypes = {
   rightCols?: Array<number>;
   orderLeft?: number;
   orderRight?: number;
-  image?: {
-    asset: {
-      id: string;
-    };
-  };
+  image: RawImageType;
 };
