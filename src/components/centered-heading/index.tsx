@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
 import { Props } from './types';
-import { Section, Container, Grid, GridItem } from '../@design-system/block-layout';
+import { Section, Container, Grid } from '../@design-system/block-layout';
+import { Block } from 'baseui/block'
 import { Heading3 } from '../@design-system/heading';
 
 const CenteredHeading: FunctionComponent<Props> = ({ heading }) => {
@@ -9,9 +10,15 @@ const CenteredHeading: FunctionComponent<Props> = ({ heading }) => {
     <Section>
       <Container>
         <Grid>
-          <GridItem>
+          <Block gridColumn={ ["1/-1"] }
+              overrides={{
+                Block: {
+                  style: { textAlign: "center" },
+                },
+              }}
+          >
             <Heading3>{heading}</Heading3>
-          </GridItem>
+          </Block>
         </Grid>
       </Container>
     </Section>

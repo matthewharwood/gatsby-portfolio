@@ -44,24 +44,14 @@ export default {
       type: 'number',
     },
     {
-      name: 'leftType',
-      title: 'Left Type',
-      type: 'string',
-    },
-    {
       name: 'orderRight',
       title: 'Order Right',
       type: 'number',
     },
     {
-      name: 'rightType',
-      title: 'Right Type',
-      type: 'string',
-    },
-    {
-      name: 'src',
-      title: 'Image Source',
-      type: 'url',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'body',
