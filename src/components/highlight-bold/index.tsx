@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Section, Container, Grid } from '../@design-system/block-layout/';
 import { Block } from 'baseui/block';
-import { useStyletron } from 'baseui';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
 /* import Img from 'gatsby-image'; */
 import SanityImgFluid from '../sanity-img-fluid';
@@ -18,20 +17,18 @@ const HighlightBold: FunctionComponent<PropTypes> = ({
   eyebrow = 'eyebrow',
   title = 'title',
   body = 'body',
-  leftCols = [4, 8, 10],
-  rightCols = [4, 8, 2],
+  leftCols = [4, 4, 8, 10],
+  rightCols = [4, 4, 8, 2],
   orderLeft = 0,
   orderRight = 1,
 }) => {
-  const [, theme] = useStyletron();
-  const bgColor = backgroundColor || theme.colors.primary50;
-  const textColor = color || theme.colors.primary700;
-  const accent = accentColor || theme.colors.accent;
+  const bgColor = backgroundColor || "primary50";
+  const textColor = color || "primary700";
+  const accent = accentColor || "accent";
   const isImageVisible = full ? false : true;
 
   const leftColsMap = leftCols.map(colVal => `span ${colVal}`);
   const rightColsMap = rightCols.map(colVal => `span ${colVal}`);
-  image && console.log(JSON.stringify( image ));
 
   return (
     <Section>
@@ -61,7 +58,7 @@ const HighlightBold: FunctionComponent<PropTypes> = ({
                 },
               }}
             >
-              { image && <SanityImgFluid assetId={image.asset.id} /> }
+              {image && <SanityImgFluid assetId={image.asset.id} />}
             </Block>
           )}
         </Grid>

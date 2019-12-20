@@ -5,6 +5,7 @@ import { useStyletron } from 'baseui'
 import { GridType } from '../types';
 
 const columnLength = {
+  default: 4,
   small: 4,
   medium: 8,
   large: 12,
@@ -16,6 +17,7 @@ const gapWidth = {
 };
 export const Grid: FunctionComponent<GridType> = ({
   $cols = [
+    `repeat(${columnLength.default}, 1fr)`,
     `repeat(${columnLength.small}, 1fr)`,
     `repeat(${columnLength.medium}, 1fr)`,
     `repeat(${columnLength.large}, 1fr)`,

@@ -13,16 +13,6 @@ export const MorningHarwood = createTheme(
       accent: 'tomato',
       transparent: 'rgba(255,255,255,0)',
     },
-    breakpoints: {
-      small: 600,
-      medium: 768,
-      large: 1280,
-    },
-    mq: {
-      sm: '@media (max-width: 599px)',
-      md: '@media (min-width: 600px) and (max-width: 1279px)',
-      lg: '@media (min-width: 1280px)',
-    },
     positions: {
       absolute: 'absolute',
       relative: 'relative',
