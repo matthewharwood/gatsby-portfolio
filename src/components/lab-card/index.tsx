@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { H3 } from 'baseui/typography';
 import { useStyletron } from 'baseui';
 import useComponentSize from '@rehooks/component-size';
-import { mq, display, positions } from '../styles';
+import { display, positions } from '../styles';
 import { Window } from './window';
 import { Tag, VARIANT } from 'baseui/tag';
 import { CardDataType } from '../../pages/lab/types';
@@ -18,7 +18,7 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
   const { image, video, title } = data;
   const tags = data.tags || [];
   const defaultMediaPreference = data.video ? 'video' : 'image';
-  const maxWidth = data.maxWidth ? `${ data.maxWidth }px` : 'auto';
+  const maxWidth = data.maxWidth ? `${data.maxWidth}px` : 'auto';
 
   const mediaType = data.labCardBackgroundType
     ? data.labCardBackgroundType
@@ -41,7 +41,7 @@ const LabCard: FunctionComponent<{ data: CardDataType }> = ({ data }) => {
     position: positions.relative,
     width: maxWidth,
     height: `${windowHeight + contentHeight}px`,
-    [mq.lg]: {
+    [theme.mediaQuery.large]: {
       marginLeft: theme.sizing.scale1200,
       marginRight: theme.sizing.scale1200,
     },

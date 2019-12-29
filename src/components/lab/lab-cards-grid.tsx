@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Navbar } from '../navbar';
-import { Grid, Section } from '../grid-system';
+import { Container, Grid, Section } from '../@design-system/block-layout';
 import { Footer } from '../footer';
 import { LabHeader } from './lab-header';
 import { CardsColumn } from './cards-columns';
@@ -13,13 +13,15 @@ const LabCardsGrid: FunctionComponent<LabCardsGridType> = ({ data }) => {
   return (
     <>
       <Navbar />
-      <Section>
-        <Grid $gridGap={theme.sizing.scale300} $alignItems="start">
-          <LabHeader />
-          <CardsColumn data={todoCards} />
-          <CardsColumn data={doingCards} />
-          <CardsColumn data={doneCards} />
-        </Grid>
+      <Section $backgroundFullBleed={true}>
+        <Container $paddingLeft="none" $paddingRight="none">
+          <Grid>
+            <LabHeader />
+            <CardsColumn data={todoCards} />
+            <CardsColumn data={doingCards} />
+            <CardsColumn data={doneCards} />
+          </Grid>
+        </Container>
       </Section>
       <Footer />
     </>

@@ -4,17 +4,19 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'full',
+      title: 'Full',
+      type: 'boolean',
+    },
+    {
+      name: 'bold',
+      title: 'Bold',
+      type: 'boolean',
+    },
+    {
       name: 'eyebrow',
       title: 'Eyebrow',
       type: 'string',
-    },
-    {
-      name: 'image',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
     },
     {
       name: 'title',
@@ -47,24 +49,19 @@ export default {
       type: 'number',
     },
     {
-      name: 'leftType',
-      title: 'Left Type',
-      type: 'string',
-    },
-    {
       name: 'orderRight',
       title: 'Order Right',
       type: 'number',
     },
     {
-      name: 'rightType',
-      title: 'Right Type',
-      type: 'string',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'body',
       title: 'Body Text',
-      type: 'text',
+      type: 'string',
     },
     {
       name: 'backgroundColor',

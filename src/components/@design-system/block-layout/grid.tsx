@@ -23,6 +23,7 @@ export const Grid: FunctionComponent<GridType> = ({
     `repeat(${columnLength.large}, 1fr)`,
   ],
   $justifyItems = 'inherit',
+  $alignItems = 'inherit',
   $marginTop = "none",
   $marginBottom = "none",
   children,
@@ -52,6 +53,7 @@ export const Grid: FunctionComponent<GridType> = ({
       gridTemplateColumns={$cols}
       height="100%"
       justifyItems={$justifyItems}
+      alignItems={$alignItems}
       gridGap={[gapWidth.small, gapWidth.medium, gapWidth.large]}
       // @ts-ignore
       marginTop={outerSpacingMap[$marginTop]}

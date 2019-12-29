@@ -1,11 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import {
-  Section,
-  Container,
-  Grid,
-  GridItemLeft,
-  GridItemRight,
-} from '../grid-system';
+import { Section, Container, Grid } from '../@design-system/block-layout';
+import { Block } from 'baseui/block';
 import { Headline } from '../headline';
 
 import { useStyletron } from 'baseui';
@@ -147,11 +142,18 @@ const SolutionCards: FunctionComponent<SolutionCardsProp> = ({
   const md = mq.md;
   const lg = mq.lg;
   return (
-    <>
-      <div className={css({ marginBottom: theme.sizing.scale1600 })}>
+    <Section $backgroundFullBleed={true}>
+      <Container
+        $paddingLeft="none"
+        $paddingRight="none"
+        $paddingTop="none"
+        $paddingOuterLeft="none"
+        $paddingOuterRight="none"
+        $marginTop="none"
+      >
         <Grid>
-          <GridItemLeft leftCols={[4, 6, 4]} orderLeft={'0'} />
-          <GridItemRight rightCols={[4, 6, 8]} orderRight={'1'}>
+          <Block gridColumn={['span 4', 'span 4', 'span 8', 'span 4']} />
+          <Block gridColumn={['span 4', 'span 4', 'span 8', 'span 8']}>
             <div
               className={css({
                 display: 'grid',
@@ -173,10 +175,10 @@ const SolutionCards: FunctionComponent<SolutionCardsProp> = ({
               {cardItems}
             </div>
             {legendItems}
-          </GridItemRight>
+          </Block>
         </Grid>
-      </div>
-    </>
+      </Container>
+    </Section>
   );
 };
 
@@ -190,12 +192,11 @@ export const Challenge: FunctionComponent<ChallengeProps> = ({
   solutionCards = [],
   legend,
 }) => {
-  const [, theme] = useStyletron();
   // @ts-ignore
-  const color = $color || theme.colors.primary700;
+  const color = $color || 'primary700';
   return (
-    <Section $collapsePaddingBottom={true} $color={color}>
-      <Container $color={theme.colors.primary300} $borderBottom={true}>
+    <Section>
+      <Container $textColor={color}>
         <Headline title={`Challenge #${challengeNum}`} text={challengeText} />
         <Headline title="solution" text={solution} $hasBottomMargin={false} />
         {!!solutionCards.length && (

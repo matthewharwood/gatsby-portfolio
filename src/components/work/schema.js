@@ -66,7 +66,6 @@ export default {
         { type: 'postHeader' },
         { type: 'summary' },
         { type: 'highlight' },
-        { type: 'highlightBold' },
         { type: 'quote' },
         { type: 'video' },
         { type: 'challenge' },

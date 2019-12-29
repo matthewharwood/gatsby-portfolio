@@ -3,7 +3,6 @@ import {PostHeader} from "../components/post-header";
 import {Summary} from "../components/summary"
 import {Process} from "../components/process"
 import {Highlight} from "../components/highlight"
-import {HighlightBold} from "../components/highlight-bold"
 import {Quote} from "../components/quote";
 import {Video} from "../components/video"
 import {Challenge} from "../components/challenge"
@@ -18,7 +17,6 @@ export const componentMap = {
   "summary": (props: any, key: number) => (<Summary {...props} key={key}/>),
   "process": (props: any, key: number) => (<Process {...props} key={key}/>),
   "highlight": (props: any, key: number) => (<Highlight {...props} key={key}/>),
-  "highlightBold": (props: any, key: number) => (<HighlightBold {...props} key={key}/>),
   "quote": (props: any, key: number) => (<Quote {...props} key={key}/>),
   "video": (props: any, key: number) => (<Video {...props} key={key}/>),
   "challenge": (props: any, key: number) => (<Challenge {...props} key={key} />),

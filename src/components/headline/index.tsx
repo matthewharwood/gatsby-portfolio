@@ -1,33 +1,33 @@
 import React, { FunctionComponent } from 'react';
-import { H4, Paragraph1, } from 'baseui/typography';
-import { useStyletron } from 'baseui';
-import { GridItemLeft, GridItemRight, Grid } from '../grid-system';
+import { H4, Paragraph1 } from 'baseui/typography';
+import { Grid } from '../@design-system/block-layout';
 
-import { PropTypes } from './types'
+import { PropTypes } from './types';
 
-export const Headline:FunctionComponent<PropTypes> = ({ title, text, $hasBottomMargin = true }) => {
-  const [css, theme] = useStyletron();
-  const marginBottom = $hasBottomMargin ? theme.sizing.scale1600 : 0;
+export const Headline: FunctionComponent<PropTypes> = ({
+  title,
+  text,
+  $hasBottomMargin = true,
+}) => {
+  const marginBottom = $hasBottomMargin ? 'full' : 'none';
   return (
-    <div className={css({ marginBottom })}>
-      <Grid>
-        <GridItemLeft leftCols={[4,6,4]} orderLeft={'0'}>
-          <H4
-            margin="0"
-            alignSelf="start"
-            $style={{ textTransform: 'uppercase' }}
-          >
-            {title}
-          </H4>
-        </GridItemLeft>
-        <GridItemRight rightCols={[4,6,8]} orderRight={'1'}>
-          <Paragraph1 margin="0" color={'inherit'}>
-            {text}
-          </Paragraph1>
-        </GridItemRight>
-      </Grid>
-    </div>
+    <Grid $backgroundColor="#FF00FF" $marginBottom={marginBottom}>
+      <H4
+        gridColumn={['span 4', 'span 4', 'span 8', 'span 4']}
+        margin={0}
+        padding={0}
+        $style={{ textTransform: 'uppercase' }}
+      >
+        {title}
+      </H4>
+      <Paragraph1
+        gridColumn={['span 4', 'span 4', 'span 8', 'span 8']}
+        padding={0}
+        margin={0}
+        color={'inherit'}
+      >
+        {text}
+      </Paragraph1>
+    </Grid>
   );
 };
-
-
