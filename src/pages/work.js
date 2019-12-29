@@ -1,11 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { join } from 'path';
 import { useStyletron } from 'baseui';
 import { Display1, Display4 } from 'baseui/typography';
 import { Button, SIZE } from 'baseui/button';
 import { Navbar } from '../components/navbar';
+
 const WorkItemWrapper = ({ children }) => {
   const [css, theme] = useStyletron();
   const c = css({
@@ -15,9 +15,11 @@ const WorkItemWrapper = ({ children }) => {
     listStyleType: 'none',
     margin: 0,
     paddingTop: 0,
-    paddingBottom: theme.sizing.scale1600,
-    paddingLeft: theme.sizing.scale1600,
-    paddingRight: theme.sizing.scale1600,
+    [theme.mediaQuery.large]: {
+      paddingBottom: theme.sizing.scale1600,
+      paddingLeft: theme.sizing.scale1600,
+      paddingRight: theme.sizing.scale1600,
+    },
   });
   const inner = css({
     width: '100%',
@@ -78,7 +80,8 @@ const Work = ({
     allSanityWork: { edges },
   },
 }) => {
-  const [css] = useStyletron();
+  const [css, theme] = useStyletron();
+  console.log();
   return (
     <>
       <Navbar />
@@ -89,11 +92,27 @@ const Work = ({
             <WorkItemWrapper key={key} first={key === 0}>
               <WorkItemLink node={node}>
                 <WorkItemHeader>
-                  <div className={css({ width: '66%', margin: '0 auto' })}>
-                    <Display1>{node.title}</Display1>
+                  <div
+                    className={css({
+                      width: '100%',
+                      [theme.mediaQuery.large]: {
+                        width: '66%',
+                        margin: '0 auto',
+                      },
+                    })}
+                  >
+                    <Display1
+                      font={['font750', 'font950', 'font950', 'font1450']}
+                    >
+                      {node.title}
+                    </Display1>
                   </div>
                   <div className={css({ width: '80%', margin: '0 auto' })}>
-                    <Display4>{node.description}</Display4>
+                    <Display4
+                      font={['font450', 'font550', 'font750', 'font750']}
+                    >
+                      {node.description}
+                    </Display4>
                   </div>
                   <div className={css({ width: '15%', margin: '0 auto' })}>
                     <Button size={SIZE.large}>Enter</Button>

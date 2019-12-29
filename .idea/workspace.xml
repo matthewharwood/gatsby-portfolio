@@ -2,37 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/@design-system/heading/schema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/centered-heading/schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/base-schemas/step/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/steps/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/centered-heading/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/centered-heading/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-pagination/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-pagination/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/process/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/process/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/process/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/process/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-container.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-container.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-container/block-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-container/block-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-container/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-container/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-container/video-background.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-container/video-background.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout/container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout/grid-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/grid-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout/grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/block-layout/section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/section.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/heading.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/heading.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/heading/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/heading/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/system/use-media-query/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/use-media-query.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work.js" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/node_modules/" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/running-header/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/work/grid.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="656">
+              <caret line="52" column="2" selection-start-line="39" selection-end-line="52" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/work/menu.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1656">
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/workTemplate.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/work.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/work/details.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="791">
+              <caret line="32" selection-start-line="5" selection-end-line="32" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>prett</find>
+      <find>margin: 0</find>
+      <find>margin:</find>
+      <find>;</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\matth\Documents\GitHub\gatsby-portfolio\src\components</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.prettierrc" />
+        <option value="$PROJECT_DIR$/src/components/navbar/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/work/details.tsx" />
+        <option value="$PROJECT_DIR$/src/components/work/grid.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/work.js" />
+      </list>
+    </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -40,7 +117,67 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-21" />
+    <option name="y" value="2" />
+    <option name="width" value="1302" />
+    <option name="height" value="1033" />
+  </component>
   <component name="ProjectId" id="1UBLimjfrKEbc0iRrmdvG0u1v2Q" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gatsby-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatsby-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -52,13 +189,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/system/steps" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\matth\Documents\GitHub\gatsby-portfolio\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="C:\Users\matth\Documents\GitHub\gatsby-portfolio\node_modules\eslint" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -75,6 +216,18 @@
       <recent name="$PROJECT_DIR$/src/components/lab" />
       <recent name="$PROJECT_DIR$/src/content" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -102,8 +255,42 @@
       <workItem from="1574825171557" duration="4504000" />
       <workItem from="1574915259821" duration="9431000" />
       <workItem from="1575227682061" duration="2824000" />
+      <workItem from="1577593886846" duration="3337000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3337000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-21" y="2" width="1302" height="1033" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="DB Browser" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17002417" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="DB Execution Console" />
+      <window_info anchor="bottom" id="Quokka" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="GraphQL" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32942432" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Code Outline" />
+      <window_info anchor="right" id="Key Promoter X" weight="0.49798548" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -136,5 +323,83 @@
     </state>
     <state x="442" y="265" width="670" height="657" key="search.everywhere.popup/0.23.1680.995@0.23.1680.995" timestamp="1575303728946" />
     <state x="505" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877826655" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.prettierrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gatsby-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="37" column="6" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="77" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gatsby-browser.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/hello.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/running-header/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/work/details.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="791">
+          <caret line="32" selection-start-line="5" selection-end-line="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/work/grid.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="52" column="2" selection-start-line="39" selection-end-line="52" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/work/menu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1656">
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/workTemplate.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/work.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
