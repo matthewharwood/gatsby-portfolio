@@ -1,16 +1,17 @@
-import React, { useState, memo, FunctionComponent } from 'react';
-import Logo from '../icons/logo';
+import React, { FunctionComponent, memo, useState } from 'react';
 import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
-import { H5, Label2 } from 'baseui/typography';
-import Grab from 'baseui/icon/grab';
-import Delete from 'baseui/icon/delete';
-import { mq, display, colors } from '../styles';
+import { Hamburger } from './hamburger';
+import { colors, display, mq } from '../styles';
 import { Boner } from '../boner';
 
-import { NavbarType, HamburgerType, ListItemType } from './types';
+import { NavbarType } from './types';
 
-export const Navbar:FunctionComponent<NavbarType> = memo(({ show = true }) => {
+import { LogoType } from './logo-type';
+import { NavList } from './nav-list';
+import { ListItem } from './nav-list-item';
+
+export const Navbar: FunctionComponent<NavbarType> = memo(({ show = true }) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
@@ -28,12 +29,11 @@ export const Navbar:FunctionComponent<NavbarType> = memo(({ show = true }) => {
         color: theme.colors.mono1000,
         textTransform: 'uppercase',
         display: display.flex,
+        maxHeight: '60px',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingLeft: theme.sizing.scale600,
         paddingRight: theme.sizing.scale600,
-        paddingTop: theme.sizing.scale500,
-        paddingBottom: theme.sizing.scale500,
         zIndex: theme.zIndex.modal,
         [lg]: {
           paddingLeft: theme.sizing.scale1600,
@@ -66,29 +66,8 @@ export const Navbar:FunctionComponent<NavbarType> = memo(({ show = true }) => {
 });
 
 
-const Hamburger:FunctionComponent<HamburgerType> = ({
-  isNavToggle,
-  toggleNav,
-}) => {
-  const [css,] = useStyletron();
-  const lg = mq.lg;
-  return (
-    <span
-      onClick={() => toggleNav()}
-      className={css({
-        [lg]: {
-          display: display.none,
-        },
-      })}
-    >
-      {isNavToggle ? <Delete size={32} /> : <Grab size={32} />}
-    </span>
-  );
-};
-
 const NavHeader = () => {
   const [css, theme] = useStyletron();
-  const md = mq.md;
   const lg = mq.lg;
   return (
     <div
@@ -111,74 +90,8 @@ const NavHeader = () => {
         })}
       >
         <Boner size={70} pos={['6px', 'auto', 'auto', '6px']} />
-        <H5
-          color={'inherit'}
-          className={css({
-            marginLeft: theme.sizing.scale600,
-            marginRight: 0,
-            marginTop: 0,
-            marginBottom: 0,
-            display: display.none,
-            position: 'relative',
-            top: '0px',
-            [md]: {
-              display: display.block,
-            },
-            [lg]: {
-              display: display.block,
-            },
-          })}
-        >
-          Morning Harwood
-        </H5>
+        <LogoType />
       </Link>
     </div>
-  );
-};
-
-const NavList:FunctionComponent = ({ children }) => {
-  const [css,] = useStyletron();
-  const lg = mq.lg;
-  return (
-    <ul
-      className={css({
-        listStyle: 'none',
-        display: display.none,
-        [lg]: {
-          display: display.flex,
-        },
-      })}
-    >
-      {children}
-    </ul>
-  );
-};
-
-const ListItem:FunctionComponent<ListItemType> = ({ title }) => {
-  const [css, theme] = useStyletron();
-  return (
-    <Link
-      className={css({
-        textDecoration: 'none',
-        color: 'inherit',
-      })}
-      to={title}
-    >
-      <li
-        className={css({
-          marginLeft: theme.sizing.scale1600,
-        })}
-      >
-        <Label2
-          color={'inherit'}
-          margin={0}
-          className={css({
-            fontSize: theme.sizing.scale600,
-          })}
-        >
-          {title}
-        </Label2>
-      </li>
-    </Link>
   );
 };

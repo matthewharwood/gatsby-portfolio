@@ -44,5 +44,4 @@ export const interests: Array<{ name: string }> = shuffle([
   { name: 'game development' },
   { name: 'sound design' },
   { name: 'lofi hiphop' },
-  { name: 'lofi hiphop' },
 ]);
