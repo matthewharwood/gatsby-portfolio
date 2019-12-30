@@ -20,7 +20,6 @@ import codeComponent from '../../src/components/code-component/schema';
 import summary from '../../src/components/summary/schema';
 import postHeader from '../../src/components/post-header/schema';
 import highlight from '../../src/components/highlight/schema';
-import highlightBold from '../../src/components/highlight-bold/schema';
 import quote from '../../src/components/quote/schema';
 import video from '../../src/components/video/schema';
 import projectOverviewSchema from '../../src/components/post-header/schema/projectOverview';
@@ -71,7 +70,6 @@ export default createSchema({
     summary,
     postHeader,
     highlight,
-    highlightBold,
     quote,
     video,
     projectOverviewSchema,

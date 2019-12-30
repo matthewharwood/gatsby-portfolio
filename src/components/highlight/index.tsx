@@ -1,61 +1,68 @@
-import React, {FunctionComponent} from 'react';
-import {
-  Section,
-  Container,
-  Grid,
-  GridItemLeft,
-  GridItemRight,
-} from '../grid-system';
-import { useStyletron } from 'baseui';
+import React, { FunctionComponent } from 'react';
+import { Section, Container, Grid } from '../@design-system/block-layout/';
+import { Block } from 'baseui/block';
 import { Display4, Label1, Paragraph1 } from 'baseui/typography';
-import { SanityImgFluid } from '../sanity-img-fluid';
-/* import Image from 'gatsby-image'; */
+import SanityImgFluid from '../sanity-img-fluid';
 
-import { PropTypes } from './types'
+import { PropTypes } from './types';
 
-
-const Highlight:FunctionComponent<PropTypes> = ({
-  $backgroundColor,
-  $color,
-  $accentColor,
-  $borderBottom = false,
+const Highlight: FunctionComponent<PropTypes> = ({
+  full = false,
+  backgroundColor,
+  backgrondColorInner,
+  color,
+  accentColor,
+  borderBottom = false,
+  image,
   eyebrow = 'eyebrow',
   title = 'title',
   body = 'body',
-  leftCols = 4,
-  rightCols = 8,
+  leftCols = [4, 4, 8, 10],
+  rightCols = [4, 4, 8, 2],
   orderLeft = 0,
   orderRight = 1,
-  image,
+  bold = false,
 }) => {
-  console.log(image);
-  const hasImage = Boolean(image && image.asset && image.asset._ref);
-  const [, theme] = useStyletron();
-  const backgroundColor = $backgroundColor || theme.colors.primary100;
-  const color = $color || theme.colors.primary700;
-  const accent = $accentColor || theme.colors.accent;
+  const bgColor = backgroundColor || 'primary50';
+  const bgInner = bold ? backgrondColorInner || 'primary100' : bgColor;
+  const textColor = color || 'primary700';
+  const accent = accentColor || 'accent';
+  const isImageVisible = full ? false : true;
+
+  const leftColsMap = leftCols.map(colVal => `span ${colVal}`);
+  const rightColsMap = rightCols.map(colVal => `span ${colVal}`);
+
   return (
-    <Section
-      $backgroundColor={backgroundColor}
-      $color={color}
-      $collapsePaddingBottom={!!$borderBottom}
-    >
-      <Container $borderBottom={$borderBottom} $color={color}>
+    <Section $backgroundFullBleed={true} $backgroundColor={bgColor}>
+      <Container $backgroundColor={bgInner}>
         <Grid>
-          <GridItemLeft leftCols={leftCols} orderLeft={orderLeft}>
+          <Block
+            gridColumn={leftColsMap}
+            color={textColor}
+            overrides={{
+              Block: {
+                style: { order: orderLeft },
+              },
+            }}
+          >
             <>
               <Label1 color={accent}>{eyebrow}</Label1>
               <Display4 color={'inherit'}>{title}</Display4>
               <Paragraph1 color={'inherit'}>{body}</Paragraph1>
             </>
-          </GridItemLeft>
-          <GridItemRight rightCols={rightCols} orderRight={orderRight}>
-            {hasImage && <img src={'https://cdn.sanity.io/images/42nykw3g/production/cb360e99f80ff8a5521fa62de2c833b5d1d37258-935x523.png'} alt=""/>}
-            {/*<Image*/}
-            {/*  style={{ boxShadow: 'inset 0 0 0 1000px hsla(0, 0%, 0%, 0.04)' }}*/}
-            {/*  // fluid={image.asset.fluid}*/}
-            {/*/>*/}
-          </GridItemRight>
+          </Block>
+          {isImageVisible && (
+            <Block
+              gridColumn={rightColsMap}
+              overrides={{
+                Block: {
+                  style: { order: orderRight },
+                },
+              }}
+            >
+              {image && <SanityImgFluid assetId={image.asset.id} />}
+            </Block>
+          )}
         </Grid>
       </Container>
     </Section>

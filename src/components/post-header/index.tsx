@@ -7,43 +7,34 @@ import {
   Paragraph1,
 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
-import { useStyletron } from 'baseui';
-import { Section, Container, Grid } from '../grid-system';
-import { display } from '../styles';
-import {
-  PostHeaderType,
-  TopElementType,
-} from './types';
+import { Section, Container, Grid } from '../@design-system/block-layout/';
+import { Block } from 'baseui/block';
+import { PostHeaderType, TopElementType } from './types';
 
 const TopElement: FunctionComponent<TopElementType> = ({
   $borderColor,
   children,
 }) => {
-  const [css, theme] = useStyletron();
-  const c = {
-    className: css({
-      display: display.grid,
-      gridColumn: '1/-1',
-      paddingBottom: theme.sizing.scale800,
-      borderBottom: `${$borderColor} 1px solid`,
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
+  return (
+    <Block
+      gridColumn="1/-1"
+      overrides={{
+        Block: {
+          style: ({ $theme }) => ({
+            borderBottom: `1px solid ${$theme.colors[$borderColor]}`,
+          }),
+        },
+      }}
+    >
+      {children}
+    </Block>
+  );
 };
 
 const ListItem: FunctionComponent = ({ children }) => {
-  const [css] = useStyletron();
-
-  const c = {
-    className: css({
-      display: display.grid,
-      gridColumn: 'span 3',
-      alignContent: 'start',
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
+  return (
+    <Block gridColumn={['1/-1', '1/-1', 'span 4', 'span 3']}>{children}</Block>
+  );
 };
 
 const PostHeader: FunctionComponent<PostHeaderType> = ({
@@ -54,12 +45,9 @@ const PostHeader: FunctionComponent<PostHeaderType> = ({
   $backgroundColor,
   $color,
 }) => {
-  const [, theme] = useStyletron();
-  const backgroundColor = $backgroundColor || theme.colors.primary700;
-  const color = $color || theme.colors.primary100;
-  const Layout = (
-    data: any 
-  ) => {
+  const backgroundColor = $backgroundColor || 'primary700';
+  const color = $color || 'primary100';
+  const Layout = (data: any) => {
     if (!data) {
       return data;
     }
@@ -84,32 +72,36 @@ const PostHeader: FunctionComponent<PostHeaderType> = ({
   };
 
   return (
-    <Section $backgroundColor={backgroundColor} $color={color}>
-      <Container>
+    <Section $backgroundColor={backgroundColor} $backgroundFullBleed={true}>
+      <Container
+        $backgroundColor={backgroundColor}
+        $textColor={color}
+        $paddingBottom="none"
+      >
         <Grid>
           <TopElement $borderColor={color}>
             <Label1 color={'inheirt'}>{eyebrow && eyebrow.text}</Label1>
             <Display2 color={'inheirt'}>{mainText && mainText.text}</Display2>
             <Paragraph1 color={'inheirt'}>{subText && subText.text}</Paragraph1>
           </TopElement>
-          <Grid>
-            {projectOverview &&
-              Object.entries(projectOverview)
-                .filter(([key]) => key !== '_type')
-                .map(([key, { data }]: any, k: any) => {
-                  return (
-                    <ListItem key={k}>
-                      <Label2
-                        color={'inherit'}
-                        $style={{ textTransform: 'capitalize' }}
-                      >
-                        {key}
-                      </Label2>
-                      <Paragraph4 color={'inherit'}>{Layout(data)}</Paragraph4>
-                    </ListItem>
-                  );
-                })}
-          </Grid>
+        </Grid>
+        <Grid $marginTop="half">
+          {projectOverview &&
+            Object.entries(projectOverview)
+              .filter(([key]) => key !== '_type')
+              .map(([key, { data }]: any, k: any) => {
+                return (
+                  <ListItem key={k}>
+                    <Label2
+                      color={'inherit'}
+                      $style={{ textTransform: 'capitalize' }}
+                    >
+                      {key}
+                    </Label2>
+                    <Paragraph4 color={'inherit'}>{Layout(data)}</Paragraph4>
+                  </ListItem>
+                );
+              })}
         </Grid>
       </Container>
     </Section>

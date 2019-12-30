@@ -34,6 +34,8 @@ export const Container: FunctionComponent<ContainerType> = props => {
     $paddingBottom = 'full',
     $paddingLeft = 'full',
     $paddingRight = 'full',
+    $paddingOuterLeft = 'full',
+    $paddingOuterRight = 'full',
     $paddingTop = 'full',
     $textColor = colors.primary,
     children,
@@ -66,8 +68,8 @@ export const Container: FunctionComponent<ContainerType> = props => {
       paddingTop={outerSpacingMap[$marginTop]}
       // @ts-ignore
       paddingBottom={outerSpacingMap[$marginBottom]}
-      paddingLeft={[scale800, scale800, scale900, scale1600]}
-      paddingRight={[scale800, scale800, scale900, scale1600]}
+      paddingLeft={outerSpacingMap[$paddingOuterLeft]}
+      paddingRight={outerSpacingMap[$paddingOuterRight]}
       marginLeft="auto"
       marginRight="auto"
       maxWidth={[

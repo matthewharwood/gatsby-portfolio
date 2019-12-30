@@ -1,11 +1,11 @@
 import React, { useState, FunctionComponent } from 'react';
-import { Section, Container, Grid } from '../grid-system';
-import { useStyletron } from 'baseui';
+import { Section, Container, Grid } from '../@design-system/block-layout';
 import { Display4, Label1, Label4, Paragraph1 } from 'baseui/typography';
 import { AspectRatioBox, AspectRatioBoxBody } from 'baseui/aspect-ratio-box';
+import { Block } from 'baseui/block';
+
 // @ts-ignore
 import ArrowRight from 'baseui/icon/arrow-right';
-import { display } from '../styles';
 
 import { PropTypes } from './types';
 
@@ -18,27 +18,23 @@ import {
 } from 'baseui/modal';
 
 const TopElement: FunctionComponent = ({ children }) => {
-  const [css] = useStyletron();
-  const c = {
-    className: css({
-      display: display.grid,
-      gridColumn: 'span 8',
-    }),
-  };
-
-  return <div {...c}>{children}</div>;
+  return <Block gridColumn="span 8">{children}</Block>;
 };
 
 const VideoThumbnail: FunctionComponent = ({ children }) => {
-  const [css] = useStyletron();
-  const c = {
-    className: css({
-      display: 'grid',
-      gridColumn: 'span 4',
-      cursor: 'pointer',
-    }),
-  };
-  return <div {...c}>{children}</div>;
+  return (
+    <Block
+      gridColumn="span 4"
+      marginTop="scale400"
+      overrides={{
+        Block: {
+          style: { cursor: 'pointer' },
+        },
+      }}
+    >
+      {children}
+    </Block>
+  );
 };
 
 const bodyProps = {
@@ -48,66 +44,62 @@ const bodyProps = {
   backgroundColor: 'primary300',
 };
 
-export const Summary:FunctionComponent<PropTypes> = ({
+export const Summary: FunctionComponent<PropTypes> = ({
   eyebrow,
   title,
   body,
-  $accentColor,
-  $backgroundColor,
-  $borderBottom,
-  $color,
+  accentColor,
+  backgroundColor,
+  backgroundInner,
+  color,
 }) => {
-  const [, theme] = useStyletron();
   const [isOpen, setIsOpen] = useState(false);
 
   function close() {
     setIsOpen(false);
   }
 
-  const backgroundColor = $backgroundColor || theme.colors.primary100;
-  const color = $color || theme.colors.primary700;
-  const accent = $accentColor || theme.colors.accent;
+  const bgColor = backgroundColor || 'primary50';
+  const bgInner = backgroundInner || 'primary50';
+  const textColor = color || 'primary700';
+  const accent = accentColor || 'accent';
 
   return (
     <>
-      <Section
-        $backgroundColor={backgroundColor}
-        $color={color}
-        $collapsePaddingBottom={!!$borderBottom}
-      >
-        <Container $borderBottom={$borderBottom} $color={color}>
+      <Section $backgroundColor={bgColor} $backgroundFullBleed={true}>
+        <Container $textColor={textColor} $backgroundColor={bgInner}>
           <Grid>
             <TopElement>
               <Label1 color={accent}>{eyebrow}</Label1>
               <Display4 color={'inheirt'}>{title}</Display4>
               <Paragraph1 color={'inheirt'}>{body}</Paragraph1>
             </TopElement>
-            <Grid>
-              <VideoThumbnail>
-                <AspectRatioBox aspectRatio={16 / 9}>
-                  <AspectRatioBoxBody
-                    {...bodyProps}
-                    // @ts-ignore
-                    onClick={() => setIsOpen(true)}
-                  >
-                    <ArrowRight size={36} />
-                  </AspectRatioBoxBody>
-                </AspectRatioBox>
-                <Label4>Demo Video</Label4>
-              </VideoThumbnail>
-              <VideoThumbnail>
-                <AspectRatioBox aspectRatio={16 / 9}>
-                  <AspectRatioBoxBody
-                    {...bodyProps}
-                    // @ts-ignore
-                    onClick={() => setIsOpen(true)}
-                  >
-                    <ArrowRight size={36} />
-                  </AspectRatioBoxBody>
-                </AspectRatioBox>
-                <Label4>Demo Video</Label4>
-              </VideoThumbnail>
-            </Grid>
+          </Grid>
+          <Grid>
+            <VideoThumbnail>
+              <AspectRatioBox aspectRatio={16 / 9}>
+                <AspectRatioBoxBody
+                  {...bodyProps}
+                  // @ts-ignore
+                  onClick={() => setIsOpen(true)}
+                >
+                  <ArrowRight size={36} />
+                </AspectRatioBoxBody>
+              </AspectRatioBox>
+              <Label4>Demo Video</Label4>
+            </VideoThumbnail>
+            <VideoThumbnail>
+              <AspectRatioBox aspectRatio={16 / 9}>
+                <AspectRatioBoxBody
+                  {...bodyProps}
+                  // @ts-ignore
+                  onClick={() => setIsOpen(true)}
+                >
+                  <ArrowRight size={36} />
+                </AspectRatioBoxBody>
+              </AspectRatioBox>
+              <Label4>Demo Video</Label4>
+            </VideoThumbnail>
           </Grid>
         </Container>
       </Section>

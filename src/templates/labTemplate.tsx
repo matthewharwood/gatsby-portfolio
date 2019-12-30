@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
 import { H1, Label1 } from 'baseui/typography';
-import { Section } from '../components/grid-system';
+import { Section } from '../components/@design-system/block-layout';
 import { pageRenderer } from '../services/page-renderer';
 
-import { PropTypes } from './labTemplate.types'
+import { PropTypes } from './labTemplate.types';
 
 const LabTemplate: FunctionComponent<PropTypes> = ({ data }) => {
   const flattenedData = data.sanityLab;

@@ -44,6 +44,8 @@ export type ContainerType = {
   $paddingBottom?: SpacingT;
   $paddingLeft?: SpacingT;
   $paddingRight?: SpacingT;
+  $paddingOuterLeft?: SpacingT;
+  $paddingOuterRight?: SpacingT;
   $paddingTop?: SpacingT;
   $textColor?: string;
   height?: string;
@@ -75,10 +77,30 @@ type JustifyItemsT =
   | 'initial'
   | 'unset';
 
+type AlignItemsT =
+  | 'normal'
+  | 'stretch'
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'self-start'
+  | 'self-end'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+  | 'inherit'
+  | 'initial'
+  | 'unset';
+
 export type GridType = {
   $backgroundColor?: string;
   $cols?: Array<string>;
   $justifyItems?: JustifyItemsT;
+  $alignItems?: AlignItemsT;
   $marginTop?: SpacingT;
   $marginBottom?: SpacingT;
 };
