@@ -33,7 +33,7 @@ const TopElement: FunctionComponent<TopElementType> = ({
 
 const ListItem: FunctionComponent = ({ children }) => {
   return (
-    <Block gridColumn={['1/-1', '1/-1', 'span 4', 'span 3']}>{children}</Block>
+    <Block gridColumn={'span 4'}>{children}</Block>
   );
 };
 
