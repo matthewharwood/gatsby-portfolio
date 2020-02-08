@@ -86,6 +86,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "cover": "yarn test && yarn build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
