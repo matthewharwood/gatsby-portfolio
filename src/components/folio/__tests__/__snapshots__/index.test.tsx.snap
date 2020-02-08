@@ -6,17 +6,17 @@ exports[`Should create Nav with children renders correctly 1`] = `
 >
   <span
     className=""
-    data-baseweb="typo-label4"
+    data-baseweb="typo-labelxsmall"
   >
     Good Morning Harwood
   </span>
   <p
     className=""
-    data-baseweb="typo-p4"
+    data-baseweb="typo-paragraphxsmall"
   >
     <span
       className=""
-      data-baseweb="typo-label4"
+      data-baseweb="typo-labelxsmall"
     >
       A creative playground by
     </span>

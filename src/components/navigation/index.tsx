@@ -7,8 +7,9 @@ import {
 } from 'baseui/header-navigation';
 import { Button, KIND, SHAPE, SIZE } from 'baseui/button';
 import { useStyletron, withStyle } from 'baseui';
-
-import { Link, navigate } from 'gatsby';
+import { useMediaQuery } from '../utils/use-media-query';
+import { Link } from 'gatsby';
+import { Grab } from 'baseui/icon';
 const HeaderNavigationRoot = withStyle(StyledRoot, ({ $theme }) => ({
   paddingLeft: 0,
   paddingRight: $theme.sizing.scale600,
@@ -36,6 +37,7 @@ const LogoText = () => {
 const Navigation = () => {
   const [css, theme] = useStyletron();
   const classRef: MutableRefObject<any> = useRef();
+  const isLarge = useMediaQuery(theme.mediaQuery.large);
   const navigationItems = [
     { name: 'WORK', route: '/work' },
     { name: 'LABS', route: '/labs' },
@@ -51,40 +53,49 @@ const Navigation = () => {
       </StyledNavigationList>
       <StyledNavigationList $align={ALIGN.center} />
       <StyledNavigationList $align={ALIGN.right}>
-        {navigationItems.map((item, key) => (
-          <StyledNavigationItem key={key}>
-            <Link
-              ref={classRef}
-              className={css({
-                textDecoration: 'none',
-                color: 'inherit',
-              })}
-              activeClassName={activeClass}
-              to={item.route}
-            >
-              <Button
-                size={SIZE.default}
-                shape={SHAPE.pill}
-                kind={KIND.primary}
-                isSelected={
-                  classRef &&
-                  classRef.current &&
-                  classRef.current.classList &&
-                  classRef.current.classList.contains(activeClass)
-                }
-                overrides={{
-                  BaseButton: {
-                    style: {
-                      fontWeight: 'bold',
-                    },
-                  },
-                }}
+        {isLarge ? (
+
+          navigationItems?.map?.((item, key) => (
+            <StyledNavigationItem key={key}>
+              <Link
+                ref={classRef}
+                className={css({
+                  textDecoration: 'none',
+                  color: 'inherit',
+                })}
+                activeClassName={activeClass}
+                to={item.route}
               >
-                {item.name}
-              </Button>
-            </Link>
-          </StyledNavigationItem>
-        ))}
+                <Button
+                  size={SIZE.default}
+                  shape={SHAPE.pill}
+                  kind={KIND.primary}
+                  isSelected={classRef?.current?.classList.contains(
+                    activeClass
+                  )}
+                  overrides={{
+                    BaseButton: {
+                      style: {
+                        fontWeight: 'bold',
+                      },
+                    },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              </Link>
+            </StyledNavigationItem>
+          ))
+        ) : (
+          <Button
+            size={SIZE.default}
+            shape={SHAPE.round}
+            kind={KIND.primary}
+            isSelected={false}
+          >
+            <Grab size={24} />
+          </Button>
+        )}
       </StyledNavigationList>
     </HeaderNavigationRoot>
   );

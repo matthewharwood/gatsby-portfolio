@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "@storybook/addon-actions": "5.2.6",
@@ -93,7 +92,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
-    "lint": "eslint ./src/* --fix",
+    "lint": "eslint src/components/*  --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }

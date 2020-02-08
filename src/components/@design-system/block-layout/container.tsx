@@ -43,19 +43,19 @@ export const Container: FunctionComponent<ContainerType> = props => {
   const bgColor = $backgroundTransparent ? 'transparent' : $backgroundColor;
   const textColor = $textColor ? $textColor : 'inherit';
 
-  const outerSpacingMap = {
+  const outerSpacingMap: any = {
     full: [scale1000, scale1000, scale1400, scale1600],
     half: [scale700, scale700, scale800, scale900],
     none: [0, 0, 0, 0],
   };
 
-  const innerSpacingMapSides = {
+  const innerSpacingMapSides: any = {
     full: [scale800, scale800, scale900, scale1600],
     half: [scale500, scale500, scale600, scale900],
     none: [0, 0, 0, 0],
   };
 
-  const innerSpacingMapEnds = {
+  const innerSpacingMapEnds: any = {
     full: [scale1000, scale1000, scale1400, scale1600],
     half: [scale700, scale700, scale800, scale900],
     none: [0, 0, 0, 0],
@@ -64,9 +64,7 @@ export const Container: FunctionComponent<ContainerType> = props => {
   return (
     <Block
       alignSelf={$alignSelf}
-      // @ts-ignore
       paddingTop={outerSpacingMap[$marginTop]}
-      // @ts-ignore
       paddingBottom={outerSpacingMap[$marginBottom]}
       paddingLeft={outerSpacingMap[$paddingOuterLeft]}
       paddingRight={outerSpacingMap[$paddingOuterRight]}
@@ -82,15 +80,10 @@ export const Container: FunctionComponent<ContainerType> = props => {
     >
       <Block
         backgroundColor={bgColor}
-        className="container-inner"
         color={textColor}
-        // @ts-ignore
         paddingBottom={innerSpacingMapEnds[$paddingBottom]}
-        // @ts-ignore
         paddingLeft={innerSpacingMapSides[$paddingLeft]}
-        // @ts-ignore
         paddingRight={innerSpacingMapSides[$paddingRight]}
-        // @ts-ignore
         paddingTop={innerSpacingMapEnds[$paddingTop]}
       >
         {children}

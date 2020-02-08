@@ -1,220 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Page Renderer  should render postHeader 1`] = `
-<div
-  style={
-    Object {
-      "opacity": 0,
-    }
-  }
+<section
+  className=""
+  data-baseweb="block"
 >
-  <section
+  <div
     className=""
+    data-baseweb="block"
   >
     <div
       className=""
+      data-baseweb="block"
     >
       <div
         className=""
+        data-baseweb="block"
       >
         <div
           className=""
+          data-baseweb="block"
         >
           <div
             className=""
-            data-baseweb="typo-label1"
+            data-baseweb="typo-labellarge"
           >
             Web Application
           </div>
           <div
             className=""
-            data-baseweb="typo-display2"
+            data-baseweb="typo-displaymedium"
           >
             Nike CMS
           </div>
           <p
             className=""
-            data-baseweb="typo-p1"
+            data-baseweb="typo-paragraphlarge"
           >
             Some sub text here
           </p>
         </div>
+      </div>
+      <div
+        className=""
+        data-baseweb="block"
+      >
         <div
           className=""
+          data-baseweb="block"
         >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              client
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              Google
-            </p>
+            client
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            Google
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              collaborators
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              <span>
-                Jimmy Soat (Creative Director)
-                <br />
-              </span>
-              <span>
-                Stanley Yeung (Visual Designer)
-                <br />
-              </span>
-              <span>
-                Jeffrey Qua (Developer)
-                <br />
-              </span>
-            </p>
+            collaborators
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            <span>
+              Jimmy Soat (Creative Director)
+              <br />
+            </span>
+            <span>
+              Stanley Yeung (Visual Designer)
+              <br />
+            </span>
+            <span>
+              Jeffrey Qua (Developer)
+              <br />
+            </span>
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              company
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              AKQA
-            </p>
+            company
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            AKQA
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              role
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              Frontend Engineer
-            </p>
+            role
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            Frontend Engineer
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              resources
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              <span>
-                <a
-                  className=""
-                  data-baseweb="link"
-                  href="https://www.github.com"
-                >
-                  Github
-                </a>
-                <br />
-              </span>
-            </p>
+            resources
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            <span>
+              <a
+                className=""
+                data-baseweb="link"
+                href="https://www.github.com"
+              >
+                Github
+              </a>
+              <br />
+            </span>
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              technology
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              <span>
-                Angular
-                <br />
-              </span>
-            </p>
+            technology
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            <span>
+              Angular
+              <br />
+            </span>
+          </p>
+        </div>
+        <div
+          className=""
+          data-baseweb="block"
+        >
           <div
             className=""
+            data-baseweb="typo-labelmedium"
           >
-            <div
-              className=""
-              data-baseweb="typo-label2"
-              style={
-                Object {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              when
-            </div>
-            <p
-              className=""
-              data-baseweb="typo-p4"
-            >
-              Feb 2014
-            </p>
+            when
           </div>
+          <p
+            className=""
+            data-baseweb="typo-paragraphxsmall"
+          >
+            Feb 2014
+          </p>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 `;
