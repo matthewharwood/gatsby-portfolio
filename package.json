@@ -82,7 +82,8 @@
     "typescript": "^3.7.5"
   },
   "keywords": [
-    "portfolio"
+    "portfolio",
+    "Javascript"
   ],
   "license": "MIT",
   "scripts": {
