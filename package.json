@@ -26,6 +26,7 @@
     "gatsby-transformer-sharp": "^2.3.14",
     "gl-matrix": "^3.1.0",
     "hex-to-rgba": "^2.0.1",
+    "husky": "^4.2.1",
     "inflection": "^1.12.0",
     "lodash-es": "^4.17.15",
     "node-sass": "^4.13.1",
@@ -86,6 +87,12 @@
     "Javascript",
     "Developer"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn cover",
+      "pre-push": "yarn cover"
+    }
+  },
   "license": "MIT",
   "scripts": {
     "cover": "yarn test && yarn build",
