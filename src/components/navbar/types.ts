@@ -3,7 +3,7 @@ export type NavbarType = {
 };
 
 export type HamburgerType = {
-  isNavToggle: Boolean;
+  isNavToggle: boolean;
   toggleNav: Function;
 };
 

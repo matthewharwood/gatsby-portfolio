@@ -1,4 +1,4 @@
-import { list } from "./overview-type"
+import { list } from './overview-type';
 
 export default {
   name: 'collaborators',

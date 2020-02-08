@@ -11,7 +11,6 @@ export const Heading1 = {
   ],
 };
 
-
 export const Heading2 = {
   name: 'h2',
   title: 'H2',

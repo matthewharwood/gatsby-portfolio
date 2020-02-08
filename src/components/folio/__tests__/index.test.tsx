@@ -4,11 +4,6 @@ import { Folio } from '../';
 
 describe('Should create Nav with children', () => {
   it('renders correctly', () => {
-    const FIXTURE = {
-      text: 'Hello',
-      index: '01',
-      to: '/hello',
-    };
     const tree = renderer
       .create(
         <Folio

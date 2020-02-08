@@ -5,13 +5,14 @@ import { display, mq } from '../styles';
 import { Delete, Grab } from 'baseui/icon';
 
 const Hamburger: FunctionComponent<HamburgerType> = ({
-                                                       isNavToggle,
-                                                       toggleNav,
-                                                     }) => {
+  isNavToggle,
+  toggleNav,
+}) => {
   const [css] = useStyletron();
   const lg = mq.lg;
   return (
-    <span
+    <button
+      role={'menu'}
       onClick={() => toggleNav()}
       className={css({
         [lg]: {
@@ -20,7 +21,7 @@ const Hamburger: FunctionComponent<HamburgerType> = ({
       })}
     >
       {isNavToggle ? <Delete size={32} /> : <Grab size={32} />}
-    </span>
+    </button>
   );
 };
 export { Hamburger };

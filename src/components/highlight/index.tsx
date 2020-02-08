@@ -12,7 +12,6 @@ const Highlight: FunctionComponent<PropTypes> = ({
   backgrondColorInner,
   color,
   accentColor,
-  borderBottom = false,
   image,
   eyebrow = 'eyebrow',
   title = 'title',

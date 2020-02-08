@@ -3,7 +3,7 @@ export default {
   title: 'Post Header',
   type: 'document',
   initialValue: () => ({
-    mainText: 'Hello Main Text'
+    mainText: 'Hello Main Text',
   }),
   fields: [
     {
@@ -23,8 +23,8 @@ export default {
     },
     {
       name: 'projectOverview',
-      title: "Project Overiew",
+      title: 'Project Overiew',
       type: 'projectOverviewSchema',
-    }
+    },
   ],
 };

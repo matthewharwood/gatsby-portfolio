@@ -1,18 +1,17 @@
 import React, { FunctionComponent } from 'react';
 import { useStyletron } from 'baseui';
 import { Link } from 'gatsby';
-import { mq, display, fontFamily } from '../styles';
+import { mq, display } from '../styles';
 import { useSpring, animated } from 'react-spring';
 import BezierEasing from 'bezier-easing';
 
-import { NavLinkProps } from './types'
+import { NavLinkProps } from './types';
 
 const NavLinkIndex: FunctionComponent = ({ children }) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   const c = css({
     display: 'none',
-    // fontFamily: fontFamily,
     color: 'inherit',
     fontSize: theme.sizing.scale500,
     paddingBottom: theme.sizing.scale100,

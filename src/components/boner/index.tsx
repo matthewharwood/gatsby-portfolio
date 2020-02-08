@@ -34,10 +34,11 @@ const fs = `
 let gl: any,
   shaderProgram: any,
   vertices,
+  // eslint-disable-next-line prefer-const
   matrix = mat4.create(),
   vertexCount: any;
 
-let q = quat.create(),
+const q = quat.create(),
   translate = [-3, 0, -10],
   scale = [1, 1, 1],
   pivot = [-1, 0, 0],
@@ -91,7 +92,7 @@ function createVertices(canvasRef: any) {
     [1, -1, 1, 0.5, 0, 1, 1], // 7
   ];
 
-  let normals = [
+  const normals = [
     [0, 0, 1],
     [0, 1, 0],
     [0, 0, -1],
@@ -100,7 +101,7 @@ function createVertices(canvasRef: any) {
     [1, 0, 0],
   ];
 
-  let indices = [
+  const indices = [
     [0, 1, 2, 1, 2, 3],
     [2, 3, 4, 3, 4, 5],
     [4, 5, 6, 5, 6, 7],
@@ -109,7 +110,7 @@ function createVertices(canvasRef: any) {
     [1, 3, 7, 3, 7, 5],
   ];
 
-  let attributes = [];
+  const attributes = [];
   for (let side = 0; side < indices.length; ++side) {
     for (let vi = 0; vi < indices[side].length; ++vi) {
       attributes.push(...vertices[indices[side][vi]]);
@@ -119,11 +120,11 @@ function createVertices(canvasRef: any) {
 
   vertexCount = attributes.length / 10;
 
-  var buffer = gl.createBuffer();
+  const buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(attributes), gl.STATIC_DRAW);
 
-  let coords = gl.getAttribLocation(shaderProgram, 'coords');
+  const coords = gl.getAttribLocation(shaderProgram, 'coords');
   gl.vertexAttribPointer(
     coords,
     3,
@@ -134,7 +135,7 @@ function createVertices(canvasRef: any) {
   );
   gl.enableVertexAttribArray(coords);
 
-  let colorsLocation = gl.getAttribLocation(shaderProgram, 'colors');
+  const colorsLocation = gl.getAttribLocation(shaderProgram, 'colors');
   gl.vertexAttribPointer(
     colorsLocation,
     4,
@@ -145,7 +146,7 @@ function createVertices(canvasRef: any) {
   );
   gl.enableVertexAttribArray(colorsLocation);
 
-  let normalLocation = gl.getAttribLocation(shaderProgram, 'normal');
+  const normalLocation = gl.getAttribLocation(shaderProgram, 'normal');
   gl.vertexAttribPointer(
     normalLocation,
     3,
@@ -158,15 +159,15 @@ function createVertices(canvasRef: any) {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-  let lightColor = gl.getUniformLocation(shaderProgram, 'lightColor');
+  const lightColor = gl.getUniformLocation(shaderProgram, 'lightColor');
   gl.uniform3f(lightColor, 1, 1, 1);
 
-  let lightDirection = gl.getUniformLocation(shaderProgram, 'lightDirection');
+  const lightDirection = gl.getUniformLocation(shaderProgram, 'lightDirection');
   gl.uniform3f(lightDirection, 0.5, 0.5, -1);
 
-  let perspectiveMatrix = mat4.create();
+  const perspectiveMatrix = mat4.create();
   mat4.perspective(perspectiveMatrix, 1, canvas.width / canvas.height, 0.1, 11);
-  let perspectiveLoc = gl.getUniformLocation(
+  const perspectiveLoc = gl.getUniformLocation(
     shaderProgram,
     'perspectiveMatrix'
   );
@@ -176,11 +177,11 @@ function createVertices(canvasRef: any) {
 
 let rafId: any = null;
 const easeInCirc = (t: any) => t * t * t;
-let quat_t = null;
+let quatT = null;
 const offset = 0.5;
-let trans_t = null;
-let scale_t = null;
-let pivot_t = null;
+let transT = null;
+let scaleT = null;
+let pivotT = null;
 let start = 0;
 const finishTimeMs = 1500;
 
@@ -190,17 +191,17 @@ function draw(timeMs: number) {
   }
 
   rafId = requestAnimationFrame(draw);
-  let interval = Math.max(0, timeMs - start) / finishTimeMs; // 1500 ms are 1.5 seconds
-  let t = interval - Math.floor(interval);
+  const interval = Math.max(0, timeMs - start) / finishTimeMs; // 1500 ms are 1.5 seconds
+  const t = interval - Math.floor(interval);
 
-  trans_t = vec3.lerp(vec3.create(), translate, translate2, t); // ?
-  scale_t = vec3.lerp(vec3.create(), scale, scale2, t);
-  pivot_t = vec3.lerp(vec3.create(), pivot, pivot2, t);
+  transT = vec3.lerp(vec3.create(), translate, translate2, t); // ?
+  scaleT = vec3.lerp(vec3.create(), scale, scale2, t);
+  pivotT = vec3.lerp(vec3.create(), pivot, pivot2, t);
   if (t >= offset) {
     // @ts-ignore
-    quat_t = quat.slerp(quat.create(), q, q2, easeInCirc(t - offset));
+    quatT = quat.slerp(quat.create(), q, q2, easeInCirc(t - offset));
   } else {
-    quat_t = quat.create();
+    quatT = quat.create();
   }
 
   if (timeMs >= Math.floor(finishTimeMs + start - 1)) {
@@ -209,14 +210,17 @@ function draw(timeMs: number) {
   } else {
     mat4.fromRotationTranslationScaleOrigin(
       matrix,
-      quat_t,
-      trans_t,
-      scale_t,
-      pivot_t
+      quatT,
+      transT,
+      scaleT,
+      pivotT
     );
   }
 
-  let transformMatrix = gl.getUniformLocation(shaderProgram, 'transformMatrix');
+  const transformMatrix = gl.getUniformLocation(
+    shaderProgram,
+    'transformMatrix'
+  );
   gl.uniformMatrix4fv(transformMatrix, false, matrix);
 
   gl.clear(gl.COLOR_BUFFER_BIT);

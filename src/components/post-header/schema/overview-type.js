@@ -121,4 +121,3 @@ export const linklist = [
     title: 'data',
   },
 ];
-

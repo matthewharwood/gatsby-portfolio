@@ -31,13 +31,6 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
   const [videoState, setVideoState] = useState(State.initial);
   const progress = Math.ceil((currentTime / duration) * 100);
 
-  const playVideo = () => {
-    enableVideo();
-    setVideoState(State.play);
-    // @ts-ignore
-    videoPlayer.current.play();
-  };
-
   const pauseVideo = () => {
     setVideoState(State.pause);
     // @ts-ignore
@@ -52,7 +45,12 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
     // @ts-ignore
     setActiveVideoId(videoId);
   };
-
+  const playVideo = () => {
+    enableVideo();
+    setVideoState(State.play);
+    // @ts-ignore
+    videoPlayer.current.play();
+  };
   // Checks if change in global activeVideoID enables the video
   useEffect(() => {
     if (isVideoActive && videoState === State.play) {
@@ -81,7 +79,14 @@ export const Player = ({ videoId, videoSrc, poster }: Props) => {
             })}
             src={videoSrc}
             poster={poster}
-          ></video>
+          >
+            <track
+              src="#"
+              kind="captions"
+              srcLang="en"
+              label="english_captions"
+            />
+          </video>
           <ProgressBar
             value={progress}
             overrides={{

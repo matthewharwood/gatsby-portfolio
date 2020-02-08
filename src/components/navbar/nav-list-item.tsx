@@ -33,6 +33,4 @@ const ListItem: FunctionComponent<ListItemType> = ({ title }) => {
   );
 };
 
-export {
-  ListItem,
-};
+export { ListItem };

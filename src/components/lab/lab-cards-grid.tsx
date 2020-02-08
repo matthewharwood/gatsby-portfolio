@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { useStyletron } from 'baseui';
 import { Navbar } from '../navbar';
 import { Container, Grid, Section } from '../@design-system/block-layout';
 import { Footer } from '../footer';
@@ -9,7 +8,6 @@ import { LabCardsGridType } from './types';
 
 const LabCardsGrid: FunctionComponent<LabCardsGridType> = ({ data }) => {
   const { todoCards, doingCards, doneCards } = data;
-  const [, theme] = useStyletron();
   return (
     <>
       <Navbar />

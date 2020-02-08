@@ -1,4 +1,4 @@
-import { linklist } from "./overview-type"
+import { linklist } from './overview-type';
 
 export default {
   name: 'resources',

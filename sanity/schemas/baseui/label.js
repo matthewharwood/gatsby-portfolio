@@ -3,18 +3,18 @@ export default {
   title: 'Label',
   type: 'document',
   initialValue: () => ({
-    color: 'inherit'
+    color: 'inherit',
   }),
   fields: [
     {
       name: 'text',
       title: 'Text',
-      type: 'string'
+      type: 'string',
     },
     // {
     //   name: 'color',
     //   title: 'Color',
     //   type: 'string'
     // },
-  ]
+  ],
 };

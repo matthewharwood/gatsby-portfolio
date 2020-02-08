@@ -30,6 +30,4 @@ const Media: FunctionComponent<MediaType> = ({ image, video, mediaType }) => {
   );
 };
 
-export {
-  Media
-}
+export { Media };

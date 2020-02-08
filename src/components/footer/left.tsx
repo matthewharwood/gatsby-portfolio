@@ -11,7 +11,7 @@ const BIRTH_YEAR = '1985-09-03';
 export const FooterLeft = () => {
   const [css, theme] = useStyletron();
   const [ref, inView] = useInView({ triggerOnce: true });
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   const mattAge = getAge(BIRTH_YEAR);
   const years = range(mattAge + 1, new Date().getFullYear() - mattAge);

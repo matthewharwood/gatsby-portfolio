@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import { useStyletron } from 'baseui';
 import { Hamburger } from './hamburger';
@@ -11,7 +11,7 @@ import { LogoType } from './logo-type';
 import { NavList } from './nav-list';
 import { ListItem } from './nav-list-item';
 
-export const Navbar: FunctionComponent<NavbarType> = memo(({ show = true }) => {
+export const Navbar: FunctionComponent<NavbarType> = ({ show = true }) => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
   const [isNavToggle, setNavToggle] = useState(false);
@@ -63,11 +63,10 @@ export const Navbar: FunctionComponent<NavbarType> = memo(({ show = true }) => {
       />
     </nav>
   );
-});
-
+};
 
 const NavHeader = () => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const lg = mq.lg;
   return (
     <div

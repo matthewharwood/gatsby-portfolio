@@ -25,6 +25,4 @@ const LogoType = () => {
   );
 };
 
-export {
-  LogoType,
-};
+export { LogoType };

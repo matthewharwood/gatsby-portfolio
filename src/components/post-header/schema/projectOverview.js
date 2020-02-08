@@ -1,4 +1,3 @@
-import {list, single, linklist} from './overview-type';
 export default {
   name: 'projectOverviewSchema',
   title: 'Project Overview',
@@ -7,7 +6,7 @@ export default {
     {
       name: 'company',
       title: 'Company',
-      type: 'company'
+      type: 'company',
     },
 
     {

@@ -19,4 +19,4 @@ const GridSpanFour: FunctionComponent = ({ children }) => {
   );
 };
 
-export { GridSpanFour}
+export { GridSpanFour };

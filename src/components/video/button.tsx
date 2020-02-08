@@ -15,25 +15,25 @@ export const VideoButton: FunctionComponent<VideoButtonType> = ({
 }) => {
   const [css, theme] = useStyletron();
   const stateMap = {
-    'INITIAL': {
+    INITIAL: {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: playVideo,
       icon: iconPlay,
     },
-    'PLAY': {
+    PLAY: {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: pauseVideo,
       icon: iconPause,
     },
-    'PAUSE': {
+    PAUSE: {
       backgroundColor: theme.colors.accent,
       hoverBg: theme.colors.negative400,
       trigger: playVideo,
       icon: iconPlay,
     },
-    'STOP': {
+    STOP: {
       backgroundColor: theme.colors.positive200,
       hoverBg: theme.colors.positive300,
       trigger: playVideo,

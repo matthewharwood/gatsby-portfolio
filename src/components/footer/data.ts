@@ -1,4 +1,4 @@
-let SOCIAL = {
+const SOCIAL = {
   FACEBOOK: {
     url: 'https://www.facebook.com/Watashi',
   },

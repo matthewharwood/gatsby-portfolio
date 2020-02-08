@@ -15,7 +15,7 @@ export default {
 //   },
 // };
 
-export const toStorybook = () => <Footer  />;
+export const toStorybook = () => <Footer />;
 
 toStorybook.story = {
   name: 'Footer Story',

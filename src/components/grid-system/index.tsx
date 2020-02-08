@@ -2,7 +2,7 @@ import React from 'react';
 import { useStyletron } from 'baseui';
 import { mq, display } from '../styles';
 import { useInView } from 'react-intersection-observer';
-import {useSpring, animated} from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
 export const Section = ({
   $backgroundColor,
@@ -12,8 +12,8 @@ export const Section = ({
   children,
 }: any) => {
   const [css, theme] = useStyletron();
-  const [ref, inView] = useInView({triggerOnce: true});
-  const props = useSpring({opacity: inView ? 1 : 0});
+  const [ref, inView] = useInView({ triggerOnce: true });
+  const props = useSpring({ opacity: inView ? 1 : 0 });
   const FadeInSection = animated.div;
 
   const bgColor = $backgroundColor || 'inherit';
@@ -46,9 +46,11 @@ export const Section = ({
   });
   return (
     <FadeInSection style={props}>
-      <section className={className} ref={ref}>{children}</section>
+      <section className={className} ref={ref}>
+        {children}
+      </section>
     </FadeInSection>
-  )
+  );
 };
 
 export const Container = ({
@@ -83,7 +85,7 @@ export const Container = ({
 };
 
 export const GridItemLeft = ({ leftCols, orderLeft, children }: any) => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const c = {
     className: css({
       order: orderLeft,
@@ -107,7 +109,7 @@ export const GridItemRight = ({
   children,
   hidden = false,
 }: any) => {
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
   const c = {
     className: css({
       order: orderRight,
@@ -125,7 +127,12 @@ export const GridItemRight = ({
   return <div {...c}>{children}</div>;
 };
 
-export const Grid = ({ children, $gridColumn = '1/-1', $gridGap, $alignItems }: any) => {
+export const Grid = ({
+  children,
+  $gridColumn = '1/-1',
+  $gridGap,
+  $alignItems,
+}: any) => {
   const [css, theme] = useStyletron();
 
   const className = css({

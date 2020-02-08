@@ -54,7 +54,6 @@ const Navigation = () => {
       <StyledNavigationList $align={ALIGN.center} />
       <StyledNavigationList $align={ALIGN.right}>
         {isLarge ? (
-
           navigationItems?.map?.((item, key) => (
             <StyledNavigationItem key={key}>
               <Link

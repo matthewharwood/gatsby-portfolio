@@ -7,12 +7,12 @@ export default {
     {
       name: 'text',
       title: 'Text',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'href',
       title: 'Href',
-      type: 'url'
+      type: 'url',
     },
-  ]
+  ],
 };

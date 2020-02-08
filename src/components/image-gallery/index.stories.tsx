@@ -17,7 +17,7 @@ const imageAssetIdArray = [
 ];
 
 const singleImageData = {
-  images: imageAssetIdArray.slice(0,1).map(assetId => ({
+  images: imageAssetIdArray.slice(0, 1).map(assetId => ({
     image: {
       asset: {
         id: assetId,
@@ -27,7 +27,7 @@ const singleImageData = {
 };
 
 const twoImagesData = {
-  images: imageAssetIdArray.slice(0,2).map(assetId => ({
+  images: imageAssetIdArray.slice(0, 2).map(assetId => ({
     image: {
       asset: {
         id: assetId,
@@ -37,7 +37,7 @@ const twoImagesData = {
 };
 
 const threeImagesData = {
-  images: imageAssetIdArray.slice(0,3).map(assetId => ({
+  images: imageAssetIdArray.slice(0, 3).map(assetId => ({
     image: {
       asset: {
         id: assetId,
@@ -47,7 +47,7 @@ const threeImagesData = {
 };
 
 const fourImagesData = {
-  images: imageAssetIdArray.slice(0,4).map(assetId => ({
+  images: imageAssetIdArray.slice(0, 4).map(assetId => ({
     image: {
       asset: {
         id: assetId,
@@ -57,7 +57,7 @@ const fourImagesData = {
 };
 
 const eightImagesData = {
-  images: imageAssetIdArray.slice(0,8).map(assetId => ({
+  images: imageAssetIdArray.slice(0, 8).map(assetId => ({
     image: {
       asset: {
         id: assetId,
@@ -66,8 +66,18 @@ const eightImagesData = {
   })),
 };
 
-export const imageGalleryWithSingleImage = () => <ImageGallery {...singleImageData} />;
-export const ImageGalleryWithTwoImages = () => <ImageGallery {...twoImagesData} />;
-export const ImageGalleryWithThreeImages = () => <ImageGallery {...threeImagesData} />;
-export const ImageGalleryWithFourImages = () => <ImageGallery {...fourImagesData} />;
-export const ImageGalleryWithEightImages = () => <ImageGallery {...eightImagesData} />;
+export const imageGalleryWithSingleImage = () => (
+  <ImageGallery {...singleImageData} />
+);
+export const ImageGalleryWithTwoImages = () => (
+  <ImageGallery {...twoImagesData} />
+);
+export const ImageGalleryWithThreeImages = () => (
+  <ImageGallery {...threeImagesData} />
+);
+export const ImageGalleryWithFourImages = () => (
+  <ImageGallery {...fourImagesData} />
+);
+export const ImageGalleryWithEightImages = () => (
+  <ImageGallery {...eightImagesData} />
+);
