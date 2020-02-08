@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from '../../components/navbar';
-import { IntroSection } from './intro-section';
-import { ResumeSection } from './resume-section';
+import { IntroSection } from '../../components/profile/intro-section';
+import { ResumeSection } from '../../components/profile/resume-section';
 
 const Profile = () => {
   return (

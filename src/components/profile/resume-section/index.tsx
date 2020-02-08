@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStyletron } from 'baseui';
 import { H1, H2, Paragraph3 } from 'baseui/typography';
-import { Grid } from '../../../components/@design-system/block-layout';
+import { Grid } from '../../@design-system/block-layout';
 import { Block } from 'baseui/block';
 import {
   awards, education,

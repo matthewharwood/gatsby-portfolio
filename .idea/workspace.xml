@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="537002f2-b812-4b8e-bcff-2cd81d0e6ca5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/@design-system/block-layout/container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@design-system/block-layout/container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folio/__tests__/__snapshots__/index.test.tsx.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-header/__tests__/__snapshots__/index.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-header/__tests__/__snapshots__/index.test.tsx.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/intro-section/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/intro-section/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/resume-section/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/resume-section/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +52,18 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/utils" />
-      <recent name="$PROJECT_DIR$/src/components/system/heading" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/components/lab" />
-      <recent name="$PROJECT_DIR$/src/content" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.storybook" />
       <recent name="$PROJECT_DIR$/src/components/system/steps" />
       <recent name="$PROJECT_DIR$/src/components/system" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/lab" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/profile" />
+      <recent name="$PROJECT_DIR$/src/components/utils" />
+      <recent name="$PROJECT_DIR$/src/components/system/heading" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components/lab" />
     </key>
   </component>
@@ -157,12 +154,12 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="565" y="352" key="jetbrains.nodejs.interpreters-dialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581131986967" />
-    <state x="290" y="390" width="994" height="934" key="search.everywhere.popup" timestamp="1581141303448">
+    <state x="290" y="390" width="994" height="934" key="search.everywhere.popup" timestamp="1581143400906">
       <screen x="70" y="27" width="2490" height="1413" />
     </state>
     <state x="442" y="265" width="670" height="657" key="search.everywhere.popup/0.23.1680.995@0.23.1680.995" timestamp="1575303728946" />
     <state x="505" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877826655" />
     <state x="505" y="280" width="766" height="698" key="search.everywhere.popup/0.23.1920.1057/-1680.23.1680.1027@0.23.1920.1057" timestamp="1581120726675" />
-    <state x="290" y="390" width="994" height="934" key="search.everywhere.popup/70.27.2490.1413@70.27.2490.1413" timestamp="1581141303448" />
+    <state x="290" y="390" width="994" height="934" key="search.everywhere.popup/70.27.2490.1413@70.27.2490.1413" timestamp="1581143400906" />
   </component>
 </project>
