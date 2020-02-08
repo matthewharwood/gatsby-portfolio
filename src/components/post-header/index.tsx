@@ -32,9 +32,7 @@ const TopElement: FunctionComponent<TopElementType> = ({
 };
 
 const ListItem: FunctionComponent = ({ children }) => {
-  return (
-    <Block gridColumn={'span 4'}>{children}</Block>
-  );
+  return <Block gridColumn={'span 4'}>{children}</Block>;
 };
 
 const PostHeader: FunctionComponent<PostHeaderType> = ({

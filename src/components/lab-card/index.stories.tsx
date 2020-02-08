@@ -39,7 +39,7 @@ const dataFromSanity = {
 
 const dataForLabCardWithImage = {
   ...dataFromSanity.data.sanityLab,
-  maxWidth:500,
+  maxWidth: 500,
 };
 
 const dataForLabCardWithVideo = {
@@ -49,11 +49,15 @@ const dataForLabCardWithVideo = {
       url: 'http://techslides.com/demos/sample-videos/small.webm',
     },
   },
-  maxWidth:500,
+  maxWidth: 500,
 };
 
-export const labCardWithImage = () => <LabCard data={dataForLabCardWithImage} />;
-export const labCardWithVideo = () => <LabCard data={dataForLabCardWithVideo} />;
+export const labCardWithImage = () => (
+  <LabCard data={dataForLabCardWithImage} />
+);
+export const labCardWithVideo = () => (
+  <LabCard data={dataForLabCardWithVideo} />
+);
 
 labCardWithImage.story = {
   name: 'LabCard with Image',

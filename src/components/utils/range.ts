@@ -1,4 +1,3 @@
-
-export const range = (size:number, startAt:number = 0) => {
+export const range = (size: number, startAt = 0) => {
   return [...Array(size).keys()].map(i => i + startAt);
-}
+};

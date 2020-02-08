@@ -50,8 +50,6 @@ const bgImageSmall = {
   rtlMirror: true,
 };
 
-
-
 // @ts-ignore
 storyModule.add('with Basic Layout', () => (
   <BlockContainer

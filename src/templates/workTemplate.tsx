@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Navbar } from '../components/navbar';
@@ -7,6 +7,7 @@ import { pageRenderer } from '../services/page-renderer';
 import useScroll from '../components/utils/use-scroll';
 import { useSpring, animated } from 'react-spring';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const WorkTemplate = ({ data }: any) => {
   const props = useSpring({
     opacity: 1,

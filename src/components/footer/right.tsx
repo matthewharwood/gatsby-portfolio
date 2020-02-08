@@ -1,5 +1,5 @@
 import { useStyletron } from 'baseui';
-import { Button, KIND, SHAPE, SIZE } from 'baseui/button';
+import { Button, KIND, SHAPE } from 'baseui/button';
 import { display, mq } from '../styles';
 import { StatefulPopover, TRIGGER_TYPE } from 'baseui/popover';
 import { FacebookIcon } from '../icons/facebook';
@@ -11,8 +11,6 @@ import { More } from '../icons/more';
 import React, { FunctionComponent } from 'react';
 
 const FooterButton = ({ children, setIsOpen }) => {
-  const [css, theme] = useStyletron();
-
   return (
     <Button
       shape={SHAPE.round}
@@ -55,20 +53,20 @@ export const FooterRight: FunctionComponent<{ setIsOpen: Function }> = ({
         showArrow
       >
         <FooterButton setIsOpen={setIsOpen}>
-          <FacebookIcon scale={0.8}/>
+          <FacebookIcon scale={0.8} />
         </FooterButton>
       </StatefulPopover>
       <FooterButton setIsOpen={setIsOpen}>
-        <InstagramIcon scale={0.8}/>
+        <InstagramIcon scale={0.8} />
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <LinkedinIcon scale={0.8}/>
+        <LinkedinIcon scale={0.8} />
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <TwitterIcon scale={0.8}/>
+        <TwitterIcon scale={0.8} />
       </FooterButton>
       <FooterButton setIsOpen={setIsOpen}>
-        <More scale={0.8}/>
+        <More scale={0.8} />
       </FooterButton>
     </div>
   );

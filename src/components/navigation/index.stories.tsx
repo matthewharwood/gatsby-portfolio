@@ -1,5 +1,4 @@
 import React from 'react';
-import useScroll from '../utils/use-scroll';
 
 import { Navigation } from './';
 

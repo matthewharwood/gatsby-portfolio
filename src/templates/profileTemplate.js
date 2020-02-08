@@ -1,14 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
-const ProfileTemplate = ({ data }) => {
-  return (
-    <>
-      Profile Tempalte
-    </>
-  );
+const ProfileTemplate = () => {
+  return <>Profile Tempalte</>;
 };
 
 export default ProfileTemplate;
-
-

@@ -7,8 +7,7 @@ export default {
 };
 
 const FIXTURE: Props = {
-  code: 
-  `const gridStyle = css({
+  code: `const gridStyle = css({
     display: display.grid,
     gridTemplateColumns: 'repeat(1, 1fr)',
     marginTop: theme.sizing.scale900,
@@ -23,7 +22,7 @@ const FIXTURE: Props = {
     [lg]: {
       gridTemplateColumns: 'repeat(4, 1fr)',
     },
-  });`
+  });`,
 };
 
 export const toStorybook = () => <CodeComponent {...FIXTURE} />;

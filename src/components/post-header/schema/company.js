@@ -1,4 +1,4 @@
-import { single } from "./overview-type"
+import { single } from './overview-type';
 
 export default {
   name: 'company',
@@ -6,4 +6,3 @@ export default {
   type: 'object',
   fields: single,
 };
-

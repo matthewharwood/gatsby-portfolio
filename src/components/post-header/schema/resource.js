@@ -3,15 +3,15 @@ export default {
   title: 'Resource',
   type: 'object',
   fields: [
-  {
-    name: 'text',
-    title: 'text',
-    type: 'string',
-  },
+    {
+      name: 'text',
+      title: 'text',
+      type: 'string',
+    },
     {
       name: 'href',
       title: 'Href',
       type: 'url',
     },
   ],
-}
+};

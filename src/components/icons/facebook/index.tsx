@@ -1,15 +1,15 @@
 import React from 'react';
 
 type fbIconType = {
-  scale?: number,
-}
+  scale?: number;
+};
 
-export const FacebookIcon = ({scale=1}:fbIconType) => {
+export const FacebookIcon = ({ scale = 1 }: fbIconType) => {
   return (
     <svg
       width="24"
       height="24"
-      transform={ `scale(${scale})` }
+      transform={`scale(${scale})`}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

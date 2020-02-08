@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Block } from 'baseui/block';
-import { useStyletron } from 'baseui'
+import { useStyletron } from 'baseui';
 
 import { GridType } from '../types';
 
@@ -24,21 +24,13 @@ export const Grid: FunctionComponent<GridType> = ({
   ],
   $justifyItems = 'inherit',
   $alignItems = 'inherit',
-  $marginTop = "none",
-  $marginBottom = "none",
+  $marginTop = 'none',
+  $marginBottom = 'none',
   children,
 }) => {
-
   const [, theme] = useStyletron();
   const {
-    sizing: {
-      scale700,
-      scale800,
-      scale900,
-      scale1000,
-      scale1400,
-      scale1600,
-    },
+    sizing: { scale700, scale800, scale900, scale1000, scale1400, scale1600 },
   } = theme;
 
   const outerSpacingMap = {

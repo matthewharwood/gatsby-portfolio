@@ -27,7 +27,7 @@ export const Quote: FunctionComponent<Props> = ({
             }}
           >
             <Paragraph1 color={'primary600'} font={'inherit'}>
-              "{body}"
+              &ldquo;{body}&rdquo;
             </Paragraph1>
           </Block>
           <Block

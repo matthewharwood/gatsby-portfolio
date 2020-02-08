@@ -5,5 +5,4 @@ export default {
   title: 'home-navigation',
 };
 
-export const HomeNavigationStory = () => <HomeNavigation/>;
-
+export const HomeNavigationStory = () => <HomeNavigation />;

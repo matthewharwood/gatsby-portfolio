@@ -58,6 +58,8 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-test-renderer": "^16.9.2",
     "@types/styletron-react": "^5.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
@@ -95,14 +97,14 @@
   },
   "license": "MIT",
   "scripts": {
-    "cover": "yarn test && yarn build",
+    "cover": "yarn lint && yarn test && yarn build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
-    "lint": "eslint src/components/*  --fix",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }

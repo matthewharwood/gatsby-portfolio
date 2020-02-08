@@ -20,6 +20,4 @@ const NavList: FunctionComponent = ({ children }) => {
   );
 };
 
-export {
-  NavList,
-};
+export { NavList };

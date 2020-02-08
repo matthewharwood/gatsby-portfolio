@@ -26,11 +26,11 @@ export type labCardBackgroundType = 'image' | 'video';
 
 export type ImageType = {
   asset: {
-    fluid: GatsbySanityImageFluid_withWebp;
+    fluid: GatsbySanityImageFluidwithWebp;
   };
 };
 
-export type GatsbySanityImageFluid_withWebp = {
+export type GatsbySanityImageFluidwithWebp = {
   base64: string;
   aspectRatio: number;
   src: string;

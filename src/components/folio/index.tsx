@@ -4,7 +4,7 @@ import { Paragraph4, Label4 } from 'baseui/typography';
 import { mq, display, positions } from '../styles';
 import { StyledLink } from 'baseui/link';
 
-import { FolioProps } from './types'
+import { FolioProps } from './types';
 
 const Folio: FunctionComponent<FolioProps> = ({
   headline,

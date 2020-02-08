@@ -14,8 +14,8 @@ const FIXTURE = {
   title: 'Title',
   body:
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt inventore consequatur',
-  leftCols: [4,6,8],
-  rightCols: [4,6,4],
+  leftCols: [4, 6, 8],
+  rightCols: [4, 6, 4],
   orderLeft: 0,
   orderRight: 1,
 };

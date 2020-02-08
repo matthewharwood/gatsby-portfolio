@@ -4,14 +4,14 @@ import { Label4 } from 'baseui/typography';
 import { useInterval } from '../utils/use-interval';
 import { interests } from '../../content/interests';
 import { mq } from '../styles';
-import {useTransition, animated} from 'react-spring';
-import { StyledLink } from "baseui/link";
+import { useTransition, animated } from 'react-spring';
+import { StyledLink } from 'baseui/link';
 
 const RunningHeader: FunctionComponent = () => {
   const [css, theme] = useStyletron();
   const lg = mq.lg;
-  let [count, setCount] = useState(0);
-  let [hovered, setHover] = useState(false);
+  const [count, setCount] = useState(0);
+  const [hovered, setHover] = useState(false);
 
   useInterval(() => {
     if (!hovered) {
@@ -22,18 +22,31 @@ const RunningHeader: FunctionComponent = () => {
     }
   }, 1000);
 
-
   const renderTrans = (name: string) => {
     const transitions = useTransition(!!count, null, {
-      from:  { position: 'absolute', transform: 'translate3d(0, 20px, 0)', opacity: 0 },
-      enter: { position: 'absolute', transform: 'translate3d(0, 0px, 0)', opacity: 1 },
+      from: {
+        position: 'absolute',
+        transform: 'translate3d(0, 20px, 0)',
+        opacity: 0,
+      },
+      enter: {
+        position: 'absolute',
+        transform: 'translate3d(0, 0px, 0)',
+        opacity: 1,
+      },
       leave: { color: '#fff' },
     });
 
-    return transitions.map(({ item, key, props }) =>
-      item && <animated.span key={key} style={props}> {name}️</animated.span>
-    )
-  }
+    return transitions.map(
+      ({ item, key, props }) =>
+        item && (
+          <animated.span key={key} style={props}>
+            {' '}
+            {name}️
+          </animated.span>
+        )
+    );
+  };
 
   const cList = css({
     borderLeft: `${theme.sizing.scale100} solid ${theme.colors.accent}`,
@@ -84,18 +97,20 @@ const RunningHeader: FunctionComponent = () => {
   return (
     <ul className={cList}>
       <li className={cItem}>
-        <Label4 color={'inherit'}>
-          Contact
-        </Label4>
+        <Label4 color={'inherit'}>Contact</Label4>
       </li>
-      <li className={cItemLink} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <li
+        className={cItemLink}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <StyledLink
-          style={{textDecoration:'none'}}
+          style={{ textDecoration: 'none' }}
           href={`mailto:matthhar12@gmail.com?subject=${interests[count].name}`}
           target={'_blank'}
           color={'inherit'}
         >
-          <span className={s}>Let's talk about </span>
+          <span className={s}>Let&apos;s talk about </span>
           <span className={s}>
             ✉ <i>{renderTrans(interests[count].name)}</i>
           </span>

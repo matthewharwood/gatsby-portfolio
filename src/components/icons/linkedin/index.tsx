@@ -1,10 +1,10 @@
 import React from 'react';
 
 type linkedInIconType = {
-  scale?: number,
-}
+  scale?: number;
+};
 
-export const LinkedinIcon = ({scale=1}:linkedInIconType) => {
+export const LinkedinIcon = ({ scale = 1 }: linkedInIconType) => {
   return (
     <svg
       role="img"
