@@ -126,7 +126,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1UBLimjfrKEbc0iRrmdvG0u1v2Q" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -147,7 +147,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="C:/Users/matth/Documents/GitHub/gatsby-portfolio/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="$USER_HOME$/Documents/GitHub/gatsby-portfolio/node_modules/eslint" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v12.14.1/bin/node" />
@@ -201,6 +201,7 @@
       <workItem from="1581120287841" duration="4282000" />
       <workItem from="1581128929831" duration="4047000" />
       <workItem from="1581136280376" duration="6025000" />
+      <workItem from="1581177964292" duration="914000" />
     </task>
     <servers />
   </component>
@@ -247,9 +248,10 @@
     </state>
     <state x="628" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1581134167079" />
     <state x="628" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.995@0.23.1680.995" timestamp="1574950570688" />
-    <state x="807" y="372" width="1240" height="723" key="find.popup" timestamp="1581146772852">
-      <screen x="70" y="27" width="2490" height="1413" />
+    <state x="758" y="342" width="1275" height="717" key="find.popup" timestamp="1581178855907">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="758" y="342" width="1275" height="717" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581178855907" />
     <state x="497" y="274" width="836" height="525" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1581123619020" />
     <state x="497" y="266" width="835" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1575303874995" />
     <state x="568" y="273" width="783" height="524" key="find.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877828000" />
