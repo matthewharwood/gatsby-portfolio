@@ -34,20 +34,53 @@ const LogoText = () => {
     </h1>
   );
 };
+const NavigationItemContainer = ({ items }: any) => {
+  const [css] = useStyletron();
+  const classRef: MutableRefObject<any> = useRef();
+  const activeClass = 'active';
 
+  return items?.map?.((item: any, key: number) => (
+    <StyledNavigationItem key={key}>
+      <Link
+        ref={classRef}
+        className={css({
+          textDecoration: 'none',
+          color: 'inherit',
+        })}
+        activeClassName={activeClass}
+        to={item.route}
+      >
+        <Button
+          size={SIZE.default}
+          shape={SHAPE.pill}
+          kind={KIND.primary}
+          isSelected={classRef?.current?.classList.contains(activeClass)}
+          overrides={{
+            BaseButton: {
+              style: {
+                fontWeight: 'bold',
+              },
+            },
+          }}
+        >
+          {item.name}
+        </Button>
+      </Link>
+    </StyledNavigationItem>
+  ));
+};
 const Navigation: FunctionComponent<{ toggle: Function; active: boolean }> = ({
   toggle,
   active,
 }) => {
-  const [css, theme] = useStyletron();
-  const classRef: MutableRefObject<any> = useRef();
+  const [, theme] = useStyletron();
+
   const isLarge = useMediaQuery(theme.mediaQuery.large);
   const navigationItems = [
     { name: 'WORK', route: '/work' },
     { name: 'LABS', route: '/labs' },
     { name: 'PROFILE', route: '/profile' },
   ];
-  const activeClass = 'active';
 
   return (
     <HeaderNavigationRoot>
@@ -59,37 +92,7 @@ const Navigation: FunctionComponent<{ toggle: Function; active: boolean }> = ({
       <StyledNavigationList $align={ALIGN.center} />
       <StyledNavigationList $align={ALIGN.right}>
         {isLarge ? (
-          navigationItems?.map?.((item, key) => (
-            <StyledNavigationItem key={key}>
-              <Link
-                ref={classRef}
-                className={css({
-                  textDecoration: 'none',
-                  color: 'inherit',
-                })}
-                activeClassName={activeClass}
-                to={item.route}
-              >
-                <Button
-                  size={SIZE.default}
-                  shape={SHAPE.pill}
-                  kind={KIND.primary}
-                  isSelected={classRef?.current?.classList.contains(
-                    activeClass
-                  )}
-                  overrides={{
-                    BaseButton: {
-                      style: {
-                        fontWeight: 'bold',
-                      },
-                    },
-                  }}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            </StyledNavigationItem>
-          ))
+          <NavigationItemContainer items={navigationItems} />
         ) : (
           <Button
             size={SIZE.default}
