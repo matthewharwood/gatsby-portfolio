@@ -46,7 +46,12 @@ export const Grid: FunctionComponent<GridType> = ({
       height="100%"
       justifyItems={$justifyItems}
       alignItems={$alignItems}
-      gridGap={[gapWidth.small, gapWidth.medium, gapWidth.large]}
+      gridGap={[
+        gapWidth.small,
+        gapWidth.small,
+        gapWidth.medium,
+        gapWidth.large,
+      ]}
       // @ts-ignore
       marginTop={outerSpacingMap[$marginTop]}
       // @ts-ignore

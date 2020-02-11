@@ -1,4 +1,4 @@
-import React, { useRef, MutableRefObject } from 'react';
+import React, { useRef, MutableRefObject, FunctionComponent } from 'react';
 import {
   ALIGN,
   StyledNavigationItem,
@@ -9,7 +9,8 @@ import { Button, KIND, SHAPE, SIZE } from 'baseui/button';
 import { useStyletron, withStyle } from 'baseui';
 import { useMediaQuery } from '../utils/use-media-query';
 import { Link } from 'gatsby';
-import { Grab } from 'baseui/icon';
+import { Hamburger } from './hamburger';
+
 const HeaderNavigationRoot = withStyle(StyledRoot, ({ $theme }) => ({
   paddingLeft: 0,
   paddingRight: $theme.sizing.scale600,
@@ -34,7 +35,10 @@ const LogoText = () => {
   );
 };
 
-const Navigation = () => {
+const Navigation: FunctionComponent<{ toggle: Function; active: boolean }> = ({
+  toggle,
+  active,
+}) => {
   const [css, theme] = useStyletron();
   const classRef: MutableRefObject<any> = useRef();
   const isLarge = useMediaQuery(theme.mediaQuery.large);
@@ -44,6 +48,7 @@ const Navigation = () => {
     { name: 'PROFILE', route: '/profile' },
   ];
   const activeClass = 'active';
+
   return (
     <HeaderNavigationRoot>
       <StyledNavigationList $align={ALIGN.left}>
@@ -91,8 +96,10 @@ const Navigation = () => {
             shape={SHAPE.round}
             kind={KIND.primary}
             isSelected={false}
+            // @ts-ignore
+            onClick={toggle}
           >
-            <Grab size={24} />
+            <Hamburger active={active} />
           </Button>
         )}
       </StyledNavigationList>
