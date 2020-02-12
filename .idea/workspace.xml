@@ -44,8 +44,8 @@
     <property name="node.js.selected.package.standard" value="$USER_HOME$/Documents/GitHub/gatsby-portfolio/node_modules/eslint" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v12.14.1/bin/node" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\matth\@dev\gatsby-portfolio\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
@@ -111,6 +111,10 @@
     </state>
     <state x="440" y="202" key="#ESLint/0.23.1680.1027@0.23.1680.1027" timestamp="1581131990777" />
     <state x="722" y="273" width="800" height="684" key="#ESLint/70.27.2490.1413@70.27.2490.1413" timestamp="1581135943294" />
+    <state x="872" y="359" key="#Prettier" timestamp="1581479745910">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="359" key="#Prettier/0.0.2560.1400@0.0.2560.1400" timestamp="1581479745910" />
     <state x="304" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575303977623">
       <screen x="0" y="23" width="1680" height="995" />
     </state>
@@ -127,15 +131,17 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="640" y="169" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581374970324" />
-    <state x="520" y="233" width="1022" height="737" key="SettingsEditor" timestamp="1581356903667">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="520" y="207" width="1022" height="737" key="SettingsEditor" timestamp="1581479728636">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="520" y="207" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1581479728636" />
     <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1581186902388" />
     <state x="520" y="233" key="SettingsEditor/0.23.2560.1417/-1680.23.1680.1027@0.23.2560.1417" timestamp="1581356903667" />
     <state x="575" y="236" width="1022" height="737" key="SettingsEditor/70.27.2490.1413@70.27.2490.1413" timestamp="1581137445888" />
-    <state width="764" height="635" key="SwitcherDM" timestamp="1581360856280">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="764" height="628" key="SwitcherDM" timestamp="1581480751454">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="764" height="628" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1581480751454" />
     <state width="501" height="460" key="SwitcherDM/0.23.1680.1027@0.23.1680.1027" timestamp="1581307320038" />
     <state width="500" height="445" key="SwitcherDM/0.23.1680.995@0.23.1680.995" timestamp="1575304746459" />
     <state width="572" height="459" key="SwitcherDM/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877361669" />
@@ -151,10 +157,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="100" y="123" width="2360" height="1217" key="dock-window-1/0.23.2560.1417/-1680.23.1680.1027@0.23.2560.1417" timestamp="1581356955159" />
-    <state x="757" y="369" width="1274" height="725" key="find.popup" timestamp="1581360114130">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="758" y="342" width="1275" height="717" key="find.popup" timestamp="1581479825593">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="758" y="342" width="1275" height="717" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581178855907" />
+    <state x="758" y="342" width="1275" height="717" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581479825593" />
     <state x="497" y="274" width="836" height="525" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1581307659539" />
     <state x="497" y="266" width="835" height="508" key="find.popup/0.23.1680.995@0.23.1680.995" timestamp="1575303874995" />
     <state x="568" y="273" width="783" height="524" key="find.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877828000" />
@@ -165,9 +171,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="565" y="352" key="jetbrains.nodejs.interpreters-dialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581131986967" />
-    <state x="226" y="387" width="1023" height="937" key="search.everywhere.popup" timestamp="1581382363888">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="226" y="360" width="1023" height="926" key="search.everywhere.popup" timestamp="1581481372536">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="226" y="360" width="1023" height="926" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581481372536" />
     <state x="148" y="287" width="671" height="679" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1581375001026" />
     <state x="442" y="265" width="670" height="657" key="search.everywhere.popup/0.23.1680.995@0.23.1680.995" timestamp="1575303728946" />
     <state x="505" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1025/-1680.23.1680.1027@0.23.1920.1025" timestamp="1574877826655" />

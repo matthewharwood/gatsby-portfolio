@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
-import { Navbar } from '../components/navbar';
 import { Footer } from '../components/footer';
 import { H1, Label1 } from 'baseui/typography';
 import { Section } from '../components/@design-system/block-layout';
@@ -10,9 +9,9 @@ import { PropTypes } from './labTemplate.types';
 
 const LabTemplate: FunctionComponent<PropTypes> = ({ data }) => {
   const flattenedData = data.sanityLab;
+
   return (
     <>
-      <Navbar />
       <Section>
         <PageHeader
           headline={flattenedData.title}

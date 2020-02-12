@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import { join } from 'path';
 import { useStyletron } from 'baseui';
 import { Display1, Display4 } from 'baseui/typography';
 import { Button, SIZE } from 'baseui/button';
-import { Navbar } from '../components/navbar';
+import { Navigation } from '../components/navigation';
+import { useMediaQuery } from '../components/utils/use-media-query';
 
 const WorkItemWrapper = ({ children }) => {
   const [css, theme] = useStyletron();
@@ -81,10 +82,19 @@ const Work = ({
   },
 }) => {
   const [css, theme] = useStyletron();
-  console.log();
+
+  const isLarge = useMediaQuery(theme.mediaQuery.large);
+  const [active, updateActive] = useState(false);
+  const toggle = () => updateActive(!active);
+  const close = () => updateActive(false);
   return (
     <>
-      <Navbar />
+      <Navigation
+        isLarge={isLarge}
+        toggle={toggle}
+        active={active}
+        close={close}
+      />
       <WorkItemsWrapper>
         {' '}
         {edges.map(({ node }, key) => {
