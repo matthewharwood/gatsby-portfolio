@@ -143,6 +143,8 @@ exports[`Page Renderer  should render postHeader 1`] = `
                 className=""
                 data-baseweb="link"
                 href="https://www.github.com"
+                onBlur={[Function]}
+                onFocus={[Function]}
               >
                 Github
               </a>
