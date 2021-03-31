@@ -671,9 +671,9 @@
   version "1.1.3"
   resolved "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
 
-"@sanity/base@^0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/base/-/base-0.144.0.tgz#0d32fe16f303e8dbfc8d3ccd647fb600165f6ee3"
+"@sanity/base@^0.144.1":
+  version "0.144.1"
+  resolved "https://registry.yarnpkg.com/@sanity/base/-/base-0.144.1.tgz#086feb2f1e8c5440bf9d24e09c3a49fc6913601f"
   dependencies:
     "@sanity/client" "0.144.0"
     "@sanity/document-store" "0.144.0"
@@ -684,7 +684,7 @@
     "@sanity/preview" "0.144.0"
     "@sanity/schema" "0.144.0"
     "@sanity/state-router" "0.144.0"
-    "@sanity/structure" "0.144.0"
+    "@sanity/structure" "0.144.1"
     "@sanity/transaction-collator" "0.144.0"
     "@sanity/util" "0.144.0"
     "@sanity/validation" "0.144.0"
@@ -732,9 +732,9 @@
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/components@^0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/components/-/components-0.144.0.tgz#7afa0abe5092b035ed30b3e4fc22b1ec4943bbfc"
+"@sanity/components@^0.144.2":
+  version "0.144.2"
+  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-0.144.2.tgz#4a154e20adf976f6e42612893caf50ed7b811762"
   dependencies:
     "@sanity/date-input" "0.144.0"
     "@sanity/imagetool" "0.144.0"
@@ -845,9 +845,9 @@
     "@sanity/generate-help-url" "0.144.0"
     "@sanity/rich-date-input" "0.144.0"
 
-"@sanity/default-layout@^0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-0.144.0.tgz#a35dbe08aba0c24d10efca9b53fb5221cbdb242d"
+"@sanity/default-layout@^0.144.2":
+  version "0.144.2"
+  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-0.144.2.tgz#299a665ea30314f849a24a3ef47d69d3927094d8"
   dependencies:
     "@sanity/generate-help-url" "0.144.0"
     is-hotkey "^0.1.4"
@@ -867,16 +867,16 @@
     prop-types "^15.6.0"
     rxjs "^6.5.2"
 
-"@sanity/desk-tool@^0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-0.144.0.tgz#0e210056301cf44494f10ee42feac805bbdf939a"
+"@sanity/desk-tool@^0.144.3":
+  version "0.144.3"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-0.144.3.tgz#dd6262589b2d19dffbd4dc13a27d50d3937ba638"
   dependencies:
     "@sanity/data-aspects" "0.144.0"
-    "@sanity/form-builder" "0.144.0"
+    "@sanity/form-builder" "0.144.2"
     "@sanity/generate-help-url" "0.144.0"
     "@sanity/mutator" "0.144.0"
     "@sanity/schema" "0.144.0"
-    "@sanity/structure" "0.144.0"
+    "@sanity/structure" "0.144.1"
     "@sanity/uuid" "0.144.0"
     "@sanity/validation" "0.144.0"
     boundless-arrow-key-navigation "^1.1.0"
@@ -925,9 +925,9 @@
     simple-get "^3.0.2"
     split2 "^2.1.1"
 
-"@sanity/form-builder@0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-0.144.0.tgz#efec58714aa38295e95d9770125caff4885ade2b"
+"@sanity/form-builder@0.144.2":
+  version "0.144.2"
+  resolved "https://registry.yarnpkg.com/@sanity/form-builder/-/form-builder-0.144.2.tgz#438d7e83382cb3867eab60f33b053e3603da2f1b"
   dependencies:
     "@sanity/block-tools" "0.144.0"
     "@sanity/generate-help-url" "0.144.0"
@@ -1130,9 +1130,9 @@
     lodash "^4.17.4"
     nano-pubsub "^1.0.2"
 
-"@sanity/structure@0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/structure/-/structure-0.144.0.tgz#6df21ddccb5911b06529d8c98012d020cdd54750"
+"@sanity/structure@0.144.1":
+  version "0.144.1"
+  resolved "https://registry.yarnpkg.com/@sanity/structure/-/structure-0.144.1.tgz#abd000c4cbeae99a3618a40be579bd6efe9901cd"
   dependencies:
     "@sanity/initial-value-templates" "0.144.0"
     "@types/lodash" "^4.14.116"
@@ -1176,9 +1176,9 @@
     es6-error "^4.0.2"
     type-of-is "^3.5.1"
 
-"@sanity/vision@^0.144.0":
-  version "0.144.0"
-  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-0.144.0.tgz#091b97c03563eef72ea29e397d1cd92094c17fe3"
+"@sanity/vision@^0.144.2":
+  version "0.144.2"
+  resolved "https://registry.yarnpkg.com/@sanity/vision/-/vision-0.144.2.tgz#612d0c85550a41ee0848d872290c57491d00d0d5"
   dependencies:
     classnames "^2.2.5"
     codemirror "^5.47.0"
@@ -6183,14 +6183,14 @@ react-datepicker@^1.8.0:
     react-onclickoutside "^6.7.1"
     react-popper "^1.0.2"
 
-react-dom@^16.2:
-  version "16.11.0"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.11.0.tgz#7e7c4a5a85a569d565c2462f5d345da2dd849af5"
+react-dom@^16.12.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.17.0"
+    scheduler "^0.19.1"
 
 react-fast-compare@^2.0.2:
   version "2.0.4"
@@ -6351,9 +6351,9 @@ react-tippy@^1.2.3:
   dependencies:
     popper.js "^1.11.1"
 
-react@^16.2:
-  version "16.11.0"
-  resolved "https://registry.npmjs.org/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
+react@^16.12.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -6701,9 +6701,9 @@ scheduler@^0.16.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.17.0.tgz#7c9c673e4ec781fac853927916d1c426b6f3ddfe"
+scheduler@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -7852,8 +7852,8 @@ xxhashjs@^0.2.1:
     cuint "^0.2.2"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.npmjs.org/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
 
 yallist@^2.1.2:
   version "2.1.2"
