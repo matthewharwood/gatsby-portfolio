@@ -25,7 +25,7 @@
         "gatsby-plugin-transition-link": "^1.17.7",
         "gatsby-source-filesystem": "^2.1.48",
         "gatsby-source-sanity": "^5.0.5",
-        "gatsby-transformer-remark": "^2.6.50",
+        "gatsby-transformer-remark": "^5.25.1",
         "gatsby-transformer-sharp": "^2.3.14",
         "gl-matrix": "^3.1.0",
         "hex-to-rgba": "^2.0.1",
